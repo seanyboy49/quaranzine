@@ -21,3 +21,9 @@ export const LogoContainer = styled.div`
   align-items: center;
   flex-direction: column;
 `
+
+export const WeeklyContainer = styled.div`
+  height: 100px;
+  width: 100%;
+  background-color: ${props => props.background};
+`
