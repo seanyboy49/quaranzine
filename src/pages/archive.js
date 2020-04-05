@@ -15,10 +15,7 @@ import {
 import theme from "../styles/theme"
 
 const Archive = () => {
-  const weeklyIssues = [
-    { linkBarColor: theme.blue, titleColor: theme.red },
-    { linkBarColor: "purple", titleColor: "yellow" },
-  ]
+  const weeklyIssues = [{ linkBarColor: theme.blue, titleColor: theme.red }]
 
   return (
     <>
@@ -33,17 +30,15 @@ const Archive = () => {
       <WeeklyIssueContainer>
         {weeklyIssues.map((weeklyIssue, index) => {
           return (
-            <IssueLinkBar backgroundColor={weeklyIssue.linkBarColor}>
-              <WeeklyTitle textColor={weeklyIssue.titleColor}>
-                Week {index + 1}.
-              </WeeklyTitle>
-            </IssueLinkBar>
+            <StyledLink to="/">
+              <IssueLinkBar backgroundColor={weeklyIssue.linkBarColor}>
+                <WeeklyTitle textColor={weeklyIssue.titleColor}>
+                  Week {index + 1}.
+                </WeeklyTitle>
+              </IssueLinkBar>
+            </StyledLink>
           )
         })}
-
-        {/* <IssueLinkBar backgroundColor={theme.blue}>
-          <WeeklyTitle textColor={theme.red}>Week 1.</WeeklyTitle>
-        </IssueLinkBar> */}
       </WeeklyIssueContainer>
     </>
   )
