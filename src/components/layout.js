@@ -8,8 +8,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
+import { NavBar, StyledLink } from "./styled"
+import logo from "../images/logo.svg"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -24,7 +24,11 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <NavBar>
+        <img width={128} src={logo} alt="small qrzn logo"></img>
+        <p>the quaranzine for the quaranzined</p>
+        <StyledLink to="/archive/">archive</StyledLink>
+      </NavBar>
       <div
         style={{
           margin: `0 auto`,
