@@ -21,16 +21,22 @@ const StyledLink = styled(Link)`
   }
 `
 
+const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+`
+
 const Archive = () => (
   <>
     <SEO title="Archive" />
     <ArchiveNavbar>
-      <StyledLink>Home</StyledLink>
+      <StyledLink to="/">Home</StyledLink>
     </ArchiveNavbar>
-    <div>
+    <LogoContainer>
       <img width="200" src={logo} alt="qrzn logo"></img>
-      <h3>the quaranzine for the quaranzined</h3>
-    </div>
+      <p>the quaranzine for the quaranzined</p>
+    </LogoContainer>
   </>
 )
 
