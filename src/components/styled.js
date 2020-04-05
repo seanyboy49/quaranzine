@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 export const NavBar = styled.nav`
   padding: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: ${props => props.justify || "space-between"};
   align-items: center;
 `
 
@@ -14,4 +14,10 @@ export const StyledLink = styled(Link)`
   &:hover {
     color: grey;
   }
+`
+
+export const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 `
