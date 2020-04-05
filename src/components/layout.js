@@ -29,16 +29,8 @@ const Layout = ({ children }) => {
         <p>the quaranzine for the quaranzined</p>
         <StyledLink to="/archive/">archive</StyledLink>
       </NavBar>
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>Built with love by people in quarantine</footer>
-      </div>
+      <main>{children}</main>
+      <footer>Built with love by people in quarantine</footer>
     </>
   )
 }
