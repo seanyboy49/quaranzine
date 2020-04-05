@@ -18,6 +18,8 @@ h1 {
   font-family: "HelveticaNeue-Bold";
   font-size: 73px;
   color: #ff07a9;
+  margin: 0;
+  line-height: 70px;
 }
 
 h2 {

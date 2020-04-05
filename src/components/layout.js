@@ -8,7 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import { NavBar, StyledLink } from "./styled"
+import { NavBar, StyledLink } from "../styles/navigation"
 import logo from "../images/logo.svg"
 
 const Layout = ({ children }) => {
