@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 import SEO from "../components/seo"
 import logo from "../images/logo.svg"
-import { NavBar, StyledLink, LogoContainer } from "../components/styled"
+import { NavBar, StyledLink, LogoContainer } from "../styles/navigation"
 
 const Archive = () => (
   <>
