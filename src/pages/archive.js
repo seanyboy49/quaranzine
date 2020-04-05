@@ -1,10 +1,32 @@
 import React from "react"
+import styled from "styled-components"
 
-import SEO from "../../components/seo"
-import logo from "../../images/logo.svg"
-import { NavBar, StyledLink, LogoContainer } from "../../styles/navigation"
-import { IssueLinkBar, WeeklyIssueContainer, WeeklyTitle } from "./styled"
-import theme from "../../styles/theme"
+import SEO from "../components/seo"
+import logo from "../images/logo.svg"
+import { NavBar, StyledLink, LogoContainer } from "../styles/navigation"
+import theme from "../styles/theme"
+
+const IssueLinkBar = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 25px;
+  width: 100%;
+  background-color: ${props => props.backgroundColor};
+`
+
+const WeeklyIssueContainer = styled.div`
+  height: 100%;
+  width: 100%;
+  margin: 70px 0 0 0;
+  display: block;
+`
+
+const WeeklyTitle = styled.p`
+  font-size: 65px;
+  color: ${props => props.textColor};
+  margin: 0;
+`
 
 const Archive = () => {
   const weeklyIssues = [{ linkBarColor: theme.blue, titleColor: theme.red }]
