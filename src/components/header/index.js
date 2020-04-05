@@ -6,7 +6,7 @@ import { Link } from "gatsby"
 import logoSmall from "../../images/logo-small.svg"
 
 const NavBar = styled.nav`
-  margin: 20px;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,9 +21,10 @@ const StyledLink = styled(Link)`
 `
 
 const Header = () => {
+  console.log("header")
   return (
     <NavBar>
-      <img src={logoSmall} alt="small qrzn logo"></img>
+      <img width={128} src={logoSmall} alt="small qrzn logo"></img>
       <p>the quaranzine for the quaranzined</p>
       <StyledLink to="/archive/">archive</StyledLink>
     </NavBar>
