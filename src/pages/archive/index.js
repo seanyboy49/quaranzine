@@ -1,18 +1,10 @@
 import React from "react"
-import { Link } from "gatsby"
-import styled from "styled-components"
 
-import SEO from "../components/seo"
-import logo from "../images/logo.svg"
-import {
-  NavBar,
-  StyledLink,
-  LogoContainer,
-  WeeklyIssueContainer,
-  IssueLinkBar,
-  WeeklyTitle,
-} from "../components/styled"
-import theme from "../styles/theme"
+import SEO from "../../components/seo"
+import logo from "../../images/logo.svg"
+import { NavBar, StyledLink, LogoContainer } from "../../styles/navigation"
+import { IssueLinkBar, WeeklyIssueContainer, WeeklyTitle } from "./styled"
+import theme from "../../styles/theme"
 
 const Archive = () => {
   const weeklyIssues = [{ linkBarColor: theme.blue, titleColor: theme.red }]

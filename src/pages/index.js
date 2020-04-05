@@ -1,16 +1,23 @@
 import React from "react"
-import { Link } from "gatsby"
 
-import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { NavBar, StyledLink } from "../styles/navigation"
+import Issue1 from "../issues/issue-1"
+import logo from "../images/logo.svg"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Issue 1: Handdrawn</h1>
-    <p>Now go build something great.</p>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+const Home = () => {
+  return (
+    <>
+      <SEO title="Home" />
+      <NavBar>
+        <img width={128} src={logo} alt="small qrzn logo"></img>
+        <p>the quaranzine for the quaranzined</p>
+        <StyledLink to="/archive/">archive</StyledLink>
+      </NavBar>
 
-export default IndexPage
+      <Issue1 />
+    </>
+  )
+}
+
+export default Home
