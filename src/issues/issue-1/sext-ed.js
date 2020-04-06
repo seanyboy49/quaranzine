@@ -17,6 +17,15 @@ const ArtistName = styled.p`
   font-size: 30px;
 `
 
+const bulletpointStyle = styled.ul`
+  list-style-type: circle;
+  font-size: 50%;
+  line-height: 2;
+  li::before {
+    color: red;
+  }
+`
+
 const Sext = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -40,7 +49,14 @@ const Sext = () => {
   )
 
   const imgFace = data.allFile.edges.find(edge => edge.node.name === "Face")
-  console.log(imgFace)
+
+  const guidelines = data.allFile.edges.find(
+    edge => edge.node.name === "guidelines"
+  )
+
+  const digitalFucking = data.allFile.edges.find(
+    edge => edge.node.name === "1-digital-fucking"
+  )
 
   return (
     <PaddedWidthContainer id="sext-ed">
@@ -71,6 +87,47 @@ const Sext = () => {
             collective love in the time of covid-19.
           </p>
           <p>Tl;dr: Now is a great time to brush up on your sex talk skills!</p>
+        </Column>
+      </Row>
+      <Img
+        style={{ width: "85%", margin: "auto" }}
+        fluid={guidelines.node.childImageSharp.fluid}
+      />
+      <Img
+        style={{ width: "60%" }}
+        fluid={digitalFucking.node.childImageSharp.fluid}
+      />
+      <Row>
+        <Column>
+          <bulletpointStyle>
+            <li>
+              <p>
+                Be upfront with your partners, just as you would IRL — and it
+                doesn’t have to be corny. I think it’s incredibly sexy for a new
+                partner to tell me where they would like to be touched. Or for
+                someone to set the vibe by asking to tell me about a specific
+                memory.
+              </p>
+            </li>
+            <li>
+              <p>
+                Maybe a new partner likes [redacted], but not [redacted] or
+                their [redacted] are especially sensitive. Maybe I’m at work
+                right now and can’t be distracted by play by play and pictures
+                of your dick. Get clear. Listen to each other; this is a
+                dialogue, not a masturbatory monologue.
+              </p>
+            </li>
+            <li>
+              <p>
+                Check in with partners on communications boundaries. You want to
+                know that any images or text messages you send are just for them
+                (unless part of y’all’s mutual agreement and interest is that
+                they share your sexts with other partners, etc. — and if so, you
+                better talk about it.)
+              </p>
+            </li>
+          </bulletpointStyle>
         </Column>
       </Row>
     </PaddedWidthContainer>
