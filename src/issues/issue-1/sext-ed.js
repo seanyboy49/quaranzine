@@ -35,11 +35,19 @@ const Sext = () => {
     }
   `)
 
+  const imgTitle = data.allFile.edges.find(
+    edge => edge.node.name === "Sext-Ed-101"
+  )
+
+  const imgFace = data.allFile.edges.find(edge => edge.node.name === "Face")
+
   return (
     <PaddedWidthContainer>
-      <Img fluid={data.file.childImageSharp.fluid} />
+      <Img fluid={imgTitle.node.childImageSharp.fluid} />
       <Column>
-        <Row></Row>
+        <Row>
+          <Img fluid={imgFace.node.childImageSharp.fluid} />
+        </Row>
       </Column>
     </PaddedWidthContainer>
   )
