@@ -3,6 +3,7 @@ import React from "react"
 import Cover from "./cover"
 import ApartmentDrawing from "./apartment-drawing"
 
+import Sext from "./sext-ed"
 import Credits from "./credits"
 
 const Issue1 = () => {
@@ -11,6 +12,7 @@ const Issue1 = () => {
       <Cover />
       <ApartmentDrawing />
 
+      <Sext />
       <Credits />
     </>
   )
