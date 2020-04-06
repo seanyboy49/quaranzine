@@ -1,0 +1,46 @@
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
+
+import { PaddedWidthContainer, Row, Column } from "../../styles/layout"
+import { StyledH2 } from "../../styles/text"
+
+const Chart = () => {
+  const { allFile } = useStaticQuery(graphql`
+    query {
+      allFile(filter: { relativeDirectory: { eq: "chart" } }) {
+        edges {
+          node {
+            name
+            childImageSharp {
+              fixed {
+                ...GatsbyImageSharpFixed_withWebp_tracedSVG
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const dow = allFile.edges[0]
+  const meditation = allFile.edges[1]
+
+  return (
+    <PaddedWidthContainer id="rejecting-materialism">
+      <StyledH2 textAlign="center">
+        when rejecting materialism <br /> leads to great profits
+      </StyledH2>
+      <Row>
+        <Column>
+          <Img fixed={meditation.node.childImageSharp.fixed} />
+        </Column>
+        <Column>
+          <Img fixed={dow.node.childImageSharp.fixed} />
+        </Column>
+      </Row>
+    </PaddedWidthContainer>
+  )
+}
+
+export default Chart

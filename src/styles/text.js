@@ -5,3 +5,6 @@ export const StyledH1 = styled.h1`
   margin: 0;
   text-align: ${props => props.textAlign};
 `
+export const StyledH2 = styled.h1`
+  text-align: ${props => props.textAlign};
+`
