@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 import { PaddedWidthContainer, Row, Column } from "../../styles/layout"
 import { StyledH2 } from "../../styles/text"
 
-const Chart = () => {
+const RejectingMaterialismChart = () => {
   const { allFile } = useStaticQuery(graphql`
     query {
       allFile(filter: { relativeDirectory: { eq: "chart" } }) {
@@ -43,4 +43,4 @@ const Chart = () => {
   )
 }
 
-export default Chart
+export default RejectingMaterialismChart

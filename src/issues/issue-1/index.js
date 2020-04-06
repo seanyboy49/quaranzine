@@ -3,7 +3,7 @@ import React from "react"
 import Cover from "./cover"
 import ApartmentDrawing from "./apartment-drawing"
 import LineBreak from "./line-breaks"
-import Chart from "./chart"
+import RejectingMaterialismChart from "./rejecting-materialism"
 
 const Issue1 = () => {
   return (
@@ -12,7 +12,7 @@ const Issue1 = () => {
       <LineBreak fileName="morse-follow-me" />
       <ApartmentDrawing />
       <LineBreak fileName="morse-into-the-void" />
-      <Chart />
+      <RejectingMaterialismChart />
     </>
   )
 }
