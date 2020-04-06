@@ -1,14 +1,8 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-import styled from "styled-components"
 
-import {
-  PaddedWidthContainer,
-  Row,
-  Column,
-  CustomPosition,
-} from "../../styles/layout"
+import { PaddedWidthContainer, Row, Column } from "../../styles/layout"
 import { StyledH2 } from "../../styles/text"
 
 const RejectingMaterialismChart = () => {
