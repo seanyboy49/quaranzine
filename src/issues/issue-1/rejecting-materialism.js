@@ -1,14 +1,20 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import styled from "styled-components"
 
-import { PaddedWidthContainer, Row, Column } from "../../styles/layout"
+import {
+  PaddedWidthContainer,
+  Row,
+  Column,
+  CustomPosition,
+} from "../../styles/layout"
 import { StyledH2 } from "../../styles/text"
 
 const RejectingMaterialismChart = () => {
   const { allFile } = useStaticQuery(graphql`
     query {
-      allFile(filter: { relativeDirectory: { eq: "chart" } }) {
+      allFile(filter: { relativeDirectory: { eq: "rejecting-materialism" } }) {
         edges {
           node {
             name
@@ -25,6 +31,7 @@ const RejectingMaterialismChart = () => {
 
   const dow = allFile.edges[0]
   const meditation = allFile.edges[1]
+  const bugs = allFile.edges[2]
 
   return (
     <PaddedWidthContainer id="rejecting-materialism">
@@ -33,12 +40,16 @@ const RejectingMaterialismChart = () => {
       </StyledH2>
       <Row>
         <Column>
-          <Img fixed={meditation.node.childImageSharp.fixed} />
-        </Column>
-        <Column>
           <Img fixed={dow.node.childImageSharp.fixed} />
         </Column>
+        <Column>
+          <Img fixed={meditation.node.childImageSharp.fixed} />
+        </Column>
       </Row>
+      <Img
+        style={{ position: "relative", marginLeft: "90%", marginTop: "15px" }}
+        fixed={bugs.node.childImageSharp.fixed}
+      />
     </PaddedWidthContainer>
   )
 }

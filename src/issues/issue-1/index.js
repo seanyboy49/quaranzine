@@ -13,6 +13,7 @@ const Issue1 = () => {
       <ApartmentDrawing />
       <LineBreak fileName="morse-into-the-void" />
       <RejectingMaterialismChart />
+      <LineBreak fileName="boring-line" />
     </>
   )
 }

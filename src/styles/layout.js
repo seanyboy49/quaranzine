@@ -18,3 +18,7 @@ export const Column = styled.div`
   flex-direction: column;
   align-items: center;
 `
+export const CustomPosition = styled.div`
+  position: absolute;
+  right: 0;
+`
