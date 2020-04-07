@@ -8,62 +8,68 @@ const breakpoints = {
 }
 
 export const PaddedWidthContainer = styled.section`
-  padding: 73.5px 145px;
+    padding: 73.5px 145px;
 
-  ${breakpoints.phoneWide} {
-    padding: 28px 56px;
-  }
+  ${breakpoints.tabletWide} {
+    padding: 28px 56px;
+  }
 `
 export const FullWidthContainer = styled.section`
-  padding: 145px 0;
+    padding: 145px 0;
 
-  ${breakpoints.phoneWide} {
-    padding: 56px 0;
-  }
+  ${breakpoints.tabletWide} {
+    padding: 56px 0;
+  }
 `
 
 export const Row = styled.div`
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin: 20px, 0; 
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 20px 0;
 
-  ${breakpoints.tabletWide} {
-    flex-direction: column;
-    align-items: center;
-  }
+  ${breakpoints.tabletWide} {
+    flex-direction: column;
+    align-items: center;
 
-  ${p =>
-  p.center &&
-  css`
-      justify-content: center;
-    `};
+    ${p =>
+      p.reverseColumn &&
+      css`
+        flex-direction: column-reverse;
+      `}
+  }
 
-  ${p =>
-  p.start &&
-  css`
-      justify-content: flex-start;
-    `};
+  ${p =>
+    p.center &&
+    css`
+      justify-content: center;
+    `};
 
-  ${p =>
-  p.end &&
-  css`
-      justify-content: flex-end;
-    `};
-`
+  ${p =>
+    p.start &&
+    css`
+      justify-content: flex-start;
+    `};
 
-export const CustomPosition = styled.div`
-    position: absolute;
-    right: 0;
+  ${p =>
+    p.end &&
+    css`
+      justify-content: flex-end;
+    `};
 `
 
 export const Column = styled.div`
-    display: flex;
-    width: ${props => props.width || 50}%;
-    flex-direction: column;
-    align-items: ${props => props.align || "center"};
+  display: flex;
+  width: ${props => props.width || 50}%;
+  flex-direction: column;
+  align-items: ${props => props.align || "center"};
 
-    ${breakpoints.tabletWide} {
-        width: 100%;
-      }
+  ${breakpoints.tabletWide} {
+    width: 100%;
+  }
+`
+
+export const CustomPosition = styled.div`
+  position: absolute;
+  right: 0;
 `
