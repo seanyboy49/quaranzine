@@ -59,6 +59,7 @@ export const Text = styled.p`
   font-family: "HelveticaNeue-Medium";
   font-size: 17px;
   color: ${theme.black};
+  width: 100%;
   ${color};
   ${align};
 

@@ -12,7 +12,7 @@ const Home = () => {
       <SEO title="Home" />
       <NavBar>
         <img width={128} src={logo} alt="small qrzn logo"></img>
-        <Text>the quaranzine for the quaranzined</Text>
+        <Text center>the quaranzine for the quaranzined</Text>
         <StyledLink to="/archive/">archive</StyledLink>
       </NavBar>
 
