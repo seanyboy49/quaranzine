@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 import { PaddedWidthContainer, Row, Column } from "../../styles/layout"
+import { Text } from "../../styles/text"
 import coronaHeartGif from "../../images/reflections/corona-heart.gif"
 import corona from "../../images/reflections/corona1.gif"
 
@@ -17,6 +18,9 @@ const Reflections = () => {
               fluid {
                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
               }
+              fixed {
+                ...GatsbyImageSharpFixed_withWebp_tracedSVG
+              }
             }
           }
         }
@@ -25,8 +29,8 @@ const Reflections = () => {
   `)
 
   const titleImage = data.findFileByName("reflections-title")
-
   const mehirsImage = data.findFileByName("mehirs")
+  const roachesImage = data.findFileByName("roaches")
 
   return (
     <PaddedWidthContainer id="reflections">
@@ -37,52 +41,52 @@ const Reflections = () => {
           </div>
         </Column>
         <Column>
-          <p>
+          <Text>
             A long time ago, in 2017, I visited the coastal town of Carnac, in
             the northwest of France. Carnac is known for three things—beaches,
             crepes, and the Carnac stones: a dense collection of more than 3,000
             giant standing rocks erected thousands of years ago.
-          </p>
-          <p>
+          </Text>
+          <Text>
             To see the stones in person is equal parts breathtaking and
             confounding. Why would an entire society take the time to arrange
             fields of huge rocks in perfect rows? Over the centuries, scholars
             have proposed a variety of potential explanations, but there has
             been no definitive conclusion.
-          </p>
-          <p>
+          </Text>
+          <Text>
             I believe the answer to these unanswered questions—like most
             unanswered questions of the universe—is at once more simple and more
             profound than any academic could ever comprehend. I believe that the
             answer is: love.
-          </p>
+          </Text>
         </Column>
       </Row>
       <Row>
         <Column>
-          <p>
+          <Text>
             If we strip away all of the scientific evidence and data collected
             on these stones over centuries of study, what do we have? An
             articulation of perfect harmony. A vision of unity. A pure
             expression of humankind’s capacity to love.
-          </p>
-          <p>You might not agree with me at first, but think about it.</p>
-          <p>
+          </Text>
+          <Text>You might not agree with me at first, but think about it.</Text>
+          <Text>
             Why would John Lennon say, “all you need is love?” Why would Whitney
             Houston proclaim, “I will always love you?” Why did Fergie say—on
             her breakthrough hit London Bridge— “I’m Fergie Ferg and me love you
             longtime.” Were all of these visionary artists bluffing? No. Quite
             simply, as Lennon points out in his masterpiece, “love is all you
             need.”
-          </p>
-          <p>
+          </Text>
+          <Text>
             In these difficult and uncertain times, unlocking the true power of
             love has never been more imperative. Just think about it.
-          </p>
-          <p>
+          </Text>
+          <Text>
             As the global economy shuts down, the stock price of love has never
             been higher. And we are all shareholders.
-          </p>
+          </Text>
         </Column>
         <Column>
           <div style={{ width: "80%", margin: "auto" }}>
@@ -92,30 +96,49 @@ const Reflections = () => {
       </Row>
       <Row>
         <Column>
-          <img src={corona} />
+          <img src={corona} style={{ width: "80%", margin: "auto" }} />
         </Column>
         <Column>
-          <p>
+          <Text>
             If we’re being honest with ourselves, we don’t need more money. We
             don’t need more clothes, gadgets or jewelry. What we need right now
             are hugs and kisses. Right now, what we need to do is walk to a
             public park and hold hands in unity.
-          </p>
-          <p>
+          </Text>
+          <Text>
             I can’t help but think that these are the times where we need to hug
             our loved ones more tightly, and keep our friends closer than ever
             before. There is a healing power in physically joining people
             together that goes beyond all human knowledge and scientific
             inquiry.
-          </p>
-          <p>
+          </Text>
+          <Text>
             In times of crisis, I know that love explains all and will heal all.
-          </p>
-          <p>
+          </Text>
+          <Text>
             And so, I implore you to ruminate on this message of love and
             togetherness in these trying times. Think about how you can apply it
-            to your life.{" "}
-          </p>
+            to your life.
+          </Text>
+        </Column>
+      </Row>
+      <Row>
+        <Column>
+          <Text>
+            It’s as simple as knocking on your neighbor’s door to ask how
+            they’re doing. It’s as simple as hand-delivering groceries to your
+            grandmother to show her that you care. It’s as simple as giving a
+            stranger on the street a hug.
+          </Text>
+          <Text>
+            Now, more than ever before, these simple acts of love are the most
+            profound.{" "}
+          </Text>
+        </Column>
+        <Column>
+          <div style={{ width: "60%", margin: "auto" }}>
+            <Img fluid={roachesImage.node.childImageSharp.fluid} />
+          </div>
         </Column>
       </Row>
     </PaddedWidthContainer>
