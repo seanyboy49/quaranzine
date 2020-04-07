@@ -1,6 +1,8 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
 
+import theme from "./theme"
+
 export const NavBar = styled.nav`
   padding: 20px;
   display: flex;
@@ -9,10 +11,11 @@ export const NavBar = styled.nav`
 `
 
 export const StyledLink = styled(Link)`
-  color: black;
+  color: ${theme.black};
   text-decoration: none;
+
   &:hover {
-    color: grey;
+    color: ${theme.pink};
   }
 `
 

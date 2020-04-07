@@ -3,35 +3,9 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-:root {
-  --black: #000000;
-  --pink: #ff07a9;
-}
-
-h1 {
-  font-family: "HelveticaNeue-Bold";
-  font-size: 45px;
-  line-height: 55px;
-  color: var(--pink);
-}
-
-h2 {
-  font-family: "HelveticaNeue-Medium";
-  font-size: 40px;
-  line-height: 40px;
-  color: var(--pink);
-}
-
-p,
-a {
-  font-family: "HelveticaNeue-Medium";
-  font-size: 20px;
-  line-height: 30px;
-  color: var(--black);
 }
