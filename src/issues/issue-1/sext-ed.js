@@ -72,6 +72,10 @@ const Sext = () => {
 
   const listen = data.allFile.edges.find(edge => edge.node.name === "listen")
 
+  const dirtyTalk = data.allFile.edges.find(
+    edge => edge.node.name === "3-dirty-talk"
+  )
+
   return (
     <PaddedWidthContainer id="sext-ed">
       <Img fluid={imgTitle.node.childImageSharp.fluid} />
@@ -150,7 +154,7 @@ const Sext = () => {
           position: "relative",
           marginLeft: "40%",
           height: "60px",
-          marginTop: "20px",
+          marginTop: "70px",
         }}
         fixed={communication.node.childImageSharp.fixed}
       />
@@ -178,6 +182,11 @@ const Sext = () => {
           </Text>
         </Column>
       </Row>
+      <Img
+        style={{ width: "68%", height: "50px" }}
+        fixed={dirtyTalk.node.childImageSharp.fixed}
+      />
+      <Row></Row>
     </PaddedWidthContainer>
   )
 }
