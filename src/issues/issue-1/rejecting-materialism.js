@@ -13,8 +13,8 @@ const RejectingMaterialismChart = () => {
           node {
             name
             childImageSharp {
-              fixed {
-                ...GatsbyImageSharpFixed_withWebp_tracedSVG
+              fluid {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
               }
             }
           }
@@ -23,8 +23,7 @@ const RejectingMaterialismChart = () => {
     }
   `)
 
-  const dowImage = data.findFileByName("dow-jones")
-  const meditationImage = data.findFileByName("meditation")
+  const chartsImage = data.findFileByName("charts")
   const bugsImage = data.findFileByName("crawling-bugs")
 
   return (
@@ -32,17 +31,20 @@ const RejectingMaterialismChart = () => {
       <H2 center>
         when rejecting materialism <br /> leads to great profits
       </H2>
-      <Row>
-        <Column>
-          <Img fixed={dowImage.node.childImageSharp.fixed} />
-        </Column>
-        <Column>
-          <Img fixed={meditationImage.node.childImageSharp.fixed} />
-        </Column>
-      </Row>
+
       <Img
-        style={{ position: "relative", marginLeft: "90%", marginTop: "15px" }}
-        fixed={bugsImage.node.childImageSharp.fixed}
+        style={{ maxWidth: "800px", margin: "auto" }}
+        fluid={chartsImage.node.childImageSharp.fluid}
+      />
+
+      <Img
+        style={{
+          width: "200px",
+          position: "relative",
+          marginLeft: "90%",
+          marginTop: "15px",
+        }}
+        fluid={bugsImage.node.childImageSharp.fluid}
       />
     </PaddedWidthContainer>
   )

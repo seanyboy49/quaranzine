@@ -16,8 +16,8 @@ export const FullWidthContainer = styled.section`
 `
 
 export const Row = styled.div`
-  width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 
   ${p =>
