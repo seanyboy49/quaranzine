@@ -6,7 +6,7 @@ import { PaddedWidthContainer, Row, Column } from "../../styles/layout"
 import { Text } from "../../styles/text"
 import { findFileByName } from "../../utils"
 
-import corona from "../../images/reflections/corona-heart.gif"
+import corona from "../../gifs/corona-heart.gif"
 
 const Reflections = () => {
   const data = useStaticQuery(graphql`
@@ -28,8 +28,6 @@ const Reflections = () => {
       }
     }
   `)
-
-  console.log("data", data)
 
   const titleImage = findFileByName(data, "reflections-title")
   const mehirsImage = findFileByName(data, "mehirs")
