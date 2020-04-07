@@ -45,18 +45,7 @@ export const Column = styled.div`
   flex-direction: column;
   align-items: center;
 `
-export const Row = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-`
 
-export const Column = styled.div`
-  display: flex;
-  width: ${props => props.width || 50}%;
-  flex-direction: column;
-  align-items: center;
-`
 export const CustomPosition = styled.div`
   position: absolute;
   right: 0;

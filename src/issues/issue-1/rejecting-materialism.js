@@ -3,10 +3,10 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 import { PaddedWidthContainer, Row, Column } from "../../styles/layout"
-import { StyledH2 } from "../../styles/text"
+import { H2 } from "../../styles/text"
 
 const RejectingMaterialismChart = () => {
-  const { allFile } = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query {
       allFile(filter: { relativeDirectory: { eq: "rejecting-materialism" } }) {
         edges {
@@ -23,26 +23,26 @@ const RejectingMaterialismChart = () => {
     }
   `)
 
-  const dow = allFile.edges[0]
-  const meditation = allFile.edges[1]
-  const bugs = allFile.edges[2]
+  const dowImage = data.findFileByName("dow-jones")
+  const meditationImage = data.findFileByName("meditation")
+  const bugsImage = data.findFileByName("crawling-bugs")
 
   return (
     <PaddedWidthContainer id="rejecting-materialism">
-      <StyledH2 textAlign="center">
+      <H2 center>
         when rejecting materialism <br /> leads to great profits
-      </StyledH2>
+      </H2>
       <Row>
         <Column>
-          <Img fixed={dow.node.childImageSharp.fixed} />
+          <Img fixed={dowImage.node.childImageSharp.fixed} />
         </Column>
         <Column>
-          <Img fixed={meditation.node.childImageSharp.fixed} />
+          <Img fixed={meditationImage.node.childImageSharp.fixed} />
         </Column>
       </Row>
       <Img
         style={{ position: "relative", marginLeft: "90%", marginTop: "15px" }}
-        fixed={bugs.node.childImageSharp.fixed}
+        fixed={bugsImage.node.childImageSharp.fixed}
       />
     </PaddedWidthContainer>
   )

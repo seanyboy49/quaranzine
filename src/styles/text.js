@@ -66,6 +66,3 @@ export const Text = styled.p`
     font-size: 15px;
   }
 `
-export const StyledH2 = styled.h1`
-  text-align: ${props => props.textAlign};
-`
