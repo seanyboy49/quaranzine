@@ -2,8 +2,9 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-import { PaddedWidthContainer, Row, Column } from "../../styles/layout"
+import { PaddedWidthContainer } from "../../styles/layout"
 import { H2 } from "../../styles/text"
+import { findFileByName } from "../../utils"
 
 const RejectingMaterialismChart = () => {
   const data = useStaticQuery(graphql`
@@ -23,8 +24,8 @@ const RejectingMaterialismChart = () => {
     }
   `)
 
-  const chartsImage = data.findFileByName("charts")
-  const bugsImage = data.findFileByName("crawling-bugs")
+  const chartsImage = findFileByName(data, "charts")
+  const bugsImage = findFileByName(data, "crawling-bugs")
 
   return (
     <PaddedWidthContainer id="rejecting-materialism">

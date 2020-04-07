@@ -4,8 +4,9 @@ import Img from "gatsby-image"
 
 import { PaddedWidthContainer, Row, Column } from "../../styles/layout"
 import { Text } from "../../styles/text"
-import coronaHeartGif from "../../images/reflections/corona-heart.gif"
-import corona from "../../images/reflections/corona1.gif"
+import { findFileByName } from "../../utils"
+
+import corona from "../../images/reflections/corona-heart.gif"
 
 const Reflections = () => {
   const data = useStaticQuery(graphql`
@@ -28,9 +29,11 @@ const Reflections = () => {
     }
   `)
 
-  const titleImage = data.findFileByName("reflections-title")
-  const mehirsImage = data.findFileByName("mehirs")
-  const roachesImage = data.findFileByName("roaches")
+  console.log("data", data)
+
+  const titleImage = findFileByName(data, "reflections-title")
+  const mehirsImage = findFileByName(data, "mehirs")
+  const roachesImage = findFileByName(data, "roaches")
 
   return (
     <PaddedWidthContainer id="reflections">
