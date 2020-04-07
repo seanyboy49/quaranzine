@@ -3,7 +3,7 @@ import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 
 import { PaddedWidthContainer } from "../../styles/layout"
-import { StyledH1 } from "../../styles/text"
+import { H1, H2, Text } from "../../styles/text"
 
 const Cover = () => {
   const data = useStaticQuery(graphql`
@@ -22,8 +22,10 @@ const Cover = () => {
     <>
       <Img fluid={data.file.childImageSharp.fluid} />
       <PaddedWidthContainer id="manifesto">
-        <StyledH1 textAlign="right">issue #1: by hand</StyledH1>
-        <h1>
+        <H1 black right>
+          issue #1: by hand
+        </H1>
+        <H1>
           qrzn is the mag for people who are bored out of their minds and want
           to see stuff or read stuff that’s fairly interesting. Mostly it’s a
           way for my friends and i to force each other to design things even
@@ -32,7 +34,7 @@ const Cover = () => {
           every week. We’ve got contributors from all over the world, like New
           York, Paris, Toronto, Singapore, Lima, New Jersey, etc. If you want to
           be a part of this, dm us your stuff @qrzn_mag
-        </h1>
+        </H1>
       </PaddedWidthContainer>
     </>
   )
