@@ -76,6 +76,10 @@ const Sext = () => {
     edge => edge.node.name === "3-dirty-talk"
   )
 
+  const dirtyTalk2 = data.allFile.edges.find(
+    edge => edge.node.name === "dirty-talk-2"
+  )
+
   return (
     <PaddedWidthContainer id="sext-ed">
       <Img fluid={imgTitle.node.childImageSharp.fluid} />
@@ -183,10 +187,27 @@ const Sext = () => {
         </Column>
       </Row>
       <Img
-        style={{ width: "68%", height: "50px" }}
+        style={{ width: "68%", height: "50px", marginBottom: "50px" }}
         fixed={dirtyTalk.node.childImageSharp.fixed}
       />
-      <Row></Row>
+      <Row style={{ marginLeft: "5%" }}>
+        <Column width="60">
+          <Text>
+            Sometimes a few flirty texts are just…a few flirty texts! Just like
+            physical sexual acts don’t always have to end in orgasm—thovugh, we
+            love an orgasm—it can be fun to have a little chat to boost
+            confidence, calm the nervous system, get the blood flowing; and
+            then, put a pin in it for later, or just leave it at that. You don’t
+            always have to be actively trying to get off.
+          </Text>
+        </Column>
+        <div style={{ width: "40%" }}>
+          <Img
+            style={{ width: "60%" }}
+            fluid={dirtyTalk2.node.childImageSharp.fluid}
+          />
+        </div>
+      </Row>
     </PaddedWidthContainer>
   )
 }
