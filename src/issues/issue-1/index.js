@@ -5,6 +5,7 @@ import ApartmentDrawing from "./apartment-drawing"
 import LineBreak from "./line-breaks"
 import RejectingMaterialismChart from "./rejecting-materialism"
 import Reflections from "./reflections"
+import Attention from "./attention"
 
 const Issue1 = () => {
   return (
@@ -16,6 +17,7 @@ const Issue1 = () => {
       <RejectingMaterialismChart />
       <LineBreak fileName="boring-line" />
       <Reflections />
+      <Attention />
     </>
   )
 }
