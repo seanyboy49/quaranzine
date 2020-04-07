@@ -62,6 +62,7 @@ const Reflections = () => {
           </Text>
         </Column>
       </Row>
+
       <Row>
         <Column>
           <Text>
@@ -70,7 +71,9 @@ const Reflections = () => {
             articulation of perfect harmony. A vision of unity. A pure
             expression of humankind’s capacity to love.
           </Text>
-          <Text>You might not agree with me at first, but think about it.</Text>
+          <Text left>
+            You might not agree with me at first, but think about it.
+          </Text>
           <Text>
             Why would John Lennon say, “all you need is love?” Why would Whitney
             Houston proclaim, “I will always love you?” Why did Fergie say—on
@@ -94,6 +97,7 @@ const Reflections = () => {
           </div>
         </Column>
       </Row>
+
       <Row>
         <Column>
           <img src={corona} style={{ width: "80%", margin: "auto" }} />
@@ -122,6 +126,7 @@ const Reflections = () => {
           </Text>
         </Column>
       </Row>
+
       <Row>
         <Column>
           <Text>
@@ -132,11 +137,11 @@ const Reflections = () => {
           </Text>
           <Text>
             Now, more than ever before, these simple acts of love are the most
-            profound.{" "}
+            profound.
           </Text>
         </Column>
         <Column>
-          <div style={{ width: "60%", margin: "auto" }}>
+          <div style={{ width: "40%", margin: "auto" }}>
             <Img fluid={roachesImage.node.childImageSharp.fluid} />
           </div>
         </Column>
