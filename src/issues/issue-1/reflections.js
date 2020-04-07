@@ -63,7 +63,7 @@ const Reflections = () => {
         </Column>
       </Row>
 
-      <Row>
+      <Row reverseColumn>
         <Column>
           <Text>
             If we strip away all of the scientific evidence and data collected
@@ -127,7 +127,7 @@ const Reflections = () => {
         </Column>
       </Row>
 
-      <Row>
+      <Row reverseColumn>
         <Column>
           <Text>
             It’s as simple as knocking on your neighbor’s door to ask how

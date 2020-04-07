@@ -31,6 +31,12 @@ export const Row = styled.div`
   ${breakpoints.tabletWide} {
     flex-direction: column;
     align-items: center;
+
+    ${p =>
+      p.reverseColumn &&
+      css`
+        flex-direction: column-reverse;
+      `}
   }
 
   ${p =>
