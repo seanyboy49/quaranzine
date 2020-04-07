@@ -4,6 +4,7 @@ import styled from "styled-components"
 import SEO from "../components/seo"
 import logo from "../images/logo.svg"
 import { NavBar, StyledLink, LogoContainer } from "../styles/navigation"
+import { Text } from "../styles/text"
 import theme from "../styles/theme"
 
 const IssueLinkBar = styled.div`
@@ -39,7 +40,7 @@ const Archive = () => {
       </NavBar>
       <LogoContainer>
         <img width="200" src={logo} alt="qrzn logo"></img>
-        <p>the quaranzine for the quaranzined</p>
+        <Text>the quaranzine for the quaranzined</Text>
       </LogoContainer>
       <WeeklyIssueContainer>
         {weeklyIssues.map((weeklyIssue, index) => {

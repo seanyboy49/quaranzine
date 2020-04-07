@@ -22,7 +22,9 @@ const Cover = () => {
     <>
       <Img fluid={data.file.childImageSharp.fluid} />
       <PaddedWidthContainer id="manifesto">
-        <H1 textAlign="right">issue #1: by hand</H1>
+        <H1 black right>
+          issue #1: by hand
+        </H1>
         <H1>
           qrzn is the mag for people who are bored out of their minds and want
           to see stuff or read stuff that’s fairly interesting. Mostly it’s a
@@ -33,9 +35,6 @@ const Cover = () => {
           York, Paris, Toronto, Singapore, Lima, New Jersey, etc. If you want to
           be a part of this, dm us your stuff @qrzn_mag
         </H1>
-        <div>
-          <H2>My money's in that office?</H2>
-        </div>
       </PaddedWidthContainer>
     </>
   )
