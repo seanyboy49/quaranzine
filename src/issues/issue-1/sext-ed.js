@@ -18,15 +18,6 @@ const ArtistName = styled.p`
   font-size: 23px;
 `
 
-const bulletpointStyle = styled.ul`
-  list-style-type: circle;
-  font-size: 50%;
-  line-height: 2;
-  li::before {
-    color: red;
-  }
-`
-
 const Sext = () => {
   const data = useStaticQuery(graphql`
     query {
