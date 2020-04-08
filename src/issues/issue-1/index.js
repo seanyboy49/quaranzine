@@ -8,6 +8,7 @@ import Reflections from "./reflections"
 import Attention from "./attention"
 import InstagramPostMap from "./instagram-post-map"
 import PointingFingers from "./pointing-fingers"
+import SpringPoem from "./spring-poem"
 
 const Issue1 = () => {
   return (
@@ -24,6 +25,8 @@ const Issue1 = () => {
       <InstagramPostMap />
       <LineBreak fileName="morse-because-theres" />
       <PointingFingers />
+      <LineBreak fileName="morse-nothing-better" />
+      <SpringPoem />
     </>
   )
 }
