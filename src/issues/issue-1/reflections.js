@@ -6,7 +6,7 @@ import { PaddedWidthContainer, Row, Column } from "../../styles/layout"
 import { Text } from "../../styles/text"
 import { findFileByName } from "../../utils"
 
-import corona from "../../gifs/corona-heart.gif"
+import coronaVideo from "../../gifs/corona_video.mp4"
 
 const Reflections = () => {
   const data = useStaticQuery(graphql`
@@ -101,7 +101,17 @@ const Reflections = () => {
 
       <Row>
         <Column>
-          <img src={corona} style={{ width: "80%", margin: "auto" }} />
+          <video
+            style={{ margin: "auto auto", display: "block", maxWidth: "500px" }}
+            autoPlay
+            loop
+            muted
+            playInline
+            src={coronaVideo}
+          >
+            <source src={coronaVideo} type="video/mp4" />
+            <img src={coronaVideo} alt="beating heart full of coronavirus" />
+          </video>
         </Column>
         <Column>
           <Text>

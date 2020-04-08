@@ -3,23 +3,32 @@ import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 
 import { PaddedWidthContainer } from "../../styles/layout"
+import { findFileByName } from "../../utils"
 
 const InstagramPostMap = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "instagram-post-map.png" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+      allFile(filter: { relativeDirectory: { eq: "instagram-post-map" } }) {
+        edges {
+          node {
+            name
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              }
+            }
           }
         }
       }
     }
   `)
 
+  const desktopImage = findFileByName(data, "desktop")
+  const mobile = findFileByName(data, "mobile")
+
   return (
     <PaddedWidthContainer>
-      <Img fluid={data.file.childImageSharp.fluid} />
+      <Img fluid={desktopImage.node.childImageSharp.fluid} />
     </PaddedWidthContainer>
   )
 }
