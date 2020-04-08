@@ -4,10 +4,10 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import { FullWidthContainer } from "../../styles/layout"
 
-const Attention = () => {
+const PointingFingers = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "attention.png" }) {
+      file(relativePath: { eq: "pointing-fingers.png" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
@@ -18,10 +18,10 @@ const Attention = () => {
   `)
 
   return (
-    <FullWidthContainer id="attention">
+    <FullWidthContainer id="pointing-fingers">
       <Img fluid={data.file.childImageSharp.fluid} />
     </FullWidthContainer>
   )
 }
 
-export default Attention
+export default PointingFingers

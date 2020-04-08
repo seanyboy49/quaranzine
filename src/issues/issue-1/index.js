@@ -7,6 +7,7 @@ import RejectingMaterialismChart from "./rejecting-materialism"
 import Reflections from "./reflections"
 import Attention from "./attention"
 import InstagramPostMap from "./instagram-post-map"
+import PointingFingers from "./pointing-fingers"
 
 const Issue1 = () => {
   return (
@@ -21,6 +22,8 @@ const Issue1 = () => {
       <Attention />
       <LineBreak fileName="boring-line" />
       <InstagramPostMap />
+      <LineBreak fileName="morse-because-theres" />
+      <PointingFingers />
     </>
   )
 }

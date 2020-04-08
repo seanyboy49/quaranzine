@@ -35,7 +35,7 @@ const InstagramPostMap = () => {
 
   if (isPhoneWide) {
     return (
-      <PaddedWidthContainer>
+      <PaddedWidthContainer id="inspirational-instagram-posts">
         <Img fluid={mobileTitleImage.node.childImageSharp.fluid} />
         <H2 center>about the pandemic</H2>
         <Img fluid={mobileImage.node.childImageSharp.fluid} />
@@ -44,7 +44,7 @@ const InstagramPostMap = () => {
   }
 
   return (
-    <PaddedWidthContainer>
+    <PaddedWidthContainer id="inspirational-instagram-posts">
       <Img fluid={desktopImage.node.childImageSharp.fluid} />
     </PaddedWidthContainer>
   )
