@@ -1,8 +1,9 @@
 import React from "react"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
+import { useMediaQuery } from "react-responsive"
 
-import { PaddedWidthContainer } from "../../styles/layout"
+import { PaddedWidthContainer, breakpoints } from "../../styles/layout"
 import { findFileByName } from "../../utils"
 
 const InstagramPostMap = () => {
@@ -22,6 +23,10 @@ const InstagramPostMap = () => {
       }
     }
   `)
+
+  const isPhoneWide = useMediaQuery({
+    query: breakpoints.phoneWide,
+  })
 
   const desktopImage = findFileByName(data, "desktop")
   const mobile = findFileByName(data, "mobile")
