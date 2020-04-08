@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { useMediaQuery } from "react-responsive"
 
 import { PaddedWidthContainer, breakpoints } from "../../styles/layout"
+import { H2 } from "../../styles/text"
 import { findFileByName } from "../../utils"
 
 const InstagramPostMap = () => {
@@ -29,7 +30,18 @@ const InstagramPostMap = () => {
   })
 
   const desktopImage = findFileByName(data, "desktop")
-  const mobile = findFileByName(data, "mobile")
+  const mobileImage = findFileByName(data, "mobile")
+  const mobileTitleImage = findFileByName(data, "mobile-title")
+
+  if (isPhoneWide) {
+    return (
+      <PaddedWidthContainer>
+        <Img fluid={mobileTitleImage.node.childImageSharp.fluid} />
+        <H2 center>about the pandemic</H2>
+        <Img fluid={mobileImage.node.childImageSharp.fluid} />
+      </PaddedWidthContainer>
+    )
+  }
 
   return (
     <PaddedWidthContainer>
