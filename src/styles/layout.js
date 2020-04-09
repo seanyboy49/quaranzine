@@ -1,23 +1,36 @@
 import styled, { css } from "styled-components"
 
-const breakpoints = {
-  phoneWide: `@media only screen and (max-width: 600px)`,
-  tabletWide: `@media only screen and (max-width: 880px)`,
-  laptop: `@media only screen and (max-width: 1024px)`,
-  desktop: `@media only screen and (max-width: 1440px)`,
+export const breakpoints = {
+  phoneWide: `(max-width: 600px)`,
+  tabletWide: `(max-width: 880px)`,
+  laptop: `(max-width: 1024px)`,
+  desktop: `(max-width: 1440px)`,
 }
+
+export const mediaQueries = Object.entries(breakpoints)
+  .map(([media, query]) => {
+    return {
+      [media]: `@media only screen and ${query}`,
+    }
+  })
+  .reduce((mediaQueries, query) => {
+    return {
+      ...mediaQueries,
+      ...query,
+    }
+  }, {})
 
 export const PaddedWidthContainer = styled.section`
     padding: 73.5px 145px;
 
-  ${breakpoints.tabletWide} {
+  ${mediaQueries.tabletWide} {
     padding: 28px 56px;
   }
 `
 export const FullWidthContainer = styled.section`
     padding: 145px 0;
 
-  ${breakpoints.tabletWide} {
+  ${mediaQueries.tabletWide} {
     padding: 56px 0;
   }
 `
@@ -28,7 +41,7 @@ export const Row = styled.div`
   flex-wrap: wrap;
   margin: 20px 0;
 
-  ${breakpoints.tabletWide} {
+  ${mediaQueries.tabletWide} {
     flex-direction: column;
     align-items: center;
 
@@ -64,7 +77,7 @@ export const Column = styled.div`
   flex-direction: column;
   align-items: ${props => props.align || "center"};
 
-  ${breakpoints.tabletWide} {
+  ${mediaQueries.tabletWide} {
     width: 100%;
   }
 `
