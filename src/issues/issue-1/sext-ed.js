@@ -79,6 +79,12 @@ const Sext = () => {
     edge => edge.node.name === "shakespeare"
   )
 
+  const feelYourself = data.allFile.edges.find(
+    edge => edge.node.name === "5-feel-yourself"
+  )
+
+  const bathtub = data.allFile.edges.find(edge => edge.node.name === "bathtub")
+
   return (
     <PaddedWidthContainer id="sext-ed">
       <Img fluid={imgTitle.node.childImageSharp.fluid} />
@@ -214,20 +220,47 @@ const Sext = () => {
         />
       </div>
       <Row>
-        <div style={{ width: "30%", marginLeft: "150px" }}>
+        <div style={{ width: "50%", marginLeft: "10%" }}>
           <Img
-            style={{ width: "100%" }}
-            fixed={shakespeare.node.childImageSharp.fixed}
+            style={{ width: "80%", marginTop: "-25px" }}
+            fluid={shakespeare.node.childImageSharp.fluid}
           />
         </div>
-        <Column width="40">
-          <Text>
+        <Column width="35">
+          <Text style={{ marginLeft: "-50%", marginTop: "10%" }}>
             And we don’t have to be. Phone flirtation doesn’t have to be the
             most dirrty (Christina Aguilera voice)—or even that well written.
             Ask yourself what you want, what brings you pleasure, and express it
             in words that feel true to you—then move from that place.
           </Text>
         </Column>
+      </Row>
+      <Img
+        style={{ width: "70%", height: "42px" }}
+        fixed={feelYourself.node.childImageSharp.fixed}
+      />
+      <Row style={{ marginLeft: "5%" }}>
+        <Column width="50">
+          <Text>
+            Set the mood if you can: Think of whatever makes you feel sexy. Take
+            a shower, scrub, and moisturize. Shave. Light some candles, if
+            you’re into that. Put on underthings that make you feel fly. Have a
+            glass of wine. Roll a joint.
+          </Text>
+          <Text>
+            Then go ahead: Describe where you are, the scent of the candles
+            you’re burning, the slip of the sheets on the bed, what you’re
+            wearing. Ask your partner to do the same. Not only does painting
+            this picture help close the distance, you’re hyping yourself up —
+            how hot do you sound right now? You, yes you; you’re that hot bitch.
+          </Text>
+        </Column>
+        <div style={{ width: "50%" }}>
+          <Img
+            style={{ width: "68%", marginLeft: "60px", marginTop: "-5px" }}
+            fluid={bathtub.node.childImageSharp.fluid}
+          />
+        </div>
       </Row>
     </PaddedWidthContainer>
   )
