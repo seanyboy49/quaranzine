@@ -10,6 +10,7 @@ import InstagramPostMap from "./instagram-post-map"
 import PointingFingers from "./pointing-fingers"
 import SpringPoem from "./spring-poem"
 import PodcatRatings from "./podcast-ratings"
+import LimerickMinute from "./limerick-minute"
 
 const Issue1 = () => {
   return (
@@ -30,6 +31,9 @@ const Issue1 = () => {
       <SpringPoem />
       <LineBreak fileName="morse-to-do-today" />
       <PodcatRatings />
+      <LineBreak fileName="boring-line" />
+      <LimerickMinute />
+      <LineBreak fileName="boring-line" />
     </>
   )
 }

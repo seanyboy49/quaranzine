@@ -32,7 +32,7 @@ const PodcastRatings = () => {
   const secondColumnImage = findFileByName(data, "4-6")
 
   return (
-    <PaddedWidthContainer>
+    <PaddedWidthContainer id="podcast-ratings">
       <Row start>
         <H2>
           Quaranzine Staff
