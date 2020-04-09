@@ -71,6 +71,14 @@ const Sext = () => {
     edge => edge.node.name === "dirty-talk-2"
   )
 
+  const sexShakespeare = data.allFile.edges.find(
+    edge => edge.node.name === "sex-shakespeare"
+  )
+
+  const shakespeare = data.allFile.edges.find(
+    edge => edge.node.name === "shakespeare"
+  )
+
   return (
     <PaddedWidthContainer id="sext-ed">
       <Img fluid={imgTitle.node.childImageSharp.fluid} />
@@ -198,6 +206,28 @@ const Sext = () => {
             fluid={dirtyTalk2.node.childImageSharp.fluid}
           />
         </div>
+      </Row>
+      <div style={{ width: "100%", marginLeft: "45%" }}>
+        <Img
+          style={{ width: "55%", height: "70px" }}
+          fixed={sexShakespeare.node.childImageSharp.fixed}
+        />
+      </div>
+      <Row>
+        <div style={{ width: "30%", marginLeft: "150px" }}>
+          <Img
+            style={{ width: "100%" }}
+            fixed={shakespeare.node.childImageSharp.fixed}
+          />
+        </div>
+        <Column width="40">
+          <Text>
+            And we don’t have to be. Phone flirtation doesn’t have to be the
+            most dirrty (Christina Aguilera voice)—or even that well written.
+            Ask yourself what you want, what brings you pleasure, and express it
+            in words that feel true to you—then move from that place.
+          </Text>
+        </Column>
       </Row>
     </PaddedWidthContainer>
   )
