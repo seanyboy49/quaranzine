@@ -9,6 +9,7 @@ import Attention from "./attention"
 import InstagramPostMap from "./instagram-post-map"
 import PointingFingers from "./pointing-fingers"
 import SpringPoem from "./spring-poem"
+import PodcatRatings from "./podcast-ratings"
 
 const Issue1 = () => {
   return (
@@ -28,6 +29,7 @@ const Issue1 = () => {
       <LineBreak fileName="morse-nothing-better" />
       <SpringPoem />
       <LineBreak fileName="morse-to-do-today" />
+      <PodcatRatings />
     </>
   )
 }
