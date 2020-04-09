@@ -85,6 +85,18 @@ const Sext = () => {
 
   const bathtub = data.allFile.edges.find(edge => edge.node.name === "bathtub")
 
+  const haveFun = data.allFile.edges.find(
+    edge => edge.node.name === "6-have-fun-and-keep-going"
+  )
+
+  const zoom = data.allFile.edges.find(edge => edge.node.name === "zoom")
+
+  const madLibs = data.allFile.edges.find(
+    edge => edge.node.name === "7-fucking-mad-libs"
+  )
+
+  const cloud = data.allFile.edges.find(edge => edge.node.name === "cloud")
+
   return (
     <PaddedWidthContainer id="sext-ed">
       <Img fluid={imgTitle.node.childImageSharp.fluid} />
@@ -262,6 +274,49 @@ const Sext = () => {
           />
         </div>
       </Row>
+      <Img
+        style={{
+          width: "50%",
+          height: "60px",
+          position: "relative",
+          marginLeft: "50%",
+          marginTop: "70px",
+        }}
+        fixed={haveFun.node.childImageSharp.fixed}
+      />
+      <Row>
+        <div style={{ width: "50%", marginLeft: "12%" }}>
+          <Img
+            style={{ width: "80%", marginTop: "-25px" }}
+            fluid={zoom.node.childImageSharp.fluid}
+          />
+        </div>
+        <Column width="35">
+          <Text>
+            Sex can be awkward and embarassing! Even (especially) in person. But
+            this should be fun. Be gentle with yourself, especially if you’re
+            new to this. Don’t be afraid to say things you haven’t said before —
+            and don’t forget to laugh a little when something funny comes up,
+            like a WiFi delay or your partner’s quarantine housemate walks into
+            the Zoom frame.
+          </Text>
+          <Text>
+            Like most things in life, dirty talk gets easier with practice.
+          </Text>
+        </Column>
+      </Row>
+      <div>
+        <Img
+          style={{ width: "80%", marginTop: "-25px" }}
+          fluid={cloud.node.childImageSharp.fluid}
+        />
+        <div>
+          <Img
+            style={{ width: "80%", marginTop: "-25px" }}
+            fluid={madLibs.node.childImageSharp.fluid}
+          />
+        </div>
+      </div>
     </PaddedWidthContainer>
   )
 }
