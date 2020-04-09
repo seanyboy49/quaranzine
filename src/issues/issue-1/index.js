@@ -11,6 +11,7 @@ import PointingFingers from "./pointing-fingers"
 import SpringPoem from "./spring-poem"
 import PodcatRatings from "./podcast-ratings"
 import LimerickMinute from "./limerick-minute"
+import BarbershopsAreClosed from "./barbershops-are-closed"
 
 const Issue1 = () => {
   return (
@@ -34,6 +35,7 @@ const Issue1 = () => {
       <LineBreak fileName="boring-line" />
       <LimerickMinute />
       <LineBreak fileName="boring-line" />
+      <BarbershopsAreClosed />
     </>
   )
 }
