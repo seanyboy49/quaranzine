@@ -77,6 +77,12 @@ export const Column = styled.div`
   flex-direction: column;
   align-items: ${props => props.align || "center"};
 
+  ${p =>
+    p.center &&
+    css`
+      justify-content: center;
+    `};
+
   ${mediaQueries.tabletWide} {
     width: 100%;
   }
