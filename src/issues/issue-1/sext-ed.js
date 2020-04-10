@@ -58,7 +58,7 @@ const Sext = () => {
     : digitalFuckingDesktop
 
   const imgTitle = data.allFile.edges.find(
-    edge => edge.node.name === "Sext-Ed-101"
+    edge => edge.node.name === "sext-ed-101"
   )
 
   const imgFace = data.allFile.edges.find(edge => edge.node.name === "Face")
@@ -107,23 +107,55 @@ const Sext = () => {
     edge => edge.node.name === "shakespeare"
   )
 
-  const feelYourself = data.allFile.edges.find(
+  const feelYourselfDesktop = data.allFile.edges.find(
     edge => edge.node.name === "5-feel-yourself"
   )
 
+  const feelYourselfMobile = data.allFile.edges.find(
+    edge => edge.node.name === "5-feel-yourself-mobile"
+  )
+
+  const displayGuideline5 = isPhoneWide
+    ? feelYourselfMobile
+    : feelYourselfDesktop
+
   const bathtub = data.allFile.edges.find(edge => edge.node.name === "bathtub")
 
-  const haveFun = data.allFile.edges.find(
+  const haveFunDesktop = data.allFile.edges.find(
     edge => edge.node.name === "6-have-fun-and-keep-going"
   )
+  const haveFunMobile = data.allFile.edges.find(
+    edge => edge.node.name === "6-have-fun-and-keep-going-mobile"
+  )
+
+  const displayGuideline6 = isPhoneWide ? haveFunMobile : haveFunDesktop
 
   const zoom = data.allFile.edges.find(edge => edge.node.name === "zoom")
 
-  const madLibs = data.allFile.edges.find(
+  const madLibsDesktop = data.allFile.edges.find(
     edge => edge.node.name === "7-fucking-mad-libs"
   )
 
-  const cloud = data.allFile.edges.find(edge => edge.node.name === "cloud")
+  const madLibsMobile = data.allFile.edges.find(
+    edge => edge.node.name === "madlib"
+  )
+
+  const displayMadibs = isPhoneWide ? madLibsMobile : madLibsDesktop
+
+  const cloudDesktop = data.allFile.edges.find(
+    edge => edge.node.name === "cloud"
+  )
+  const cloudMobile = data.allFile.edges.find(
+    edge => edge.node.name === "cloud-mobile"
+  )
+
+  const displayCloud = isPhoneWide ? cloudMobile : cloudDesktop
+
+  const aboutKim = data.allFile.edges.find(
+    edge => edge.node.name === "about-kim"
+  )
+
+  const layer21 = data.allFile.edges.find(edge => edge.node.name === "layer-21")
 
   return (
     <PaddedWidthContainer id="sext-ed">
@@ -160,11 +192,16 @@ const Sext = () => {
         style={{ margin: "auto" }}
         fluid={guidelines.node.childImageSharp.fluid}
       />
-      <Row style={{ marginLeft: "5%" }}>
-        <Column width="60">
+
+      <Row style={{ justifyContent: "flex-start", margin: "0" }}>
+        <Column width={60}>
           <div style={{ width: "100%" }}>
             <Img fluid={displayGuideline1.node.childImageSharp.fluid} />
           </div>
+        </Column>
+      </Row>
+      <Row style={{ marginLeft: "5%" }} reverseColumn>
+        <Column width="60">
           <Text>
             Be upfront with your partners, just as you would IRL — and it
             doesn’t have to be corny. I think it’s incredibly sexy for a new
@@ -188,7 +225,7 @@ const Sext = () => {
           </Text>
         </Column>
         <Column width={40}>
-          <div style={{ width: "100%" }}>
+          <div style={{ width: "85%", marginBottom: "20px" }}>
             <Img fluid={phone.node.childImageSharp.fluid} />
           </div>
         </Column>
@@ -232,7 +269,7 @@ const Sext = () => {
           </div>
         </Column>
       </Row>
-      <Row style={{ marginLeft: "5%" }}>
+      <Row style={{ marginLeft: "5%" }} reverseColumn>
         <Column width={45} style={{ marginTop: "30px" }}>
           <Text>
             Sometimes a few flirty texts are just…a few flirty texts! Just like
@@ -261,14 +298,19 @@ const Sext = () => {
         </Column>
       </Row>
       <Row>
-        <div style={{ width: "50%", marginLeft: "10%" }}>
-          <Img
-            style={{ width: "80%", marginTop: "-25px" }}
-            fluid={shakespeare.node.childImageSharp.fluid}
-          />
-        </div>
-        <Column width="35">
-          <Text style={{ marginLeft: "-50%", marginTop: "10%" }}>
+        <Column>
+          <div style={{ width: "100%", marginLeft: "20%" }}>
+            <Img
+              style={{ width: "80%", marginTop: "-25px" }}
+              fluid={shakespeare.node.childImageSharp.fluid}
+            />
+          </div>
+        </Column>
+        <Column
+          width={33}
+          style={{ alignSelf: "flex-start", marginRight: "70px" }}
+        >
+          <Text>
             And we don’t have to be. Phone flirtation doesn’t have to be the
             most dirrty (Christina Aguilera voice)—or even that well written.
             Ask yourself what you want, what brings you pleasure, and express it
@@ -276,12 +318,16 @@ const Sext = () => {
           </Text>
         </Column>
       </Row>
-      <Img
-        style={{ width: "70%", height: "42px" }}
-        fixed={feelYourself.node.childImageSharp.fixed}
-      />
-      <Row style={{ marginLeft: "5%" }}>
-        <Column width="50">
+
+      <Row style={{ justifyContent: "flex-start", margin: "0" }}>
+        <Column width={80}>
+          <div style={{ width: "100%" }}>
+            <Img fluid={displayGuideline5.node.childImageSharp.fluid} />
+          </div>
+        </Column>
+      </Row>
+      <Row style={{ marginLeft: "5%" }} reverseColumn>
+        <Column>
           <Text>
             Set the mood if you can: Think of whatever makes you feel sexy. Take
             a shower, scrub, and moisturize. Shave. Light some candles, if
@@ -296,31 +342,33 @@ const Sext = () => {
             how hot do you sound right now? You, yes you; you’re that hot bitch.
           </Text>
         </Column>
-        <div style={{ width: "50%" }}>
-          <Img
-            style={{ width: "68%", marginLeft: "60px", marginTop: "-5px" }}
-            fluid={bathtub.node.childImageSharp.fluid}
-          />
-        </div>
+        <Column>
+          <div style={{ width: "100%" }}>
+            <Img
+              style={{ width: "75%", marginLeft: "60px", marginTop: "-5px" }}
+              fluid={bathtub.node.childImageSharp.fluid}
+            />
+          </div>
+        </Column>
       </Row>
-      <Img
-        style={{
-          width: "50%",
-          height: "60px",
-          position: "relative",
-          marginLeft: "50%",
-          marginTop: "70px",
-        }}
-        fixed={haveFun.node.childImageSharp.fixed}
-      />
+
+      <Row style={{ justifyContent: "flex-end", margin: "0" }}>
+        <Column width={55}>
+          <div style={{ width: "100%" }}>
+            <Img fluid={displayGuideline6.node.childImageSharp.fluid} />
+          </div>
+        </Column>
+      </Row>
       <Row>
-        <div style={{ width: "50%", marginLeft: "12%" }}>
-          <Img
-            style={{ width: "80%", marginTop: "-25px" }}
-            fluid={zoom.node.childImageSharp.fluid}
-          />
-        </div>
-        <Column width="35">
+        <Column width={50}>
+          <div style={{ width: "100%", marginLeft: "30%" }}>
+            <Img
+              style={{ width: "80%", marginTop: "-25px" }}
+              fluid={zoom.node.childImageSharp.fluid}
+            />
+          </div>
+        </Column>
+        <Column width={35}>
           <Text>
             Sex can be awkward and embarassing! Even (especially) in person. But
             this should be fun. Be gentle with yourself, especially if you’re
@@ -334,18 +382,34 @@ const Sext = () => {
           </Text>
         </Column>
       </Row>
-      <div>
-        <Img
-          style={{ width: "80%", marginTop: "-25px" }}
-          fluid={cloud.node.childImageSharp.fluid}
-        />
-        <div>
-          <Img
-            style={{ width: "80%", marginTop: "-25px" }}
-            fluid={madLibs.node.childImageSharp.fluid}
-          />
-        </div>
-      </div>
+
+      <Row style={{ justifyContent: "flex-start", margin: "0" }}>
+        <Column width={80}>
+          <div style={{ width: "100%" }}>
+            <Img fluid={displayCloud.node.childImageSharp.fluid} />
+          </div>
+        </Column>
+        <Column width={20}>
+          <div style={{ width: "100%", marginTop: "20%" }}>
+            <Img fluid={displayMadibs.node.childImageSharp.fluid} />
+          </div>
+        </Column>
+      </Row>
+      <Row style={{ justifyContent: "flex-end" }}>
+        <Column width={50}>
+          <div style={{ width: "100%" }}>
+            <Img fluid={aboutKim.node.childImageSharp.fluid} />
+          </div>
+        </Column>
+      </Row>
+
+      <Row style={{ marginTop: "10%" }}>
+        <Column width={100}>
+          <div style={{ width: "100%" }}>
+            <Img fluid={layer21.node.childImageSharp.fluid} />
+          </div>
+        </Column>
+      </Row>
     </PaddedWidthContainer>
   )
 }
