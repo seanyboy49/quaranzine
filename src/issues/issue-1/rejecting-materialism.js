@@ -33,15 +33,12 @@ const RejectingMaterialismChart = () => {
         when rejecting materialism <br /> leads to great profits
       </H2>
       <Img
-        style={{ maxWidth: "800px", margin: "auto" }}
+        style={{ maxWidth: "800px", margin: "auto", marginBottom: "15px" }}
         fluid={chartsImage.node.childImageSharp.fluid}
       />
       <Img
         style={{
-          width: "200px",
-          position: "relative",
-          marginLeft: "90%",
-          marginTop: "15px",
+          maxWidth: "200px",
         }}
         fluid={bugsImage.node.childImageSharp.fluid}
       />
