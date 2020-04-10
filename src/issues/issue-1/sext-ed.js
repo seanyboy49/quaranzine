@@ -46,7 +46,7 @@ const Sext = () => {
     query: breakpoints.phoneWide,
   })
 
-  const imgTitle = data.allFile.edges.find(
+  const imgSexted101 = data.allFile.edges.find(
     edge => edge.node.name === "sexted-101"
   )
 
@@ -161,7 +161,7 @@ const Sext = () => {
     <PaddedWidthContainer id="sext-ed">
       <Img
         style={{ marginBottom: "50px" }}
-        fluid={imgTitle.node.childImageSharp.fluid}
+        fluid={imgSexted101.node.childImageSharp.fluid}
       />
 
       <FluidImageContainer>
