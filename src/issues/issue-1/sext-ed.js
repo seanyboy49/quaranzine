@@ -67,21 +67,27 @@ const Sext = () => {
     edge => edge.node.name === "guidelines"
   )
 
-  const digitalFucking = data.allFile.edges.find(
-    edge => edge.node.name === "1-digital-fucking"
-  )
-
   const phone = data.allFile.edges.find(edge => edge.node.name === "phone")
 
-  const communication = data.allFile.edges.find(
+  const communicationDesktop = data.allFile.edges.find(
     edge => edge.node.name === "2-good-communication"
   )
+  const communicationMobile = data.allFile.edges.find(
+    edge => edge.node.name === "2-good-communication-mobile"
+  )
+  const displayGuideline2 = isPhoneWide
+    ? communicationMobile
+    : communicationDesktop
 
   const listen = data.allFile.edges.find(edge => edge.node.name === "listen")
 
-  const dirtyTalk = data.allFile.edges.find(
+  const dirtyTalkDesktop = data.allFile.edges.find(
     edge => edge.node.name === "3-dirty-talk"
   )
+  const dirtyTalkMobile = data.allFile.edges.find(
+    edge => edge.node.name === "3-dirty-talk-mobile"
+  )
+  const displayGuideline3 = isPhoneWide ? dirtyTalkMobile : dirtyTalkDesktop
 
   const dirtyTalk2 = data.allFile.edges.find(
     edge => edge.node.name === "dirty-talk-2"
@@ -119,11 +125,9 @@ const Sext = () => {
         style={{ marginBottom: "50px" }}
         fluid={imgTitle.node.childImageSharp.fluid}
       />
+
       <FluidImageContainer>
-        <Img
-          // style={{ width: "60%", margin: "auto" }}
-          fluid={imgFace.node.childImageSharp.fluid}
-        />
+        <Img fluid={imgFace.node.childImageSharp.fluid} />
       </FluidImageContainer>
       <Row>
         <Column style={{ margin: "auto" }}>
@@ -183,24 +187,22 @@ const Sext = () => {
           </div>
         </Column>
       </Row>
-      <Img
-        style={{
-          width: "60%",
-          position: "relative",
-          marginLeft: "40%",
-          height: "60px",
-          marginTop: "70px",
-        }}
-        fixed={communication.node.childImageSharp.fixed}
-      />
+
+      <Row style={{ justifyContent: "flex-end", margin: "0" }}>
+        <Column width={70}>
+          <div style={{ width: "100%" }}>
+            <Img fluid={displayGuideline2.node.childImageSharp.fluid} />
+          </div>
+        </Column>
+      </Row>
+
       <Row>
-        <div style={{ width: "30%", marginLeft: "150px" }}>
-          <Img
-            style={{ width: "100%" }}
-            fluid={listen.node.childImageSharp.fluid}
-          />
-        </div>
-        <Column width="50">
+        <Column width={30}>
+          <div style={{ width: "100%" }}>
+            <Img fluid={listen.node.childImageSharp.fluid} />
+          </div>
+        </Column>
+        <Column width={60}>
           <Text>
             Tell your partner what you like / are into / want to do / want done
             to you.
@@ -217,10 +219,13 @@ const Sext = () => {
           </Text>
         </Column>
       </Row>
-      <Img
-        // style={{ width: "68%", height: "50px", marginBottom: "50px" }}
-        fixed={dirtyTalk.node.childImageSharp.fixed}
-      />
+      <Row style={{ justifyContent: "flex-start", margin: "0" }}>
+        <Column width={75}>
+          <div style={{ width: "100%" }}>
+            <Img fluid={displayGuideline3.node.childImageSharp.fluid} />
+          </div>
+        </Column>
+      </Row>
       <Row style={{ marginLeft: "5%" }}>
         <Column width="60">
           <Text>
