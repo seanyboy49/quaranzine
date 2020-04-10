@@ -7,7 +7,7 @@ import { FullWidthContainer } from "../../styles/layout"
 const PointingFingers = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "pointing-fingers.png" }) {
+      file(relativePath: { eq: "pointing-fingers.jpg" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
