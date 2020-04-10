@@ -2,6 +2,7 @@ import React from "react"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 import { useMediaQuery } from "react-responsive"
+import { useBreakpoint } from "gatsby-plugin-breakpoints"
 
 import { PaddedWidthContainer, breakpoints } from "../../styles/layout"
 import { H1 } from "../../styles/text"
@@ -29,10 +30,13 @@ const Cover = () => {
     query: breakpoints.phoneWide,
   })
 
+  const { phoneWide } = useBreakpoint()
+  // console.log("breakpoints", bp)
+
   const desktopImage = findFileByName(data, "hero-desktop")
   const mobileImage = findFileByName(data, "hero-mobile")
 
-  const imageToDisplay = isPhoneWide ? mobileImage : desktopImage
+  const imageToDisplay = phoneWide ? mobileImage : desktopImage
 
   return (
     <>
