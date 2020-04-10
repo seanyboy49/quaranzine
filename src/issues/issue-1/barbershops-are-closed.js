@@ -8,7 +8,7 @@ import { H2 } from "../../styles/text"
 
 const BarbershopsAreClosed = () => {
   return (
-    <PaddedWidthContainer>
+    <PaddedWidthContainer id="barbershops-are-closed">
       <H2 center>
         all the barbershops in
         <br />

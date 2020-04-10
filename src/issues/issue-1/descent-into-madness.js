@@ -49,7 +49,7 @@ const DescentIntoMadness = () => {
   const cookieImage = findFileByName(data, "cookie")
 
   return (
-    <PaddedWidthContainer>
+    <PaddedWidthContainer id="descent-into-madness">
       <Img
         style={{ maxWidth: "700px", marginBottom: "10%" }}
         fluid={titleImage.node.childImageSharp.fluid}

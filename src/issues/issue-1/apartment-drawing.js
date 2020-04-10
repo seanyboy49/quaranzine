@@ -33,7 +33,7 @@ const ApartmentDrawing = () => {
   const imageToDisplay = isPhoneWide ? mobileImage : desktopImage
 
   return (
-    <PaddedWidthContainer>
+    <PaddedWidthContainer id="new-york-in-quarantine">
       <Img fluid={imageToDisplay.node.childImageSharp.fluid} />
     </PaddedWidthContainer>
   )
