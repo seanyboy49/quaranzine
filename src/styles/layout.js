@@ -21,14 +21,14 @@ export const mediaQueries = Object.entries(breakpoints)
   }, {})
 
 export const PaddedWidthContainer = styled.section`
-  padding: 73.5px 145px;
+    padding: 73.5px 145px;
 
   ${mediaQueries.tabletWide} {
     padding: 28px 56px;
   }
 `
 export const FullWidthContainer = styled.section`
-  padding: 145px 0;
+    padding: 145px 0;
 
   ${mediaQueries.tabletWide} {
     padding: 56px 0;
@@ -75,7 +75,7 @@ export const Column = styled.div`
   display: flex;
   width: ${props => props.width || 50}%;
   flex-direction: column;
-  align-items: center;
+  align-items: ${props => props.align || "center"};
 
   ${mediaQueries.tabletWide} {
     width: 100%;
