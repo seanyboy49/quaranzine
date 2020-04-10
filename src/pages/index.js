@@ -13,6 +13,10 @@ const Home = () => {
     query: breakpoints.phoneWide,
   })
 
+  console.log("isPhoneWide", isPhoneWide)
+  if (isPhoneWide === undefined) {
+    return <Text>Loading</Text>
+  }
   return (
     <>
       <SEO title="Home" />
