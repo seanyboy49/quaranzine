@@ -13,6 +13,9 @@ import PodcatRatings from "./podcast-ratings"
 import LimerickMinute from "./limerick-minute"
 import BarbershopsAreClosed from "./barbershops-are-closed"
 
+import Sext from "./sext-ed"
+import Credits from "./credits"
+
 const Issue1 = () => {
   return (
     <>
@@ -20,6 +23,7 @@ const Issue1 = () => {
       <LineBreak fileName="morse-follow-me" />
       <ApartmentDrawing />
       <LineBreak fileName="morse-into-the-void" />
+
       <RejectingMaterialismChart />
       <LineBreak fileName="boring-line" />
       <Reflections />
@@ -36,6 +40,8 @@ const Issue1 = () => {
       <LimerickMinute />
       <LineBreak fileName="boring-line" />
       <BarbershopsAreClosed />
+      <Sext />
+      <Credits />
     </>
   )
 }
