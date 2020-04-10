@@ -19,7 +19,7 @@ import Credits from "./credits"
 const Issue1 = () => {
   return (
     <>
-      <Cover />
+      {/* <Cover />
       <LineBreak fileName="morse-follow-me" />
       <ApartmentDrawing />
       <LineBreak fileName="morse-into-the-void" />
@@ -39,7 +39,7 @@ const Issue1 = () => {
       <LineBreak fileName="boring-line" />
       <LimerickMinute />
       <LineBreak fileName="boring-line" />
-      <BarbershopsAreClosed />
+      <BarbershopsAreClosed /> */}
       <Sext />
       <Credits />
     </>

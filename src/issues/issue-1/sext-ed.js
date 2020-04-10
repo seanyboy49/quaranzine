@@ -2,20 +2,23 @@ import React from "react"
 import Img from "gatsby-image"
 import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
+import { useMediaQuery } from "react-responsive"
 
-import { PaddedWidthContainer, Row, Column } from "../../styles/layout"
+import {
+  PaddedWidthContainer,
+  Row,
+  Column,
+  breakpoints,
+} from "../../styles/layout"
 import { Text, H2, H1 } from "../../styles/text"
 
-const ArtistNameContainer = styled.div`
-  position: absolute;
-  top: 35px;
-  right: 155px;
-  width: 100px;
-  height: 124px;
-`
+const FluidImageContainer = styled.div`
+  width: 70%;
+  margin: auto;
 
-const ArtistName = styled.p`
-  font-size: 23px;
+  @media only screen and (max-width: 600px) {
+    width: 90%;
+  }
 `
 
 const Sext = () => {
@@ -39,7 +42,20 @@ const Sext = () => {
     }
   `)
 
-  console.log(data)
+  const isPhoneWide = useMediaQuery({
+    query: breakpoints.phoneWide,
+  })
+
+  const digitalFuckingDesktop = data.allFile.edges.find(
+    edge => edge.node.name === "1-digital-fucking"
+  )
+  const digitalFuckingMobile = data.allFile.edges.find(
+    edge => edge.node.name === "1-digital-fucking-mobile"
+  )
+
+  const displayGuideline1 = isPhoneWide
+    ? digitalFuckingMobile
+    : digitalFuckingDesktop
 
   const imgTitle = data.allFile.edges.find(
     edge => edge.node.name === "Sext-Ed-101"
@@ -99,19 +115,19 @@ const Sext = () => {
 
   return (
     <PaddedWidthContainer id="sext-ed">
-      <Img fluid={imgTitle.node.childImageSharp.fluid} />
-      <div style={{ position: "relative", marginTop: "7%" }}>
+      <Img
+        style={{ marginBottom: "50px" }}
+        fluid={imgTitle.node.childImageSharp.fluid}
+      />
+      <FluidImageContainer>
         <Img
-          style={{ width: "50%", margin: "auto" }}
+          // style={{ width: "60%", margin: "auto" }}
           fluid={imgFace.node.childImageSharp.fluid}
         />
-        <ArtistNameContainer>
-          <ArtistName>by Kimberley Chou</ArtistName>
-        </ArtistNameContainer>
-      </div>
+      </FluidImageContainer>
       <Row>
-        <Column width="100" align="flex-start" style={{ margin: "0 23%" }}>
-          <H1>I love dirty talk. </H1>
+        <Column style={{ margin: "auto" }}>
+          <H1 style={{ width: "100%" }}>I love dirty talk. </H1>
           <Text>
             And to be sexting—that is, sending sexually explicit photos, videos
             or text-based messages—or having phone sex during this period of
@@ -131,15 +147,14 @@ const Sext = () => {
         </Column>
       </Row>
       <Img
-        style={{ width: "85%", margin: "auto" }}
+        style={{ margin: "auto" }}
         fluid={guidelines.node.childImageSharp.fluid}
-      />
-      <Img
-        style={{ width: "60%", height: "100px" }}
-        fixed={digitalFucking.node.childImageSharp.fixed}
       />
       <Row style={{ marginLeft: "5%" }}>
         <Column width="60">
+          <div style={{ width: "100%" }}>
+            <Img fluid={displayGuideline1.node.childImageSharp.fluid} />
+          </div>
           <Text>
             Be upfront with your partners, just as you would IRL — and it
             doesn’t have to be corny. I think it’s incredibly sexy for a new
@@ -162,12 +177,11 @@ const Sext = () => {
             talk about it.)
           </Text>
         </Column>
-        <div style={{ width: "40%" }}>
-          <Img
-            style={{ width: "100%", margin: "10px" }}
-            fluid={phone.node.childImageSharp.fluid}
-          />
-        </div>
+        <Column width={40}>
+          <div style={{ width: "100%" }}>
+            <Img fluid={phone.node.childImageSharp.fluid} />
+          </div>
+        </Column>
       </Row>
       <Img
         style={{
@@ -204,7 +218,7 @@ const Sext = () => {
         </Column>
       </Row>
       <Img
-        style={{ width: "68%", height: "50px", marginBottom: "50px" }}
+        // style={{ width: "68%", height: "50px", marginBottom: "50px" }}
         fixed={dirtyTalk.node.childImageSharp.fixed}
       />
       <Row style={{ marginLeft: "5%" }}>
