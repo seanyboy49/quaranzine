@@ -3,7 +3,7 @@ import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
-import { PaddedWidthContainer, Row, Column } from "../../styles/layout"
+import { PaddedWidthContainer, Column } from "../../styles/layout"
 import { H2, Text } from "../../styles/text"
 
 export const NonBreakingRow = styled.div`

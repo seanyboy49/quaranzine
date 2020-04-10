@@ -1,8 +1,6 @@
 import React from "react"
-import Img from "gatsby-image"
 
 import quarantineTrimsVideo from "../../gifs/quarantine-trims.mp4"
-
 import { PaddedWidthContainer } from "../../styles/layout"
 import { H2 } from "../../styles/text"
 

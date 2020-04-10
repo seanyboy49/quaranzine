@@ -2,13 +2,10 @@ import React from "react"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
-import { useMediaQuery } from "react-responsive"
 
 import {
   PaddedWidthContainer,
   FluidImageContainer,
-  FullWidthContainer,
-  breakpoints,
   Row,
   Column,
 } from "../../styles/layout"
