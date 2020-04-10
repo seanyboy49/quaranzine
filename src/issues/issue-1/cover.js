@@ -3,7 +3,7 @@ import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 
 import { PaddedWidthContainer } from "../../styles/layout"
-import { H1, H2, Text } from "../../styles/text"
+import { H1 } from "../../styles/text"
 
 const Cover = () => {
   const data = useStaticQuery(graphql`

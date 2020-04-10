@@ -102,7 +102,7 @@ const Reflections = () => {
       <Row>
         <Column>
           <video
-            style={{ margin: "auto auto", display: "block", maxWidth: "500px" }}
+            style={{ margin: "auto auto", display: "block", maxWidth: "80%" }}
             autoPlay
             loop
             muted

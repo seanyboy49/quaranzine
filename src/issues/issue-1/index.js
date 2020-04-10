@@ -9,6 +9,9 @@ import Attention from "./attention"
 import InstagramPostMap from "./instagram-post-map"
 import PointingFingers from "./pointing-fingers"
 import SpringPoem from "./spring-poem"
+import PodcatRatings from "./podcast-ratings"
+import LimerickMinute from "./limerick-minute"
+import BarbershopsAreClosed from "./barbershops-are-closed"
 
 import Sext from "./sext-ed"
 import Credits from "./credits"
@@ -32,6 +35,11 @@ const Issue1 = () => {
       <LineBreak fileName="morse-nothing-better" />
       <SpringPoem />
       <LineBreak fileName="morse-to-do-today" />
+      <PodcatRatings />
+      <LineBreak fileName="boring-line" />
+      <LimerickMinute />
+      <LineBreak fileName="boring-line" />
+      <BarbershopsAreClosed />
       <Sext />
       <Credits />
     </>
