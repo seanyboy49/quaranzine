@@ -25,14 +25,14 @@ const Cover = () => {
     }
   `)
 
-  const isPhoneWide = useMediaQuery({
-    query: breakpoints.phoneWide,
+  const isLaptopWide = useMediaQuery({
+    query: breakpoints.laptop,
   })
 
   const desktopImage = findFileByName(data, "hero-desktop")
   const mobileImage = findFileByName(data, "hero-mobile")
-
-  const imageToDisplay = isPhoneWide ? mobileImage : desktopImage
+  console.log("isLaptopWide", isLaptopWide)
+  const imageToDisplay = isLaptopWide ? desktopImage : mobileImage
 
   return (
     <>

@@ -1,10 +1,10 @@
 import styled, { css } from "styled-components"
 
 export const breakpoints = {
-  phoneWide: `(max-width: 600px)`,
-  tabletWide: `(max-width: 880px)`,
-  laptop: `(max-width: 1024px)`,
-  desktop: `(max-width: 1440px)`,
+  phoneWide: `(min-width: 600px)`,
+  tabletWide: `(min-width: 880px)`,
+  laptop: `(min-width: 1024px)`,
+  desktop: `(min-width: 1440px)`,
 }
 
 export const mediaQueries = Object.entries(breakpoints)
