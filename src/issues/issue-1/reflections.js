@@ -34,7 +34,7 @@ const Reflections = () => {
   const roachesImage = findFileByName(data, "roaches")
 
   return (
-    <PaddedWidthContainer id="reflections">
+    <PaddedWidthContainer id="reflections-on-love">
       <Row>
         <Column>
           <div style={{ width: "80%", margin: "auto" }}>

@@ -77,12 +77,21 @@ export const Column = styled.div`
   flex-direction: column;
   align-items: ${props => props.align || "center"};
 
+  ${p =>
+    p.center &&
+    css`
+      justify-content: center;
+    `};
+
   ${mediaQueries.tabletWide} {
     width: 100%;
   }
 `
 
-export const CustomPosition = styled.div`
-  position: absolute;
-  right: 0;
+export const FluidImageContainer = styled.div`
+  width: ${props => props.desktop || 70}%;
+
+  ${mediaQueries.phoneWide} {
+    width: ${props => props.mobile || 90}%;
+  }
 `

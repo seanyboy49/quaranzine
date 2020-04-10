@@ -155,8 +155,6 @@ const Sext = () => {
     edge => edge.node.name === "about-kim"
   )
 
-  const layer21 = data.allFile.edges.find(edge => edge.node.name === "layer-21")
-
   return (
     <PaddedWidthContainer id="sext-ed">
       <Img
@@ -399,14 +397,6 @@ const Sext = () => {
         <Column width={50}>
           <div style={{ width: "100%" }}>
             <Img fluid={aboutKim.node.childImageSharp.fluid} />
-          </div>
-        </Column>
-      </Row>
-
-      <Row style={{ marginTop: "10%" }}>
-        <Column width={100}>
-          <div style={{ width: "100%" }}>
-            <Img fluid={layer21.node.childImageSharp.fluid} />
           </div>
         </Column>
       </Row>

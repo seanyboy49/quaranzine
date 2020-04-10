@@ -18,7 +18,7 @@ const Credits = () => {
   `)
 
   return (
-    <PaddedWidthContainer>
+    <PaddedWidthContainer id="credits">
       <Img fluid={data.file.childImageSharp.fluid} />
     </PaddedWidthContainer>
   )

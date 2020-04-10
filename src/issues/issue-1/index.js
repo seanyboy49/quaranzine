@@ -12,6 +12,7 @@ import SpringPoem from "./spring-poem"
 import PodcatRatings from "./podcast-ratings"
 import LimerickMinute from "./limerick-minute"
 import BarbershopsAreClosed from "./barbershops-are-closed"
+import DescentIntoMadness from "./descent-into-madness"
 
 import Sext from "./sext-ed"
 import Credits from "./credits"
@@ -40,7 +41,11 @@ const Issue1 = () => {
       <LimerickMinute />
       <LineBreak fileName="boring-line" />
       <BarbershopsAreClosed />
+      <LineBreak fileName="boring-line" />
+      <DescentIntoMadness />
+      <LineBreak fileName="boring-line" />
       <Sext />
+      <LineBreak fileName="boring-line" />
       <Credits />
     </>
   )
