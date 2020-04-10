@@ -4,7 +4,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import { useMediaQuery } from "react-responsive"
 
 import { PaddedWidthContainer, breakpoints } from "../../styles/layout"
-import { H2 } from "../../styles/text"
 import { findFileByName } from "../../utils"
 
 const SpringPoem = () => {
