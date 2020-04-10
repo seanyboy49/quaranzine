@@ -82,7 +82,10 @@ export const Column = styled.div`
   }
 `
 
-export const CustomPosition = styled.div`
-  position: absolute;
-  right: 0;
+export const FluidImageContainer = styled.div`
+  width: ${props => props.desktop || 70}%;
+
+  ${mediaQueries.phoneWide} {
+    width: ${props => props.mobile || 90}%;
+  }
 `
