@@ -93,9 +93,15 @@ const Sext = () => {
     edge => edge.node.name === "dirty-talk-2"
   )
 
-  const sexShakespeare = data.allFile.edges.find(
-    edge => edge.node.name === "sex-shakespeare"
+  const sexShakespeareDeskTop = data.allFile.edges.find(
+    edge => edge.node.name === "4-sex-shakespeare"
   )
+  const sexShakespeareMobile = data.allFile.edges.find(
+    edge => edge.node.name === "4-sex-shakespeare-mobile"
+  )
+  const displayGuideline4 = isPhoneWide
+    ? sexShakespeareMobile
+    : sexShakespeareDeskTop
 
   const shakespeare = data.allFile.edges.find(
     edge => edge.node.name === "shakespeare"
@@ -195,7 +201,6 @@ const Sext = () => {
           </div>
         </Column>
       </Row>
-
       <Row>
         <Column width={30}>
           <div style={{ width: "100%" }}>
@@ -219,6 +224,7 @@ const Sext = () => {
           </Text>
         </Column>
       </Row>
+
       <Row style={{ justifyContent: "flex-start", margin: "0" }}>
         <Column width={75}>
           <div style={{ width: "100%" }}>
@@ -227,7 +233,7 @@ const Sext = () => {
         </Column>
       </Row>
       <Row style={{ marginLeft: "5%" }}>
-        <Column width="60">
+        <Column width={45} style={{ marginTop: "30px" }}>
           <Text>
             Sometimes a few flirty texts are just…a few flirty texts! Just like
             physical sexual acts don’t always have to end in orgasm—thovugh, we
@@ -237,19 +243,23 @@ const Sext = () => {
             always have to be actively trying to get off.
           </Text>
         </Column>
-        <div style={{ width: "40%" }}>
-          <Img
-            style={{ width: "60%" }}
-            fluid={dirtyTalk2.node.childImageSharp.fluid}
-          />
-        </div>
+        <Column width={45}>
+          <div style={{ width: "100%" }}>
+            <Img
+              style={{ width: "70%" }}
+              fluid={dirtyTalk2.node.childImageSharp.fluid}
+            />
+          </div>
+        </Column>
       </Row>
-      <div style={{ width: "100%", marginLeft: "45%" }}>
-        <Img
-          style={{ width: "55%", height: "70px" }}
-          fixed={sexShakespeare.node.childImageSharp.fixed}
-        />
-      </div>
+
+      <Row style={{ justifyContent: "flex-end", margin: "0" }}>
+        <Column width={70}>
+          <div style={{ width: "100%" }}>
+            <Img fluid={displayGuideline4.node.childImageSharp.fluid} />
+          </div>
+        </Column>
+      </Row>
       <Row>
         <div style={{ width: "50%", marginLeft: "10%" }}>
           <Img
