@@ -10,7 +10,7 @@ import {
   Column,
   breakpoints,
 } from "../../styles/layout"
-import { Text, H2, H1 } from "../../styles/text"
+import { Text, H1 } from "../../styles/text"
 
 const FluidImageContainer = styled.div`
   width: 70%;
