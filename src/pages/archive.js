@@ -40,7 +40,7 @@ const Archive = () => {
       </NavBar>
       <LogoContainer>
         <img width="200" src={logo} alt="qrzn logo"></img>
-        <Text>the quaranzine for the quaranzined</Text>
+        <Text center>the quaranzine for the quaranzined</Text>
       </LogoContainer>
       <WeeklyIssueContainer>
         {weeklyIssues.map((weeklyIssue, index) => {
