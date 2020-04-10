@@ -46,6 +46,10 @@ const Sext = () => {
     query: breakpoints.phoneWide,
   })
 
+  const imgTitle = data.allFile.edges.find(
+    edge => edge.node.name === "sexted-101"
+  )
+
   const digitalFuckingDesktop = data.allFile.edges.find(
     edge => edge.node.name === "1-digital-fucking"
   )
@@ -56,10 +60,6 @@ const Sext = () => {
   const displayGuideline1 = isPhoneWide
     ? digitalFuckingMobile
     : digitalFuckingDesktop
-
-  const imgTitle = data.allFile.edges.find(
-    edge => edge.node.name === "sext-ed-101"
-  )
 
   const imgFace = data.allFile.edges.find(edge => edge.node.name === "Face")
 
