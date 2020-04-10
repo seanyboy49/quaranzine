@@ -3,8 +3,11 @@ import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 import { useMediaQuery } from "react-responsive"
 
-import { PaddedWidthContainer, breakpoints } from "../../styles/layout"
-import { H2 } from "../../styles/text"
+import {
+  PaddedWidthContainer,
+  FullWidthContainer,
+  breakpoints,
+} from "../../styles/layout"
 import { findFileByName } from "../../utils"
 
 const SpringPoem = () => {
@@ -34,6 +37,13 @@ const SpringPoem = () => {
 
   const imageToDisplay = isPhoneWide ? mobileImage : desktopImage
 
+  if (isPhoneWide) {
+    return (
+      <FullWidthContainer id="inspirational-instagram-posts">
+        <Img fluid={imageToDisplay.node.childImageSharp.fluid} />
+      </FullWidthContainer>
+    )
+  }
   return (
     <PaddedWidthContainer id="inspirational-instagram-posts">
       <Img fluid={imageToDisplay.node.childImageSharp.fluid} />

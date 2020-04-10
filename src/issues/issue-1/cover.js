@@ -1,26 +1,42 @@
 import React from "react"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
+import { useMediaQuery } from "react-responsive"
 
-import { PaddedWidthContainer } from "../../styles/layout"
+import { PaddedWidthContainer, breakpoints } from "../../styles/layout"
 import { H1 } from "../../styles/text"
+import { findFileByName } from "../../utils"
 
 const Cover = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "quaranzine-hero.png" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+      allFile(filter: { relativeDirectory: { eq: "quaranzine-hero" } }) {
+        edges {
+          node {
+            name
+            childImageSharp {
+              fluid(quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              }
+            }
           }
         }
       }
     }
   `)
 
+  const isPhoneWide = useMediaQuery({
+    query: breakpoints.phoneWide,
+  })
+
+  const desktopImage = findFileByName(data, "hero-desktop")
+  const mobileImage = findFileByName(data, "hero-mobile")
+
+  const imageToDisplay = isPhoneWide ? mobileImage : desktopImage
+
   return (
     <>
-      <Img fluid={data.file.childImageSharp.fluid} />
+      <Img fluid={imageToDisplay.node.childImageSharp.fluid} />
       <PaddedWidthContainer id="manifesto">
         <H1 black right>
           issue #1: by hand
