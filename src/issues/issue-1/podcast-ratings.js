@@ -45,7 +45,7 @@ const PodcastRatings = () => {
           Podcast Rankings
         </H2>
         <FluidImageContainer
-          desktop={15}
+          desktop={10}
           mobile={30}
           style={{ margin: "0 5%" }}
         >
@@ -54,14 +54,14 @@ const PodcastRatings = () => {
       </Row>
       <Row>
         <Column>
-          <div style={{ width: "60%" }}>
+          <FluidImageContainer desktop={60}>
             <Img fluid={firstColumnImage.node.childImageSharp.fluid} />
-          </div>
+          </FluidImageContainer>
         </Column>
         <Column>
-          <div style={{ width: "60%" }}>
+          <FluidImageContainer desktop={60}>
             <Img fluid={secondColumnImage.node.childImageSharp.fluid} />
-          </div>
+          </FluidImageContainer>
         </Column>
       </Row>
     </PaddedWidthContainer>
