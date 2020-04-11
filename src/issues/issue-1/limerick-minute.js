@@ -55,6 +55,8 @@ const LimerickMinute = () => {
               with
               <br />
               Pierre
+              <br />
+              Chazot
             </Text>
           </TitleBylineContainer>
         </Column>
