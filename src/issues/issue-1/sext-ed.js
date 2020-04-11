@@ -14,7 +14,7 @@ import { Text, H1 } from "../../styles/text"
 import { findFileByName } from "../../utils"
 
 const FluidImageContainer = styled.div`
-  width: 70%;
+  width: 40%;
   margin: auto;
 
   @media only screen and (max-width: 600px) {
@@ -100,8 +100,6 @@ const Sext = () => {
   const cloudMobile = findFileByName(data, "cloud-mobile")
   const displayCloudImage = isPhoneWide ? cloudMobile : cloudDesktop
 
-  const aboutKimImage = findFileByName(data, "about-kim")
-
   return (
     <PaddedWidthContainer id="sext-ed">
       <Img
@@ -114,6 +112,7 @@ const Sext = () => {
       </FluidImageContainer>
       <Row>
         <Column style={{ margin: "auto" }}>
+          <Text>By Kimberley Chou Tsun An</Text>
           <H1 style={{ width: "100%" }}>I love dirty talk. </H1>
           <Text>
             And to be sexting—that is, sending sexually explicit photos, videos
@@ -342,9 +341,16 @@ const Sext = () => {
       </Row>
       <Row style={{ justifyContent: "flex-end" }}>
         <Column width={50}>
-          <div style={{ width: "100%" }}>
-            <Img fluid={aboutKimImage.node.childImageSharp.fluid} />
-          </div>
+          <Text>ABOUT ME // ABOUT THIS PROJECT</Text>
+          <Text>
+            Kimberly Chou Tsun An (@kimberchou) lives in Detroit. Her cultural
+            work has involved food, writing, live events, and sending nudes.
+          </Text>
+          <Text>
+            Her project “Sexting at the End of the World” explores how we can
+            stay connected, stay hopeful and stay turning each other out,
+            especially in times of crisis.
+          </Text>
         </Column>
       </Row>
     </PaddedWidthContainer>
