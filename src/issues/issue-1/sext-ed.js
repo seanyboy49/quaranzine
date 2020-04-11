@@ -208,7 +208,7 @@ const Sext = () => {
       </Row>
 
       <Row style={{ justifyContent: "flex-start", margin: "0" }}>
-        <Column width={75}>
+        <Column width={80}>
           <div style={{ width: "100%" }}>
             <Img fluid={guideline3Image.node.childImageSharp.fluid} />
           </div>
