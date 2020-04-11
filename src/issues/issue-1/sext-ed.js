@@ -47,9 +47,9 @@ const Sext = () => {
     query: breakpoints.phoneWide,
   })
 
-  const sexted101img = findFileByName(data, "sexted-101")
+  const sexted101Image = findFileByName(data, "sexted-101")
 
-  const imgFace = findFileByName(data, "face")
+  const faceImage = findFileByName(data, "face")
 
   const guidelineHeaderImage = findFileByName(data, "guidelines")
 
@@ -106,11 +106,11 @@ const Sext = () => {
     <PaddedWidthContainer id="sext-ed">
       <Img
         style={{ marginBottom: "50px" }}
-        fluid={sexted101img.node.childImageSharp.fluid}
+        fluid={sexted101Image.node.childImageSharp.fluid}
       />
 
       <FluidImageContainer>
-        <Img fluid={imgFace.node.childImageSharp.fluid} />
+        <Img fluid={faceImage.node.childImageSharp.fluid} />
       </FluidImageContainer>
       <Row>
         <Column style={{ margin: "auto" }}>
