@@ -17,7 +17,8 @@ const BarbershopsAreClosed = () => {
         autoPlay
         loop
         muted
-        playInline
+        playsInline
+        defaultMuted
         src={quarantineTrimsVideo}
       >
         <source src={quarantineTrimsVideo} type="video/mp4" />

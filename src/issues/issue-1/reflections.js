@@ -106,7 +106,8 @@ const Reflections = () => {
             autoPlay
             loop
             muted
-            playInline
+            playsInline
+            defaultMuted
             src={coronaVideo}
           >
             <source src={coronaVideo} type="video/mp4" />
