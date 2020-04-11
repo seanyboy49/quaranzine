@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { useMediaQuery } from "react-responsive"
 
 import SEO from "../components/seo"
@@ -9,18 +9,9 @@ import Issue1 from "../issues/issue-1"
 import logo from "../images/logo.svg"
 
 const Home = () => {
-  const [isLoading, setIsLoading] = useState(true)
   const isPhoneWide = useMediaQuery({
     query: breakpoints.phoneWide,
   })
-
-  useEffect(() => {
-    setIsLoading(false)
-  }, [])
-
-  if (isLoading) {
-    return null
-  }
 
   return (
     <>
@@ -32,7 +23,7 @@ const Home = () => {
           alt="small qrzn logo"
         ></img>
         {!isPhoneWide && <Text center>the quaranzine for the quaranzined</Text>}
-        <StyledLink to="/archive/">archive</StyledLink>
+        <StyledLink to="/">archive</StyledLink>
       </NavBar>
 
       <Issue1 />
