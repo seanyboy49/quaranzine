@@ -7,7 +7,7 @@ import { PaddedWidthContainer } from "../../styles/layout"
 const Credits = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "Credits.png" }) {
+      file(relativePath: { eq: "credit.png" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
