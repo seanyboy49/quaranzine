@@ -11,6 +11,7 @@ import {
   breakpoints,
 } from "../../styles/layout"
 import { Text, H1 } from "../../styles/text"
+import { findFileByName } from "../../utils"
 
 const FluidImageContainer = styled.div`
   width: 70%;
@@ -46,116 +47,60 @@ const Sext = () => {
     query: breakpoints.phoneWide,
   })
 
-  const sexted101img = data.allFile.edges.find(
-    edge => edge.node.name === "sexted-101"
-  )
+  const sexted101img = findFileByName(data, "sexted-101")
 
-  const digitalFuckingDesktop = data.allFile.edges.find(
-    edge => edge.node.name === "1-digital-fucking"
-  )
-  const digitalFuckingMobile = data.allFile.edges.find(
-    edge => edge.node.name === "1-digital-fucking-mobile"
-  )
+  const imgFace = findFileByName(data, "face")
 
+  const guidelineHeaderImage = findFileByName(data, "guidelines")
+
+  const digitalFuckingDesktop = findFileByName(data, "1-digital-fucking")
+  const digitalFuckingMobile = findFileByName(data, "1-digital-fucking-mobile")
   const guideline1Image = isPhoneWide
     ? digitalFuckingMobile
     : digitalFuckingDesktop
+  const phoneImage = findFileByName(data, "phone")
 
-  const imgFace = data.allFile.edges.find(edge => edge.node.name === "face")
-
-  const guidelineHeaderImage = data.allFile.edges.find(
-    edge => edge.node.name === "guidelines"
-  )
-
-  const phoneImage = data.allFile.edges.find(edge => edge.node.name === "phone")
-
-  const communicationDesktop = data.allFile.edges.find(
-    edge => edge.node.name === "2-good-communication"
-  )
-  const communicationMobile = data.allFile.edges.find(
-    edge => edge.node.name === "2-good-communication-mobile"
+  const communicationDesktop = findFileByName(data, "2-good-communication")
+  const communicationMobile = findFileByName(
+    data,
+    "2-good-communication-mobile"
   )
   const guideline2Image = isPhoneWide
     ? communicationMobile
     : communicationDesktop
+  const listenImage = findFileByName(data, "listen")
 
-  const listenImage = data.allFile.edges.find(
-    edge => edge.node.name === "listen"
-  )
-
-  const dirtyTalkDesktop = data.allFile.edges.find(
-    edge => edge.node.name === "3-dirty-talk"
-  )
-  const dirtyTalkMobile = data.allFile.edges.find(
-    edge => edge.node.name === "3-dirty-talk-mobile"
-  )
+  const dirtyTalkDesktop = findFileByName(data, "3-dirty-talk")
+  const dirtyTalkMobile = findFileByName(data, "3-dirty-talk-mobile")
   const guideline3Image = isPhoneWide ? dirtyTalkMobile : dirtyTalkDesktop
+  const dirtyTalkImage = findFileByName(data, "dirty-talk-2")
 
-  const dirtyTalkImage = data.allFile.edges.find(
-    edge => edge.node.name === "dirty-talk-2"
-  )
-
-  const sexShakespeareDeskTop = data.allFile.edges.find(
-    edge => edge.node.name === "4-sex-shakespeare"
-  )
-  const sexShakespeareMobile = data.allFile.edges.find(
-    edge => edge.node.name === "4-sex-shakespeare-mobile"
-  )
+  const sexShakespeareDeskTop = findFileByName(data, "4-sex-shakespeare")
+  const sexShakespeareMobile = findFileByName(data, "4-sex-shakespeare-mobile")
   const guideline4Image = isPhoneWide
     ? sexShakespeareMobile
     : sexShakespeareDeskTop
+  const shakespeareImage = findFileByName(data, "shakespeare")
 
-  const shakespeareImage = data.allFile.edges.find(
-    edge => edge.node.name === "shakespeare"
-  )
-
-  const feelYourselfDesktop = data.allFile.edges.find(
-    edge => edge.node.name === "5-feel-yourself"
-  )
-
-  const feelYourselfMobile = data.allFile.edges.find(
-    edge => edge.node.name === "5-feel-yourself-mobile"
-  )
-
+  const feelYourselfDesktop = findFileByName(data, "5-feel-yourself")
+  const feelYourselfMobile = findFileByName(data, "5-feel-yourself-mobile")
   const guideline5Image = isPhoneWide ? feelYourselfMobile : feelYourselfDesktop
+  const bathtubImage = findFileByName(data, "bathtub")
 
-  const bathtubImage = data.allFile.edges.find(
-    edge => edge.node.name === "bathtub"
-  )
-
-  const haveFunDesktop = data.allFile.edges.find(
-    edge => edge.node.name === "6-have-fun-and-keep-going"
-  )
-  const haveFunMobile = data.allFile.edges.find(
-    edge => edge.node.name === "6-have-fun-and-keep-going-mobile"
-  )
-
+  const haveFunDesktop = findFileByName(data, "6-have-fun-and-keep-going")
+  const haveFunMobile = findFileByName(data, "6-have-fun-and-keep-going-mobile")
   const guideline6Image = isPhoneWide ? haveFunMobile : haveFunDesktop
+  const zoomImage = findFileByName(data, "zoom")
 
-  const zoomImage = data.allFile.edges.find(edge => edge.node.name === "zoom")
-
-  const madLibsDesktop = data.allFile.edges.find(
-    edge => edge.node.name === "7-fucking-mad-libs"
-  )
-
-  const madLibsMobile = data.allFile.edges.find(
-    edge => edge.node.name === "madlib"
-  )
-
+  const madLibsDesktop = findFileByName(data, "7-fucking-mad-libs")
+  const madLibsMobile = findFileByName(data, "madlib")
   const displayMadlibImage = isPhoneWide ? madLibsMobile : madLibsDesktop
 
-  const cloudDesktop = data.allFile.edges.find(
-    edge => edge.node.name === "cloud"
-  )
-  const cloudMobile = data.allFile.edges.find(
-    edge => edge.node.name === "cloud-mobile"
-  )
-
+  const cloudDesktop = findFileByName(data, "cloud")
+  const cloudMobile = findFileByName(data, "cloud-mobile")
   const displayCloudImage = isPhoneWide ? cloudMobile : cloudDesktop
 
-  const aboutKimImage = data.allFile.edges.find(
-    edge => edge.node.name === "about-kim"
-  )
+  const aboutKimImage = findFileByName(data, "about-kim")
 
   return (
     <PaddedWidthContainer id="sext-ed">
