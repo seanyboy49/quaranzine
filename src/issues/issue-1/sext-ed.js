@@ -24,7 +24,7 @@ const FluidImageContainer = styled.div`
 const Sext = () => {
   const data = useStaticQuery(graphql`
     query {
-      allFile(filter: { relativeDirectory: { eq: "sext-ed-images" } }) {
+      allFile(filter: { relativeDirectory: { eq: "sext-ed" } }) {
         edges {
           node {
             name
@@ -46,7 +46,7 @@ const Sext = () => {
     query: breakpoints.phoneWide,
   })
 
-  const imgSexted101 = data.allFile.edges.find(
+  const sexted101img = data.allFile.edges.find(
     edge => edge.node.name === "sexted-101"
   )
 
@@ -57,17 +57,17 @@ const Sext = () => {
     edge => edge.node.name === "1-digital-fucking-mobile"
   )
 
-  const displayGuideline1 = isPhoneWide
+  const guideline1Image = isPhoneWide
     ? digitalFuckingMobile
     : digitalFuckingDesktop
 
-  const imgFace = data.allFile.edges.find(edge => edge.node.name === "Face")
+  const imgFace = data.allFile.edges.find(edge => edge.node.name === "face")
 
-  const guidelines = data.allFile.edges.find(
+  const guidelineHeaderImage = data.allFile.edges.find(
     edge => edge.node.name === "guidelines"
   )
 
-  const phone = data.allFile.edges.find(edge => edge.node.name === "phone")
+  const phoneImage = data.allFile.edges.find(edge => edge.node.name === "phone")
 
   const communicationDesktop = data.allFile.edges.find(
     edge => edge.node.name === "2-good-communication"
@@ -75,11 +75,13 @@ const Sext = () => {
   const communicationMobile = data.allFile.edges.find(
     edge => edge.node.name === "2-good-communication-mobile"
   )
-  const displayGuideline2 = isPhoneWide
+  const guideline2Image = isPhoneWide
     ? communicationMobile
     : communicationDesktop
 
-  const listen = data.allFile.edges.find(edge => edge.node.name === "listen")
+  const listenImage = data.allFile.edges.find(
+    edge => edge.node.name === "listen"
+  )
 
   const dirtyTalkDesktop = data.allFile.edges.find(
     edge => edge.node.name === "3-dirty-talk"
@@ -87,9 +89,9 @@ const Sext = () => {
   const dirtyTalkMobile = data.allFile.edges.find(
     edge => edge.node.name === "3-dirty-talk-mobile"
   )
-  const displayGuideline3 = isPhoneWide ? dirtyTalkMobile : dirtyTalkDesktop
+  const guideline3Image = isPhoneWide ? dirtyTalkMobile : dirtyTalkDesktop
 
-  const dirtyTalk2 = data.allFile.edges.find(
+  const dirtyTalkImage = data.allFile.edges.find(
     edge => edge.node.name === "dirty-talk-2"
   )
 
@@ -99,11 +101,11 @@ const Sext = () => {
   const sexShakespeareMobile = data.allFile.edges.find(
     edge => edge.node.name === "4-sex-shakespeare-mobile"
   )
-  const displayGuideline4 = isPhoneWide
+  const guideline4Image = isPhoneWide
     ? sexShakespeareMobile
     : sexShakespeareDeskTop
 
-  const shakespeare = data.allFile.edges.find(
+  const shakespeareImage = data.allFile.edges.find(
     edge => edge.node.name === "shakespeare"
   )
 
@@ -115,11 +117,11 @@ const Sext = () => {
     edge => edge.node.name === "5-feel-yourself-mobile"
   )
 
-  const displayGuideline5 = isPhoneWide
-    ? feelYourselfMobile
-    : feelYourselfDesktop
+  const guideline5Image = isPhoneWide ? feelYourselfMobile : feelYourselfDesktop
 
-  const bathtub = data.allFile.edges.find(edge => edge.node.name === "bathtub")
+  const bathtubImage = data.allFile.edges.find(
+    edge => edge.node.name === "bathtub"
+  )
 
   const haveFunDesktop = data.allFile.edges.find(
     edge => edge.node.name === "6-have-fun-and-keep-going"
@@ -128,9 +130,9 @@ const Sext = () => {
     edge => edge.node.name === "6-have-fun-and-keep-going-mobile"
   )
 
-  const displayGuideline6 = isPhoneWide ? haveFunMobile : haveFunDesktop
+  const guideline6Image = isPhoneWide ? haveFunMobile : haveFunDesktop
 
-  const zoom = data.allFile.edges.find(edge => edge.node.name === "zoom")
+  const zoomImage = data.allFile.edges.find(edge => edge.node.name === "zoom")
 
   const madLibsDesktop = data.allFile.edges.find(
     edge => edge.node.name === "7-fucking-mad-libs"
@@ -140,7 +142,7 @@ const Sext = () => {
     edge => edge.node.name === "madlib"
   )
 
-  const displayMadibs = isPhoneWide ? madLibsMobile : madLibsDesktop
+  const displayMadlibImage = isPhoneWide ? madLibsMobile : madLibsDesktop
 
   const cloudDesktop = data.allFile.edges.find(
     edge => edge.node.name === "cloud"
@@ -149,9 +151,9 @@ const Sext = () => {
     edge => edge.node.name === "cloud-mobile"
   )
 
-  const displayCloud = isPhoneWide ? cloudMobile : cloudDesktop
+  const displayCloudImage = isPhoneWide ? cloudMobile : cloudDesktop
 
-  const aboutKim = data.allFile.edges.find(
+  const aboutKimImage = data.allFile.edges.find(
     edge => edge.node.name === "about-kim"
   )
 
@@ -159,7 +161,7 @@ const Sext = () => {
     <PaddedWidthContainer id="sext-ed">
       <Img
         style={{ marginBottom: "50px" }}
-        fluid={imgSexted101.node.childImageSharp.fluid}
+        fluid={sexted101img.node.childImageSharp.fluid}
       />
 
       <FluidImageContainer>
@@ -188,13 +190,13 @@ const Sext = () => {
       </Row>
       <Img
         style={{ margin: "auto" }}
-        fluid={guidelines.node.childImageSharp.fluid}
+        fluid={guidelineHeaderImage.node.childImageSharp.fluid}
       />
 
       <Row style={{ justifyContent: "flex-start", margin: "0" }}>
         <Column width={60}>
           <div style={{ width: "100%" }}>
-            <Img fluid={displayGuideline1.node.childImageSharp.fluid} />
+            <Img fluid={guideline1Image.node.childImageSharp.fluid} />
           </div>
         </Column>
       </Row>
@@ -224,7 +226,7 @@ const Sext = () => {
         </Column>
         <Column width={40}>
           <div style={{ width: "85%", marginBottom: "20px" }}>
-            <Img fluid={phone.node.childImageSharp.fluid} />
+            <Img fluid={phoneImage.node.childImageSharp.fluid} />
           </div>
         </Column>
       </Row>
@@ -232,14 +234,14 @@ const Sext = () => {
       <Row style={{ justifyContent: "flex-end", margin: "0" }}>
         <Column width={70}>
           <div style={{ width: "100%" }}>
-            <Img fluid={displayGuideline2.node.childImageSharp.fluid} />
+            <Img fluid={guideline2Image.node.childImageSharp.fluid} />
           </div>
         </Column>
       </Row>
       <Row>
         <Column width={30}>
           <div style={{ width: "100%" }}>
-            <Img fluid={listen.node.childImageSharp.fluid} />
+            <Img fluid={listenImage.node.childImageSharp.fluid} />
           </div>
         </Column>
         <Column width={60}>
@@ -263,7 +265,7 @@ const Sext = () => {
       <Row style={{ justifyContent: "flex-start", margin: "0" }}>
         <Column width={75}>
           <div style={{ width: "100%" }}>
-            <Img fluid={displayGuideline3.node.childImageSharp.fluid} />
+            <Img fluid={guideline3Image.node.childImageSharp.fluid} />
           </div>
         </Column>
       </Row>
@@ -282,7 +284,7 @@ const Sext = () => {
           <div style={{ width: "100%" }}>
             <Img
               style={{ width: "70%" }}
-              fluid={dirtyTalk2.node.childImageSharp.fluid}
+              fluid={dirtyTalkImage.node.childImageSharp.fluid}
             />
           </div>
         </Column>
@@ -291,7 +293,7 @@ const Sext = () => {
       <Row style={{ justifyContent: "flex-end", margin: "0" }}>
         <Column width={70}>
           <div style={{ width: "100%" }}>
-            <Img fluid={displayGuideline4.node.childImageSharp.fluid} />
+            <Img fluid={guideline4Image.node.childImageSharp.fluid} />
           </div>
         </Column>
       </Row>
@@ -300,7 +302,7 @@ const Sext = () => {
           <div style={{ width: "100%", marginLeft: "20%" }}>
             <Img
               style={{ width: "80%", marginTop: "-25px" }}
-              fluid={shakespeare.node.childImageSharp.fluid}
+              fluid={shakespeareImage.node.childImageSharp.fluid}
             />
           </div>
         </Column>
@@ -320,7 +322,7 @@ const Sext = () => {
       <Row style={{ justifyContent: "flex-start", margin: "0" }}>
         <Column width={80}>
           <div style={{ width: "100%" }}>
-            <Img fluid={displayGuideline5.node.childImageSharp.fluid} />
+            <Img fluid={guideline5Image.node.childImageSharp.fluid} />
           </div>
         </Column>
       </Row>
@@ -344,7 +346,7 @@ const Sext = () => {
           <div style={{ width: "100%" }}>
             <Img
               style={{ width: "75%", marginLeft: "60px", marginTop: "-5px" }}
-              fluid={bathtub.node.childImageSharp.fluid}
+              fluid={bathtubImage.node.childImageSharp.fluid}
             />
           </div>
         </Column>
@@ -353,7 +355,7 @@ const Sext = () => {
       <Row style={{ justifyContent: "flex-end", margin: "0" }}>
         <Column width={55}>
           <div style={{ width: "100%" }}>
-            <Img fluid={displayGuideline6.node.childImageSharp.fluid} />
+            <Img fluid={guideline6Image.node.childImageSharp.fluid} />
           </div>
         </Column>
       </Row>
@@ -362,7 +364,7 @@ const Sext = () => {
           <div style={{ width: "100%", marginLeft: "30%" }}>
             <Img
               style={{ width: "80%", marginTop: "-25px" }}
-              fluid={zoom.node.childImageSharp.fluid}
+              fluid={zoomImage.node.childImageSharp.fluid}
             />
           </div>
         </Column>
@@ -384,19 +386,19 @@ const Sext = () => {
       <Row style={{ justifyContent: "flex-start", margin: "0" }}>
         <Column width={80}>
           <div style={{ width: "100%" }}>
-            <Img fluid={displayCloud.node.childImageSharp.fluid} />
+            <Img fluid={displayCloudImage.node.childImageSharp.fluid} />
           </div>
         </Column>
         <Column width={20}>
           <div style={{ width: "100%", marginTop: "20%" }}>
-            <Img fluid={displayMadibs.node.childImageSharp.fluid} />
+            <Img fluid={displayMadlibImage.node.childImageSharp.fluid} />
           </div>
         </Column>
       </Row>
       <Row style={{ justifyContent: "flex-end" }}>
         <Column width={50}>
           <div style={{ width: "100%" }}>
-            <Img fluid={aboutKim.node.childImageSharp.fluid} />
+            <Img fluid={aboutKimImage.node.childImageSharp.fluid} />
           </div>
         </Column>
       </Row>
