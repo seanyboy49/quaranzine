@@ -9,6 +9,7 @@ import {
   Row,
   Column,
   breakpoints,
+  mediaQueries,
 } from "../../styles/layout"
 import { Text, H1 } from "../../styles/text"
 import { findFileByName } from "../../utils"
@@ -19,6 +20,16 @@ const FluidImageContainer = styled.div`
 
   @media only screen and (max-width: 600px) {
     width: 90%;
+  }
+`
+
+const BioText = styled(Text)`
+  font-size: 12px;
+  font-size: 15px;
+
+  ${mediaQueries.phoneWide} {
+    font-size: 10px;
+    line-height: 12px;
   }
 `
 
@@ -341,16 +352,16 @@ const Sext = () => {
       </Row>
       <Row style={{ justifyContent: "flex-end" }}>
         <Column width={50}>
-          <Text>ABOUT ME // ABOUT THIS PROJECT</Text>
-          <Text>
+          <BioText>ABOUT ME // ABOUT THIS PROJECT</BioText>
+          <BioText>
             Kimberly Chou Tsun An (@kimberchou) lives in Detroit. Her cultural
             work has involved food, writing, live events, and sending nudes.
-          </Text>
-          <Text>
+          </BioText>
+          <BioText>
             Her project “Sexting at the End of the World” explores how we can
             stay connected, stay hopeful and stay turning each other out,
             especially in times of crisis.
-          </Text>
+          </BioText>
         </Column>
       </Row>
     </PaddedWidthContainer>

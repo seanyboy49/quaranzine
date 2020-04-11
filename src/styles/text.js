@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components"
 import theme from "./theme"
+import { mediaQueries } from "./layout"
 
 const color = css`
   ${p =>
@@ -35,7 +36,7 @@ export const H1 = styled.h1`
   ${color};
   ${align};
 
-  @media only screen and (max-width: 600px) {
+  ${mediaQueries.phoneWide} {
     font-size: 20px;
     line-height: 25px;
   }
@@ -49,7 +50,7 @@ export const H2 = styled.h2`
   ${color};
   ${align};
 
-  @media only screen and (max-width: 600px) {
+  ${mediaQueries.phoneWide} {
     font-size: 15px;
     line-height: 20px;
   }
@@ -64,7 +65,7 @@ export const Text = styled.p`
   ${color};
   ${align};
 
-  @media only screen and (max-width: 600px) {
+  ${mediaQueries.phoneWide} {
     font-size: 15px;
   }
 `
