@@ -42,7 +42,7 @@ const LimerickMinute = () => {
   return (
     <PaddedWidthContainer id="limerick-minute">
       <NonBreakingRow>
-        <Column>
+        <Column center>
           <TitleBylineContainer>
             <H2>
               The
@@ -55,6 +55,8 @@ const LimerickMinute = () => {
               with
               <br />
               Pierre
+              <br />
+              Chazot
             </Text>
           </TitleBylineContainer>
         </Column>

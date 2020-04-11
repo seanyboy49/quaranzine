@@ -7,7 +7,7 @@ import { Text } from "../../styles/text"
 import { findFileByName } from "../../utils"
 import "./video.css"
 
-import coronaVideo from "../../gifs/corona_video.mp4"
+import coronaVideo from "../../gifs/corona-heart.mp4"
 
 const Reflections = () => {
   const data = useStaticQuery(graphql`
@@ -19,9 +19,6 @@ const Reflections = () => {
             childImageSharp {
               fluid {
                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
-              }
-              fixed {
-                ...GatsbyImageSharpFixed_withWebp_tracedSVG
               }
             }
           }

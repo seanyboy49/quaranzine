@@ -14,7 +14,7 @@ import { Text, H1 } from "../../styles/text"
 import { findFileByName } from "../../utils"
 
 const FluidImageContainer = styled.div`
-  width: 70%;
+  width: 40%;
   margin: auto;
 
   @media only screen and (max-width: 600px) {
@@ -100,8 +100,6 @@ const Sext = () => {
   const cloudMobile = findFileByName(data, "cloud-mobile")
   const displayCloudImage = isPhoneWide ? cloudMobile : cloudDesktop
 
-  const aboutKimImage = findFileByName(data, "about-kim")
-
   return (
     <PaddedWidthContainer id="sext-ed">
       <Img
@@ -114,6 +112,7 @@ const Sext = () => {
       </FluidImageContainer>
       <Row>
         <Column style={{ margin: "auto" }}>
+          <Text>By Kimberley Chou Tsun An</Text>
           <H1 style={{ width: "100%" }}>I love dirty talk. </H1>
           <Text>
             And to be sexting—that is, sending sexually explicit photos, videos
@@ -189,7 +188,7 @@ const Sext = () => {
             <Img fluid={listenImage.node.childImageSharp.fluid} />
           </div>
         </Column>
-        <Column width={60}>
+        <Column width={60} center>
           <Text>
             Tell your partner what you like / are into / want to do / want done
             to you.
@@ -215,7 +214,7 @@ const Sext = () => {
         </Column>
       </Row>
       <Row style={{ marginLeft: "5%" }} reverseColumn>
-        <Column width={45} style={{ marginTop: "30px" }}>
+        <Column width={45} center>
           <Text>
             Sometimes a few flirty texts are just…a few flirty texts! Just like
             physical sexual acts don’t always have to end in orgasm—thovugh, we
@@ -242,19 +241,18 @@ const Sext = () => {
           </div>
         </Column>
       </Row>
+
       <Row>
         <Column>
-          <div style={{ width: "100%", marginLeft: "20%" }}>
+          <div style={{ width: "100%" }}>
             <Img
-              style={{ width: "80%", marginTop: "-25px" }}
+              style={{ width: "80%", margin: "auto" }}
               fluid={shakespeareImage.node.childImageSharp.fluid}
             />
           </div>
         </Column>
-        <Column
-          width={33}
-          style={{ alignSelf: "flex-start", marginRight: "70px" }}
-        >
+
+        <Column width={33} center>
           <Text>
             And we don’t have to be. Phone flirtation doesn’t have to be the
             most dirrty (Christina Aguilera voice)—or even that well written.
@@ -290,7 +288,7 @@ const Sext = () => {
         <Column>
           <div style={{ width: "100%" }}>
             <Img
-              style={{ width: "75%", marginLeft: "60px", marginTop: "-5px" }}
+              style={{ width: "75%", margin: "auto" }}
               fluid={bathtubImage.node.childImageSharp.fluid}
             />
           </div>
@@ -304,16 +302,17 @@ const Sext = () => {
           </div>
         </Column>
       </Row>
+
       <Row>
-        <Column width={50}>
-          <div style={{ width: "100%", marginLeft: "30%" }}>
+        <Column>
+          <div style={{ width: "100%" }}>
             <Img
-              style={{ width: "80%", marginTop: "-25px" }}
+              style={{ width: "80%", marginTop: "-25px", margin: "auto" }}
               fluid={zoomImage.node.childImageSharp.fluid}
             />
           </div>
         </Column>
-        <Column width={35}>
+        <Column width={40} center>
           <Text>
             Sex can be awkward and embarassing! Even (especially) in person. But
             this should be fun. Be gentle with yourself, especially if you’re
@@ -342,9 +341,16 @@ const Sext = () => {
       </Row>
       <Row style={{ justifyContent: "flex-end" }}>
         <Column width={50}>
-          <div style={{ width: "100%" }}>
-            <Img fluid={aboutKimImage.node.childImageSharp.fluid} />
-          </div>
+          <Text>ABOUT ME // ABOUT THIS PROJECT</Text>
+          <Text>
+            Kimberly Chou Tsun An (@kimberchou) lives in Detroit. Her cultural
+            work has involved food, writing, live events, and sending nudes.
+          </Text>
+          <Text>
+            Her project “Sexting at the End of the World” explores how we can
+            stay connected, stay hopeful and stay turning each other out,
+            especially in times of crisis.
+          </Text>
         </Column>
       </Row>
     </PaddedWidthContainer>

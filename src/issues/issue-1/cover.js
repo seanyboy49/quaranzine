@@ -44,12 +44,12 @@ const Cover = () => {
         <H1>
           qrzn is the mag for people who are bored out of their minds and want
           to see stuff or read stuff that’s fairly interesting. Mostly it’s a
-          way for my friends and i to force each other to design things even
+          way for my friends and I to force each other to design things even
           though we’d much rather sit and watch the world burn around us. Each
           issue is based on a different theme, so we’re reinventing the magazine
-          every week. We’ve got contributors from all over the world, like New
-          York, Paris, Toronto, Singapore, Lima, New Jersey, etc. If you want to
-          be a part of this, dm us your stuff @qrzn_mag
+          every time around. We’ve got contributors from all over the world,
+          like New York, Paris, Toronto, Singapore, Lima, New Jersey, etc. If
+          you want to be a part of this, dm us your stuff @qrzn_mag
         </H1>
       </PaddedWidthContainer>
     </>

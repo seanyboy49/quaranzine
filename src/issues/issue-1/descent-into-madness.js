@@ -48,7 +48,7 @@ const DescentIntoMadness = () => {
   return (
     <PaddedWidthContainer id="descent-into-madness">
       <Img
-        style={{ maxWidth: "700px", marginBottom: "10%" }}
+        style={{ maxWidth: "700px" }}
         fluid={titleImage.node.childImageSharp.fluid}
       />
       <Row>
