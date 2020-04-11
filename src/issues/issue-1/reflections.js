@@ -20,9 +20,6 @@ const Reflections = () => {
               fluid {
                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
               }
-              fixed {
-                ...GatsbyImageSharpFixed_withWebp_tracedSVG
-              }
             }
           }
         }
