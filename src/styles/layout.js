@@ -24,7 +24,7 @@ export const PaddedWidthContainer = styled.section`
     padding: 73.5px 145px;
 
   ${mediaQueries.tabletWide} {
-    padding: 28px 56px;
+    padding: 28px;
   }
 `
 export const FullWidthContainer = styled.section`
