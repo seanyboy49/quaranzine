@@ -3,6 +3,7 @@ import React from "react"
 import quarantineTrimsVideo from "../../gifs/quarantine-trims.mp4"
 import { PaddedWidthContainer } from "../../styles/layout"
 import { H2 } from "../../styles/text"
+import "./video.css"
 
 const BarbershopsAreClosed = () => {
   return (
@@ -17,7 +18,8 @@ const BarbershopsAreClosed = () => {
         autoPlay
         loop
         muted
-        playInline
+        playsInline
+        defaultMuted
         src={quarantineTrimsVideo}
       >
         <source src={quarantineTrimsVideo} type="video/mp4" />
