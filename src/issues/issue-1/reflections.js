@@ -5,6 +5,7 @@ import Img from "gatsby-image"
 import { PaddedWidthContainer, Row, Column } from "../../styles/layout"
 import { Text } from "../../styles/text"
 import { findFileByName } from "../../utils"
+import "./video.css"
 
 import coronaVideo from "../../gifs/corona_video.mp4"
 
