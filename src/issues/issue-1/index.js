@@ -21,7 +21,7 @@ const Issue1 = () => {
   return (
     <>
       <Cover />
-      <LineBreak fileName="morse-follow-me" />
+      {/* <LineBreak fileName="morse-follow-me" />
       <ApartmentDrawing />
       <LineBreak fileName="morse-into-the-void" />
 
@@ -43,7 +43,7 @@ const Issue1 = () => {
       <BarbershopsAreClosed />
       <LineBreak fileName="boring-line" />
       <DescentIntoMadness />
-      <LineBreak fileName="boring-line" />
+      <LineBreak fileName="boring-line" /> */}
       <Sext />
       <LineBreak fileName="boring-line" />
       <Credits />
