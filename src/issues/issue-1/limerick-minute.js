@@ -1,21 +1,26 @@
 import React from "react"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
-import styled from "styled-components"
+import { useMediaQuery } from "react-responsive"
+import styled, { css } from "styled-components"
 
-import { PaddedWidthContainer, Column } from "../../styles/layout"
+import {
+  PaddedWidthContainer,
+  Row,
+  Column,
+  breakpoints,
+  mediaQueries,
+} from "../../styles/layout"
 import { H2, Text } from "../../styles/text"
-
-export const NonBreakingRow = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin: 20px 0;
-`
 
 const TitleBylineContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
+  ${mediaQueries.phoneWide} {
+    align-items: center;
+  }
 `
 
 export const FluidImageContainer = styled.div`
@@ -39,25 +44,42 @@ const LimerickMinute = () => {
     }
   `)
 
+  const isPhoneWide = useMediaQuery({
+    query: breakpoints.phoneWide,
+  })
+
+  const title = isPhoneWide ? (
+    <H2>The Limerick Minute</H2>
+  ) : (
+    <H2>
+      The
+      <br />
+      Limerick
+      <br />
+      Minute
+    </H2>
+  )
+
+  const byLine = isPhoneWide ? (
+    <Text center style={{ width: "initial", marginTop: "0" }}>
+      with Pierre Chazot
+    </Text>
+  ) : (
+    <Text style={{ width: "initial", marginTop: "0" }}>
+      with
+      <br />
+      Pierre
+      <br />
+      Chazot
+    </Text>
+  )
   return (
     <PaddedWidthContainer id="limerick-minute">
-      <NonBreakingRow>
-        <Column center>
+      <Row>
+        <Column>
           <TitleBylineContainer>
-            <H2>
-              The
-              <br />
-              Limerick
-              <br />
-              Minute
-            </H2>
-            <Text style={{ width: "initial", marginTop: "0" }}>
-              with
-              <br />
-              Pierre
-              <br />
-              Chazot
-            </Text>
+            {title}
+            {byLine}
           </TitleBylineContainer>
         </Column>
         <Column>
@@ -65,7 +87,7 @@ const LimerickMinute = () => {
             <Img fluid={data.file.childImageSharp.fluid} />
           </FluidImageContainer>
         </Column>
-      </NonBreakingRow>
+      </Row>
     </PaddedWidthContainer>
   )
 }
