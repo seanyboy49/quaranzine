@@ -228,7 +228,7 @@ const Sext = () => {
         <Column width={45} center>
           <Text>
             Sometimes a few flirty texts are just…a few flirty texts! Just like
-            physical sexual acts don’t always have to end in orgasm—thovugh, we
+            physical sexual acts don’t always have to end in orgasm—though, we
             love an orgasm—it can be fun to have a little chat to boost
             confidence, calm the nervous system, get the blood flowing; and
             then, put a pin in it for later, or just leave it at that. You don’t
