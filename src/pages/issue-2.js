@@ -5,10 +5,9 @@ import SEO from "../components/seo"
 import { NavBar, StyledLink } from "../styles/navigation"
 import { Text } from "../styles/text"
 import { breakpoints } from "../styles/layout"
-import Issue1 from "../issues/issue-1"
 import logo from "../images/logo.svg"
 
-const PublishedIssue1 = () => {
+const PublishedIssue2 = () => {
   const [isLoading, setIsLoading] = useState(true)
   const isPhoneWide = useMediaQuery({
     query: breakpoints.phoneWide,
@@ -34,10 +33,8 @@ const PublishedIssue1 = () => {
         {!isPhoneWide && <Text center>the quaranzine for the quaranzined</Text>}
         <StyledLink to="/archive/">archive</StyledLink>
       </NavBar>
-
-      <Issue1 />
     </>
   )
 }
 
-export default PublishedIssue1
+export default PublishedIssue2
