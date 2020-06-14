@@ -3,13 +3,34 @@ import { Carousel } from "react-responsive-carousel"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 import { useMediaQuery } from "react-responsive"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 const ResizeImage = styled.div`
-  width: 500px;
-  height: 800px;
+  width: 40%;
   margin: 0;
   padding: 0;
+`
+const SlideContainer = styled.div`
+  background: ${props => props.color};
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+const TextContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+`
+
+const StyleP = styled.p`
+  transform: ${({ degrees }) => `rotate(${degrees}deg)`};
+  font-size: ${props => props.fontSize || 20}px;
+  align-self: ${props => props.align || "center"};
 `
 
 const FavoriteSmells = () => {
@@ -41,25 +62,36 @@ const FavoriteSmells = () => {
     edge => edge.node.name === "boulangerie"
   )
   return (
-    <Carousel autoPlay>
-      <div
-        style={{
-          background: "#d6f2f2",
-          width: "100%",
-          height: "50%",
-          position: "fixed",
-          top: "0",
-          left: "0",
-        }}
-      >
+    <Carousel>
+      <SlideContainer color={"#d6f2f2"}>
         <ResizeImage>
           <Img fluid={afterShowerImg.node.childImageSharp.fluid} />
         </ResizeImage>
-      </div>
-      <div>
-        <Img fluid={boulangerieImg.node.childImageSharp.fluid} />
-        <p className="legend">Legend 2</p>
-      </div>
+        <TextContainer>
+          <StyleP degrees={1}>"I Love how people smell right after</StyleP>
+          <StyleP degrees={2}>they shower and get ready for the</StyleP>
+          <StyleP degrees={1}>day. So it's like their own special</StyleP>
+          <StyleP degrees={0}>person smell plus good clean soap</StyleP>
+          <StyleP degree={1} align={"flex-start"}>
+            plus laundry detergent"
+          </StyleP>
+          <StyleP fontSize={25} align={"flex-end"}>
+            -Sanika
+          </StyleP>
+        </TextContainer>
+      </SlideContainer>
+
+      <SlideContainer>
+        <ResizeImage>
+          <Img fluid={boulangerieImg.node.childImageSharp.fluid} />
+        </ResizeImage>
+        <TextContainer>
+          <StyleP degrees={0.5}>"boulangerie in the morning"</StyleP>
+          <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
+            -Sacha
+          </StyleP>
+        </TextContainer>
+      </SlideContainer>
     </Carousel>
   )
 }
