@@ -81,7 +81,7 @@ const FavoriteSmells = () => {
         </TextContainer>
       </SlideContainer>
 
-      <SlideContainer>
+      <SlideContainer color={"#deffdc"}>
         <ResizeImage>
           <Img fluid={boulangerieImg.node.childImageSharp.fluid} />
         </ResizeImage>
