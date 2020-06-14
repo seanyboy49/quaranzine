@@ -10,7 +10,9 @@ import { findFileByName } from "../../utils"
 const Cover = () => {
   const data = useStaticQuery(graphql`
     query {
-      allFile(filter: { relativeDirectory: { eq: "quaranzine-hero" } }) {
+      allFile(
+        filter: { relativeDirectory: { eq: "issue1-images/quaranzine-hero" } }
+      ) {
         edges {
           node {
             name

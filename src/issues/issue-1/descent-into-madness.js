@@ -20,7 +20,11 @@ const Pink = styled.span`
 const DescentIntoMadness = () => {
   const data = useStaticQuery(graphql`
     query {
-      allFile(filter: { relativeDirectory: { eq: "descent-into-madness" } }) {
+      allFile(
+        filter: {
+          relativeDirectory: { eq: "issue1-images/descent-into-madness" }
+        }
+      ) {
         edges {
           node {
             name

@@ -12,7 +12,9 @@ import coronaVideo from "../../gifs/corona_video.mp4"
 const Reflections = () => {
   const data = useStaticQuery(graphql`
     query {
-      allFile(filter: { relativeDirectory: { eq: "reflections" } }) {
+      allFile(
+        filter: { relativeDirectory: { eq: "issue1-images/reflections" } }
+      ) {
         edges {
           node {
             name

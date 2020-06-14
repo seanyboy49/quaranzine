@@ -24,7 +24,9 @@ const FluidImageContainer = styled.div`
 const Sext = () => {
   const data = useStaticQuery(graphql`
     query {
-      allFile(filter: { relativeDirectory: { eq: "sext-ed-images" } }) {
+      allFile(
+        filter: { relativeDirectory: { eq: "issue1-images/sext-ed-images" } }
+      ) {
         edges {
           node {
             name

@@ -32,7 +32,7 @@ const WeeklyTitle = styled.p`
 const Archive = () => {
   const weeklyIssues = [
     { linkBarColor: theme.blue, titleColor: theme.red },
-    // { linkBarColor: theme.pink, titleColor: theme.blue },
+    { linkBarColor: theme.pink, titleColor: theme.blue },
   ]
 
   return (
