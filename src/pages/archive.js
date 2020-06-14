@@ -30,7 +30,10 @@ const WeeklyTitle = styled.p`
 `
 
 const Archive = () => {
-  const weeklyIssues = [{ linkBarColor: theme.blue, titleColor: theme.red }]
+  const weeklyIssues = [
+    { linkBarColor: theme.blue, titleColor: theme.red },
+    // { linkBarColor: theme.pink, titleColor: theme.blue },
+  ]
 
   return (
     <>
@@ -45,7 +48,7 @@ const Archive = () => {
       <WeeklyIssueContainer>
         {weeklyIssues.map((weeklyIssue, index) => {
           return (
-            <StyledLink to="/">
+            <StyledLink to={`/issue-${index + 1}`}>
               <IssueLinkBar backgroundColor={weeklyIssue.linkBarColor}>
                 <WeeklyTitle textColor={weeklyIssue.titleColor}>
                   Week {index + 1}.
