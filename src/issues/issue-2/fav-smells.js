@@ -25,6 +25,7 @@ const TextContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
+  padding: 0 5%;
 `
 
 const StyleP = styled.p`
@@ -61,6 +62,16 @@ const FavoriteSmells = () => {
   const boulangerieImg = data.allFile.edges.find(
     edge => edge.node.name === "boulangerie"
   )
+  const gardenImg = data.allFile.edges.find(
+    edge => edge.node.name === "earth-after-rain"
+  )
+  const warmSkinImg = data.allFile.edges.find(
+    edge => edge.node.name === "warm-skin"
+  )
+  const deliciousFoodImg = data.allFile.edges.find(
+    edge => edge.node.name === "delicious-food"
+  )
+
   return (
     <Carousel>
       <SlideContainer color={"#d6f2f2"}>
@@ -81,7 +92,7 @@ const FavoriteSmells = () => {
         </TextContainer>
       </SlideContainer>
 
-      <SlideContainer color={"#deffdc"}>
+      <SlideContainer color={"#fdffe9"}>
         <ResizeImage>
           <Img fluid={boulangerieImg.node.childImageSharp.fluid} />
         </ResizeImage>
@@ -89,6 +100,42 @@ const FavoriteSmells = () => {
           <StyleP degrees={0.5}>"boulangerie in the morning"</StyleP>
           <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
             -Sacha
+          </StyleP>
+        </TextContainer>
+      </SlideContainer>
+
+      <SlideContainer color={"#deffdc"}>
+        <ResizeImage>
+          <Img fluid={gardenImg.node.childImageSharp.fluid} />
+        </ResizeImage>
+        <TextContainer>
+          <StyleP degrees={-0.5}>"a garden after the rain"</StyleP>
+          <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
+            -Georgia
+          </StyleP>
+        </TextContainer>
+      </SlideContainer>
+
+      <SlideContainer color={"#fbf8e6"}>
+        <ResizeImage>
+          <Img fluid={warmSkinImg.node.childImageSharp.fluid} />
+        </ResizeImage>
+        <TextContainer>
+          <StyleP degrees={0.5}>"warm skin"</StyleP>
+          <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
+            -Luca
+          </StyleP>
+        </TextContainer>
+      </SlideContainer>
+
+      <SlideContainer color={"#ecd6b7"}>
+        <ResizeImage>
+          <Img fluid={deliciousFoodImg.node.childImageSharp.fluid} />
+        </ResizeImage>
+        <TextContainer>
+          <StyleP degrees={0.5}>"whatever delicious food is cooking"</StyleP>
+          <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
+            -Holly
           </StyleP>
         </TextContainer>
       </SlideContainer>
