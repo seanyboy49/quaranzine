@@ -85,6 +85,10 @@ const FavoriteSmells = () => {
   const chairImg = data.allFile.edges.find(
     edge => edge.node.name === "old-armchair"
   )
+  const seaImg = data.allFile.edges.find(edge => edge.node.name === "salty-sea")
+  const paulImg = data.allFile.edges.find(
+    edge => edge.node.name === "paul-smell"
+  )
 
   return (
     <Carousel>
@@ -199,7 +203,7 @@ const FavoriteSmells = () => {
         <TextContainer>
           <StyleP degrees={-0.25}>"my mom"</StyleP>
           <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
-            -Bellyn
+            -Morgan
           </StyleP>
         </TextContainer>
       </SlideContainer>
@@ -209,9 +213,33 @@ const FavoriteSmells = () => {
           <Img fluid={chairImg.node.childImageSharp.fluid} />
         </ResizeImage>
         <TextContainer>
-          <StyleP degrees={0.75}>"an old armchair"</StyleP>
+          <StyleP degrees={-0.5}>"an old armchair"</StyleP>
           <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
             -Jean
+          </StyleP>
+        </TextContainer>
+      </SlideContainer>
+
+      <SlideContainer color={"#d4faff"}>
+        <ResizeImage>
+          <Img fluid={seaImg.node.childImageSharp.fluid} />
+        </ResizeImage>
+        <TextContainer>
+          <StyleP degrees={0.25}>"the salty sea"</StyleP>
+          <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
+            -Alice
+          </StyleP>
+        </TextContainer>
+      </SlideContainer>
+
+      <SlideContainer color={"#faf9bc"}>
+        <ResizeImage>
+          <Img fluid={paulImg.node.childImageSharp.fluid} />
+        </ResizeImage>
+        <TextContainer>
+          <StyleP degrees={-0.25}>"Paul's smell"</StyleP>
+          <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
+            -Camila
           </StyleP>
         </TextContainer>
       </SlideContainer>
