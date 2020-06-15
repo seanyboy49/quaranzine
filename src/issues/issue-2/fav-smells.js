@@ -56,6 +56,7 @@ const FavoriteSmells = () => {
       }
     }
   `)
+
   const afterShowerImg = data.allFile.edges.find(
     edge => edge.node.name === "after-shower"
   )
@@ -70,6 +71,19 @@ const FavoriteSmells = () => {
   )
   const deliciousFoodImg = data.allFile.edges.find(
     edge => edge.node.name === "delicious-food"
+  )
+  const cinemaImg = data.allFile.edges.find(
+    edge => edge.node.name === "cinema-popcorn"
+  )
+  const coffeeImg = data.allFile.edges.find(
+    edge => edge.node.name === "coffee-morning"
+  )
+  const victoryImg = data.allFile.edges.find(
+    edge => edge.node.name === "victory"
+  )
+  const momImg = data.allFile.edges.find(edge => edge.node.name === "my-mom")
+  const chairImg = data.allFile.edges.find(
+    edge => edge.node.name === "old-armchair"
   )
 
   return (
@@ -136,6 +150,68 @@ const FavoriteSmells = () => {
           <StyleP degrees={0.5}>"whatever delicious food is cooking"</StyleP>
           <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
             -Holly
+          </StyleP>
+        </TextContainer>
+      </SlideContainer>
+
+      <SlideContainer color={"#edc0c0"}>
+        <ResizeImage>
+          <Img fluid={cinemaImg.node.childImageSharp.fluid} />
+        </ResizeImage>
+        <TextContainer>
+          <StyleP degrees={1}>"I love the smell of cinema butter</StyleP>
+          <StyleP degrees={-1}>popcorn, as soon as you open</StyleP>
+          <StyleP degrees={0.5}>the door. BOOM."</StyleP>
+          <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
+            -Nicholas
+          </StyleP>
+        </TextContainer>
+      </SlideContainer>
+
+      <SlideContainer color={"#fdffe9"}>
+        <ResizeImage>
+          <Img fluid={coffeeImg.node.childImageSharp.fluid} />
+        </ResizeImage>
+        <TextContainer>
+          <StyleP degrees={0.75}>"coffee in the morning"</StyleP>
+          <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
+            -Lea
+          </StyleP>
+        </TextContainer>
+      </SlideContainer>
+
+      <SlideContainer color={"#fff1db"}>
+        <ResizeImage>
+          <Img fluid={victoryImg.node.childImageSharp.fluid} />
+        </ResizeImage>
+        <TextContainer>
+          <StyleP degrees={0.75}>"victory"</StyleP>
+          <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
+            -Bellyn
+          </StyleP>
+        </TextContainer>
+      </SlideContainer>
+
+      <SlideContainer color={"#fff4fb"}>
+        <ResizeImage>
+          <Img fluid={momImg.node.childImageSharp.fluid} />
+        </ResizeImage>
+        <TextContainer>
+          <StyleP degrees={-0.25}>"my mom"</StyleP>
+          <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
+            -Bellyn
+          </StyleP>
+        </TextContainer>
+      </SlideContainer>
+
+      <SlideContainer color={"#dfd9d8"}>
+        <ResizeImage>
+          <Img fluid={chairImg.node.childImageSharp.fluid} />
+        </ResizeImage>
+        <TextContainer>
+          <StyleP degrees={0.75}>"an old armchair"</StyleP>
+          <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
+            -Jean
           </StyleP>
         </TextContainer>
       </SlideContainer>
