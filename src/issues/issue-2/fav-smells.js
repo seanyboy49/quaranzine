@@ -10,6 +10,16 @@ const ResizeImage = styled.div`
   margin: 0;
   padding: 0;
 `
+const TitleStyledLayout = styled.div`
+  display: flex;
+  flex-direction: column;
+  background: #fdffe9;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+`
+
 const SlideContainer = styled.div`
   background: ${props => props.color};
   width: 100%;
@@ -19,6 +29,8 @@ const SlideContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
+  margin: 0;
 `
 
 const TextContainer = styled.div`
@@ -32,6 +44,18 @@ const StyleP = styled.p`
   transform: ${({ degrees }) => `rotate(${degrees}deg)`};
   font-size: ${props => props.fontSize || 20}px;
   align-self: ${props => props.align || "center"};
+`
+
+const ControlButton = styled.button`
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  font-size: 5rem;
+  font-weight: normal;
+  font-family: Georgia, "Times New Roman", serif;
 `
 
 const FavoriteSmells = () => {
@@ -91,36 +115,47 @@ const FavoriteSmells = () => {
   )
   const noseImg = data.allFile.edges.find(edge => edge.node.name === "noses")
 
+  const handleArrowNext = (event, props) => {
+    console.log(props)
+  }
+
+  const renderCustomArrow = (clickHandler, hasNext) => {
+    return <ControlButton onClick={clickHandler}>></ControlButton>
+  }
+
   return (
-    <Carousel>
-      <SlideContainer color={"#fdffe9"}>
-        <StyleP degrees={-2} fontSize={40}>
+    <Carousel renderArrowNext={renderCustomArrow}>
+      <TitleStyledLayout>
+        <StyleP degrees={-1.5} fontSize={40}>
           lls favorite smells favorite smell
         </StyleP>
-        <TextContainer>
-          <StyleP degrees={1}>when I lost my sense of</StyleP>
-          <StyleP degrees={2}>smell after contracting</StyleP>
-          <StyleP degrees={1}>Covid, my life changed</StyleP>
-          <StyleP degrees={0}>abruptly. vinegar,</StyleP>
-          <StyleP degrees={1}>pillows, coffee grounds,</StyleP>
-          <StyleP degrees={2}>expired chicken, central</StyleP>
-          <StyleP degrees={1}>park, it all smelled the</StyleP>
-          <StyleP degrees={0}>same. Life became plastic.</StyleP>
-        </TextContainer>
-        <ResizeImage>
-          <Img fluid={noseImg.node.childImageSharp.fluid} />
-        </ResizeImage>
-        <TextContainer>
-          <StyleP degrees={1}>and so, i asked people on</StyleP>
-          <StyleP degrees={2}>instagram what they</StyleP>
-          <StyleP degrees={1}>favorite smells were, and</StyleP>
-          <StyleP degrees={0}>made collages out of my</StyleP>
-          <StyleP degrees={1}>favorite responses,</StyleP>
-          <StyleP degrees={2}>thinking that by looking at</StyleP>
-          <StyleP degrees={1}>them, i could imagine what</StyleP>
-          <StyleP degrees={0}>it was to smell again.</StyleP>
-        </TextContainer>
-      </SlideContainer>
+        <SlideContainer color={"#fdffe9"}>
+          <TextContainer>
+            <StyleP degrees={1}>when I lost my sense of</StyleP>
+            <StyleP degrees={2}>smell after contracting</StyleP>
+            <StyleP degrees={1}>Covid, my life changed</StyleP>
+            <StyleP degrees={0}>abruptly. vinegar,</StyleP>
+            <StyleP degrees={1}>pillows, coffee grounds,</StyleP>
+            <StyleP degrees={2}>expired chicken, central</StyleP>
+            <StyleP degrees={1}>park, it all smelled the</StyleP>
+            <StyleP degrees={0}>same. Life became plastic.</StyleP>
+          </TextContainer>
+          <ResizeImage>
+            <Img fluid={noseImg.node.childImageSharp.fluid} />
+          </ResizeImage>
+          <TextContainer>
+            <StyleP degrees={1}>and so, i asked people on</StyleP>
+            <StyleP degrees={2}>instagram what they</StyleP>
+            <StyleP degrees={1}>favorite smells were, and</StyleP>
+            <StyleP degrees={0}>made collages out of my</StyleP>
+            <StyleP degrees={1}>favorite responses,</StyleP>
+            <StyleP degrees={2}>thinking that by looking at</StyleP>
+            <StyleP degrees={1}>them, i could imagine what</StyleP>
+            <StyleP degrees={0}>it was to smell again.</StyleP>
+          </TextContainer>
+        </SlideContainer>
+        <button onClick={handleArrowNext}>Arrow</button>
+      </TitleStyledLayout>
 
       <SlideContainer color={"#d6f2f2"}>
         <ResizeImage>
