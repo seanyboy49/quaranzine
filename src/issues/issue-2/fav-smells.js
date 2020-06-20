@@ -59,17 +59,36 @@ const StyleP = styled.p`
   align-self: ${props => props.align || "center"};
 `
 
-const ControlButton = styled.button`
-  background-color: Transparent;
-  background-repeat: no-repeat;
+const ControlRight = styled.button`
   border: none;
   cursor: pointer;
   overflow: hidden;
   outline: none;
-  font-size: 5rem;
-  font-weight: normal;
-  font-family: Georgia, "Times New Roman", serif;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  background: transparent;
+  padding: 0;
+  margin: 0;
 `
+
+const ControlLeft = styled.button`
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background: green;
+  padding: 0;
+  margin: 0;
+`
+
+// const ArrowStyle = styled.Img`
+//   width: 50px;
+//   height: 50px;
+// `
 
 const FavoriteSmells = () => {
   const data = useStaticQuery(graphql`
@@ -128,16 +147,35 @@ const FavoriteSmells = () => {
   )
   const noseImg = data.allFile.edges.find(edge => edge.node.name === "noses")
 
-  const handleArrowNext = (event, props) => {
-    console.log(props)
+  const leftArrow = data.allFile.edges.find(
+    edge => edge.node.name === "left-arrow"
+  )
+
+  const rightArrow = data.allFile.edges.find(
+    edge => edge.node.name === "right-arrow"
+  )
+
+  const renderCustomArrowNext = (clickHandler, hasNext) => {
+    return (
+      <ControlRight onClick={clickHandler}>
+        <Img fixed={rightArrow.node.childImageSharp.fixed} width={10} />
+      </ControlRight>
+    )
   }
 
-  const renderCustomArrow = (clickHandler, hasNext) => {
-    return <ControlButton onClick={clickHandler}>></ControlButton>
+  const renderCustomArrowPrev = (clickHandler, hasPrev) => {
+    return (
+      <ControlLeft onClick={clickHandler}>
+        <Img fixed={leftArrow.node.childImageSharp.fixed} width={10} />
+      </ControlLeft>
+    )
   }
 
   return (
-    <Carousel renderArrowNext={renderCustomArrow}>
+    <Carousel
+      renderArrowNext={renderCustomArrowNext}
+      renderArrowPrev={renderCustomArrowPrev}
+    >
       <TitleStyledLayout>
         <CoverDiv>
           <CoverTitle>lls favorite smells favorite smell</CoverTitle>
