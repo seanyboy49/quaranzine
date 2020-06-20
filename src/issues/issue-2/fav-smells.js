@@ -49,8 +49,8 @@ const TextContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
-  padding: 0 5%;
-  width: 30%;
+  padding: 0 3%;
+  width: 35%;
 `
 
 const StyleP = styled.p`
@@ -65,7 +65,7 @@ const ControlRight = styled.button`
   overflow: hidden;
   outline: none;
   position: absolute;
-  top: 50%;
+  top: 45%;
   right: 0;
   background: transparent;
   padding: 0;
@@ -78,17 +78,13 @@ const ControlLeft = styled.button`
   overflow: hidden;
   outline: none;
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 0;
-  background: green;
+  background: transparent;
   padding: 0;
   margin: 0;
+  z-index: 10;
 `
-
-// const ArrowStyle = styled.Img`
-//   width: 50px;
-//   height: 50px;
-// `
 
 const FavoriteSmells = () => {
   const data = useStaticQuery(graphql`
@@ -155,26 +151,30 @@ const FavoriteSmells = () => {
     edge => edge.node.name === "right-arrow"
   )
 
-  const renderCustomArrowNext = (clickHandler, hasNext) => {
-    return (
-      <ControlRight onClick={clickHandler}>
-        <Img fixed={rightArrow.node.childImageSharp.fixed} width={10} />
-      </ControlRight>
-    )
+  const renderCustomArrowPrev = (clickHandler, hasPrev) => {
+    if (hasPrev) {
+      return (
+        <ControlLeft onClick={clickHandler}>
+          <Img fixed={leftArrow.node.childImageSharp.fixed} width={10} />
+        </ControlLeft>
+      )
+    }
   }
 
-  const renderCustomArrowPrev = (clickHandler, hasPrev) => {
-    return (
-      <ControlLeft onClick={clickHandler}>
-        <Img fixed={leftArrow.node.childImageSharp.fixed} width={10} />
-      </ControlLeft>
-    )
+  const renderCustomArrowNext = (clickHandler, hasNext) => {
+    if (hasNext) {
+      return (
+        <ControlRight onClick={clickHandler}>
+          <Img fixed={rightArrow.node.childImageSharp.fixed} width={10} />
+        </ControlRight>
+      )
+    }
   }
 
   return (
     <Carousel
-      renderArrowNext={renderCustomArrowNext}
       renderArrowPrev={renderCustomArrowPrev}
+      renderArrowNext={renderCustomArrowNext}
     >
       <TitleStyledLayout>
         <CoverDiv>
