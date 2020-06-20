@@ -19,6 +19,18 @@ const TitleStyledLayout = styled.div`
   padding: 0;
   margin: 0;
 `
+const CoverTitle = styled.h1`
+  font-size: 6em;
+  white-space: nowrap;
+  transform: rotate(-1deg);
+  margin: auto;
+`
+const CoverDiv = styled.div`
+width: 100%
+height: auto;
+padding: 0;
+margin: 0; 
+`
 
 const SlideContainer = styled.div`
   background: ${props => props.color};
@@ -38,6 +50,7 @@ const TextContainer = styled.div`
   justify-content: flex-end;
   flex-direction: column;
   padding: 0 5%;
+  width: 30%;
 `
 
 const StyleP = styled.p`
@@ -126,9 +139,9 @@ const FavoriteSmells = () => {
   return (
     <Carousel renderArrowNext={renderCustomArrow}>
       <TitleStyledLayout>
-        <StyleP degrees={-1.5} fontSize={40}>
-          lls favorite smells favorite smell
-        </StyleP>
+        <CoverDiv>
+          <CoverTitle>lls favorite smells favorite smell</CoverTitle>
+        </CoverDiv>
         <SlideContainer color={"#fdffe9"}>
           <TextContainer>
             <StyleP degrees={1}>when I lost my sense of</StyleP>
@@ -154,7 +167,6 @@ const FavoriteSmells = () => {
             <StyleP degrees={0}>it was to smell again.</StyleP>
           </TextContainer>
         </SlideContainer>
-        <button onClick={handleArrowNext}>Arrow</button>
       </TitleStyledLayout>
 
       <SlideContainer color={"#d6f2f2"}>
