@@ -26,10 +26,10 @@ const CoverTitle = styled.h1`
   margin: auto;
 `
 const CoverDiv = styled.div`
-width: 100%
-height: auto;
-padding: 0;
-margin: 0; 
+  width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;
 `
 
 const SlideContainer = styled.div`
@@ -70,6 +70,13 @@ const ControlRight = styled.button`
   background: transparent;
   padding: 0;
   margin: 0;
+  ${props =>
+    props &&
+    props.left &&
+    css`
+      left: 0;
+      right: initial;
+    `}
 `
 
 const ControlLeft = styled.button`
@@ -147,9 +154,15 @@ const FavoriteSmells = () => {
     edge => edge.node.name === "left-arrow"
   )
 
-  const rightArrow = data.allFile.edges.find(
-    edge => edge.node.name === "right-arrow"
-  )
+  // const rightArrow = data.allFile.edges.find(
+  //   edge => edge.node.name === "right-arrow"
+  // )
+
+  function getFile(data, key, name) {
+    return data.allFile.edges.find(edge => edge.node[key] === name)
+  }
+
+  const rightArrow = getFile(data, "name", "right-arrow")
 
   const renderCustomArrowPrev = (clickHandler, hasPrev) => {
     if (hasPrev) {
@@ -175,6 +188,7 @@ const FavoriteSmells = () => {
     <Carousel
       renderArrowPrev={renderCustomArrowPrev}
       renderArrowNext={renderCustomArrowNext}
+      showThumbs={false}
     >
       <TitleStyledLayout>
         <CoverDiv>
