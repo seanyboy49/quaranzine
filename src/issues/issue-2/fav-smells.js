@@ -10,7 +10,7 @@ const ResizeImage = styled.div`
   margin: 0;
   padding: 0;
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 750px) {
     width: 85%;
   }
 `
@@ -22,6 +22,7 @@ const TitleStyledLayout = styled.div`
   justify-content: center;
   padding: 0;
   margin: 0;
+  height: 100%;
 `
 const CoverTitle = styled.h1`
   font-size: 6em;
@@ -29,8 +30,8 @@ const CoverTitle = styled.h1`
   transform: rotate(-1deg);
   margin: auto;
 
-  @media only screen and (max-width: 600px) {
-    font-size: 2.05em;
+  @media only screen and (max-width: 750px) {
+    font-size: 5.5em;
   }
 `
 const CoverDiv = styled.div`
@@ -52,9 +53,8 @@ const SlideContainer = styled.div`
   padding: 0;
   margin: 0;
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 750px) {
     flex-direction: column;
-    height: 50%;
   }
 `
 
@@ -62,10 +62,10 @@ const TextContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
-  padding: 0 3%;
+  padding: 0 7%;
   width: 35%;
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 750px) {
     width: 100%;
   }
 `
@@ -185,27 +185,39 @@ const FavoriteSmells = () => {
         </CoverDiv>
         <SlideContainer color={"#fdffe9"}>
           <TextContainer>
-            <StyleP degrees={1}>when I lost my sense of</StyleP>
+            <StyleP>
+              when I lost my sense of smell after contracting Covid, my life
+              changed abruptly. vinegar, pillows, coffee grounds, expired
+              chicken, central park, it all smelled the same. Life became
+              plastic.
+            </StyleP>
+            {/* <StyleP degrees={1}>when I lost my sense of</StyleP>
             <StyleP degrees={2}>smell after contracting</StyleP>
             <StyleP degrees={1}>Covid, my life changed</StyleP>
             <StyleP degrees={0}>abruptly. vinegar,</StyleP>
             <StyleP degrees={1}>pillows, coffee grounds,</StyleP>
             <StyleP degrees={2}>expired chicken, central</StyleP>
             <StyleP degrees={1}>park, it all smelled the</StyleP>
-            <StyleP degrees={0}>same. Life became plastic.</StyleP>
+            <StyleP degrees={0}>same. Life became plastic.</StyleP> */}
           </TextContainer>
           <ResizeImage>
             <Img fluid={noseImg.node.childImageSharp.fluid} />
           </ResizeImage>
           <TextContainer>
-            <StyleP degrees={1}>and so, i asked people on</StyleP>
+            <StyleP>
+              and so, i asked people on instagram what they favorite smells
+              were, and made collages out of my favorite responses, thinking
+              that by looking at them, i could imagine what it was to smell
+              again.
+            </StyleP>
+            {/* <StyleP degrees={1}>and so, i asked people on</StyleP>
             <StyleP degrees={2}>instagram what they</StyleP>
             <StyleP degrees={1}>favorite smells were, and</StyleP>
             <StyleP degrees={0}>made collages out of my</StyleP>
             <StyleP degrees={1}>favorite responses,</StyleP>
             <StyleP degrees={2}>thinking that by looking at</StyleP>
             <StyleP degrees={1}>them, i could imagine what</StyleP>
-            <StyleP degrees={0}>it was to smell again.</StyleP>
+            <StyleP degrees={0}>it was to smell again.</StyleP> */}
           </TextContainer>
         </SlideContainer>
       </TitleStyledLayout>
