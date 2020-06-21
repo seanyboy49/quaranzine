@@ -9,6 +9,10 @@ const ResizeImage = styled.div`
   width: 40%;
   margin: 0;
   padding: 0;
+
+  @media only screen and (max-width: 600px) {
+    width: 85%;
+  }
 `
 const TitleStyledLayout = styled.div`
   display: flex;
@@ -24,6 +28,10 @@ const CoverTitle = styled.h1`
   white-space: nowrap;
   transform: rotate(-1deg);
   margin: auto;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 2.05em;
+  }
 `
 const CoverDiv = styled.div`
   width: 100%;
@@ -43,6 +51,11 @@ const SlideContainer = styled.div`
   justify-content: center;
   padding: 0;
   margin: 0;
+
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+    height: 50%;
+  }
 `
 
 const TextContainer = styled.div`
@@ -51,6 +64,10 @@ const TextContainer = styled.div`
   flex-direction: column;
   padding: 0 3%;
   width: 35%;
+
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+  }
 `
 
 const StyleP = styled.p`
@@ -116,52 +133,24 @@ const FavoriteSmells = () => {
     }
   `)
 
-  const afterShowerImg = data.allFile.edges.find(
-    edge => edge.node.name === "after-shower"
-  )
-  const boulangerieImg = data.allFile.edges.find(
-    edge => edge.node.name === "boulangerie"
-  )
-  const gardenImg = data.allFile.edges.find(
-    edge => edge.node.name === "earth-after-rain"
-  )
-  const warmSkinImg = data.allFile.edges.find(
-    edge => edge.node.name === "warm-skin"
-  )
-  const deliciousFoodImg = data.allFile.edges.find(
-    edge => edge.node.name === "delicious-food"
-  )
-  const cinemaImg = data.allFile.edges.find(
-    edge => edge.node.name === "cinema-popcorn"
-  )
-  const coffeeImg = data.allFile.edges.find(
-    edge => edge.node.name === "coffee-morning"
-  )
-  const victoryImg = data.allFile.edges.find(
-    edge => edge.node.name === "victory"
-  )
-  const momImg = data.allFile.edges.find(edge => edge.node.name === "my-mom")
-  const chairImg = data.allFile.edges.find(
-    edge => edge.node.name === "old-armchair"
-  )
-  const seaImg = data.allFile.edges.find(edge => edge.node.name === "salty-sea")
-  const paulImg = data.allFile.edges.find(
-    edge => edge.node.name === "paul-smell"
-  )
-  const noseImg = data.allFile.edges.find(edge => edge.node.name === "noses")
-
-  const leftArrow = data.allFile.edges.find(
-    edge => edge.node.name === "left-arrow"
-  )
-
-  // const rightArrow = data.allFile.edges.find(
-  //   edge => edge.node.name === "right-arrow"
-  // )
-
   function getFile(data, key, name) {
     return data.allFile.edges.find(edge => edge.node[key] === name)
   }
 
+  const afterShowerImg = getFile(data, "name", "after-shower")
+  const boulangerieImg = getFile(data, "name", "boulangerie")
+  const gardenImg = getFile(data, "name", "earth-after-rain")
+  const warmSkinImg = getFile(data, "name", "warm-skin")
+  const deliciousFoodImg = getFile(data, "name", "delicious-food")
+  const cinemaImg = getFile(data, "name", "cinema-popcorn")
+  const coffeeImg = getFile(data, "name", "coffee-morning")
+  const victoryImg = getFile(data, "name", "victory")
+  const momImg = getFile(data, "name", "my-mom")
+  const chairImg = getFile(data, "name", "old-armchair")
+  const seaImg = getFile(data, "name", "salty-sea")
+  const paulImg = getFile(data, "name", "paul-smell")
+  const noseImg = getFile(data, "name", "noses")
+  const leftArrow = getFile(data, "name", "left-arrow")
   const rightArrow = getFile(data, "name", "right-arrow")
 
   const renderCustomArrowPrev = (clickHandler, hasPrev) => {
