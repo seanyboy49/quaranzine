@@ -10,7 +10,7 @@ const ResizeImage = styled.div`
   margin: 0;
   padding: 0;
 
-  @media only screen and (max-width: 750px) {
+  @media only screen and (max-width: 775px) {
     width: 85%;
   }
 `
@@ -30,7 +30,7 @@ const CoverTitle = styled.h1`
   transform: rotate(-1deg);
   margin: auto;
 
-  @media only screen and (max-width: 750px) {
+  @media only screen and (max-width: 775px) {
     font-size: 5.5em;
   }
 `
@@ -53,7 +53,7 @@ const SlideContainer = styled.div`
   padding: 0;
   margin: 0;
 
-  @media only screen and (max-width: 750px) {
+  @media only screen and (max-width: 775px) {
     flex-direction: column;
   }
 `
@@ -65,7 +65,7 @@ const TextContainer = styled.div`
   padding: 0 7%;
   width: 35%;
 
-  @media only screen and (max-width: 750px) {
+  @media only screen and (max-width: 775px) {
     width: 100%;
   }
 `
@@ -191,14 +191,6 @@ const FavoriteSmells = () => {
               chicken, central park, it all smelled the same. Life became
               plastic.
             </StyleP>
-            {/* <StyleP degrees={1}>when I lost my sense of</StyleP>
-            <StyleP degrees={2}>smell after contracting</StyleP>
-            <StyleP degrees={1}>Covid, my life changed</StyleP>
-            <StyleP degrees={0}>abruptly. vinegar,</StyleP>
-            <StyleP degrees={1}>pillows, coffee grounds,</StyleP>
-            <StyleP degrees={2}>expired chicken, central</StyleP>
-            <StyleP degrees={1}>park, it all smelled the</StyleP>
-            <StyleP degrees={0}>same. Life became plastic.</StyleP> */}
           </TextContainer>
           <ResizeImage>
             <Img fluid={noseImg.node.childImageSharp.fluid} />
@@ -210,14 +202,6 @@ const FavoriteSmells = () => {
               that by looking at them, i could imagine what it was to smell
               again.
             </StyleP>
-            {/* <StyleP degrees={1}>and so, i asked people on</StyleP>
-            <StyleP degrees={2}>instagram what they</StyleP>
-            <StyleP degrees={1}>favorite smells were, and</StyleP>
-            <StyleP degrees={0}>made collages out of my</StyleP>
-            <StyleP degrees={1}>favorite responses,</StyleP>
-            <StyleP degrees={2}>thinking that by looking at</StyleP>
-            <StyleP degrees={1}>them, i could imagine what</StyleP>
-            <StyleP degrees={0}>it was to smell again.</StyleP> */}
           </TextContainer>
         </SlideContainer>
       </TitleStyledLayout>
@@ -231,9 +215,7 @@ const FavoriteSmells = () => {
           <StyleP degrees={2}>they shower and get ready for the</StyleP>
           <StyleP degrees={1}>day. So it's like their own special</StyleP>
           <StyleP degrees={0}>person smell plus good clean soap</StyleP>
-          <StyleP degree={1} align={"flex-start"}>
-            plus laundry detergent"
-          </StyleP>
+          <StyleP degree={1}>plus laundry detergent"</StyleP>
           <StyleP fontSize={25} align={"flex-end"}>
             -Sanika
           </StyleP>
