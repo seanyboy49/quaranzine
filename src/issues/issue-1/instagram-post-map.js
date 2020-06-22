@@ -10,7 +10,11 @@ import { findFileByName } from "../../utils"
 const InstagramPostMap = () => {
   const data = useStaticQuery(graphql`
     query {
-      allFile(filter: { relativeDirectory: { eq: "instagram-post-map" } }) {
+      allFile(
+        filter: {
+          relativeDirectory: { eq: "issue1-images/instagram-post-map" }
+        }
+      ) {
         edges {
           node {
             name

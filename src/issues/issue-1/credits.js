@@ -1,11 +1,8 @@
 import React from "react"
-
-import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
-import { PaddedWidthContainer, Row, Column } from "../../styles/layout"
+import { PaddedWidthContainer, Row } from "../../styles/layout"
 import { H1, H2, Text } from "../../styles/text"
-import theme from "../../styles/theme"
 
 const StyledH1 = styled(H1)`
   width: 100%;
@@ -51,7 +48,6 @@ const Credits = () => {
           Ford Donovan
         </Text>
       </Row>
-      {/* <Img fluid={data.file.childImageSharp.fluid} /> */}
     </PaddedWidthContainer>
   )
 }

@@ -14,7 +14,9 @@ import { findFileByName } from "../../utils"
 const PodcastRatings = () => {
   const data = useStaticQuery(graphql`
     query {
-      allFile(filter: { relativeDirectory: { eq: "podcast-ratings" } }) {
+      allFile(
+        filter: { relativeDirectory: { eq: "issue1-images/podcast-ratings" } }
+      ) {
         edges {
           node {
             name

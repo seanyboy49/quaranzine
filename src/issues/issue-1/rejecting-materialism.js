@@ -9,7 +9,11 @@ import { findFileByName } from "../../utils"
 const RejectingMaterialismChart = () => {
   const data = useStaticQuery(graphql`
     query {
-      allFile(filter: { relativeDirectory: { eq: "rejecting-materialism" } }) {
+      allFile(
+        filter: {
+          relativeDirectory: { eq: "issue1-images/rejecting-materialism" }
+        }
+      ) {
         edges {
           node {
             name

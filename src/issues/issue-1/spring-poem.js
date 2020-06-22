@@ -13,7 +13,9 @@ import { findFileByName } from "../../utils"
 const SpringPoem = () => {
   const data = useStaticQuery(graphql`
     query {
-      allFile(filter: { relativeDirectory: { eq: "spring-poem" } }) {
+      allFile(
+        filter: { relativeDirectory: { eq: "issue1-images/spring-poem" } }
+      ) {
         edges {
           node {
             name

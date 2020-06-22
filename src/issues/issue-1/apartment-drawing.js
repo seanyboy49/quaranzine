@@ -9,7 +9,9 @@ import { PaddedWidthContainer, breakpoints } from "../../styles/layout"
 const ApartmentDrawing = () => {
   const data = useStaticQuery(graphql`
     query {
-      allFile(filter: { relativeDirectory: { eq: "apartment" } }) {
+      allFile(
+        filter: { relativeDirectory: { eq: "issue1-images/apartment" } }
+      ) {
         edges {
           node {
             name
