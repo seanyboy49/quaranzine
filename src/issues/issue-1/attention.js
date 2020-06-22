@@ -16,7 +16,6 @@ const Attention = () => {
       }
     }
   `)
-  console.log("data", data)
 
   return (
     <FullWidthContainer id="attention">

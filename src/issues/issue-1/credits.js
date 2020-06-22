@@ -1,11 +1,8 @@
 import React from "react"
-
-import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
-import { PaddedWidthContainer, Row, Column } from "../../styles/layout"
+import { PaddedWidthContainer, Row } from "../../styles/layout"
 import { H1, H2, Text } from "../../styles/text"
-import theme from "../../styles/theme"
 
 const StyledH1 = styled(H1)`
   width: 100%;
@@ -17,18 +14,6 @@ const StyledH2 = styled(H2)`
 `
 
 const Credits = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "issue1-images/Credits.png" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_withWebp_tracedSVG
-          }
-        }
-      }
-    }
-  `)
-
   return (
     <PaddedWidthContainer id="credits">
       <Row>

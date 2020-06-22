@@ -6,6 +6,7 @@ import { useMediaQuery } from "react-responsive"
 import styled, { css } from "styled-components"
 
 import { mediaQueries, breakpoints } from "../../styles/layout"
+import { findFileByName } from "../../utils"
 
 const ResizeImage = styled.div`
   width: 40%;
@@ -79,7 +80,7 @@ const StyleP = styled.p`
   align-self: ${props => props.align || "center"};
 `
 
-const ControlRight = styled.button`
+const ControlArrows = styled.button`
   border: none;
   cursor: pointer;
   overflow: hidden;
@@ -96,21 +97,8 @@ const ControlRight = styled.button`
     css`
       left: 0;
       right: initial;
+      z-index: 10;
     `}
-`
-
-const ControlLeft = styled.button`
-  border: none;
-  cursor: pointer;
-  overflow: hidden;
-  outline: none;
-  position: absolute;
-  top: 45%;
-  left: 0;
-  background: transparent;
-  padding: 0;
-  margin: 0;
-  z-index: 10;
 `
 
 const FavoriteSmells = () => {
@@ -136,25 +124,21 @@ const FavoriteSmells = () => {
     }
   `)
 
-  function getFile(data, key, name) {
-    return data.allFile.edges.find(edge => edge.node[key] === name)
-  }
-
-  const afterShowerImg = getFile(data, "name", "after-shower")
-  const boulangerieImg = getFile(data, "name", "boulangerie")
-  const gardenImg = getFile(data, "name", "earth-after-rain")
-  const warmSkinImg = getFile(data, "name", "warm-skin")
-  const deliciousFoodImg = getFile(data, "name", "delicious-food")
-  const cinemaImg = getFile(data, "name", "cinema-popcorn")
-  const coffeeImg = getFile(data, "name", "coffee-morning")
-  const victoryImg = getFile(data, "name", "victory")
-  const momImg = getFile(data, "name", "my-mom")
-  const chairImg = getFile(data, "name", "old-armchair")
-  const seaImg = getFile(data, "name", "salty-sea")
-  const paulImg = getFile(data, "name", "paul-smell")
-  const noseImg = getFile(data, "name", "noses")
-  const leftArrow = getFile(data, "name", "left-arrow")
-  const rightArrow = getFile(data, "name", "right-arrow")
+  const afterShowerImg = findFileByName(data, "after-shower")
+  const boulangerieImg = findFileByName(data, "boulangerie")
+  const gardenImg = findFileByName(data, "earth-after-rain")
+  const warmSkinImg = findFileByName(data, "warm-skin")
+  const deliciousFoodImg = findFileByName(data, "delicious-food")
+  const cinemaImg = findFileByName(data, "cinema-popcorn")
+  const coffeeImg = findFileByName(data, "coffee-morning")
+  const victoryImg = findFileByName(data, "victory")
+  const momImg = findFileByName(data, "my-mom")
+  const chairImg = findFileByName(data, "old-armchair")
+  const seaImg = findFileByName(data, "salty-sea")
+  const paulImg = findFileByName(data, "paul-smell")
+  const noseImg = findFileByName(data, "noses")
+  const leftArrow = findFileByName(data, "left-arrow")
+  const rightArrow = findFileByName(data, "right-arrow")
 
   const isPhoneWide = useMediaQuery({
     query: breakpoints.phoneWide,
@@ -166,9 +150,9 @@ const FavoriteSmells = () => {
     }
     if (hasPrev) {
       return (
-        <ControlLeft onClick={clickHandler}>
+        <ControlArrows left onClick={clickHandler}>
           <Img fixed={leftArrow.node.childImageSharp.fixed} />
-        </ControlLeft>
+        </ControlArrows>
       )
     }
   }
@@ -180,9 +164,9 @@ const FavoriteSmells = () => {
 
     if (hasNext) {
       return (
-        <ControlRight onClick={clickHandler}>
+        <ControlArrows onClick={clickHandler}>
           <Img fixed={rightArrow.node.childImageSharp.fixed} />
-        </ControlRight>
+        </ControlArrows>
       )
     }
   }
