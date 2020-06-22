@@ -5,12 +5,14 @@ import { useStaticQuery, graphql } from "gatsby"
 import { useMediaQuery } from "react-responsive"
 import styled, { css } from "styled-components"
 
+import { mediaQueries, breakpoints } from "../../styles/layout"
+
 const ResizeImage = styled.div`
   width: 40%;
   margin: 0;
   padding: 0;
 
-  @media only screen and (max-width: 775px) {
+  ${mediaQueries.tabletWide} {
     width: 85%;
   }
 `
@@ -30,7 +32,7 @@ const CoverTitle = styled.h1`
   transform: rotate(-1deg);
   margin: auto;
 
-  @media only screen and (max-width: 775px) {
+  ${mediaQueries.tabletWide} {
     font-size: 5.5em;
   }
 `
@@ -53,7 +55,7 @@ const SlideContainer = styled.div`
   padding: 0;
   margin: 0;
 
-  @media only screen and (max-width: 775px) {
+  ${mediaQueries.tabletWide} {
     flex-direction: column;
   }
 `
@@ -63,10 +65,11 @@ const TextContainer = styled.div`
   justify-content: flex-end;
   flex-direction: column;
   padding: 0 7%;
-  width: 35%;
+  width: 40%;
 
-  @media only screen and (max-width: 775px) {
+  ${mediaQueries.tabletWide} {
     width: 100%;
+    padding: 0 5px;
   }
 `
 
@@ -153,21 +156,32 @@ const FavoriteSmells = () => {
   const leftArrow = getFile(data, "name", "left-arrow")
   const rightArrow = getFile(data, "name", "right-arrow")
 
+  const isPhoneWide = useMediaQuery({
+    query: breakpoints.phoneWide,
+  })
+
   const renderCustomArrowPrev = (clickHandler, hasPrev) => {
+    if (isPhoneWide) {
+      return null
+    }
     if (hasPrev) {
       return (
         <ControlLeft onClick={clickHandler}>
-          <Img fixed={leftArrow.node.childImageSharp.fixed} width={10} />
+          <Img fixed={leftArrow.node.childImageSharp.fixed} />
         </ControlLeft>
       )
     }
   }
 
   const renderCustomArrowNext = (clickHandler, hasNext) => {
+    if (isPhoneWide) {
+      return null
+    }
+
     if (hasNext) {
       return (
         <ControlRight onClick={clickHandler}>
-          <Img fixed={rightArrow.node.childImageSharp.fixed} width={10} />
+          <Img fixed={rightArrow.node.childImageSharp.fixed} />
         </ControlRight>
       )
     }
