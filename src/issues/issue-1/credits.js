@@ -63,7 +63,6 @@ const Credits = () => {
           Ford Donovan
         </Text>
       </Row>
-      {/* <Img fluid={data.file.childImageSharp.fluid} /> */}
     </PaddedWidthContainer>
   )
 }
