@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components"
 import theme from "./theme"
+import { mediaQueries } from "./layout"
 
 const color = css`
   ${p =>
@@ -30,12 +31,12 @@ export const align = css`
 export const H1 = styled.h1`
   font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue";
   font-size: 30px;
-  line-height: 40px;
+  line-height: 33px;
   color: ${theme.pink};
   ${color};
   ${align};
 
-  @media only screen and (max-width: 600px) {
+  ${mediaQueries.phoneWide} {
     font-size: 20px;
     line-height: 25px;
   }
@@ -44,12 +45,12 @@ export const H1 = styled.h1`
 export const H2 = styled.h2`
   font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue";
   font-size: 25px;
-  line-height: 35px;
+  line-height: 28px;
   color: ${theme.pink};
   ${color};
   ${align};
 
-  @media only screen and (max-width: 600px) {
+  ${mediaQueries.phoneWide} {
     font-size: 15px;
     line-height: 20px;
   }
@@ -58,12 +59,13 @@ export const H2 = styled.h2`
 export const Text = styled.p`
   font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue";
   font-size: 17px;
+  line-height: 20px;
   color: ${theme.black};
   width: 100%;
   ${color};
   ${align};
 
-  @media only screen and (max-width: 600px) {
+  ${mediaQueries.phoneWide} {
     font-size: 15px;
   }
 `

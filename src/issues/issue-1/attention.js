@@ -7,7 +7,7 @@ import { FullWidthContainer } from "../../styles/layout"
 const Attention = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "issue1-images/attention.png" }) {
+      file(relativePath: { eq: "attention.jpg" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG

@@ -24,7 +24,6 @@ const Issue1 = () => {
       <LineBreak fileName="morse-follow-me" />
       <ApartmentDrawing />
       <LineBreak fileName="morse-into-the-void" />
-
       <RejectingMaterialismChart />
       <LineBreak fileName="boring-line" />
       <Reflections />

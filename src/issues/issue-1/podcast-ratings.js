@@ -2,7 +2,12 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-import { PaddedWidthContainer, Row, Column } from "../../styles/layout"
+import {
+  PaddedWidthContainer,
+  Row,
+  Column,
+  FluidImageContainer,
+} from "../../styles/layout"
 import { H2 } from "../../styles/text"
 import { findFileByName } from "../../utils"
 
@@ -41,21 +46,24 @@ const PodcastRatings = () => {
           <br />
           Podcast Rankings
         </H2>
-        <Img
-          fixed={roachIpodImage.node.childImageSharp.fixed}
+        <FluidImageContainer
+          desktop={10}
+          mobile={30}
           style={{ margin: "0 5%" }}
-        />
+        >
+          <Img fluid={roachIpodImage.node.childImageSharp.fluid} />
+        </FluidImageContainer>
       </Row>
       <Row>
         <Column>
-          <div style={{ width: "60%" }}>
+          <FluidImageContainer desktop={60}>
             <Img fluid={firstColumnImage.node.childImageSharp.fluid} />
-          </div>
+          </FluidImageContainer>
         </Column>
         <Column>
-          <div style={{ width: "60%" }}>
+          <FluidImageContainer desktop={60}>
             <Img fluid={secondColumnImage.node.childImageSharp.fluid} />
-          </div>
+          </FluidImageContainer>
         </Column>
       </Row>
     </PaddedWidthContainer>

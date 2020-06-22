@@ -9,15 +9,27 @@ import {
   Row,
   Column,
   breakpoints,
+  mediaQueries,
 } from "../../styles/layout"
 import { Text, H1 } from "../../styles/text"
+import { findFileByName } from "../../utils"
 
 const FluidImageContainer = styled.div`
-  width: 70%;
+  width: 40%;
   margin: auto;
 
   @media only screen and (max-width: 600px) {
     width: 90%;
+  }
+`
+
+const BioText = styled(Text)`
+  font-size: 12px;
+  font-size: 15px;
+
+  ${mediaQueries.phoneWide} {
+    font-size: 10px;
+    line-height: 12px;
   }
 `
 
@@ -48,127 +60,72 @@ const Sext = () => {
     query: breakpoints.phoneWide,
   })
 
-  const imgSexted101 = data.allFile.edges.find(
-    edge => edge.node.name === "sexted-101"
-  )
+  const sexted101Image = findFileByName(data, "sexted-101")
 
-  const digitalFuckingDesktop = data.allFile.edges.find(
-    edge => edge.node.name === "1-digital-fucking"
-  )
-  const digitalFuckingMobile = data.allFile.edges.find(
-    edge => edge.node.name === "1-digital-fucking-mobile"
-  )
+  const faceImage = findFileByName(data, "face")
 
-  const displayGuideline1 = isPhoneWide
+  const guidelineHeaderImage = findFileByName(data, "guidelines")
+
+  const digitalFuckingDesktop = findFileByName(data, "1-digital-fucking")
+  const digitalFuckingMobile = findFileByName(data, "1-digital-fucking-mobile")
+  const guideline1Image = isPhoneWide
     ? digitalFuckingMobile
     : digitalFuckingDesktop
+  const phoneImage = findFileByName(data, "phone")
 
-  const imgFace = data.allFile.edges.find(edge => edge.node.name === "Face")
-
-  const guidelines = data.allFile.edges.find(
-    edge => edge.node.name === "guidelines"
+  const communicationDesktop = findFileByName(data, "2-good-communication")
+  const communicationMobile = findFileByName(
+    data,
+    "2-good-communication-mobile"
   )
-
-  const phone = data.allFile.edges.find(edge => edge.node.name === "phone")
-
-  const communicationDesktop = data.allFile.edges.find(
-    edge => edge.node.name === "2-good-communication"
-  )
-  const communicationMobile = data.allFile.edges.find(
-    edge => edge.node.name === "2-good-communication-mobile"
-  )
-  const displayGuideline2 = isPhoneWide
+  const guideline2Image = isPhoneWide
     ? communicationMobile
     : communicationDesktop
+  const listenImage = findFileByName(data, "listen")
 
-  const listen = data.allFile.edges.find(edge => edge.node.name === "listen")
+  const dirtyTalkDesktop = findFileByName(data, "3-dirty-talk")
+  const dirtyTalkMobile = findFileByName(data, "3-dirty-talk-mobile")
+  const guideline3Image = isPhoneWide ? dirtyTalkMobile : dirtyTalkDesktop
+  const dirtyTalkImage = findFileByName(data, "dirty-talk-2")
 
-  const dirtyTalkDesktop = data.allFile.edges.find(
-    edge => edge.node.name === "3-dirty-talk"
-  )
-  const dirtyTalkMobile = data.allFile.edges.find(
-    edge => edge.node.name === "3-dirty-talk-mobile"
-  )
-  const displayGuideline3 = isPhoneWide ? dirtyTalkMobile : dirtyTalkDesktop
-
-  const dirtyTalk2 = data.allFile.edges.find(
-    edge => edge.node.name === "dirty-talk-2"
-  )
-
-  const sexShakespeareDeskTop = data.allFile.edges.find(
-    edge => edge.node.name === "4-sex-shakespeare"
-  )
-  const sexShakespeareMobile = data.allFile.edges.find(
-    edge => edge.node.name === "4-sex-shakespeare-mobile"
-  )
-  const displayGuideline4 = isPhoneWide
+  const sexShakespeareDeskTop = findFileByName(data, "4-sex-shakespeare")
+  const sexShakespeareMobile = findFileByName(data, "4-sex-shakespeare-mobile")
+  const guideline4Image = isPhoneWide
     ? sexShakespeareMobile
     : sexShakespeareDeskTop
+  const shakespeareImage = findFileByName(data, "shakespeare")
 
-  const shakespeare = data.allFile.edges.find(
-    edge => edge.node.name === "shakespeare"
-  )
+  const feelYourselfDesktop = findFileByName(data, "5-feel-yourself")
+  const feelYourselfMobile = findFileByName(data, "5-feel-yourself-mobile")
+  const guideline5Image = isPhoneWide ? feelYourselfMobile : feelYourselfDesktop
+  const bathtubImage = findFileByName(data, "bathtub")
 
-  const feelYourselfDesktop = data.allFile.edges.find(
-    edge => edge.node.name === "5-feel-yourself"
-  )
+  const haveFunDesktop = findFileByName(data, "6-have-fun-and-keep-going")
+  const haveFunMobile = findFileByName(data, "6-have-fun-and-keep-going-mobile")
+  const guideline6Image = isPhoneWide ? haveFunMobile : haveFunDesktop
+  const zoomImage = findFileByName(data, "zoom")
 
-  const feelYourselfMobile = data.allFile.edges.find(
-    edge => edge.node.name === "5-feel-yourself-mobile"
-  )
+  const madLibsDesktop = findFileByName(data, "7-fucking-mad-libs")
+  const madLibsMobile = findFileByName(data, "madlib")
+  const displayMadlibImage = isPhoneWide ? madLibsMobile : madLibsDesktop
 
-  const displayGuideline5 = isPhoneWide
-    ? feelYourselfMobile
-    : feelYourselfDesktop
-
-  const bathtub = data.allFile.edges.find(edge => edge.node.name === "bathtub")
-
-  const haveFunDesktop = data.allFile.edges.find(
-    edge => edge.node.name === "6-have-fun-and-keep-going"
-  )
-  const haveFunMobile = data.allFile.edges.find(
-    edge => edge.node.name === "6-have-fun-and-keep-going-mobile"
-  )
-
-  const displayGuideline6 = isPhoneWide ? haveFunMobile : haveFunDesktop
-
-  const zoom = data.allFile.edges.find(edge => edge.node.name === "zoom")
-
-  const madLibsDesktop = data.allFile.edges.find(
-    edge => edge.node.name === "7-fucking-mad-libs"
-  )
-
-  const madLibsMobile = data.allFile.edges.find(
-    edge => edge.node.name === "madlib"
-  )
-
-  const displayMadibs = isPhoneWide ? madLibsMobile : madLibsDesktop
-
-  const cloudDesktop = data.allFile.edges.find(
-    edge => edge.node.name === "cloud"
-  )
-  const cloudMobile = data.allFile.edges.find(
-    edge => edge.node.name === "cloud-mobile"
-  )
-
-  const displayCloud = isPhoneWide ? cloudMobile : cloudDesktop
-
-  const aboutKim = data.allFile.edges.find(
-    edge => edge.node.name === "about-kim"
-  )
+  const cloudDesktop = findFileByName(data, "cloud")
+  const cloudMobile = findFileByName(data, "cloud-mobile")
+  const displayCloudImage = isPhoneWide ? cloudMobile : cloudDesktop
 
   return (
     <PaddedWidthContainer id="sext-ed">
       <Img
         style={{ marginBottom: "50px" }}
-        fluid={imgSexted101.node.childImageSharp.fluid}
+        fluid={sexted101Image.node.childImageSharp.fluid}
       />
 
       <FluidImageContainer>
-        <Img fluid={imgFace.node.childImageSharp.fluid} />
+        <Img fluid={faceImage.node.childImageSharp.fluid} />
       </FluidImageContainer>
       <Row>
         <Column style={{ margin: "auto" }}>
+          <Text>By Kimberley Chou Tsun An</Text>
           <H1 style={{ width: "100%" }}>I love dirty talk. </H1>
           <Text>
             And to be sexting—that is, sending sexually explicit photos, videos
@@ -190,13 +147,13 @@ const Sext = () => {
       </Row>
       <Img
         style={{ margin: "auto" }}
-        fluid={guidelines.node.childImageSharp.fluid}
+        fluid={guidelineHeaderImage.node.childImageSharp.fluid}
       />
 
       <Row style={{ justifyContent: "flex-start", margin: "0" }}>
         <Column width={60}>
           <div style={{ width: "100%" }}>
-            <Img fluid={displayGuideline1.node.childImageSharp.fluid} />
+            <Img fluid={guideline1Image.node.childImageSharp.fluid} />
           </div>
         </Column>
       </Row>
@@ -226,7 +183,7 @@ const Sext = () => {
         </Column>
         <Column width={40}>
           <div style={{ width: "85%", marginBottom: "20px" }}>
-            <Img fluid={phone.node.childImageSharp.fluid} />
+            <Img fluid={phoneImage.node.childImageSharp.fluid} />
           </div>
         </Column>
       </Row>
@@ -234,17 +191,17 @@ const Sext = () => {
       <Row style={{ justifyContent: "flex-end", margin: "0" }}>
         <Column width={70}>
           <div style={{ width: "100%" }}>
-            <Img fluid={displayGuideline2.node.childImageSharp.fluid} />
+            <Img fluid={guideline2Image.node.childImageSharp.fluid} />
           </div>
         </Column>
       </Row>
       <Row>
         <Column width={30}>
           <div style={{ width: "100%" }}>
-            <Img fluid={listen.node.childImageSharp.fluid} />
+            <Img fluid={listenImage.node.childImageSharp.fluid} />
           </div>
         </Column>
-        <Column width={60}>
+        <Column width={60} center>
           <Text>
             Tell your partner what you like / are into / want to do / want done
             to you.
@@ -263,17 +220,17 @@ const Sext = () => {
       </Row>
 
       <Row style={{ justifyContent: "flex-start", margin: "0" }}>
-        <Column width={75}>
+        <Column width={80}>
           <div style={{ width: "100%" }}>
-            <Img fluid={displayGuideline3.node.childImageSharp.fluid} />
+            <Img fluid={guideline3Image.node.childImageSharp.fluid} />
           </div>
         </Column>
       </Row>
       <Row style={{ marginLeft: "5%" }} reverseColumn>
-        <Column width={45} style={{ marginTop: "30px" }}>
+        <Column width={45} center>
           <Text>
             Sometimes a few flirty texts are just…a few flirty texts! Just like
-            physical sexual acts don’t always have to end in orgasm—thovugh, we
+            physical sexual acts don’t always have to end in orgasm—though, we
             love an orgasm—it can be fun to have a little chat to boost
             confidence, calm the nervous system, get the blood flowing; and
             then, put a pin in it for later, or just leave it at that. You don’t
@@ -284,7 +241,7 @@ const Sext = () => {
           <div style={{ width: "100%" }}>
             <Img
               style={{ width: "70%" }}
-              fluid={dirtyTalk2.node.childImageSharp.fluid}
+              fluid={dirtyTalkImage.node.childImageSharp.fluid}
             />
           </div>
         </Column>
@@ -293,23 +250,22 @@ const Sext = () => {
       <Row style={{ justifyContent: "flex-end", margin: "0" }}>
         <Column width={70}>
           <div style={{ width: "100%" }}>
-            <Img fluid={displayGuideline4.node.childImageSharp.fluid} />
+            <Img fluid={guideline4Image.node.childImageSharp.fluid} />
           </div>
         </Column>
       </Row>
+
       <Row>
         <Column>
-          <div style={{ width: "100%", marginLeft: "20%" }}>
+          <div style={{ width: "100%" }}>
             <Img
-              style={{ width: "80%", marginTop: "-25px" }}
-              fluid={shakespeare.node.childImageSharp.fluid}
+              style={{ width: "80%", margin: "auto" }}
+              fluid={shakespeareImage.node.childImageSharp.fluid}
             />
           </div>
         </Column>
-        <Column
-          width={33}
-          style={{ alignSelf: "flex-start", marginRight: "70px" }}
-        >
+
+        <Column width={33} center>
           <Text>
             And we don’t have to be. Phone flirtation doesn’t have to be the
             most dirrty (Christina Aguilera voice)—or even that well written.
@@ -322,7 +278,7 @@ const Sext = () => {
       <Row style={{ justifyContent: "flex-start", margin: "0" }}>
         <Column width={80}>
           <div style={{ width: "100%" }}>
-            <Img fluid={displayGuideline5.node.childImageSharp.fluid} />
+            <Img fluid={guideline5Image.node.childImageSharp.fluid} />
           </div>
         </Column>
       </Row>
@@ -345,8 +301,8 @@ const Sext = () => {
         <Column>
           <div style={{ width: "100%" }}>
             <Img
-              style={{ width: "75%", marginLeft: "60px", marginTop: "-5px" }}
-              fluid={bathtub.node.childImageSharp.fluid}
+              style={{ width: "75%", margin: "auto" }}
+              fluid={bathtubImage.node.childImageSharp.fluid}
             />
           </div>
         </Column>
@@ -355,20 +311,21 @@ const Sext = () => {
       <Row style={{ justifyContent: "flex-end", margin: "0" }}>
         <Column width={55}>
           <div style={{ width: "100%" }}>
-            <Img fluid={displayGuideline6.node.childImageSharp.fluid} />
+            <Img fluid={guideline6Image.node.childImageSharp.fluid} />
           </div>
         </Column>
       </Row>
+
       <Row>
-        <Column width={50}>
-          <div style={{ width: "100%", marginLeft: "30%" }}>
+        <Column>
+          <div style={{ width: "100%" }}>
             <Img
-              style={{ width: "80%", marginTop: "-25px" }}
-              fluid={zoom.node.childImageSharp.fluid}
+              style={{ width: "80%", marginTop: "-25px", margin: "auto" }}
+              fluid={zoomImage.node.childImageSharp.fluid}
             />
           </div>
         </Column>
-        <Column width={35}>
+        <Column width={40} center>
           <Text>
             Sex can be awkward and embarassing! Even (especially) in person. But
             this should be fun. Be gentle with yourself, especially if you’re
@@ -386,20 +343,27 @@ const Sext = () => {
       <Row style={{ justifyContent: "flex-start", margin: "0" }}>
         <Column width={80}>
           <div style={{ width: "100%" }}>
-            <Img fluid={displayCloud.node.childImageSharp.fluid} />
+            <Img fluid={displayCloudImage.node.childImageSharp.fluid} />
           </div>
         </Column>
         <Column width={20}>
           <div style={{ width: "100%", marginTop: "20%" }}>
-            <Img fluid={displayMadibs.node.childImageSharp.fluid} />
+            <Img fluid={displayMadlibImage.node.childImageSharp.fluid} />
           </div>
         </Column>
       </Row>
       <Row style={{ justifyContent: "flex-end" }}>
         <Column width={50}>
-          <div style={{ width: "100%" }}>
-            <Img fluid={aboutKim.node.childImageSharp.fluid} />
-          </div>
+          <BioText>ABOUT ME // ABOUT THIS PROJECT</BioText>
+          <BioText>
+            Kimberly Chou Tsun An (@kimberchou) lives in Detroit. Her cultural
+            work has involved food, writing, live events, and sending nudes.
+          </BioText>
+          <BioText>
+            Her project “Sexting at the End of the World” explores how we can
+            stay connected, stay hopeful and stay turning each other out,
+            especially in times of crisis.
+          </BioText>
         </Column>
       </Row>
     </PaddedWidthContainer>

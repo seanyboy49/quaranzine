@@ -3,7 +3,7 @@ import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 import { useMediaQuery } from "react-responsive"
 
-import { PaddedWidthContainer, breakpoints } from "../../styles/layout"
+import { breakpoints, FullWidthContainer } from "../../styles/layout"
 import { H2 } from "../../styles/text"
 import { findFileByName } from "../../utils"
 
@@ -39,18 +39,18 @@ const InstagramPostMap = () => {
 
   if (isPhoneWide) {
     return (
-      <PaddedWidthContainer id="inspirational-instagram-posts">
+      <FullWidthContainer id="inspirational-instagram-posts">
         <Img fluid={mobileTitleImage.node.childImageSharp.fluid} />
         <H2 center>about the pandemic</H2>
         <Img fluid={mobileImage.node.childImageSharp.fluid} />
-      </PaddedWidthContainer>
+      </FullWidthContainer>
     )
   }
 
   return (
-    <PaddedWidthContainer id="inspirational-instagram-posts">
+    <FullWidthContainer id="inspirational-instagram-posts">
       <Img fluid={desktopImage.node.childImageSharp.fluid} />
-    </PaddedWidthContainer>
+    </FullWidthContainer>
   )
 }
 
