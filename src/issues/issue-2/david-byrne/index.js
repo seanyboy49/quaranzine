@@ -3,40 +3,28 @@ import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 
 import { Background } from "./styled"
+
 import { PaddedWidthContainer, breakpoints } from "../../../styles/layout"
 
 const DavidByrne = () => {
-  // const data = useStaticQuery(graphql`
-  //   query {
-  //     allFile(filter: { relativeDirectory: { eq: "issue-2/david-byrne" } }) {
-  //       edges {
-  //         node {
-  //           id
-  //           name
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
   const data = useStaticQuery(graphql`
     query {
       mini: allFile(
         filter: { relativeDirectory: { eq: "issue-2/david-byrne/mini" } }
       ) {
-        edges {
-          node {
-            id
-            name
-          }
-        }
+        ...ImageFragment
       }
       big: allFile(
         filter: { relativeDirectory: { eq: "issue-2/david-byrne/big" } }
       ) {
         edges {
           node {
-            id
             name
+            childImageSharp {
+              fluid(quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              }
+            }
           }
         }
       }
