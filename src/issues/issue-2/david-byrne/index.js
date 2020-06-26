@@ -2,21 +2,11 @@ import React, { useState } from "react"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 
+import Header from "./Header"
 import { Background } from "./styled"
 import albumByYearData from "./albumsByYear"
+import { mapImagesToAlbums } from "./utility"
 
-function mapImagesToAlbums(albumsByYear, bigImages, miniImages) {
-  return albumsByYear.map(album => {
-    const bigImg = bigImages.nodes.find(node => node.name === album.year)
-    const miniImg = miniImages.nodes.find(node => node.name === album.year)
-
-    return {
-      ...album,
-      bigImg,
-      miniImg,
-    }
-  })
-}
 const DavidByrne = () => {
   // Query images
   const { mini, big } = useStaticQuery(graphql`
@@ -44,7 +34,7 @@ const DavidByrne = () => {
 
   return (
     <Background backgroundColor={currentAlbum.backgroundColor}>
-      <h1>David Byrne</h1>
+      <Header currentAlbum={currentAlbum} />
     </Background>
   )
 }
