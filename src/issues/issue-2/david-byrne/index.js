@@ -3,10 +3,22 @@ import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 
 import { Background } from "./styled"
-import { PaddedWidthContainer, breakpoints } from "../../../styles/layout"
-import slides from "./slides"
+import albumByYearData from "./albumsByYear"
 
+function mapImagesToAlbums(albumsByYear, bigImages, miniImages) {
+  return albumsByYear.map(album => {
+    const bigImg = bigImages.nodes.find(node => node.name === album.year)
+    const miniImg = miniImages.nodes.find(node => node.name === album.year)
+
+    return {
+      ...album,
+      bigImg,
+      miniImg,
+    }
+  })
+}
 const DavidByrne = () => {
+  // Query images
   const { mini, big } = useStaticQuery(graphql`
     query {
       mini: allFile(
@@ -21,22 +33,17 @@ const DavidByrne = () => {
       }
     }
   `)
+  // Map images to album data
+  const albums = mapImagesToAlbums(albumByYearData, big, mini)
 
-  const slidesWithImages = slides.map(slide => {
-    const bigImg = big.nodes.find(node => node.name === slide.year)
-    const miniImg = mini.nodes.find(node => node.name === slide.year)
+  // Keep track of current album
+  const [albumIndex, setAlbumIndex] = useState(0)
+  const currentAlbum = albums[albumIndex]
 
-    return {
-      ...slide,
-      bigImg,
-      miniImg,
-    }
-  })
-
-  console.log("slidesWithImages", slidesWithImages)
+  console.log("currentAlbum", currentAlbum)
 
   return (
-    <Background backgroundColor="blue">
+    <Background backgroundColor={currentAlbum.backgroundColor}>
       <h1>David Byrne</h1>
     </Background>
   )
