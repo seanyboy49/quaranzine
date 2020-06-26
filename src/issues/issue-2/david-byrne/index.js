@@ -17,16 +17,7 @@ const DavidByrne = () => {
       big: allFile(
         filter: { relativeDirectory: { eq: "issue-2/david-byrne/big" } }
       ) {
-        edges {
-          node {
-            name
-            childImageSharp {
-              fluid(quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp_tracedSVG
-              }
-            }
-          }
-        }
+        ...ImageFragment
       }
     }
   `)

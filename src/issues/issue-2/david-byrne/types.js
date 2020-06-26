@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 
 export const imageFragment = graphql`
-  fragment ImageFragment on File {
+  fragment ImageFragment on FileConnection {
     edges {
       node {
         name
@@ -12,15 +12,6 @@ export const imageFragment = graphql`
           }
         }
       }
-    }
-  }
-`
-
-export const query = graphql`
-  fragment SiteInformation on Site {
-    siteMetadata {
-      title
-      siteDescription
     }
   }
 `
