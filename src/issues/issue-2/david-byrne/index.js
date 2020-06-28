@@ -30,7 +30,6 @@ const DavidByrne = () => {
 
   // Keep track of current album
   const [albumIndex, setAlbumIndex] = useState(0)
-  console.log("albumIndex", albumIndex)
   const currentAlbum = albums[albumIndex]
 
   return (
