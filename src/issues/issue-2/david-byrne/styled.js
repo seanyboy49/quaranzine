@@ -50,8 +50,3 @@ export const Text = styled.div`
   margin: auto 0;
   color: ${({ color }) => color || "black"};
 `
-
-export const PaginationWrap = styled.div`
-  display: flex;
-  justify-content: center;
-`

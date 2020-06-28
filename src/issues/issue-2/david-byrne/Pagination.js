@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 
-import { TextBox, Text, PaginationWrap } from "./styled"
+import { TextBox, Text } from "./styled"
 
 const MiniImg = styled(Img)`
   margin: 15px;
@@ -13,9 +13,9 @@ const MiniImg = styled(Img)`
   }
 `
 
-export const MiniImgWrap = styled.div`
+const PaginationWrap = styled.div`
   display: flex;
-  flex-direction: column;
+  justify-content: center;
 `
 
 const Pagination = ({ albums, albumIndex, onClick }) => {
