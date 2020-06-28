@@ -2,7 +2,7 @@ import styled from "styled-components"
 import grit from "./grit"
 
 export const Background = styled.div`
-  height: 100vh;
+  height: 110vh;
   background: ${({ backgroundColor }) => backgroundColor};
   background-image: url(${grit});
 `
@@ -22,14 +22,9 @@ export const AnimatedWordContainer = styled.div`
 export const ImgWrap = styled.div`
   margin: auto;
   display: block;
-  height: 385px;
-  src: url(${({ src }) => src});
+  width: 20%;
   z-index: 1;
   padding: 20px;
-`
-export const Img = styled.img`
-  height: 385px;
-  src: url(${({ src }) => src});
 `
 
 // export const AnimatedTextWrap = styled(animated.div)`

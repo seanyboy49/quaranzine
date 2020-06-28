@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./Header"
 import Pagination from "./Pagination"
 
-import { Background, Text } from "./styled"
+import { Background, Text, FlexContainer, ImgWrap } from "./styled"
 import albumByYearData from "./albumsByYear.js"
 import { mapImagesToAlbums } from "./utility"
 
@@ -31,10 +31,17 @@ const DavidByrne = () => {
   // Keep track of current album
   const [albumIndex, setAlbumIndex] = useState(0)
   const currentAlbum = albums[albumIndex]
+  console.log("currentAlbum", currentAlbum)
 
   return (
     <Background backgroundColor={currentAlbum.backgroundColor}>
       <Header currentAlbum={currentAlbum} />
+      <FlexContainer>
+        <ImgWrap>
+          <Img fluid={currentAlbum.bigImg.childImageSharp.fluid} />
+        </ImgWrap>
+      </FlexContainer>
+
       <Text>{currentAlbum.title}</Text>
       <Pagination
         albums={albums}
