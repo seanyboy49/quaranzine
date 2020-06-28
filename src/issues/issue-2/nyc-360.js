@@ -42,9 +42,15 @@ const Nyc360 = () => {
 
   const roofTop = findFileByName(data, "my-rooftop-quarantine")
   return (
-    <ImgWrapper>
-      <Img fixed={roofTop.node.childImageSharp.fixed} />
-    </ImgWrapper>
+    <div>
+      <div>
+        <h2>The New York City 360º Rooftop Experience</h2>
+        <p>clickand drag plz</p>
+      </div>
+      <ImgWrapper>
+        <Img fixed={roofTop.node.childImageSharp.fixed} />
+      </ImgWrapper>
+    </div>
   )
 }
 
