@@ -3,8 +3,10 @@ import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./Header"
-import { Background } from "./styled"
-import albumByYearData from "./albumsByYear"
+import Pagination from "./Pagination"
+
+import { Background, Text } from "./styled"
+import albumByYearData from "./albumsByYear.js"
 import { mapImagesToAlbums } from "./utility"
 
 const DavidByrne = () => {
@@ -28,13 +30,18 @@ const DavidByrne = () => {
 
   // Keep track of current album
   const [albumIndex, setAlbumIndex] = useState(0)
+  console.log("albumIndex", albumIndex)
   const currentAlbum = albums[albumIndex]
-
-  console.log("currentAlbum", currentAlbum)
 
   return (
     <Background backgroundColor={currentAlbum.backgroundColor}>
       <Header currentAlbum={currentAlbum} />
+      <Text>{currentAlbum.title}</Text>
+      <Pagination
+        albums={albums}
+        albumIndex={albumIndex}
+        onClick={setAlbumIndex}
+      />
     </Background>
   )
 }

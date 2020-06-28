@@ -1,6 +1,13 @@
 import React from "react"
+import styled from "styled-components"
 
-import { TitleWrap, TextBox, Text } from "./styled"
+import { TextBox, Text } from "./styled"
+
+const TitleWrap = styled.div`
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+`
 
 const Header = ({ currentAlbum }) => {
   return (

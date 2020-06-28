@@ -32,22 +32,6 @@ export const Img = styled.img`
   src: url(${({ src }) => src});
 `
 
-export const ImgMini = styled.img`
-  margin: 15px;
-  width: ${({ size }) => size}px;
-  src: url(${({ src }) => src});
-
-  :hover {
-    cursor: pointer;
-  }
-`
-
-export const TitleWrap = styled.div`
-  display: flex;
-  justify-content: space-around;
-  padding: 10px;
-`
-
 // export const AnimatedTextWrap = styled(animated.div)`
 //   padding: 10px 20px;
 //   position: absolute;
@@ -75,9 +59,4 @@ export const Text = styled.div`
 export const PaginationWrap = styled.div`
   display: flex;
   justify-content: center;
-`
-
-export const MiniIconWrap = styled.div`
-  display: flex;
-  flex-direction: column;
 `
