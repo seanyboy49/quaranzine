@@ -62,7 +62,7 @@ const Sext = () => {
 
   const sexted101Image = findFileByName(data, "sexted-101")
 
-  const faceImage = findFileByName(data, "face")
+  const faceImage = findFileByName(data, "sext-face")
 
   const guidelineHeaderImage = findFileByName(data, "guidelines")
 
