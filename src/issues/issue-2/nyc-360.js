@@ -53,7 +53,7 @@ const Nyc360 = () => {
     }
   `)
 
-  const roofTop = findFileByName(data, "my-rooftop-quarantine")
+  const roofTopImg = findFileByName(data, "my-rooftop-quarantine")
   return (
     <div>
       <TitleSection>
@@ -61,7 +61,7 @@ const Nyc360 = () => {
         <SideNote>scroll plz</SideNote>
       </TitleSection>
       <ImgWrapper>
-        <Img fixed={roofTop.node.childImageSharp.fixed} />
+        <Img fixed={roofTopImg.node.childImageSharp.fixed} />
       </ImgWrapper>
     </div>
   )
