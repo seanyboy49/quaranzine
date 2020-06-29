@@ -16,7 +16,6 @@ export const FlexContainer = styled.div`
 export const AnimatedWordContainer = styled.div`
   margin: auto;
   background-color: lightgreen;
-  width: 100%;
 `
 
 export const ImgWrap = styled.div`

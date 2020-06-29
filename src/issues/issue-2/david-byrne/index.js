@@ -8,7 +8,13 @@ import Pagination from "./Pagination"
 import useMedia from "./useMedia"
 import albumByYearData from "./albumsByYear.js"
 import { mapImagesToAlbums } from "./utility"
-import { Background, Text, FlexContainer, ImgWrap } from "./styled"
+import {
+  Background,
+  Text,
+  FlexContainer,
+  ImgWrap,
+  AnimatedWordContainer,
+} from "./styled"
 
 const DavidByrne = () => {
   // Query images
@@ -46,9 +52,13 @@ const DavidByrne = () => {
       <Header currentAlbum={currentAlbum} />
 
       <FlexContainer>
+        <AnimatedWordContainer></AnimatedWordContainer>
+
         <ImgWrap>
           <Img fluid={currentAlbum.bigImg.childImageSharp.fluid} />
         </ImgWrap>
+
+        <AnimatedWordContainer></AnimatedWordContainer>
       </FlexContainer>
 
       <Text>{currentAlbum.title}</Text>
