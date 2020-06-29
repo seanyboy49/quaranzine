@@ -14,8 +14,6 @@ const ImgWrapper = styled.div`
   white-space: nowrap;
   user-select: none;
   cursor: pointer;
-  transition: all 0.2s;
-  transform: scale(0.98);
   will-change: transform;
   position: relative;
   border: none;
@@ -32,21 +30,12 @@ const Title = styled.h2`
   padding: 0;
   margin: 0;
 `
-const sideNote = styled.p`
-padding: 0
-margin: 0
+const SideNote = styled.p`
+  padding: 0;
+  margin: 0;
 `
 
 const Nyc360 = () => {
-  const [isDown, setIsDown] = useState(false)
-
-  let startX
-  let scrollLeft
-
-  const handleClick = e => {
-    console.log(e)
-  }
-
   const data = useStaticQuery(graphql`
     query {
       allFile(filter: { relativeDirectory: { eq: "issue2-images" } }) {
@@ -54,7 +43,7 @@ const Nyc360 = () => {
           node {
             name
             childImageSharp {
-              fixed(height: 700, width: 11200) {
+              fixed(height: 581, width: 9296) {
                 ...GatsbyImageSharpFixed_withWebp_tracedSVG
               }
             }
@@ -69,9 +58,9 @@ const Nyc360 = () => {
     <div>
       <TitleSection>
         <Title>The New York City 360º Rooftop Experience</Title>
-        <sideNote>click and drag plz</sideNote>
+        <SideNote>scroll plz</SideNote>
       </TitleSection>
-      <ImgWrapper onClick={e => handleClick(e)}>
+      <ImgWrapper>
         <Img fixed={roofTop.node.childImageSharp.fixed} />
       </ImgWrapper>
     </div>
