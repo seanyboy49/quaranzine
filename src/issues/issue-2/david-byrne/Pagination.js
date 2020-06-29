@@ -23,7 +23,7 @@ const Pagination = ({ albums, albumIndex, onClick }) => {
     <PaginationWrap>
       {albums.map((album, index) => {
         return (
-          <div key={index} onClick={() => onClick(index)}>
+          <div key={album.year} onClick={() => onClick(index)}>
             <MiniImg fluid={album.miniImg.childImageSharp.fluid} />
             {index === albumIndex ? (
               <TextBox size={16}>{album.year}</TextBox>

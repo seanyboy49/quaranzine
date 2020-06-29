@@ -19,6 +19,7 @@ export default function useMedia(queries, columnValues, defaultColumnValue) {
   const [numberOfColumns, setNumberOfColumns] = useState(match)
 
   useEffect(() => {
+    console.log("usefect media")
     const resizeHandler = () => setNumberOfColumns(match)
     window.addEventListener("resize", resizeHandler)
 
