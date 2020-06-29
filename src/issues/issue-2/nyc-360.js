@@ -1,9 +1,10 @@
-import React from "react"
+import React, { useState } from "react"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 import styled, { css } from "styled-components"
 
 import { findFileByName } from "../../utils"
+import theme from "../../styles/theme"
 
 const ImgWrapper = styled.div`
   height: auto;
@@ -22,7 +23,30 @@ const ImgWrapper = styled.div`
   margin: 0px;
 `
 
+const TitleSection = styled.div`
+  margin: 30px;
+  padding: 2px 0;
+`
+const Title = styled.h2`
+  color: #ff07a9;
+  padding: 0;
+  margin: 0;
+`
+const sideNote = styled.p`
+padding: 0
+margin: 0
+`
+
 const Nyc360 = () => {
+  const [isDown, setIsDown] = useState(false)
+
+  let startX
+  let scrollLeft
+
+  const handleClick = e => {
+    console.log(e)
+  }
+
   const data = useStaticQuery(graphql`
     query {
       allFile(filter: { relativeDirectory: { eq: "issue2-images" } }) {
@@ -43,11 +67,11 @@ const Nyc360 = () => {
   const roofTop = findFileByName(data, "my-rooftop-quarantine")
   return (
     <div>
-      <div>
-        <h2>The New York City 360º Rooftop Experience</h2>
-        <p>clickand drag plz</p>
-      </div>
-      <ImgWrapper>
+      <TitleSection>
+        <Title>The New York City 360º Rooftop Experience</Title>
+        <sideNote>click and drag plz</sideNote>
+      </TitleSection>
+      <ImgWrapper onClick={e => handleClick(e)}>
         <Img fixed={roofTop.node.childImageSharp.fixed} />
       </ImgWrapper>
     </div>
