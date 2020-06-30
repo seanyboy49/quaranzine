@@ -5,6 +5,16 @@ import styled from "styled-components"
 
 import { findFileByName } from "../../utils"
 
+const LeftSection = styled.div`
+  margin: 50px;
+`
+const PMargin = styled.p`
+  margin: ${props => props.margin}px 40px;
+`
+const ComponentWrapper = styled.div`
+  display: flex;
+`
+
 const Paradise = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -34,10 +44,10 @@ const Paradise = () => {
   const sidewalk_img = findFileByName(data, "sidewalk-edit")
   const street_img = findFileByName(data, "street-edit")
   return (
-    <>
-      <div>
+    <ComponentWrapper>
+      <LeftSection>
         <Img fixed={sidewalk_img.node.childImageSharp.fixed} />
-        <p>
+        <PMargin margin={120}>
           It's a sin to seek perfection
           <br />
           It's a sin to help the poor
@@ -64,12 +74,32 @@ const Paradise = () => {
           <br />
           The gates of paradise
           <br />
+        </PMargin>
+      </LeftSection>
+      <div>
+        <Img fixed={park_img.node.childImageSharp.fixed} />
+        <p>
+          I am nothing like my sister
+          <br />
+          I am nothing like my mom
+          <br />
+          You can't see me in my father
+          <br />
+          Wonder where did I come from?
+          <br />
+          <br />
+          And the laws of men are not the laws of heaven
+          <br />
+          And angel's breath is like the desert wind
+          <br />
+          And terrorists are acting out of love, sweet love
+          <br />
+          To bring us home again
+          <br />
         </p>
+        <Img fixed={street_img.node.childImageSharp.fixed} />
       </div>
-
-      {/* <Img fixed={park_img.node.childImageSharp.fixed} /> */}
-      {/* <Img fixed={street_img.node.childImageSharp.fixed} /> */}
-    </>
+    </ComponentWrapper>
   )
 }
 
