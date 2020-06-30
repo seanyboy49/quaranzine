@@ -3,7 +3,7 @@ import ResizeObserver from "resize-observer-polyfill"
 
 export default function useMeasure() {
   // Create a ref that will be passed to an element to track
-  const ref = useRef()
+  const ref = useRef(null)
   // Initalize the dimensions of the element
   const [bounds, setBounds] = useState({
     left: 0,
