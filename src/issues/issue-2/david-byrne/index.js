@@ -9,6 +9,7 @@ import Pagination from "./Pagination"
 
 import useMedia from "./useMedia"
 import useMeasure from "./useMeasure"
+import usePositions from "./usePositions"
 import albumByYearData from "./albumsByYear.js"
 import { mapImagesToAlbums } from "./utility"
 import {
@@ -20,9 +21,6 @@ import {
   AnimatedTextWrap,
   TextBox,
 } from "./styled"
-
-import data from "./data"
-import "./index.css"
 
 const DavidByrne = () => {
   // Query images
@@ -49,35 +47,27 @@ const DavidByrne = () => {
   const words = currentAlbum.words
 
   // Hook1: Tie media queries to the number of columns
-  // const numberOfColumns = useMedia(
-  //   ["(min-width: 1440px)", "(min-width: 1000px)"],
-  //   [4, 3],
-  //   2
-  // )
-
-  const numberOfColumns = 2
-
-  console.log("numberOfColumns", numberOfColumns)
+  const numberOfColumns = useMedia(
+    ["(min-width: 1440px)", "(min-width: 1000px)"],
+    [4, 3],
+    2
+  )
 
   // Hook2: Measure the width of the container element
   const [ref, { width: containerWidth }] = useMeasure()
 
-  // Form a grid of stacked items using width & columns
-  // Column heights are initiliazed to zero
-  // because we'll add to them every time we place a new tile
+  // Column heights are initiliazed to zero because we'll add to them every time we place a new tile
   let leftHeights = new Array(numberOfColumns).fill(0)
 
   const CARD_HEIGHT = 85
 
   // select the first half of the list
-  // const half = Math.ceil(words.length / 2)
-  // const firstHalfWords = words.slice(0, half)
-  // const secondHalfWords = words.slice(half)
+  const half = Math.ceil(words.length / 2)
+  const firstHalfWords = words.slice(0, half)
+  const secondHalfWords = words.slice(half)
 
-  let leftGridItems = words.map(word => {
-    // We want to fill the smallest column with a tile
-    // before adding tiles to other columns
-
+  let leftGridItems = firstHalfWords.map(word => {
+    // We want to fill the smallest column with a tile before adding tiles to other columns
     const columnIndex = leftHeights.indexOf(Math.min(...leftHeights))
     // X = Width of container divided by number of columns and multipled by column index. This calculates how much to translate x
     // Y = The height of the column
@@ -101,35 +91,19 @@ const DavidByrne = () => {
   const xOffset = window.innerWidth / 2
   const yOffset = 212
 
-  const leftTransitions = useTransition(leftGridItems, item => item.word, {
-    from: ({ xy, width, height }) => {
-      return {
-        xy: [xOffset, yOffset],
-        width,
-        height,
-        opacity: 0,
-      }
-    },
-    enter: ({ xy, width, height }) => ({ xy, width, height, opacity: 1 }),
-    update: ({ xy, width, height }) => ({ xy, width, height }),
-    leave: ({ xy, width, height }) => {
-      return {
-        xy: [xOffset, yOffset],
-        opacity: 0,
-      }
-    },
-    config: { mass: 5, tension: 500, friction: 100 },
-    trail: 25,
-  })
+  const leftTransitions = usePositions(leftGridItems, { xOffset, yOffset })
 
-  const style = { height: Math.max(...leftHeights) }
+  console.log("leftTransitions", leftTransitions)
 
   return (
     <Background backgroundColor={currentAlbum.backgroundColor}>
       <Header currentAlbum={currentAlbum} />
 
       <FlexContainer>
-        <AnimatedWordContainer {...ref} style={style}>
+        <AnimatedWordContainer
+          {...ref}
+          style={{ height: Math.max(...leftHeights) }}
+        >
           {leftTransitions.map(({ item, props: { xy, ...rest }, key }) => {
             return (
               <AnimatedTextWrap
