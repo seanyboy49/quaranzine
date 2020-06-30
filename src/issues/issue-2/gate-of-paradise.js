@@ -6,13 +6,23 @@ import styled from "styled-components"
 import { findFileByName } from "../../utils"
 
 const LeftSection = styled.div`
-  margin: 50px;
+  margin: 50px; 100px; 
+  width: 35%
+`
+const RightSection = styled.div`
+  width: 35%;
 `
 const PMargin = styled.p`
-  margin: ${props => props.margin}px 40px;
+  margin: ${props => props.margin};
 `
 const ComponentWrapper = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: center;
+`
+const ImageWrapper = styled.div`
+    width: 130%
+    height: 130%
 `
 
 const Paradise = () => {
@@ -46,8 +56,8 @@ const Paradise = () => {
   return (
     <ComponentWrapper>
       <LeftSection>
-        <Img fixed={sidewalk_img.node.childImageSharp.fixed} />
-        <PMargin margin={120}>
+        <Img fluid={sidewalk_img.node.childImageSharp.fluid} />
+        <PMargin margin={"120px 40px"}>
           It's a sin to seek perfection
           <br />
           It's a sin to help the poor
@@ -76,9 +86,9 @@ const Paradise = () => {
           <br />
         </PMargin>
       </LeftSection>
-      <div>
-        <Img fixed={park_img.node.childImageSharp.fixed} />
-        <p>
+      <RightSection>
+        <Img fluid={street_img.node.childImageSharp.fluid} />
+        <PMargin margin={"70px 0px"}>
           I am nothing like my sister
           <br />
           I am nothing like my mom
@@ -96,9 +106,9 @@ const Paradise = () => {
           <br />
           To bring us home again
           <br />
-        </p>
-        <Img fixed={street_img.node.childImageSharp.fixed} />
-      </div>
+        </PMargin>
+        <Img fluid={park_img.node.childImageSharp.fluid} />
+      </RightSection>
     </ComponentWrapper>
   )
 }
