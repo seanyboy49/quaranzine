@@ -1,7 +1,8 @@
 import { useTransition } from "react-spring"
 
 const usePositions = (gridItems, { xOffset, yOffset }) =>
-  useTransition(gridItems, item => item.word, {
+  useTransition(gridItems, {
+    keys: item => item.word,
     from: ({ xy, width, height }) => {
       return {
         xy: [xOffset, yOffset],

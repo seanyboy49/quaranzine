@@ -22,6 +22,8 @@ import {
   TextBox,
 } from "./styled"
 
+const CARD_HEIGHT = 85
+
 const DavidByrne = () => {
   // Query images
   const { mini, big } = useStaticQuery(graphql`
@@ -59,8 +61,6 @@ const DavidByrne = () => {
   // Column heights are initiliazed to zero because we'll add to them every time we place a new tile
   let leftHeights = new Array(numberOfColumns).fill(0)
 
-  const CARD_HEIGHT = 85
-
   // select the first half of the list
   const half = Math.ceil(words.length / 2)
   const firstHalfWords = words.slice(0, half)
@@ -91,9 +91,9 @@ const DavidByrne = () => {
   const xOffset = window.innerWidth / 2
   const yOffset = 212
 
-  const leftTransitions = usePositions(leftGridItems, { xOffset, yOffset })
+  const renderTransitions = usePositions(leftGridItems, { xOffset, yOffset })
 
-  console.log("leftTransitions", leftTransitions)
+  console.log("render")
 
   return (
     <Background backgroundColor={currentAlbum.backgroundColor}>
@@ -104,7 +104,22 @@ const DavidByrne = () => {
           {...ref}
           style={{ height: Math.max(...leftHeights) }}
         >
-          {leftTransitions.map(({ item, props: { xy, ...rest }, key }) => {
+          {renderTransitions(({ xy, ...rest }, item, transition) => {
+            // console.log("transition.phase", transition.phase)
+
+            return (
+              <AnimatedTextWrap
+                key={item.word}
+                style={{
+                  transform: xy.to((x, y) => `translate3d(${x}px, ${y}px, 0)`),
+                  ...rest,
+                }}
+              >
+                <TextBox>{item.word}</TextBox>
+              </AnimatedTextWrap>
+            )
+          })}
+          {/* {leftTransitions.map(({ item, props: { xy, ...rest }, key }) => {
             return (
               <AnimatedTextWrap
                 key={key}
@@ -118,7 +133,7 @@ const DavidByrne = () => {
                 <TextBox>{item.word}</TextBox>
               </AnimatedTextWrap>
             )
-          })}
+          })} */}
         </AnimatedWordContainer>
 
         <ImgWrap>
