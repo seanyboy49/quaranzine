@@ -19,6 +19,7 @@ export const AnimatedWordContainer = styled.div`
   margin: auto;
   background-color: lightgreen;
   width: 100%;
+  padding-left: 20px;
 `
 
 export const ImgWrap = styled.div`
@@ -30,7 +31,6 @@ export const ImgWrap = styled.div`
 `
 
 export const AnimatedTextWrap = styled(animated.div)`
-  padding: 10px 20px;
   position: absolute;
   will-change: transform, width, height, opacity;
 `
