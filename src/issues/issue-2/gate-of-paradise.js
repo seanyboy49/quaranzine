@@ -6,14 +6,17 @@ import styled from "styled-components"
 import { findFileByName } from "../../utils"
 
 const LeftSection = styled.div`
-  margin: 50px; 100px; 
-  width: 35%
+  margin: 50px 0px;
+  margin-right: 7%;
+  width: 35%;
 `
 const RightSection = styled.div`
   width: 35%;
+  margin-left: 7%;
 `
 const PMargin = styled.p`
   margin: ${props => props.margin};
+  font-size: 1.25rem;
 `
 const ComponentWrapper = styled.div`
   display: flex;
