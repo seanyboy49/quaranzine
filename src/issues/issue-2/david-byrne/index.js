@@ -91,7 +91,10 @@ const DavidByrne = () => {
   const xOffset = window.innerWidth / 2
   const yOffset = 212
 
-  const renderTransitions = usePositions(leftGridItems, { xOffset, yOffset })
+  const renderLeftTransitions = usePositions(leftGridItems, {
+    xOffset,
+    yOffset,
+  })
 
   console.log("render")
 
@@ -104,14 +107,14 @@ const DavidByrne = () => {
           {...ref}
           style={{ height: Math.max(...leftHeights) }}
         >
-          {renderTransitions(({ xy, ...rest }, item, transition) => {
-            // console.log("transition.phase", transition.phase)
-
+          {renderLeftTransitions(({ xy, ...rest }, item, transition) => {
+            // console.log("rest", rest)
             return (
               <AnimatedTextWrap
                 key={item.word}
                 style={{
                   transform: xy.to((x, y) => `translate3d(${x}px, ${y}px, 0)`),
+
                   ...rest,
                 }}
               >
