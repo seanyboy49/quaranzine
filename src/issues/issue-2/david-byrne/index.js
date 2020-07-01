@@ -1,28 +1,21 @@
 import React, { useState, useEffect } from "react"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
-import { useTransition, interpolate, a } from "react-spring"
 import _ from "lodash"
 
 import Header from "./Header"
+import AnimatedWords from "./AnimatedWords"
 import Pagination from "./Pagination"
 
 import useMedia from "./useMedia"
 import useMeasure from "./useMeasure"
 import usePositions from "./usePositions"
 import albumByYearData from "./albumsByYear.js"
-import { mapImagesToAlbums } from "./utility"
-import {
-  Background,
-  Text,
-  FlexContainer,
-  ImgWrap,
-  AnimatedWordContainer,
-  AnimatedTextWrap,
-  TextBox,
-} from "./styled"
+import { mapImagesToAlbums, calculateGridItems } from "./utility"
+import { Background, Text, FlexContainer, ImgWrap } from "./styled"
 
-const CARD_HEIGHT = 85
+const xOffset = window.innerWidth / 2
+const yOffset = 212
 
 const DavidByrne = () => {
   // Query images
@@ -58,44 +51,33 @@ const DavidByrne = () => {
   // Hook2: Measure the width of the container element
   const [ref, { width: containerWidth }] = useMeasure()
 
-  // Column heights are initiliazed to zero because we'll add to them every time we place a new tile
-  let leftHeights = new Array(numberOfColumns).fill(0)
-
-  // select the first half of the list
   const half = Math.ceil(words.length / 2)
   const firstHalfWords = words.slice(0, half)
   const secondHalfWords = words.slice(half)
 
-  let leftGridItems = firstHalfWords.map(word => {
-    // We want to fill the smallest column with a tile before adding tiles to other columns
-    const columnIndex = leftHeights.indexOf(Math.min(...leftHeights))
-    // X = Width of container divided by number of columns and multipled by column index. This calculates how much to translate x
-    // Y = The height of the column
-    const xy = [
-      (containerWidth / numberOfColumns) * columnIndex,
-      leftHeights[columnIndex],
-    ]
-
-    // Increase the column height by the card height
-    leftHeights[columnIndex] += CARD_HEIGHT
-
-    return {
-      word,
-      xy,
-      width: containerWidth / numberOfColumns, // card width is calculated to match the column width
-      height: CARD_HEIGHT,
-    }
+  // Transform items to give them animatable values
+  const [leftHeights, leftGridItems] = calculateGridItems({
+    numColumns: numberOfColumns,
+    items: firstHalfWords,
+    width: containerWidth,
   })
 
-  //Hook5: Turn the static grid values into animated transitions, any addition, removal or change will be animated
-  const xOffset = window.innerWidth / 2
-  const yOffset = 212
+  const [rightHeights, rightGridItems] = calculateGridItems({
+    numColumns: numberOfColumns,
+    items: secondHalfWords,
+    width: containerWidth,
+  })
 
+  //Hook3: Turn the static grid values into animated transitions, any addition, removal or change will be animated
   const renderLeftTransitions = usePositions(leftGridItems, {
     xOffset,
     yOffset,
   })
 
+  const renderRightTransitions = usePositions(rightGridItems, {
+    xOffset: -xOffset,
+    yOffset,
+  })
   console.log("render")
 
   return (
@@ -103,47 +85,21 @@ const DavidByrne = () => {
       <Header currentAlbum={currentAlbum} />
 
       <FlexContainer>
-        <AnimatedWordContainer
-          {...ref}
-          style={{ height: Math.max(...leftHeights) }}
-        >
-          {renderLeftTransitions(({ xy, ...rest }, item, transition) => {
-            // console.log("rest", rest)
-            return (
-              <AnimatedTextWrap
-                key={item.word}
-                style={{
-                  transform: xy.to((x, y) => `translate3d(${x}px, ${y}px, 0)`),
-
-                  ...rest,
-                }}
-              >
-                <TextBox>{item.word}</TextBox>
-              </AnimatedTextWrap>
-            )
-          })}
-          {/* {leftTransitions.map(({ item, props: { xy, ...rest }, key }) => {
-            return (
-              <AnimatedTextWrap
-                key={key}
-                style={{
-                  transform: xy.interpolate(
-                    (x, y) => `translate3d(${x}px,${y}px,0)`
-                  ),
-                  ...rest,
-                }}
-              >
-                <TextBox>{item.word}</TextBox>
-              </AnimatedTextWrap>
-            )
-          })} */}
-        </AnimatedWordContainer>
+        <AnimatedWords
+          forwardedRef={ref}
+          heights={leftHeights}
+          renderTransitions={renderLeftTransitions}
+        />
 
         <ImgWrap>
           <Img fluid={currentAlbum.bigImg.childImageSharp.fluid} />
         </ImgWrap>
 
-        <AnimatedWordContainer></AnimatedWordContainer>
+        <AnimatedWords
+          forwardedRef={ref}
+          heights={rightHeights}
+          renderTransitions={renderRightTransitions}
+        />
       </FlexContainer>
 
       <Text>{currentAlbum.title}</Text>

@@ -6,19 +6,21 @@ class NumberCruncher {
     this.upperBound = upperBound
   }
 
+  // Randomly make the number positive or negative
   positiveOrNegative(number) {
     return (number *= Math.floor(Math.random() * 2) == 1 ? 1 : -1)
   }
 
-  getRandomNumberFromRange() {
+  // Generate a random number up until an upperBound
+  getRandomNumber() {
     const randomNumber = Math.floor(Math.random() * this.upperBound) + 1
 
     return this.positiveOrNegative(randomNumber)
   }
 
   getXY() {
-    const x = this.getRandomNumberFromRange()
-    const y = this.getRandomNumberFromRange()
+    const x = this.getRandomNumber()
+    const y = this.getRandomNumber()
 
     return [x, y]
   }
