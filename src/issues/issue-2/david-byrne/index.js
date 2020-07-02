@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 import _ from "lodash"
+import { useMediaQuery } from "react-responsive"
 
 import Header from "./Header"
 import AnimatedWords from "./AnimatedWords"
@@ -13,11 +14,16 @@ import usePositions from "./usePositions"
 import albumByYearData from "./albumsByYear.js"
 import { mapImagesToAlbums, calculateGridItems } from "./utility"
 import { Background, Text, FlexContainer, ImgWrap } from "./styled"
+import { mediaQueries, breakpoints } from "../../../styles/layout"
+import { H1 } from "../../../styles/text"
 
 const xOffset = window.innerWidth / 2
-const yOffset = 212
+const yOffset = window.innerHeight / 2
 
 const DavidByrne = () => {
+  const isPhoneWide = useMediaQuery({
+    query: breakpoints.phoneWide,
+  })
   // Query images
   const { mini, big } = useStaticQuery(graphql`
     query {
@@ -102,7 +108,9 @@ const DavidByrne = () => {
         />
       </FlexContainer>
 
-      <Text>{currentAlbum.title}</Text>
+      <H1 black center>
+        {currentAlbum.title}
+      </H1>
       <Pagination
         albums={albums}
         albumIndex={albumIndex}

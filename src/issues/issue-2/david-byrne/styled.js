@@ -13,6 +13,7 @@ export const FlexContainer = styled.div`
   background-color: lightblue;
   display: flex;
   justify-content: space-around;
+  flex: row;
 `
 
 export const AnimatedWordContainer = styled.div`
