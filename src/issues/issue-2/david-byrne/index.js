@@ -15,7 +15,6 @@ import albumByYearData from "./albumsByYear.js"
 import { mapImagesToAlbums, calculateGridItems } from "./utility"
 import { Background, Text, FlexContainer, ImgWrap } from "./styled"
 import { mediaQueries, breakpoints } from "../../../styles/layout"
-import { H1 } from "../../../styles/text"
 
 const xOffset = window.innerWidth / 2
 const yOffset = window.innerHeight / 2
@@ -98,7 +97,11 @@ const DavidByrne = () => {
         />
 
         <ImgWrap>
-          <Img fluid={currentAlbum.bigImg.childImageSharp.fluid} />
+          <Img
+            fluid={currentAlbum.bigImg.childImageSharp.fluid}
+            style={isPhoneWide && { maxHeight: "30vh" }}
+            imgStyle={{ objectFit: "contain" }}
+          />
         </ImgWrap>
 
         <AnimatedWords
@@ -108,9 +111,9 @@ const DavidByrne = () => {
         />
       </FlexContainer>
 
-      <H1 black center>
+      <Text bold fontSize={30} color={currentAlbum.textColor}>
         {currentAlbum.title}
-      </H1>
+      </Text>
       <Pagination
         albums={albums}
         albumIndex={albumIndex}

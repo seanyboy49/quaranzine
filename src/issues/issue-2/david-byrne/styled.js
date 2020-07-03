@@ -1,7 +1,8 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { animated } from "react-spring"
 
 import grit from "./grit"
+import { mediaQueries } from "../../../styles/layout"
 
 export const Background = styled.div`
   height: 110vh;
@@ -13,7 +14,11 @@ export const FlexContainer = styled.div`
   background-color: lightblue;
   display: flex;
   justify-content: space-around;
-  flex: row;
+
+  ${mediaQueries.phoneWide} {
+    flex-direction: column;
+    height: 70vh;
+  }
 `
 
 export const AnimatedWordContainer = styled.div`
@@ -26,9 +31,13 @@ export const AnimatedWordContainer = styled.div`
 export const ImgWrap = styled.div`
   margin: auto;
   display: block;
-  width: 40%;
+  width: 50%;
   z-index: 1;
-  padding: 20px;
+  padding: 30px;
+
+  ${mediaQueries.tabletWide} {
+    height: 50%;
+  }
 `
 
 export const AnimatedTextWrap = styled(animated.div)`
@@ -42,14 +51,30 @@ export const TextBox = styled.div`
   background: ${({ color }) => color || "white"};
   box-shadow: 5px 5px;
   font-family: "arial";
-  font-size: 20px;
+  // font-size: ${({ fontSize }) => `${fontSize}px` || "22px"};
+  
+  
+  // font-size: 2vw;
+
+
+  font-weight: ${({ bold }) => bold && `900`};
   text-align: center;
+
+  font-size: clamp(12px, 1rem + 1vw, 24px);
+
+  ${mediaQueries.phoneWide} {
+    padding: 5px 10px;
+    font-size: clamp(10px, 1rem + 1vw, 16px);
+  }
+
+
 `
 
 export const Text = styled.div`
   font-family: "arial";
-  font-size: 22px;
   text-align: center;
   margin: auto 0;
   color: ${({ color }) => color || "black"};
+  font-weight: ${({ bold }) => bold && `900`};
+  font-size: ${({ fontSize }) => `${fontSize}px` || "22px"};
 `
