@@ -37,7 +37,7 @@ const PublishedIssue2 = () => {
         <StyledLink to="/archive/">archive</StyledLink>
       </NavBar>
       <DavidByrne />
-      {/* <Issue2 /> */}
+      <Issue2 />
     </>
   )
 }

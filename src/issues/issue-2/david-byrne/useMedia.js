@@ -13,7 +13,7 @@ export default function useMedia({ queries, values, defaultValue }) {
     const matchedQueryIndex = queries.findIndex(
       query => matchMedia(query).matches
     )
-    console.log("matchedQueryIndex", matchedQueryIndex)
+
     return values[matchedQueryIndex] || defaultValue
   }, [values, defaultValue, queries])
 

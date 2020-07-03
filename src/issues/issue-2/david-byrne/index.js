@@ -19,7 +19,7 @@ import {
   ImgWrap,
   WordCountContainer,
 } from "./styled"
-import { Row, breakpoints } from "../../../styles/layout"
+import { breakpoints } from "../../../styles/layout"
 
 const xOffset = window.innerWidth / 2
 
@@ -95,7 +95,16 @@ const DavidByrne = () => {
   const renderRightTransitions = usePositions(rightGridItems, {
     xOffset: -xOffset,
   })
-  console.log("render")
+
+  function handleClick(value) {
+    if (value === -1) {
+      setAlbumIndex(albums.length - 1)
+    } else if (value === albums.length) {
+      setAlbumIndex(0)
+    } else {
+      setAlbumIndex(value)
+    }
+  }
 
   return (
     <Background backgroundColor={currentAlbum.backgroundColor}>
@@ -109,6 +118,14 @@ const DavidByrne = () => {
         />
 
         <ImgWrap>
+          {isPhoneWide && (
+            <>
+              <button onClick={() => handleClick(albumIndex - 1)}>
+                Previous
+              </button>
+              <button onClick={() => handleClick(albumIndex + 1)}>Next</button>
+            </>
+          )}
           <Img
             fluid={currentAlbum.bigImg.childImageSharp.fluid}
             style={isPhoneWide ? { maxHeight: "20vh" } : { minWidth: "25vw" }}
