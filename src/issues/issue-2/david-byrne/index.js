@@ -31,12 +31,12 @@ const DavidByrne = () => {
   const { mini, big } = useStaticQuery(graphql`
     query {
       mini: allFile(
-        filter: { relativeDirectory: { eq: "issue-2/david-byrne/mini" } }
+        filter: { relativeDirectory: { eq: "issue2-images/david-byrne/mini" } }
       ) {
         ...ImageFragment
       }
       big: allFile(
-        filter: { relativeDirectory: { eq: "issue-2/david-byrne/big" } }
+        filter: { relativeDirectory: { eq: "issue2-images/david-byrne/big" } }
       ) {
         ...ImageFragment
       }
