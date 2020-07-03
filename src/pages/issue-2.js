@@ -7,7 +7,6 @@ import { Text } from "../styles/text"
 import { breakpoints } from "../styles/layout"
 import logo from "../images/logo.svg"
 
-import DavidByrne from "../issues/issue-2/david-byrne"
 import Issue2 from "../issues/issue-2"
 
 const PublishedIssue2 = () => {
@@ -36,7 +35,6 @@ const PublishedIssue2 = () => {
         {!isPhoneWide && <Text center>the quaranzine for the quaranzined</Text>}
         <StyledLink to="/archive/">archive</StyledLink>
       </NavBar>
-      <DavidByrne />
       <Issue2 />
     </>
   )
