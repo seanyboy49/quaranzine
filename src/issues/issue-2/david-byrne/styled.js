@@ -8,10 +8,14 @@ export const Background = styled.div`
   height: 110vh;
   background: ${({ backgroundColor }) => backgroundColor};
   background-image: url(${grit});
+
+  ${mediaQueries.phoneWide} {
+    height: 100vh;
+  }
 `
 
 export const FlexContainer = styled.div`
-  background-color: lightblue;
+  // background-color: lightblue;
   display: flex;
   justify-content: center;
 
@@ -22,7 +26,7 @@ export const FlexContainer = styled.div`
 
 export const AnimatedWordContainer = styled.div`
   margin: auto;
-  background-color: lightgreen;
+  // background-color: lightgreen;
   width: 100%;
 `
 

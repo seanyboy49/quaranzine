@@ -47,7 +47,9 @@ const DavidByrne = () => {
 
   // Keep track of current album
   const [albumIndex, setAlbumIndex] = useState(0)
+  const previousAlbum = albums[albumIndex - 1]
   const currentAlbum = albums[albumIndex]
+  const nextAlbum = albums[albumIndex + 1]
   const words = currentAlbum.words
 
   // Hook1: Tie media queries to the number of columns and height offset
@@ -117,21 +119,21 @@ const DavidByrne = () => {
           renderTransitions={renderLeftTransitions}
         />
 
-        <ImgWrap>
-          {isPhoneWide && (
-            <>
-              <button onClick={() => handleClick(albumIndex - 1)}>
-                Previous
-              </button>
-              <button onClick={() => handleClick(albumIndex + 1)}>Next</button>
-            </>
-          )}
-          <Img
-            fluid={currentAlbum.bigImg.childImageSharp.fluid}
-            style={isPhoneWide ? { maxHeight: "20vh" } : { minWidth: "25vw" }}
-            imgStyle={{ objectFit: "contain" }}
+        {isPhoneWide ? (
+          <Pagination
+            albums={albums}
+            albumIndex={albumIndex}
+            onClick={setAlbumIndex}
           />
-        </ImgWrap>
+        ) : (
+          <ImgWrap>
+            <Img
+              fluid={currentAlbum.bigImg.childImageSharp.fluid}
+              style={isPhoneWide ? { maxHeight: "20vh" } : { minWidth: "15vw" }}
+              imgStyle={{ objectFit: "contain" }}
+            />
+          </ImgWrap>
+        )}
 
         <AnimatedWords
           forwardedRef={ref}
