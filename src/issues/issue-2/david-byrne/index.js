@@ -47,9 +47,7 @@ const DavidByrne = () => {
 
   // Keep track of current album
   const [albumIndex, setAlbumIndex] = useState(0)
-  const previousAlbum = albums[albumIndex - 1]
   const currentAlbum = albums[albumIndex]
-  const nextAlbum = albums[albumIndex + 1]
   const words = currentAlbum.words
 
   // Hook1: Tie media queries to the number of columns and height offset
