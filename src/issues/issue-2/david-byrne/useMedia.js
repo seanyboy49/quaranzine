@@ -2,28 +2,29 @@ import { useEffect, useState, useCallback } from "react"
 /**
  *
  * @param {Array<String>} queries - An array media queries, e.g., '(min-width: 1000px)'
- * @param {Array<Number>} columnValues - An array of possible number of columns to return
- * @param {Number} defaultColumnValue - If no matches, return the defaultColumnValue
+ * @param {Array<Object>} values - An array of possible number of media values to return
+ * @param {Number} defaultValue - If no matches, return the defaultValue
  */
 
-export default function useMedia(queries, columnValues, defaultColumnValue) {
+export default function useMedia({ queries, values, defaultValue }) {
   // findIndex returns the index of the media query that matches
-  // we then use that index to return the corresponding column
-  const match = useCallback(
-    () =>
-      columnValues[queries.findIndex(q => matchMedia(q).matches)] ||
-      defaultColumnValue,
-    [columnValues, defaultColumnValue, queries]
-  )
+  // we then use that index to return the corresponding media value
+  const match = useCallback(() => {
+    const matchedQueryIndex = queries.findIndex(
+      query => matchMedia(query).matches
+    )
 
-  const [numberOfColumns, setNumberOfColumns] = useState(match)
+    return values[matchedQueryIndex] || defaultValue
+  }, [values, defaultValue, queries])
+
+  const [mediaValues, setMediaValues] = useState(match)
 
   useEffect(() => {
-    const resizeHandler = () => setNumberOfColumns(match)
+    const resizeHandler = () => setMediaValues(match)
     window.addEventListener("resize", resizeHandler)
 
     return () => window.removeEventListener("resize", resizeHandler)
   }, [match])
 
-  return numberOfColumns
+  return mediaValues
 }

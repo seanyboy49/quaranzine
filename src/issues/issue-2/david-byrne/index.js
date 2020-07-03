@@ -47,11 +47,14 @@ const DavidByrne = () => {
   const words = currentAlbum.words
 
   // Hook1: Tie media queries to the number of columns
-  const numberOfColumns = useMedia(
-    ["(min-width: 1440px)", "(min-width: 1000px)"],
-    [4, 3],
-    2
-  )
+  const { col, height } = useMedia({
+    queries: ["(min-width: 1440px)", "(min-width: 1000px)"],
+    values: [
+      { col: 4, height: 85 },
+      { col: 3, height: 75 },
+    ],
+    defaultValue: { col: 2, height: 55 },
+  })
 
   // Hook2: Measure the width of the container element
   const [ref, { width: containerWidth }] = useMeasure()
@@ -62,13 +65,13 @@ const DavidByrne = () => {
 
   // Transform items to give them animatable values
   const [leftHeights, leftGridItems] = calculateGridItems({
-    numColumns: numberOfColumns,
+    numColumns: col,
     items: firstHalfWords,
     width: containerWidth,
   })
 
   const [rightHeights, rightGridItems] = calculateGridItems({
-    numColumns: numberOfColumns,
+    numColumns: col,
     items: secondHalfWords,
     width: containerWidth,
   })

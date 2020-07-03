@@ -1,5 +1,4 @@
 import { useTransition } from "react-spring"
-import { number } from "prop-types"
 
 class NumberCruncher {
   constructor(upperBound) {

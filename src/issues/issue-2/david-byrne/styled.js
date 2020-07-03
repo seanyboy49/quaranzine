@@ -47,12 +47,6 @@ export const TextBox = styled.div`
   padding: 0.3em 0.4em;
   box-shadow: 5px 5px;
   font-family: "arial";
-  // font-size: ${({ fontSize }) => `${fontSize}px` || "22px"};
-  
-  
-  // font-size: 2vw;
-
-
   font-weight: ${({ bold }) => bold && `900`};
   text-align: center;
 
@@ -62,8 +56,6 @@ export const TextBox = styled.div`
     padding: 5px 10px;
     font-size: clamp(10px, 1rem + 1vw, 16px);
   }
-
-
 `
 
 export const Text = styled.div`
