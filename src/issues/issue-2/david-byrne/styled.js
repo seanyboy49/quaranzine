@@ -31,13 +31,9 @@ export const AnimatedWordContainer = styled.div`
 export const ImgWrap = styled.div`
   margin: auto;
   display: block;
-  width: 50%;
+  width: 45%;
   z-index: 1;
   padding: 30px;
-
-  ${mediaQueries.tabletWide} {
-    height: 50%;
-  }
 `
 
 export const AnimatedTextWrap = styled(animated.div)`
@@ -47,8 +43,8 @@ export const AnimatedTextWrap = styled(animated.div)`
 
 export const TextBox = styled.div`
   display: inline-block;
-  padding: 10px 15px;
   background: ${({ color }) => color || "white"};
+  padding: 0.3em 0.4em;
   box-shadow: 5px 5px;
   font-family: "arial";
   // font-size: ${({ fontSize }) => `${fontSize}px` || "22px"};
