@@ -5,6 +5,12 @@ import styled from "styled-components"
 
 import { findFileByName } from "../../utils"
 
+const ParadiseWrapper = styled.div`
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+`
+
 const LeftSection = styled.div`
   margin: 50px 0px;
   margin-right: 7%;
@@ -28,17 +34,6 @@ const ImageWrapper = styled.div`
     width: 130%
     height: 130%
 `
-
-const ParadiseTitle = styled.h2`
-  font-size: 15rem;
-  white-space: nowrap;
-  top: 170px;
-  position: absolute;
-  z-index: 1;
-  left: -55px;
-  margin-right: 10px;
-  align-text: ;
-`
 const OverFlowContainer = styled.div`
   overflow: hidden;
   width: 100px;
@@ -47,12 +42,31 @@ const Title = styled.h2`
   font-size: 15rem;
   padding: 0;
   margin: 0;
-  white-space: nowrap;
+  margin-left: -5rem;
+  line-height: 12rem;
+  font-weight: normal;
+`
+const ParadiseTitle = styled.h2`
+  font-size: 15rem;
+  z-index: 2;
+  font-weight: normal;
+`
+const Author = styled.p`
+  z-index: 2;
+
+  position: absolute;
+  top: 13.5rem;
+  left: -9rem;
+  font-size: 2rem;
+  font-weight: normal;
 `
 const TextContainer = styled.div`
-  overflow: hidden;
-  white-space: nowrap;
-  margin-left: -6%;
+  position: absolute;
+  top: -0.5rem;
+  z-index: 1;
+  right: -15%;
+  padding: 0;
+  margin: 0;
 `
 
 const Paradise = () => {
@@ -84,11 +98,12 @@ const Paradise = () => {
   const sidewalk_img = findFileByName(data, "sidewalk-edit")
   const street_img = findFileByName(data, "street-edit")
   return (
-    <>
+    <ParadiseWrapper>
+      <Title>The Gates</Title>
       <TextContainer>
-        <Title>The Gate</Title>
+        <Author>by David Byrne</Author>
+        <ParadiseTitle>of Paradise</ParadiseTitle>
       </TextContainer>
-      <ParadiseTitle>of Paradise</ParadiseTitle>
       <ComponentWrapper>
         <LeftSection>
           <Img fluid={sidewalk_img.node.childImageSharp.fluid} />
@@ -145,7 +160,7 @@ const Paradise = () => {
           <Img fluid={park_img.node.childImageSharp.fluid} />
         </RightSection>
       </ComponentWrapper>
-    </>
+    </ParadiseWrapper>
   )
 }
 
