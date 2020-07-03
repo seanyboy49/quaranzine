@@ -13,11 +13,10 @@ export const Background = styled.div`
 export const FlexContainer = styled.div`
   background-color: lightblue;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 
   ${mediaQueries.phoneWide} {
     flex-direction: column;
-    height: 80vh;
   }
 `
 
@@ -33,6 +32,10 @@ export const ImgWrap = styled.div`
   width: 45%;
   z-index: 1;
   padding: 30px;
+
+  ${mediaQueries.phoneWide} {
+    padding: 1em;
+  }
 `
 
 export const AnimatedTextWrap = styled(animated.div)`
@@ -54,7 +57,7 @@ export const TextBox = styled.div`
 
   ${mediaQueries.phoneWide} {
     padding: 5px 10px;
-    font-size: clamp(10px, 1rem + 0.5vw, 16px);
+    font-size: clamp(8px, 1rem, 14px);
   }
 `
 
@@ -62,7 +65,21 @@ export const Text = styled.div`
   font-family: "arial";
   text-align: center;
   margin: auto 0;
-  color: ${({ color }) => color || "black"};
+  color: ${({ color }) => (color && color) || "black"};
   font-weight: ${({ bold }) => bold && `900`};
-  font-size: ${({ fontSize }) => `${fontSize}px` || "22px"};
+  font-size: clamp(12px, 1rem + 1vw, 24px);
+`
+
+export const WordCountContainer = styled.div`
+  border: 0.2em solid ${({ color }) => color || "black"};
+  position: relative;
+  left: 20vw;
+  padding: 0.5em;
+
+  ${mediaQueries.phoneWide} {
+    max-width: 50vw;
+    left: initial;
+    margin: auto;
+    margin-top: 0.2em;
+  }
 `

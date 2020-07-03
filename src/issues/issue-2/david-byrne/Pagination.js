@@ -35,7 +35,7 @@ const Pagination = ({ albums, albumIndex, onClick }) => {
               fluid={album.miniImg.childImageSharp.fluid}
             />
             {isActive ? (
-              <TextBox size={16}>{album.year}</TextBox>
+              <TextBox>{album.year}</TextBox>
             ) : (
               <Text color={albums[albumIndex].textColor}>{album.year}</Text>
             )}

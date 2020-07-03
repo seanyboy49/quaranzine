@@ -48,7 +48,6 @@ export function calculateGridItems({ numColumns, items, width, heightOffset }) {
     return {
       word,
       xy,
-      width: width / numColumns, // card width is calculated to match the column width
       height: heightOffset,
     }
   })

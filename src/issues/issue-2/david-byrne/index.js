@@ -12,8 +12,14 @@ import useMeasure from "./useMeasure"
 import usePositions from "./usePositions"
 import albumByYearData from "./albumsByYear.js"
 import { mapImagesToAlbums, calculateGridItems } from "./utility"
-import { Background, Text, FlexContainer, ImgWrap } from "./styled"
-import { mediaQueries, breakpoints } from "../../../styles/layout"
+import {
+  Background,
+  Text,
+  FlexContainer,
+  ImgWrap,
+  WordCountContainer,
+} from "./styled"
+import { Row, breakpoints } from "../../../styles/layout"
 
 const xOffset = window.innerWidth / 2
 
@@ -48,13 +54,13 @@ const DavidByrne = () => {
   const { col, heightOffset } = useMedia({
     queries: [
       "(min-width: 1440px)",
-      "(min-width: 1000px)",
+      "(min-width: 1024px)",
       "(max-width: 600px)",
     ],
     values: [
       { col: 4, heightOffset: 85 },
       { col: 3, heightOffset: 75 },
-      { col: 4, heightOffset: 45 },
+      { col: 4, heightOffset: 40 },
     ],
     defaultValue: { col: 2, heightOffset: 55 },
   })
@@ -105,7 +111,7 @@ const DavidByrne = () => {
         <ImgWrap>
           <Img
             fluid={currentAlbum.bigImg.childImageSharp.fluid}
-            style={isPhoneWide ? { maxHeight: "30vh" } : { minWidth: "25vw" }}
+            style={isPhoneWide ? { maxHeight: "20vh" } : { minWidth: "25vw" }}
             imgStyle={{ objectFit: "contain" }}
           />
         </ImgWrap>
@@ -117,14 +123,28 @@ const DavidByrne = () => {
         />
       </FlexContainer>
 
-      <Text bold fontSize={30} color={currentAlbum.textColor}>
-        {currentAlbum.title}
-      </Text>
-      <Pagination
-        albums={albums}
-        albumIndex={albumIndex}
-        onClick={setAlbumIndex}
-      />
+      <FlexContainer>
+        <Text bold color={currentAlbum.textColor}>
+          {currentAlbum.title}
+        </Text>
+
+        <WordCountContainer color={currentAlbum.textColor}>
+          <Text bold color={currentAlbum.textColor}>
+            Word Count
+          </Text>
+          <Text bold color={currentAlbum.textColor}>
+            {currentAlbum.wordCount}
+          </Text>
+        </WordCountContainer>
+      </FlexContainer>
+
+      {!isPhoneWide && (
+        <Pagination
+          albums={albums}
+          albumIndex={albumIndex}
+          onClick={setAlbumIndex}
+        />
+      )}
     </Background>
   )
 }
