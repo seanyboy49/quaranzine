@@ -29,7 +29,7 @@ export function mapImagesToAlbums(albumsByYear, bigImages, miniImages) {
 
 const CARD_HEIGHT = 85
 
-export function calculateGridItems({ numColumns, items, width }) {
+export function calculateGridItems({ numColumns, items, width, heightOffset }) {
   // Column heights are initiliazed to zero because we'll add to them every time we place a new tile
   const heights = new Array(numColumns).fill(0)
 
@@ -43,13 +43,13 @@ export function calculateGridItems({ numColumns, items, width }) {
     ]
 
     // Increase the column height by the card height
-    heights[columnIndex] += CARD_HEIGHT
+    heights[columnIndex] += heightOffset
 
     return {
       word,
       xy,
       width: width / numColumns, // card width is calculated to match the column width
-      height: CARD_HEIGHT,
+      height: heightOffset,
     }
   })
 
