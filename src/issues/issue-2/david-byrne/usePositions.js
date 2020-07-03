@@ -27,11 +27,11 @@ class NumberCruncher {
 
 const numberCruncher = new NumberCruncher(4)
 
-const usePositions = (gridItems, { xOffset, yOffset }) =>
+const usePositions = (gridItems, { xOffset }) =>
   useTransition(gridItems, {
     keys: item => item.word,
     from: ({ xy, width, height }) => ({
-      xy: [xOffset, yOffset],
+      xy: [xOffset, 0],
       skew: numberCruncher.getXY(),
       width,
       height,
@@ -41,7 +41,7 @@ const usePositions = (gridItems, { xOffset, yOffset }) =>
     update: ({ xy, width, height }) => ({ xy, width, height }),
     leave: ({ xy, width, height }) => {
       return {
-        xy: [xOffset, yOffset],
+        xy: [xOffset, 0],
         opacity: 0,
       }
     },

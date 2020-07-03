@@ -16,7 +16,6 @@ import { Background, Text, FlexContainer, ImgWrap } from "./styled"
 import { mediaQueries, breakpoints } from "../../../styles/layout"
 
 const xOffset = window.innerWidth / 2
-const yOffset = window.innerHeight / 2
 
 const DavidByrne = () => {
   const isPhoneWide = useMediaQuery({
@@ -45,7 +44,7 @@ const DavidByrne = () => {
   const currentAlbum = albums[albumIndex]
   const words = currentAlbum.words
 
-  // Hook1: Tie media queries to the number of columns
+  // Hook1: Tie media queries to the number of columns and height offset
   const { col, heightOffset } = useMedia({
     queries: [
       "(min-width: 1440px)",
@@ -85,12 +84,10 @@ const DavidByrne = () => {
   //Hook3: Turn the static grid values into animated transitions, any addition, removal or change will be animated
   const renderLeftTransitions = usePositions(leftGridItems, {
     xOffset,
-    yOffset,
   })
 
   const renderRightTransitions = usePositions(rightGridItems, {
     xOffset: -xOffset,
-    yOffset,
   })
   console.log("render")
 
