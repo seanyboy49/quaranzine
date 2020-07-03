@@ -36,7 +36,9 @@ const BioText = styled(Text)`
 const Sext = () => {
   const data = useStaticQuery(graphql`
     query {
-      allFile(filter: { relativeDirectory: { eq: "sext-ed" } }) {
+      allFile(
+        filter: { relativeDirectory: { eq: "issue1-images/sext-ed-images" } }
+      ) {
         edges {
           node {
             name
@@ -60,7 +62,7 @@ const Sext = () => {
 
   const sexted101Image = findFileByName(data, "sexted-101")
 
-  const faceImage = findFileByName(data, "face")
+  const faceImage = findFileByName(data, "sext-face")
 
   const guidelineHeaderImage = findFileByName(data, "guidelines")
 

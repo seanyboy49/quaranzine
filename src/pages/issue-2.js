@@ -8,6 +8,7 @@ import { breakpoints } from "../styles/layout"
 import logo from "../images/logo.svg"
 
 import DavidByrne from "../issues/issue-2/david-byrne"
+import Issue2 from "../issues/issue-2"
 
 const PublishedIssue2 = () => {
   const [isLoading, setIsLoading] = useState(true)
@@ -36,6 +37,7 @@ const PublishedIssue2 = () => {
         <StyledLink to="/archive/">archive</StyledLink>
       </NavBar>
       <DavidByrne />
+      {/* <Issue2 /> */}
     </>
   )
 }

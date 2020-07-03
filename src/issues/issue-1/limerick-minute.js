@@ -34,7 +34,7 @@ export const FluidImageContainer = styled.div`
 const LimerickMinute = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "limerick.png" }) {
+      file(relativePath: { eq: "issue1-images/limerick.png" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
