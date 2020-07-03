@@ -48,6 +48,10 @@ const PMargin = styled.p`
     margin: 1rem 0.25rem;
     font-size: 1rem;
   }
+  @media screen and (max-width: 325px) {
+    margin: 1rem 0.25rem;
+    font-size: 0.85rem;
+  }
 `
 const ArticleWrapper = styled.div`
   display: flex;
@@ -71,6 +75,33 @@ const GateTitle = styled.h2`
   margin-left: -5rem;
   line-height: 12rem;
   font-weight: normal;
+
+  ${mediaQueries.tabletWide} {
+    font-size: 11.5rem;
+    margin-left: -3.5rem;
+    font-weight: 500;
+    line-height: 10rem;
+    margin-bottom: 8rem;
+  }
+  @media screen and (max-width: 400px) {
+    font-weight: 500;
+    line-height: 8rem;
+    margin-bottom: 5rem;
+  }
+  @media screen and (max-width: 425px) {
+    font-size: 5.8rem;
+    margin-left: -1.9rem;
+    font-weight: 500;
+    line-height: 5rem;
+    margin-bottom: 5rem;
+  }
+  @media screen and (max-width: 325px) {
+    font-size: 4.9rem;
+    margin-left: -1.6rem;
+    font-weight: 500;
+    line-height: 4rem;
+    margin-bottom: 5rem;
+  }
 `
 const ParadiseTitle = styled.h2`
   font-size: 15rem;
