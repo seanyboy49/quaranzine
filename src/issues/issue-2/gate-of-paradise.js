@@ -69,7 +69,7 @@ const ImageWrapper = styled.div`
 `
 
 const GateTitle = styled.h2`
-  font-size: 15rem;
+  font-size: clamp(6rem, 18vw, 15rem);
   padding: 0;
   margin: 0;
   margin-left: -5rem;
@@ -77,35 +77,19 @@ const GateTitle = styled.h2`
   font-weight: normal;
 
   ${mediaQueries.tabletWide} {
-    font-size: 11.5rem;
-    margin-left: -3.5rem;
-    font-weight: 500;
+    font-size: 25vw;
+    margin-left: -2rem;
     line-height: 10rem;
-    margin-bottom: 8rem;
-  }
-  @media screen and (max-width: 400px) {
-    font-weight: 500;
-    line-height: 8rem;
-    margin-bottom: 5rem;
-  }
-  @media screen and (max-width: 425px) {
-    font-size: 5.8rem;
-    margin-left: -1.9rem;
-    font-weight: 500;
-    line-height: 5rem;
-    margin-bottom: 5rem;
-  }
-  @media screen and (max-width: 325px) {
-    font-size: 4.9rem;
-    margin-left: -1.6rem;
-    font-weight: 500;
-    line-height: 4rem;
-    margin-bottom: 5rem;
+    margin-bottom: 4.5rem;
   }
 `
 const ParadiseTitle = styled.h2`
-  font-size: 15rem;
+  font-size: clamp(6rem, 18vw, 15rem);
   font-weight: normal;
+
+  ${mediaQueries.tabletWide} {
+    font-size: 25vw;
+  }
 `
 const Author = styled.p`
   position: absolute;
@@ -113,14 +97,42 @@ const Author = styled.p`
   left: -9rem;
   font-size: 2rem;
   font-weight: normal;
+
+  ${mediaQueries.phoneWide} {
+    top: 4rem;
+    left: 14rem;
+    font-size: 1.25rem;
+  }
+  ${mediaQueries.tabletWide} {
+    top: 9rem;
+    left: 30rem;
+    font-size: 2.2rem;
+  }
+  @media screen and (max-width: 320px) {
+    left: 11rem;
+    font-size: 1.1rem;
+    top: 3.5rem;
+  }
 `
 const ParadiseContainer = styled.div`
   position: absolute;
-  top: -0.5rem;
+  top: -1rem;
   z-index: 1;
   right: -15%;
   padding: 0;
   margin: 0;
+  white-space: normal;
+
+  ${mediaQueries.tabletWide} {
+    top: 0.5rem;
+    line-height: 10rem;
+    margin: 0;
+  }
+  ${mediaQueries.phoneWide} {
+    top: 2.5rem;
+    line-height: 5rem;
+    margin: 0;
+  }
 `
 
 const Paradise = () => {
