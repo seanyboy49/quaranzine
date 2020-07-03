@@ -4,8 +4,9 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
 import { findFileByName } from "../../utils"
+import { mediaQueries, breakpoints } from "../../styles/layout"
 
-const ParadiseWrapper = styled.div`
+const ComponentWrapper = styled.div`
   overflow: hidden;
   white-space: nowrap;
   position: relative;
@@ -15,30 +16,55 @@ const LeftSection = styled.div`
   margin: 50px 0px;
   margin-right: 7%;
   width: 35%;
+
+  ${mediaQueries.tabletWide} {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0px;
+    margin-right: 0%;
+    width: 90%;
+  }
 `
 const RightSection = styled.div`
   width: 35%;
   margin-left: 7%;
+
+  ${mediaQueries.tabletWide} {
+    margin: 0px;
+    margin-right: 0%;
+    width: 90%;
+    align-text: center;
+  }
 `
 const PMargin = styled.p`
   margin: ${props => props.margin};
   font-size: 1.25rem;
+
+  ${mediaQueries.tabletWide} {
+    margin: 1rem 2rem;
+    font-size: 1.7rem;
+  }
+  ${mediaQueries.phoneWide} {
+    margin: 1rem 0.25rem;
+    font-size: 1rem;
+  }
 `
-const ComponentWrapper = styled.div`
+const ArticleWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+
+  ${mediaQueries.tabletWide} {
+    flex-direction: column-reverse;
+  }
 `
 const ImageWrapper = styled.div`
-    width: 130%
-    height: 130%
+  width: 130%
+  height: 130%
 `
-const OverFlowContainer = styled.div`
-  overflow: hidden;
-  width: 100px;
-`
-const Title = styled.h2`
+
+const GateTitle = styled.h2`
   font-size: 15rem;
   padding: 0;
   margin: 0;
@@ -48,19 +74,16 @@ const Title = styled.h2`
 `
 const ParadiseTitle = styled.h2`
   font-size: 15rem;
-  z-index: 2;
   font-weight: normal;
 `
 const Author = styled.p`
-  z-index: 2;
-
   position: absolute;
   top: 13.5rem;
   left: -9rem;
   font-size: 2rem;
   font-weight: normal;
 `
-const TextContainer = styled.div`
+const ParadiseContainer = styled.div`
   position: absolute;
   top: -0.5rem;
   z-index: 1;
@@ -98,13 +121,13 @@ const Paradise = () => {
   const sidewalk_img = findFileByName(data, "sidewalk-edit")
   const street_img = findFileByName(data, "street-edit")
   return (
-    <ParadiseWrapper>
-      <Title>The Gates</Title>
-      <TextContainer>
+    <ComponentWrapper>
+      <GateTitle>The Gates</GateTitle>
+      <ParadiseContainer>
         <Author>by David Byrne</Author>
         <ParadiseTitle>of Paradise</ParadiseTitle>
-      </TextContainer>
-      <ComponentWrapper>
+      </ParadiseContainer>
+      <ArticleWrapper>
         <LeftSection>
           <Img fluid={sidewalk_img.node.childImageSharp.fluid} />
           <PMargin margin={"120px 40px"}>
@@ -159,8 +182,8 @@ const Paradise = () => {
           </PMargin>
           <Img fluid={park_img.node.childImageSharp.fluid} />
         </RightSection>
-      </ComponentWrapper>
-    </ParadiseWrapper>
+      </ArticleWrapper>
+    </ComponentWrapper>
   )
 }
 
