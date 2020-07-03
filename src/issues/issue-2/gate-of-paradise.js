@@ -82,6 +82,9 @@ const GateTitle = styled.h2`
     line-height: 10rem;
     margin-bottom: 4.5rem;
   }
+  ${mediaQueries.phoneWide} {
+    margin-bottom: -2rem;
+  }
 `
 const ParadiseTitle = styled.h2`
   font-size: clamp(6rem, 18vw, 15rem);
@@ -92,27 +95,47 @@ const ParadiseTitle = styled.h2`
   }
 `
 const Author = styled.p`
-  position: absolute;
-  top: 13.5rem;
-  left: -9rem;
   font-size: 2rem;
   font-weight: normal;
+  margin-left: 10%;
 
-  ${mediaQueries.phoneWide} {
-    top: 4rem;
-    left: 14rem;
-    font-size: 1.25rem;
+  @media screen and (max-width: 1300px) {
+    margin-left: 3%; 
   }
   ${mediaQueries.tabletWide} {
-    top: 9rem;
-    left: 30rem;
-    font-size: 2.2rem;
+    margin-left: 60%; 
   }
-  @media screen and (max-width: 320px) {
-    left: 11rem;
-    font-size: 1.1rem;
-    top: 3.5rem;
+  ${mediaQueries.phoneWide} {
+    font-size: 1.5rem;
+    margin-left: 50%; 
   }
+  @media screen and (max-width: 350px) {
+    font-size: 1.25rem; 
+  }
+
+
+
+
+  
+  
+
+
+
+  // ${mediaQueries.phoneWide} {
+  //   top: 4rem;
+  //   left: 14rem;
+  //   font-size: 1.25rem;
+  // }
+  // ${mediaQueries.tabletWide} {
+  //   top: 9rem;
+  //   left: 30rem;
+  //   font-size: 2.2rem;
+  // }
+  // @media screen and (max-width: 320px) {
+  //   left: 11rem;
+  //   font-size: 1.1rem;
+  //   top: 3.5rem;
+  // }
 `
 const ParadiseContainer = styled.div`
   position: absolute;
@@ -166,8 +189,8 @@ const Paradise = () => {
   return (
     <ComponentWrapper>
       <GateTitle>The Gates</GateTitle>
+      <Author>by David Byrne</Author>
       <ParadiseContainer>
-        <Author>by David Byrne</Author>
         <ParadiseTitle>of Paradise</ParadiseTitle>
       </ParadiseContainer>
       <ArticleWrapper>
