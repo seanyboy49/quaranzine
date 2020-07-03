@@ -17,7 +17,7 @@ export const FlexContainer = styled.div`
 
   ${mediaQueries.phoneWide} {
     flex-direction: column;
-    height: 70vh;
+    height: 80vh;
   }
 `
 
@@ -25,7 +25,6 @@ export const AnimatedWordContainer = styled.div`
   margin: auto;
   background-color: lightgreen;
   width: 100%;
-  padding-left: 20px;
 `
 
 export const ImgWrap = styled.div`
@@ -39,6 +38,7 @@ export const ImgWrap = styled.div`
 export const AnimatedTextWrap = styled(animated.div)`
   position: absolute;
   will-change: transform, width, height, opacity;
+  padding-left: 10px;
 `
 
 export const TextBox = styled.div`
@@ -54,7 +54,7 @@ export const TextBox = styled.div`
 
   ${mediaQueries.phoneWide} {
     padding: 5px 10px;
-    font-size: clamp(10px, 1rem + 1vw, 16px);
+    font-size: clamp(10px, 1rem + 0.5vw, 16px);
   }
 `
 

@@ -25,9 +25,9 @@ export function mapImagesToAlbums(albumsByYear, bigImages, miniImages) {
  *
  * @param {Number} numColumns
  * @param {Array<Object>} items
+ * @param {Number} width
+ * @param {Number} heightOffset
  */
-
-const CARD_HEIGHT = 85
 
 export function calculateGridItems({ numColumns, items, width, heightOffset }) {
   // Column heights are initiliazed to zero because we'll add to them every time we place a new tile

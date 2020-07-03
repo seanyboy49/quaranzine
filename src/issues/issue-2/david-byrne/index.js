@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
-import _ from "lodash"
 import { useMediaQuery } from "react-responsive"
 
 import Header from "./Header"
@@ -48,10 +47,15 @@ const DavidByrne = () => {
 
   // Hook1: Tie media queries to the number of columns
   const { col, heightOffset } = useMedia({
-    queries: ["(min-width: 1440px)", "(min-width: 1000px)"],
+    queries: [
+      "(min-width: 1440px)",
+      "(min-width: 1000px)",
+      "(max-width: 600px)",
+    ],
     values: [
       { col: 4, heightOffset: 85 },
       { col: 3, heightOffset: 75 },
+      { col: 4, heightOffset: 45 },
     ],
     defaultValue: { col: 2, heightOffset: 55 },
   })
