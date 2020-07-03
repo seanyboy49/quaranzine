@@ -5,17 +5,12 @@ import grit from "./grit"
 import { mediaQueries } from "../../../styles/layout"
 
 export const Background = styled.div`
-  height: 110vh;
+  height: 100vh;
   background: ${({ backgroundColor }) => backgroundColor};
   background-image: url(${grit});
-
-  ${mediaQueries.phoneWide} {
-    height: 100vh;
-  }
 `
 
 export const FlexContainer = styled.div`
-  // background-color: lightblue;
   display: flex;
   justify-content: center;
 
@@ -26,7 +21,7 @@ export const FlexContainer = styled.div`
 
 export const AnimatedWordContainer = styled.div`
   margin: auto;
-  // background-color: lightgreen;
+
   width: 100%;
 `
 

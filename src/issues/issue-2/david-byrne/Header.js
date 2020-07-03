@@ -2,25 +2,32 @@ import React from "react"
 import styled from "styled-components"
 
 import { TextBox, Text } from "./styled"
+import grit from "./grit"
 
 const TitleWrap = styled.div`
   display: flex;
   justify-content: space-around;
   padding: 10px;
+  margin-bottom: 10px;
+`
+
+const HeaderText = styled(TextBox)`
+  font-size: clamp(12px, 1.5rem + 1vw, 32px);
+  background-image: url(${grit});
 `
 
 const Header = ({ currentAlbum }) => {
   return (
     <TitleWrap>
-      <TextBox bold fontSize={30} color={"#38a4d6"}>
+      <HeaderText bold color={"#38a4d6"}>
         David Byrne's
-      </TextBox>
-      <Text bold fontSize={30} color={currentAlbum.textColor}>
+      </HeaderText>
+      <Text bold color={currentAlbum.textColor}>
         {currentAlbum.year}
       </Text>
-      <TextBox bold fontSize={30} color={"#38a4d6"}>
+      <HeaderText bold color={"#38a4d6"}>
         oft used words
-      </TextBox>
+      </HeaderText>
     </TitleWrap>
   )
 }

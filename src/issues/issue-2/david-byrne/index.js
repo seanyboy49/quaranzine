@@ -61,7 +61,7 @@ const DavidByrne = () => {
     ],
     values: [
       { col: 4, heightOffset: 85 },
-      { col: 3, heightOffset: 75 },
+      { col: 3, heightOffset: 65 },
       { col: 4, heightOffset: 40 },
     ],
     defaultValue: { col: 2, heightOffset: 55 },
@@ -98,16 +98,6 @@ const DavidByrne = () => {
     xOffset: -xOffset,
   })
 
-  function handleClick(value) {
-    if (value === -1) {
-      setAlbumIndex(albums.length - 1)
-    } else if (value === albums.length) {
-      setAlbumIndex(0)
-    } else {
-      setAlbumIndex(value)
-    }
-  }
-
   return (
     <Background backgroundColor={currentAlbum.backgroundColor}>
       <Header currentAlbum={currentAlbum} />
@@ -129,7 +119,7 @@ const DavidByrne = () => {
           <ImgWrap>
             <Img
               fluid={currentAlbum.bigImg.childImageSharp.fluid}
-              style={isPhoneWide ? { maxHeight: "20vh" } : { minWidth: "15vw" }}
+              style={isPhoneWide ? { maxHeight: "20vh" } : { maxWidth: "15vw" }}
               imgStyle={{ objectFit: "contain" }}
             />
           </ImgWrap>
