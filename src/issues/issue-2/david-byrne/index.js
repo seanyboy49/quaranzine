@@ -21,7 +21,12 @@ import {
 } from "./styled"
 import { breakpoints } from "../../../styles/layout"
 
-const xOffset = window.innerWidth / 2
+let xOffset
+try {
+  xOffset = window.innerWidth / 2
+} catch (e) {
+  console.log(e)
+}
 
 const DavidByrne = () => {
   const isPhoneWide = useMediaQuery({
