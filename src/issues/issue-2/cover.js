@@ -61,8 +61,6 @@ const Cover = () => {
     }
   `)
 
-  console.log("coverImage", coverImage)
-
   return (
     <>
       <Img fluid={coverImage.file.childImageSharp.fluid} />
