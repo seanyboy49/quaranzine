@@ -18,6 +18,11 @@ const Title = styled.h1`
   padding: 2rem 3rem;
   margin: 0;
   font-size: 6rem;
+
+  ${mediaQueries.tabletWide} {
+    padding: 1rem 0.5rem;
+    font-size: 4.7rem;
+  }
 `
 const Authors = styled.h3`
   position: absolute;
@@ -25,6 +30,13 @@ const Authors = styled.h3`
   top: 70%;
   text-align: right;
   font-size: 1.5rem;
+
+  ${mediaQueries.tabletWide} {
+    position: relative;
+    text-align: left;
+    margin: 3% 0rem 5% 14%;
+    font-size: 1.5rem;
+  }
 `
 const Cover = styled.div`
   padding: 0;
@@ -35,16 +47,21 @@ const Article = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 5rem;
   padding: 0;
   margin: 3rem;
+
+  ${mediaQueries.tabletWide} {
+    margin: 2rem;
+  }
 `
 const Row = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  height: auto;
-  flex-grow: 1;
+
+  ${mediaQueries.tabletWide} {
+    flex-direction: ${props => props.direction || "column"};
+  }
 `
 const ArticleText = styled.div`
   font-size: 1.25rem;
@@ -54,16 +71,37 @@ const ArticleText = styled.div`
   justify-content: flex-start;
   flex-direction: column;
   flex-basis: 50%;
+
+  ${mediaQueries.tabletWide} {
+    flex-basis: 0%;
+    margin: 1rem;
+  }
 `
 const ImageWrapper = styled.div`
   padding: 0;
   margin: 0;
   flex-basis: 30%;
+
+  ${mediaQueries.tabletWide} {
+    flex-basis: 0%;
+    height: 100%;
+    width: 100%;
+  }
 `
 const P = styled.p`
   font-size: ${props => props.fontSize}rem;
   margin: 1rem;
   margin-left: ${props => props.marginLeft}rem;
+
+  ${mediaQueries.tabletWide} {
+    margin: 0.5rem 0rem;
+    font-size: ${props => props.fontSize}rem;
+  }
+
+  ${mediaQueries.phoneWide} {
+    margin: 0.5rem 0rem;
+    font-size: ${props => props.fontSize - 0.3}rem;
+  }
 `
 
 const Wedding = () => {
@@ -115,11 +153,10 @@ const Wedding = () => {
         <Row>
           <ArticleText>
             <P fontSize={2}>
-              1. Wish anyone and everyone <br />
-              who was at your wedding a <br />
-              happy birthday.
+              1. Wish anyone and everyone who was at your wedding a happy
+              birthday.
             </P>
-            <P fontSize={1.5}>
+            <P fontSize={1.25}>
               If you were smart, you made every single guest at the wedding pose
               next to you, so you could supply your poor, plebeian friends
               Instagram photographs of you in a wedding gown until everyone you
@@ -136,7 +173,7 @@ const Wedding = () => {
             <Img fluid={cheezIt.node.childImageSharp.fluid} />
           </ImageWrapper>
         </Row>
-        <Row>
+        <Row direction={"column-reverse"}>
           <ImageWrapper>
             <Img fluid={whiteClaw.node.childImageSharp.fluid} />
           </ImageWrapper>
@@ -144,14 +181,14 @@ const Wedding = () => {
             <P fontSize={2}>
               2. Thank your spouse for being awesome in quarantine.
             </P>
-            <P fontSize={1.5}>
+            <P fontSize={1.25}>
               Even if behind the scenes you’re bickering daily about putting
               down the toilet seat, you don’t have to show that on social media!
             </P>
             <P fontSize={2} marginLeft={7}>
               3. Don’t forget, you have multiple anniversaries!
             </P>
-            <P fontSize={1.5} marginLeft={7}>
+            <P fontSize={1.25} marginLeft={7}>
               Your first date anniversary, the day you became
               boyfriend/girlfriend, the anniversary of your engagement, the
               number of weeks, months, then FINALLY: years you’ve been married.
@@ -163,20 +200,20 @@ const Wedding = () => {
             <P fontSize={2} marginLeft={2}>
               4. The classic #TBT
             </P>
-            <P fontSize={1.5} marginLeft={2}>
+            <P fontSize={1.25} marginLeft={2}>
               #TBT to better times!!! What better times have you had than your
               wedding? IT WAS THE HAPPIEST DAY OF YOUR LIFE!
             </P>
             <P fontSize={2} marginLeft={7}>
               5. Post your manicure! Or your drink!
             </P>
-            <P fontSize={1.5} marginLeft={7}>
+            <P fontSize={1.25} marginLeft={7}>
               “I can’t go to the nail salon, so I gave myself a manicure!” aka
               “LOOK AT MY ROCK.” “I’m drinking tea” (here’s my rock) “Margarita
               night” (LOOK. AT. MY. ROCK.)
             </P>
             <P fontSize={2}>6. Don’t forget about your parents!</P>
-            <P fontSize={1.5}>
+            <P fontSize={1.25}>
               Mother’s Day, Father’s Day, your mother’s birthday, your father’s
               birthday, your parents’ anniversary, your parents’ first date.
               It’s endless!
@@ -186,13 +223,13 @@ const Wedding = () => {
             <Img fluid={honest.node.childImageSharp.fluid} />
           </ImageWrapper>
         </Row>
-        <Row>
+        <Row direction={"column-reverse"}>
           <ImageWrapper>
             <Img fluid={pringles.node.childImageSharp.fluid} />
           </ImageWrapper>
           <ArticleText>
             <P fontSize={2}>7. And your siblings!</P>
-            <P fontSize={1.5}>
+            <P fontSize={1.25}>
               Did they graduate college? Did they get a new job? Write them a
               heartfelt, 5 paragraph post and include a photo of them, next to
               you in your wedding dress.
@@ -200,7 +237,7 @@ const Wedding = () => {
             <P fontSize={2} marginLeft={7}>
               8. Prioritize Fitness.
             </P>
-            <P fontSize={1.5} marginLeft={7}>
+            <P fontSize={1.25} marginLeft={7}>
               But more importantly, posting about fitness in quarantine. Here’s
               your caption: “I tried on my wedding dress from 5 years ago and it
               STILL fits! #goalsandgains
@@ -208,7 +245,7 @@ const Wedding = () => {
             <P fontSize={2} marginLeft={3}>
               9. Play celebrity look-alike.
             </P>
-            <P fontSize={1.5} marginLeft={3}>
+            <P fontSize={1.25} marginLeft={3}>
               Just make sure that when you post the comparison photo, it’s a
               picture of you in your wedding dress!
             </P>
@@ -217,7 +254,7 @@ const Wedding = () => {
         <Row>
           <ArticleText marginTop={7}>
             <P fontSize={2}>10. Just be shameless.</P>
-            <P fontSize={1.5}>
+            <P fontSize={1.25}>
               There’s nothing more honest than just a simple “I love this
               picture” or “thinking about my wedding day.” We all know you are,
               because you post about it so goddamn much, there’s no need for a
