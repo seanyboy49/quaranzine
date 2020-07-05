@@ -36,23 +36,34 @@ const Article = styled.div`
   justify-content: center;
   flex-direction: column;
   margin: 5rem;
+  padding: 0;
+  margin: 3rem;
 `
 const Row = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  margin: 3rem;
   height: auto;
+  flex-grow: 1;
 `
 const ArticleText = styled.div`
-  flex: 2 1 30rem;
-  font-size: 1.5rem;
-  margin: 1rem;
+  font-size: 1.25rem;
+  margin: 2rem 5rem 2rem 0rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex-basis: 50%;
 `
 const ImageWrapper = styled.div`
   padding: 0;
   margin: 0;
-  width: 25%;
+  flex-basis: 30%;
+`
+const P = styled.p`
+  font-size: ${props => props.fontSize}rem;
+  margin: 1rem;
+  margin-left: ${props => props.marginLeft}rem;
 `
 
 const Wedding = () => {
@@ -79,8 +90,8 @@ const Wedding = () => {
   `)
 
   const weddingCover = findFileByName(data, "wedding-cover")
-  const CheezIt = findFileByName(data, "cheese-it")
-  console.log(weddingCover)
+  const cheezIt = findFileByName(data, "cheese-it")
+  const whiteClaw = findFileByName(data, "white-claw")
 
   return (
     <Wrapper>
@@ -100,11 +111,12 @@ const Wedding = () => {
       <Article>
         <Row>
           <ArticleText>
-            <p>
-              1. Wish anyone and everyone who was at your wedding a happy
-              birthday.{" "}
-            </p>
-            <p>
+            <P fontSize={2}>
+              1. Wish anyone and everyone <br />
+              who was at your wedding a <br />
+              happy birthday.
+            </P>
+            <P fontSize={1.5}>
               If you were smart, you made every single guest at the wedding pose
               next to you, so you could supply your poor, plebeian friends
               Instagram photographs of you in a wedding gown until everyone you
@@ -115,11 +127,33 @@ const Wedding = () => {
               rest of your lives! It doesn’t matter who they are! As long as you
               are front and center, and they are off to the side, adjusting your
               veil.
-            </p>
+            </P>
           </ArticleText>
           <ImageWrapper>
-            <Img fluid={CheezIt.node.childImageSharp.fluid} />
+            <Img fluid={cheezIt.node.childImageSharp.fluid} />
           </ImageWrapper>
+        </Row>
+        <Row>
+          <ImageWrapper>
+            <Img fluid={whiteClaw.node.childImageSharp.fluid} />
+          </ImageWrapper>
+          <ArticleText>
+            <P fontSize={2}>
+              2. Thank your spouse for being awesome in quarantine.
+            </P>
+            <P fontSize={1.5}>
+              Even if behind the scenes you’re bickering daily about putting
+              down the toilet seat, you don’t have to show that on social media!
+            </P>
+            <P fontSize={2} marginLeft={7}>
+              3. Don’t forget, you have multiple anniversaries!
+            </P>
+            <P fontSize={1.5} marginLeft={7}>
+              Your first date anniversary, the day you became
+              boyfriend/girlfriend, the anniversary of your engagement, the
+              number of weeks, months, then FINALLY: years you’ve been married.
+            </P>
+          </ArticleText>
         </Row>
       </Article>
     </Wrapper>
