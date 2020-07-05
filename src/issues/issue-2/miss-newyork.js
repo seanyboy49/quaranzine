@@ -72,6 +72,7 @@ const MissNewYork = () => {
       <IMiss>I miss</IMiss>
       <ImageWrapper>
         <Img fluid={data.file.childImageSharp.fluid} />
+        <Text right>collage by Connie Zhou @conniezhoudesign</Text>
       </ImageWrapper>
       <NewYork>New Yokr</NewYork>
     </Background>
