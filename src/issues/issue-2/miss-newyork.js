@@ -9,32 +9,49 @@ import { mediaQueries, breakpoints } from "../../styles/layout"
 
 const Background = styled.div`
   background: #e960ff;
-  height: 100vh;
   display: flex;
   position: relative;
 `
 
 const ImageWrapper = styled.div`
-  margin: auto;
-  width: 50%;
+  width: 60%;
+  margin: 10% auto 12% auto;
+
+  ${mediaQueries.phoneWide} {
+    width: 100%;
+    margin: 30% 0;
+  }
 `
 
 const Title = styled.h1`
   font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue";
-  font-size: 200px;
+  font-size: 15vw;
   position: absolute;
   z-index: 100;
   margin: 0;
+
+  ${mediaQueries.phoneWide} {
+    font-size: 22vw;
+  }
 `
 
 const IMiss = styled(Title)`
   right: 0;
-  top: -120px;
+  top: -20%;
+
+  ${mediaQueries.phoneWide} {
+    right: unset;
+    top: unset;
+  }
 `
 
 const NewYork = styled(Title)`
   left: 0;
   bottom: -100px;
+
+  ${mediaQueries.phoneWide} {
+    bottom: 0;
+  }
 `
 
 const MissNewYork = () => {
