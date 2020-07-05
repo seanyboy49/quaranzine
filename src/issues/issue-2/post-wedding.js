@@ -48,7 +48,7 @@ const Row = styled.div`
 `
 const ArticleText = styled.div`
   font-size: 1.25rem;
-  margin: 2rem 5rem 2rem 0rem;
+  margin: 2rem 3rem 2rem 0rem;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -92,6 +92,7 @@ const Wedding = () => {
   const weddingCover = findFileByName(data, "wedding-cover")
   const cheezIt = findFileByName(data, "cheese-it")
   const whiteClaw = findFileByName(data, "white-claw")
+  const honest = findFileByName(data, "honest")
 
   return (
     <Wrapper>
@@ -154,6 +155,34 @@ const Wedding = () => {
               number of weeks, months, then FINALLY: years you’ve been married.
             </P>
           </ArticleText>
+        </Row>
+        <Row>
+          <ArticleText>
+            <P fontSize={2} marginLeft={2}>
+              4. The classic #TBT
+            </P>
+            <P fontSize={1.5} marginLeft={2}>
+              #TBT to better times!!! What better times have you had than your
+              wedding? IT WAS THE HAPPIEST DAY OF YOUR LIFE!
+            </P>
+            <P fontSize={2} marginLeft={7}>
+              5. Post your manicure! Or your drink!
+            </P>
+            <P fontSize={1.5} marginLeft={7}>
+              “I can’t go to the nail salon, so I gave myself a manicure!” aka
+              “LOOK AT MY ROCK.” “I’m drinking tea” (here’s my rock) “Margarita
+              night” (LOOK. AT. MY. ROCK.)
+            </P>
+            <P fontSize={2}>6. Don’t forget about your parents!</P>
+            <P fontSize={1.5}>
+              Mother’s Day, Father’s Day, your mother’s birthday, your father’s
+              birthday, your parents’ anniversary, your parents’ first date.
+              It’s endless!
+            </P>
+          </ArticleText>
+          <ImageWrapper>
+            <Img fluid={honest.node.childImageSharp.fluid} />
+          </ImageWrapper>
         </Row>
       </Article>
     </Wrapper>
