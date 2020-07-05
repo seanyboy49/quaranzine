@@ -1,7 +1,7 @@
 import React from "react"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { useMediaQuery } from "react-responsive"
 
 import { Text } from "../../styles/text"
@@ -54,6 +54,28 @@ const NewYork = styled(Title)`
   }
 `
 
+const Blurb = styled.div`
+  font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue";
+  font-size: 17px;
+  position: absolute;
+  z-index: 100;
+
+  top: ${({ top }) => top && top};
+  left: ${({ left }) => left};
+  right: ${({ right }) => right};
+  bottom: ${({ bottom }) => bottom};
+
+  ${mediaQueries.phoneWide} {
+    font-size: 15px;
+  }
+
+  ${({ flip }) =>
+    flip &&
+    css`
+      transform: rotate(180deg);
+    `}
+`
+
 const MissNewYork = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -70,10 +92,35 @@ const MissNewYork = () => {
   return (
     <Background>
       <IMiss>I miss</IMiss>
+
+      <Blurb top={"5%"} right={0}>
+        [*&)))’’”::/{">"}
+        {">"}=]\
+      </Blurb>
+      <Blurb top={"10%"} left={"30%"}>
+        Whajt do you miszs the m0st about New YOerk?
+      </Blurb>
+      <Blurb top={"12%"} left={"20%"}>
+        {":;’}"}
+      </Blurb>
+      <Blurb top={"40%"} left={"5%"}>
+        the knicks still succ
+      </Blurb>
+      <Blurb top={"60%"} right={"5%"}>
+        joe's pizza
+      </Blurb>
+      <Blurb bottom={"17%"} right={"5%"}>
+        {",,>’{}-|#€%&’———=-[{"}
+      </Blurb>
+      <Blurb bottom={"20%"} left={"20%"}>
+        p0rtlajnd jsut istn th3 saem
+      </Blurb>
+
       <ImageWrapper>
         <Img fluid={data.file.childImageSharp.fluid} />
         <Text right>collage by Connie Zhou @conniezhoudesign</Text>
       </ImageWrapper>
+
       <NewYork>New Yokr</NewYork>
     </Background>
   )
