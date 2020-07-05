@@ -93,6 +93,7 @@ const Wedding = () => {
   const cheezIt = findFileByName(data, "cheese-it")
   const whiteClaw = findFileByName(data, "white-claw")
   const honest = findFileByName(data, "honest")
+  const pringles = findFileByName(data, "pringles")
 
   return (
     <Wrapper>
@@ -183,6 +184,34 @@ const Wedding = () => {
           <ImageWrapper>
             <Img fluid={honest.node.childImageSharp.fluid} />
           </ImageWrapper>
+        </Row>
+        <Row>
+          <ImageWrapper>
+            <Img fluid={pringles.node.childImageSharp.fluid} />
+          </ImageWrapper>
+          <ArticleText>
+            <P fontSize={2}>7. And your siblings!</P>
+            <P fontSize={1.5}>
+              Did they graduate college? Did they get a new job? Write them a
+              heartfelt, 5 paragraph post and include a photo of them, next to
+              you in your wedding dress.
+            </P>
+            <P fontSize={2} marginLeft={7}>
+              8. Prioritize Fitness.
+            </P>
+            <P fontSize={1.5} marginLeft={7}>
+              But more importantly, posting about fitness in quarantine. Here’s
+              your caption: “I tried on my wedding dress from 5 years ago and it
+              STILL fits! #goalsandgains
+            </P>
+            <P fontSize={2} marginLeft={3}>
+              9. Play celebrity look-alike.
+            </P>
+            <P fontSize={1.5} marginLeft={3}>
+              Just make sure that when you post the comparison photo, it’s a
+              picture of you in your wedding dress!
+            </P>
+          </ArticleText>
         </Row>
       </Article>
     </Wrapper>
