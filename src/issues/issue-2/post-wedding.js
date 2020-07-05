@@ -48,7 +48,7 @@ const Row = styled.div`
 `
 const ArticleText = styled.div`
   font-size: 1.25rem;
-  margin: 2rem 3rem 2rem 0rem;
+  margin: ${props => props.marginTop || 2}rem 3rem 2rem 0rem;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -94,6 +94,7 @@ const Wedding = () => {
   const whiteClaw = findFileByName(data, "white-claw")
   const honest = findFileByName(data, "honest")
   const pringles = findFileByName(data, "pringles")
+  const BenJerry = findFileByName(data, "ben-jerry")
 
   return (
     <Wrapper>
@@ -212,6 +213,20 @@ const Wedding = () => {
               picture of you in your wedding dress!
             </P>
           </ArticleText>
+        </Row>
+        <Row>
+          <ArticleText marginTop={7}>
+            <P fontSize={2}>10. Just be shameless.</P>
+            <P fontSize={1.5}>
+              There’s nothing more honest than just a simple “I love this
+              picture” or “thinking about my wedding day.” We all know you are,
+              because you post about it so goddamn much, there’s no need for a
+              reason at this point!
+            </P>
+          </ArticleText>
+          <ImageWrapper>
+            <Img fluid={BenJerry.node.childImageSharp.fluid} />
+          </ImageWrapper>
         </Row>
       </Article>
     </Wrapper>
