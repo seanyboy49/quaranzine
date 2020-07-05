@@ -77,8 +77,8 @@ const GateTitle = styled.h2`
   font-weight: normal;
 
   ${mediaQueries.tabletWide} {
-    font-size: 25vw;
-    margin-left: -2rem;
+    font-size: 22vw;
+    margin-left: -1.5rem;
     line-height: 10rem;
     margin-bottom: 4.5rem;
   }
@@ -100,42 +100,18 @@ const Author = styled.p`
   margin-left: 10%;
 
   @media screen and (max-width: 1300px) {
-    margin-left: 3%; 
+    margin-left: 3%;
   }
   ${mediaQueries.tabletWide} {
-    margin-left: 60%; 
+    margin-left: 60%;
   }
   ${mediaQueries.phoneWide} {
     font-size: 1.5rem;
-    margin-left: 50%; 
+    margin-left: 50%;
   }
   @media screen and (max-width: 350px) {
-    font-size: 1.25rem; 
+    font-size: 1.25rem;
   }
-
-
-
-
-  
-  
-
-
-
-  // ${mediaQueries.phoneWide} {
-  //   top: 4rem;
-  //   left: 14rem;
-  //   font-size: 1.25rem;
-  // }
-  // ${mediaQueries.tabletWide} {
-  //   top: 9rem;
-  //   left: 30rem;
-  //   font-size: 2.2rem;
-  // }
-  // @media screen and (max-width: 320px) {
-  //   left: 11rem;
-  //   font-size: 1.1rem;
-  //   top: 3.5rem;
-  // }
 `
 const ParadiseContainer = styled.div`
   position: absolute;
@@ -186,6 +162,7 @@ const Paradise = () => {
   const park_img = findFileByName(data, "park-edit")
   const sidewalk_img = findFileByName(data, "sidewalk-edit")
   const street_img = findFileByName(data, "street-edit")
+
   return (
     <ComponentWrapper>
       <GateTitle>The Gates</GateTitle>
