@@ -2,7 +2,6 @@ import React from "react"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 import styled, { css } from "styled-components"
-import { useMediaQuery } from "react-responsive"
 
 import { Text } from "../../styles/text"
 import { mediaQueries, breakpoints } from "../../styles/layout"

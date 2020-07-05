@@ -8,17 +8,19 @@ import Nyc360 from "./nyc-360"
 import Paradise from "./gate-of-paradise"
 import DogsMind from "./dogs-mind"
 import MissNewYork from "./miss-newyork"
+import DJBan from "./dj-ban"
 
 const Issue2 = () => {
   return (
     <>
-      {/* <Cover />
+      <Cover />
       <DavidByrne />
       <Paradise />
       <FavoriteSmells />
-      <Nyc360 />*/}
+      <Nyc360 />
       <DogsMind />
       <MissNewYork />
+      <DJBan />
     </>
   )
 }
