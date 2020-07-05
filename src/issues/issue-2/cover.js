@@ -1,9 +1,8 @@
 import React from "react"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
-import { findFileByName } from "../../utils"
 import styled from "styled-components"
-import { mediaQueries, breakpoints } from "../../styles/layout"
+import { mediaQueries } from "../../styles/layout"
 
 const IssueWrapper = styled.div`
   background-color: #ff7b4d;
@@ -17,7 +16,7 @@ const IssueWrapper = styled.div`
   }
 `
 
-const IssueNum = styled.h3`
+const IssueNum = styled.h1`
   font-size: 3rem;
   color: white;
   margin: 0;
@@ -25,6 +24,27 @@ const IssueNum = styled.h3`
 
   ${mediaQueries.tabletWide} {
     font-size: 2rem;
+  }
+  ${mediaQueries.phoneWide} {
+    font-size: 1.25rem;
+  }
+`
+const About = styled.div`
+  background-color: #7fdc99;
+  margin: 0;
+  padding: 5rem;
+
+  ${mediaQueries.phoneWide} {
+    padding: 2rem;
+  }
+`
+const H1 = styled.h1`
+  font-size: 2rem;
+  padding: 0;
+  margin: 0;
+
+  ${mediaQueries.phoneWide} {
+    font-size: 1.25rem;
   }
 `
 
@@ -49,6 +69,18 @@ const Cover = () => {
       <IssueWrapper>
         <IssueNum>issue #2: collage</IssueNum>
       </IssueWrapper>
+      <About>
+        <H1>
+          qrzn is the mag for people who are bored out of their minds and want
+          to see stuff or read stuff that’s fairly interesting. Mostly it’s a
+          way for us to design stuff so that we can keep our minds off of the
+          end of the world. Each issue is based on a different theme, so we’re
+          reinventing the magazine every time. We’ve got contributors from all
+          over the world, like New York, Paris, Toronto, Singapore, Lima, New
+          Jersey, etc. If you want to be a part of this, dm us your stuff
+          @qrzn_mag
+        </H1>
+      </About>
     </>
   )
 }

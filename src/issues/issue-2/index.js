@@ -11,7 +11,7 @@ const Issue2 = () => {
   return (
     <>
       <Cover />
-      {/* <DavidByrne /> */}
+      <DavidByrne />
       <Paradise />
       <FavoriteSmells />
       <Nyc360 />
