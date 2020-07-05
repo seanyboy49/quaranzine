@@ -15,11 +15,29 @@ const TitleWrap = styled.div`
   overflow: hidden;
   white-space: nowrap;
   position: relative;
+
+  ${mediaQueries.phoneWide} {
+    line-height: 100px;
+  }
 `
 const Title = styled.h1`
   font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue";
   font-size: 19vw;
   margin: 0 0 0 -1vw;
+`
+
+const ByLine = styled.h3`
+  font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue";
+  font-size: 3vw;
+  position: absolute;
+  right: 20.5vw;
+  bottom: -30px;
+
+  ${mediaQueries.phoneWide} {
+    right: 8vw;
+    bottom: -55px;
+    font-size: 15px;
+  }
 `
 
 const ContentWrapper = styled.div`
@@ -43,7 +61,7 @@ const ImageWrapper = styled.div`
   width: 40%;
 
   ${mediaQueries.phoneWide} {
-    margin: 5vh 0;
+    margin: 3vh 0;
   }
 `
 
@@ -148,6 +166,7 @@ const DogsMind = () => {
     <Background>
       <TitleWrap>
         <Title>Dog's Mind</Title>
+        <ByLine>by David Byrne</ByLine>
       </TitleWrap>
 
       <ContentWrapper>
@@ -156,6 +175,7 @@ const DogsMind = () => {
             <TextFirstHalf />
             <ImageWrapper>
               <Img fluid={data.file.childImageSharp.fluid} />
+              <Text center>collage by Dustin Willoughby @chilloughby</Text>
             </ImageWrapper>
             <TextSeconHalf />
           </>
@@ -171,6 +191,7 @@ const DogsMind = () => {
                 style={{ maxHeight: "70%" }}
                 imgStyle={{ objectFit: "contain" }}
               />
+              <Text center>collage by Dustin Willoughby @chilloughby</Text>
             </ImageWrapper>
           </>
         )}
