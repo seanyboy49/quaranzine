@@ -111,7 +111,7 @@ const FavoriteSmells = () => {
           node {
             name
             childImageSharp {
-              fixed(height: 581, width: 9296) {
+              fixed {
                 ...GatsbyImageSharpFixed_withWebp_tracedSVG
               }
               fluid {

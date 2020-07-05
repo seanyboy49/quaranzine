@@ -163,9 +163,9 @@ const Paradise = () => {
     }
   `)
 
-  const park_img = findFileByName(data, "park-edit")
-  const sidewalk_img = findFileByName(data, "sidewalk-edit")
-  const street_img = findFileByName(data, "street-edit")
+  const parkImg = findFileByName(data, "park-edit")
+  const sidewalkImg = findFileByName(data, "sidewalk-edit")
+  const streetImg = findFileByName(data, "street-edit")
 
   return (
     <ComponentWrapper>
@@ -176,7 +176,7 @@ const Paradise = () => {
       </ParadiseContainer>
       <ArticleWrapper>
         <LeftSection>
-          <Img fluid={sidewalk_img.node.childImageSharp.fluid} />
+          <Img fluid={sidewalkImg.node.childImageSharp.fluid} />
           <PMargin margin={"120px 40px"}>
             It's a sin to seek perfection
             <br />
@@ -207,7 +207,7 @@ const Paradise = () => {
           </PMargin>
         </LeftSection>
         <RightSection>
-          <Img fluid={street_img.node.childImageSharp.fluid} />
+          <Img fluid={streetImg.node.childImageSharp.fluid} />
           <PMargin margin={"70px 0px"}>
             I am nothing like my sister
             <br />
@@ -227,7 +227,7 @@ const Paradise = () => {
             To bring us home again
             <br />
           </PMargin>
-          <Img fluid={park_img.node.childImageSharp.fluid} />
+          <Img fluid={parkImg.node.childImageSharp.fluid} />
         </RightSection>
       </ArticleWrapper>
     </ComponentWrapper>
