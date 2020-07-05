@@ -5,7 +5,8 @@ import grit from "./grit"
 import { mediaQueries } from "../../../styles/layout"
 
 export const Background = styled.div`
-  height: 100vh;
+  height: 100%;
+  padding: 1em 0;
   background: ${({ backgroundColor }) => backgroundColor};
   background-image: url(${grit});
 `
