@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
 import { findFileByName } from "../../utils"
-import { mediaQueries, breakpoints } from "../../styles/layout"
+import { mediaQueries } from "../../styles/layout"
 
 const ComponentWrapper = styled.div`
   overflow: hidden;
@@ -62,10 +62,6 @@ const ArticleWrapper = styled.div`
   ${mediaQueries.tabletWide} {
     flex-direction: column-reverse;
   }
-`
-const ImageWrapper = styled.div`
-  width: 130%
-  height: 130%
 `
 
 const GateTitle = styled.h2`

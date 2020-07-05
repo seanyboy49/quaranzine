@@ -5,14 +5,16 @@ import DavidByrne from "./david-byrne"
 import FavoriteSmells from "./fav-smells"
 import Nyc360 from "./nyc-360"
 import Paradise from "./gate-of-paradise"
+import DogsMind from "./dogs-mind"
 
 const Issue2 = () => {
   return (
     <>
-      <DavidByrne />
+      <DogsMind />
+      {/* <DavidByrne />
       <Paradise />
       <FavoriteSmells />
-      <Nyc360 />
+      <Nyc360 /> */}
     </>
   )
 }
