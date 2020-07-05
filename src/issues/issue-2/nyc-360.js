@@ -1,10 +1,9 @@
-import React, { useState } from "react"
+import React from "react"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 
 import { findFileByName } from "../../utils"
-import theme from "../../styles/theme"
 
 const ImgWrapper = styled.div`
   height: auto;
