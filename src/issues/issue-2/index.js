@@ -10,11 +10,11 @@ import DogsMind from "./dogs-mind"
 const Issue2 = () => {
   return (
     <>
-      <DogsMind />
-      {/* <DavidByrne />
+      <DavidByrne />
       <Paradise />
       <FavoriteSmells />
-      <Nyc360 /> */}
+      <Nyc360 />
+      <DogsMind />
     </>
   )
 }
