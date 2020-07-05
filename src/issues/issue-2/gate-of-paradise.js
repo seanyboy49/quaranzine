@@ -73,17 +73,18 @@ const GateTitle = styled.h2`
   padding: 0;
   margin: 0;
   margin-left: -5rem;
-  line-height: 12rem;
+  line-height: 11rem;
   font-weight: normal;
 
   ${mediaQueries.tabletWide} {
     font-size: 22vw;
     margin-left: -1.5rem;
-    line-height: 10rem;
+    line-height: 7.5rem;
     margin-bottom: 4.5rem;
   }
   ${mediaQueries.phoneWide} {
     margin-bottom: -2rem;
+    line-height: 3.5rem;
   }
 `
 const ParadiseTitle = styled.h2`
@@ -101,13 +102,16 @@ const Author = styled.p`
 
   @media screen and (max-width: 1300px) {
     margin-left: 3%;
+    margin-top: 20%;
   }
   ${mediaQueries.tabletWide} {
     margin-left: 60%;
+    margin-top: 10%;
   }
   ${mediaQueries.phoneWide} {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin-left: 50%;
+    margin-top: 17%;
   }
   @media screen and (max-width: 350px) {
     font-size: 1.25rem;
@@ -123,12 +127,12 @@ const ParadiseContainer = styled.div`
   white-space: normal;
 
   ${mediaQueries.tabletWide} {
-    top: 0.5rem;
+    top: -1rem;
     line-height: 10rem;
     margin: 0;
   }
   ${mediaQueries.phoneWide} {
-    top: 2.5rem;
+    top: -1rem;
     line-height: 5rem;
     margin: 0;
   }
