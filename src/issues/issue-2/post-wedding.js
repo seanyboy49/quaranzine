@@ -35,9 +35,24 @@ const Article = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin: 5rem;
 `
 const Row = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem;
+  height: auto;
+`
+const ArticleText = styled.div`
+  flex: 2 1 30rem;
+  font-size: 1.5rem;
+  margin: 1rem;
+`
+const ImageWrapper = styled.div`
+  padding: 0;
+  margin: 0;
+  width: 25%;
 `
 
 const Wedding = () => {
@@ -84,7 +99,7 @@ const Wedding = () => {
       </Cover>
       <Article>
         <Row>
-          <div>
+          <ArticleText>
             <p>
               1. Wish anyone and everyone who was at your wedding a happy
               birthday.{" "}
@@ -101,7 +116,10 @@ const Wedding = () => {
               are front and center, and they are off to the side, adjusting your
               veil.
             </p>
-          </div>
+          </ArticleText>
+          <ImageWrapper>
+            <Img fluid={CheezIt.node.childImageSharp.fluid} />
+          </ImageWrapper>
         </Row>
       </Article>
     </Wrapper>
