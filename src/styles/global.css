@@ -9,3 +9,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@font-face {
+  font-family: "Apercu Mono";
+  src: url("../../static/fonts/apercu/Apercu-Mono.otf");
+}

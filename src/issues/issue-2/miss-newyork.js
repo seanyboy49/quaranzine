@@ -54,7 +54,7 @@ const NewYork = styled(Title)`
 `
 
 const Blurb = styled.div`
-  font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue";
+  font-family: "Apercu Mono";
   font-size: 17px;
   position: absolute;
   z-index: 100;

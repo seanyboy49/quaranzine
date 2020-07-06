@@ -78,6 +78,7 @@ const StyleP = styled.p`
   transform: ${({ degrees }) => `rotate(${degrees}deg)`};
   font-size: ${props => props.fontSize || 20}px;
   align-self: ${props => props.align || "center"};
+  font-family: "Apercu Mono";
 `
 
 const ControlArrows = styled.button`

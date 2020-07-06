@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import { PaddedWidthContainer, Row } from "../../styles/layout"
+import { PaddedWidthContainer } from "../../styles/layout"
 import { Text } from "../../styles/text"
 
 const P = styled(Text)`
