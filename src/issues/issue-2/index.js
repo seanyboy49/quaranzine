@@ -11,7 +11,8 @@ import Scrapbook from "./scrapbook"
 import DogsMind from "./dogs-mind"
 import MissNewYork from "./miss-newyork"
 import DJBan from "./dj-ban"
-import Wedding from "./wedding/post-wedding"
+import Wedding from "./wedding"
+import Credits from "./credits"
 
 const Issue2 = () => {
   return (
@@ -27,6 +28,7 @@ const Issue2 = () => {
       <MissNewYork />
       <DJBan />
       <Wedding />
+      <Credits />
     </>
   )
 }
