@@ -7,6 +7,7 @@ import Paradise from "./gate-of-paradise"
 import FavoriteSmells from "./fav-smells"
 import Esperas from "./esperas"
 import Nyc360 from "./nyc-360"
+import Scrapbook from "./scrapbook"
 import DogsMind from "./dogs-mind"
 import MissNewYork from "./miss-newyork"
 import DJBan from "./dj-ban"
@@ -21,6 +22,7 @@ const Issue2 = () => {
       <FavoriteSmells />
       <Esperas />
       <Nyc360 />
+      <Scrapbook />
       <DogsMind />
       <MissNewYork />
       <DJBan />
