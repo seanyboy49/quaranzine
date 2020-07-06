@@ -3,7 +3,7 @@ import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 
 import {
-  Wrapper,
+  Background,
   TitleWrapper,
   Title,
   Authors,
@@ -26,9 +26,6 @@ const Wedding = () => {
           node {
             name
             childImageSharp {
-              fixed {
-                ...GatsbyImageSharpFixed_withWebp_tracedSVG
-              }
               fluid {
                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
               }
@@ -39,15 +36,15 @@ const Wedding = () => {
     }
   `)
 
-  const weddingCover = findFileByName(data, "wedding-cover")
-  const cheezIt = findFileByName(data, "cheese-it")
-  const whiteClaw = findFileByName(data, "white-claw")
-  const honest = findFileByName(data, "honest")
-  const pringles = findFileByName(data, "pringles")
-  const BenJerry = findFileByName(data, "ben-jerry")
+  const weddingCoverImg = findFileByName(data, "wedding-cover")
+  const cheezItImg = findFileByName(data, "cheese-it")
+  const whiteClawImg = findFileByName(data, "white-claw")
+  const honestImg = findFileByName(data, "honest")
+  const pringlesImg = findFileByName(data, "pringles")
+  const benJerryImg = findFileByName(data, "ben-jerry")
 
   return (
-    <Wrapper>
+    <Background>
       <TitleWrapper>
         <Title>
           10 Ways To Keep Posting About Your Wedding Long After It’s Over.
@@ -59,7 +56,7 @@ const Wedding = () => {
         </Authors>
       </TitleWrapper>
       <Cover>
-        <Img fluid={weddingCover.node.childImageSharp.fluid} />
+        <Img fluid={weddingCoverImg.node.childImageSharp.fluid} />
       </Cover>
       <Article>
         <Row>
@@ -82,12 +79,12 @@ const Wedding = () => {
             </P>
           </ArticleText>
           <ImageWrapper>
-            <Img fluid={cheezIt.node.childImageSharp.fluid} />
+            <Img fluid={cheezItImg.node.childImageSharp.fluid} />
           </ImageWrapper>
         </Row>
         <Row direction={"column-reverse"}>
           <ImageWrapper>
-            <Img fluid={whiteClaw.node.childImageSharp.fluid} />
+            <Img fluid={whiteClawImg.node.childImageSharp.fluid} />
           </ImageWrapper>
           <ArticleText>
             <P fontSize={2}>
@@ -132,12 +129,12 @@ const Wedding = () => {
             </P>
           </ArticleText>
           <ImageWrapper>
-            <Img fluid={honest.node.childImageSharp.fluid} />
+            <Img fluid={honestImg.node.childImageSharp.fluid} />
           </ImageWrapper>
         </Row>
         <Row direction={"column-reverse"}>
           <ImageWrapper>
-            <Img fluid={pringles.node.childImageSharp.fluid} />
+            <Img fluid={pringlesImg.node.childImageSharp.fluid} />
           </ImageWrapper>
           <ArticleText>
             <P fontSize={2}>7. And your siblings!</P>
@@ -174,11 +171,11 @@ const Wedding = () => {
             </P>
           </ArticleText>
           <ImageWrapper>
-            <Img fluid={BenJerry.node.childImageSharp.fluid} />
+            <Img fluid={benJerryImg.node.childImageSharp.fluid} />
           </ImageWrapper>
         </Row>
       </Article>
-    </Wrapper>
+    </Background>
   )
 }
 

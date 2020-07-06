@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { mediaQueries } from "../../../styles/layout"
 
-export const Wrapper = styled.div`
+export const Background = styled.div`
   background-color: #f8a9a4;
   padding: 0;
   margin: 0;
