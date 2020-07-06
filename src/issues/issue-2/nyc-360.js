@@ -33,6 +33,10 @@ const SideNote = styled.p`
   padding: 0;
   margin: 0;
 `
+const Wrapper = styled.div`
+  margin: 0;
+  padding: 0;
+`
 
 const Nyc360 = () => {
   const data = useStaticQuery(graphql`
@@ -54,7 +58,7 @@ const Nyc360 = () => {
 
   const roofTopImg = findFileByName(data, "my-rooftop-quarantine")
   return (
-    <div>
+    <Wrapper>
       <TitleSection>
         <Title>The New York City 360º Rooftop Experience</Title>
         <SideNote>scroll plz</SideNote>
@@ -62,7 +66,7 @@ const Nyc360 = () => {
       <ImgWrapper>
         <Img fixed={roofTopImg.node.childImageSharp.fixed} />
       </ImgWrapper>
-    </div>
+    </Wrapper>
   )
 }
 

@@ -6,13 +6,13 @@ import FavoriteSmells from "./fav-smells"
 import Nyc360 from "./nyc-360"
 import Paradise from "./gate-of-paradise"
 import Cover from "./cover"
-import Wedding from "./post-wedding"
+import Wedding from "./wedding/post-wedding"
 
 const Issue2 = () => {
   return (
     <>
       <Cover />
-      {/* <DavidByrne /> */}
+      <DavidByrne />
       <Paradise />
       <FavoriteSmells />
       <Nyc360 />
