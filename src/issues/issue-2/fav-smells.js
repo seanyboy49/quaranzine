@@ -84,6 +84,15 @@ const StyleP = styled.p`
   font-size: ${props => props.fontSize || 20}px;
   align-self: ${props => props.align || "center"};
   font-family: "Apercu Mono";
+  padding: 0rem 1rem;
+
+  ${mediaQueries.tabletWide} {
+    font-size: 18px;
+  }
+
+  ${mediaQueries.phoneWide} {
+    font-size: 15px;
+  }
 `
 
 const ControlArrows = styled.button`
