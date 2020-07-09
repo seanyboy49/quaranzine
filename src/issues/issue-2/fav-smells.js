@@ -36,6 +36,11 @@ const CoverTitle = styled.h1`
   ${mediaQueries.tabletWide} {
     font-size: 5.5em;
   }
+  ${mediaQueries.phoneWide} {
+    font-size: 3rem;
+    margin-top: 1rem;
+    margin-left: -5rem;
+  }
 `
 const CoverDiv = styled.div`
   width: 100%;
