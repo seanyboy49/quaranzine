@@ -70,12 +70,12 @@ const TextContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
-  padding: 0 7%;
+  margin: 0 15px;
   width: 40%;
 
   ${mediaQueries.tabletWide} {
     width: 100%;
-    padding: 0 5px;
+    margin: 0 5px;
   }
 `
 
@@ -85,6 +85,8 @@ const StyleP = styled.p`
   align-self: ${props => props.align || "center"};
   font-family: "Apercu Mono";
   padding: 0rem 1rem;
+  // line-height: 3rem;
+  // text-align: left;
 
   ${mediaQueries.tabletWide} {
     font-size: 18px;
@@ -92,6 +94,27 @@ const StyleP = styled.p`
 
   ${mediaQueries.phoneWide} {
     font-size: 15px;
+  }
+`
+
+const CoverText = styled.p`
+  font-size: 20px;
+  align-self: center;
+  font-family: "Apercu Mono";
+  padding: 2rem;
+  line-height: 3rem;
+  text-align: left;
+
+  ${mediaQueries.tabletWide} {
+    font-size: 18px;
+    line-height: 1rem;
+    padding: 1rem;
+  }
+
+  ${mediaQueries.phoneWide} {
+    font-size: 15px;
+    line-height: 1rem;
+    padding: 1.5rem;
   }
 `
 const Name = styled.p`
@@ -218,23 +241,23 @@ const FavoriteSmells = () => {
         </CoverDiv>
         <SlideContainer color={"#fdffe9"}>
           <TextContainer>
-            <StyleP>
+            <CoverText>
               when I lost my sense of smell after contracting Covid, my life
               changed abruptly. vinegar, pillows, coffee grounds, expired
               chicken, central park, it all smelled the same. Life became
               plastic.
-            </StyleP>
+            </CoverText>
           </TextContainer>
           <ResizeImage>
             <Img fluid={noseImg.node.childImageSharp.fluid} />
           </ResizeImage>
           <TextContainer>
-            <StyleP>
+            <CoverText>
               and so, i asked people on instagram what they favorite smells
               were, and made collages out of my favorite responses, thinking
               that by looking at them, i could imagine what it was to smell
               again.
-            </StyleP>
+            </CoverText>
           </TextContainer>
         </SlideContainer>
       </TitleStyledLayout>
