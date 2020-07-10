@@ -121,7 +121,7 @@ const ControlArrows = styled.button`
   right: 0;
   background: transparent;
   padding: 0;
-  margin: 0;
+  margin: 2rem;
   ${props =>
     props &&
     props.left &&
@@ -175,8 +175,12 @@ const FavoriteSmells = () => {
     query: breakpoints.phoneWide,
   })
 
+  const tabletWide = useMediaQuery({
+    query: breakpoints.tabletWide,
+  })
+
   const renderCustomArrowPrev = (clickHandler, hasPrev) => {
-    if (isPhoneWide) {
+    if (isPhoneWide || tabletWide) {
       return null
     }
     if (hasPrev) {
@@ -189,7 +193,7 @@ const FavoriteSmells = () => {
   }
 
   const renderCustomArrowNext = (clickHandler, hasNext) => {
-    if (isPhoneWide) {
+    if (isPhoneWide || tabletWide) {
       return null
     }
 
