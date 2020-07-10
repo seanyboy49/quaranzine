@@ -131,6 +131,7 @@ const Name = styled.p`
 
   ${mediaQueries.phoneWide} {
     font-size: 22px;
+    margin: 2rem 4rem 3rem 0rem;
   }
 `
 
