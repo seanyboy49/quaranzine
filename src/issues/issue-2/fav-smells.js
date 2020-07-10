@@ -94,6 +94,22 @@ const StyleP = styled.p`
     font-size: 15px;
   }
 `
+const Name = styled.p`
+  transform: -0.5deg;
+  font-size: 30px;
+  align-self: flex-end;
+  font-family: "Apercu Mono";
+  margin: 2rem 2rem 3rem 0rem;
+
+  ${mediaQueries.tabletWide} {
+    font-size: 26px;
+    margin: 4rem 7rem 5rem 0rem;
+  }
+
+  ${mediaQueries.phoneWide} {
+    font-size: 22px;
+  }
+`
 
 const ControlArrows = styled.button`
   border: none;
@@ -229,9 +245,7 @@ const FavoriteSmells = () => {
           <StyleP degrees={1}>day. So it's like their own special</StyleP>
           <StyleP degrees={0}>person smell plus good clean soap</StyleP>
           <StyleP degree={1}>plus laundry detergent"</StyleP>
-          <StyleP fontSize={25} align={"flex-end"}>
-            -Sanika
-          </StyleP>
+          <Name>-Sanika</Name>
         </TextContainer>
       </SlideContainer>
 
@@ -241,9 +255,7 @@ const FavoriteSmells = () => {
         </ResizeImage>
         <TextContainer>
           <StyleP degrees={0.5}>"boulangerie in the morning"</StyleP>
-          <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
-            -Sacha
-          </StyleP>
+          <Name>-Sacha</Name>
         </TextContainer>
       </SlideContainer>
 
@@ -253,9 +265,7 @@ const FavoriteSmells = () => {
         </ResizeImage>
         <TextContainer>
           <StyleP degrees={-0.5}>"a garden after the rain"</StyleP>
-          <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
-            -Georgia
-          </StyleP>
+          <Name>-Georgia</Name>
         </TextContainer>
       </SlideContainer>
 
@@ -265,9 +275,7 @@ const FavoriteSmells = () => {
         </ResizeImage>
         <TextContainer>
           <StyleP degrees={0.5}>"warm skin"</StyleP>
-          <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
-            -Luca
-          </StyleP>
+          <Name>-Luca</Name>
         </TextContainer>
       </SlideContainer>
 
@@ -277,9 +285,7 @@ const FavoriteSmells = () => {
         </ResizeImage>
         <TextContainer>
           <StyleP degrees={0.5}>"whatever delicious food is cooking"</StyleP>
-          <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
-            -Holly
-          </StyleP>
+          <Name>-Holly</Name>
         </TextContainer>
       </SlideContainer>
 
@@ -291,9 +297,7 @@ const FavoriteSmells = () => {
           <StyleP degrees={1}>"I love the smell of cinema butter</StyleP>
           <StyleP degrees={-1}>popcorn, as soon as you open</StyleP>
           <StyleP degrees={0.5}>the door. BOOM."</StyleP>
-          <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
-            -Nicholas
-          </StyleP>
+          <Name>-Nicholas</Name>
         </TextContainer>
       </SlideContainer>
 
@@ -303,9 +307,7 @@ const FavoriteSmells = () => {
         </ResizeImage>
         <TextContainer>
           <StyleP degrees={0.75}>"coffee in the morning"</StyleP>
-          <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
-            -Lea
-          </StyleP>
+          <Name>-Lea</Name>
         </TextContainer>
       </SlideContainer>
 
@@ -315,9 +317,7 @@ const FavoriteSmells = () => {
         </ResizeImage>
         <TextContainer>
           <StyleP degrees={0.75}>"victory"</StyleP>
-          <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
-            -Bellyn
-          </StyleP>
+          <Name>-Bellyn</Name>
         </TextContainer>
       </SlideContainer>
 
@@ -327,9 +327,7 @@ const FavoriteSmells = () => {
         </ResizeImage>
         <TextContainer>
           <StyleP degrees={-0.25}>"my mom"</StyleP>
-          <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
-            -Morgan
-          </StyleP>
+          <Name>-Morgan</Name>
         </TextContainer>
       </SlideContainer>
 
@@ -339,9 +337,7 @@ const FavoriteSmells = () => {
         </ResizeImage>
         <TextContainer>
           <StyleP degrees={-0.5}>"an old armchair"</StyleP>
-          <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
-            -Jean
-          </StyleP>
+          <Name>-Jean</Name>
         </TextContainer>
       </SlideContainer>
 
@@ -351,9 +347,7 @@ const FavoriteSmells = () => {
         </ResizeImage>
         <TextContainer>
           <StyleP degrees={0.25}>"the salty sea"</StyleP>
-          <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
-            -Alice
-          </StyleP>
+          <Name>-Alice</Name>
         </TextContainer>
       </SlideContainer>
 
@@ -363,9 +357,7 @@ const FavoriteSmells = () => {
         </ResizeImage>
         <TextContainer>
           <StyleP degrees={-0.25}>"Paul's smell"</StyleP>
-          <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
-            -Camila
-          </StyleP>
+          <Name>-Camila</Name>
         </TextContainer>
       </SlideContainer>
     </Carousel>
