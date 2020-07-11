@@ -53,7 +53,7 @@ export const TextBox = styled.div`
   font-weight: ${({ bold }) => bold && `900`};
   text-align: center;
 
-  font-size: clamp(12px, 1rem + 1vw, 24px);
+  font-size: clamp(12px, 1rem + 0.5vw, 24px);
 
   ${mediaQueries.phoneWide} {
     padding: 5px 10px;
@@ -67,7 +67,7 @@ export const Text = styled.div`
   margin: auto 0;
   color: ${({ color }) => (color && color) || "black"};
   font-weight: ${({ bold }) => bold && `900`};
-  font-size: clamp(12px, 1rem + 1vw, 24px);
+  font-size: clamp(12px, 1rem + 0.5vw, 24px);
 `
 
 export const WordCountContainer = styled.div`
