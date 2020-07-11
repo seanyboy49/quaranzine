@@ -53,7 +53,7 @@ export const TextBox = styled.div`
   font-weight: ${({ bold }) => bold && `900`};
   text-align: center;
 
-  font-size: clamp(12px, 1rem + 1vw, 24px);
+  font-size: clamp(12px, 1rem + 0.5vw, 24px);
 
   ${mediaQueries.phoneWide} {
     padding: 5px 10px;
@@ -67,19 +67,26 @@ export const Text = styled.div`
   margin: auto 0;
   color: ${({ color }) => (color && color) || "black"};
   font-weight: ${({ bold }) => bold && `900`};
-  font-size: clamp(12px, 1rem + 1vw, 24px);
+  font-size: clamp(12px, 1rem + 0.5vw, 24px);
+
+  ${({ large }) =>
+    large &&
+    css`
+      font-size: clamp(1rem, 2rem + 1vw, 31px);
+    `}
 `
 
 export const WordCountContainer = styled.div`
   border: 0.2em solid ${({ color }) => color || "black"};
-  position: relative;
-  left: 20vw;
+  position: absolute;
+  right: 14vw;
   padding: 0.5em;
 
   ${mediaQueries.phoneWide} {
     max-width: 50vw;
-    left: initial;
+    right: initial;
     margin: auto;
     margin-top: 0.2em;
+    position: relative;
   }
 `
