@@ -36,6 +36,11 @@ const CoverTitle = styled.h1`
   ${mediaQueries.tabletWide} {
     font-size: 5.5em;
   }
+  ${mediaQueries.phoneWide} {
+    font-size: 3rem;
+    margin-top: 1rem;
+    margin-left: -5rem;
+  }
 `
 const CoverDiv = styled.div`
   width: 100%;
@@ -65,12 +70,12 @@ const TextContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
-  padding: 0 7%;
+  margin: 0 15px;
   width: 40%;
 
   ${mediaQueries.tabletWide} {
     width: 100%;
-    padding: 0 5px;
+    margin: 0 5px;
   }
 `
 
@@ -79,6 +84,53 @@ const StyleP = styled.p`
   font-size: ${props => props.fontSize || 20}px;
   align-self: ${props => props.align || "center"};
   font-family: "Apercu Mono";
+  padding: 0rem 1rem;
+
+  ${mediaQueries.tabletWide} {
+    font-size: 18px;
+  }
+
+  ${mediaQueries.phoneWide} {
+    font-size: 15px;
+  }
+`
+
+const CoverText = styled.p`
+  font-size: 20px;
+  align-self: center;
+  font-family: "Apercu Mono";
+  padding: 2rem;
+  line-height: 3rem;
+  text-align: left;
+
+  ${mediaQueries.tabletWide} {
+    font-size: 18px;
+    line-height: 1rem;
+    padding: 1rem;
+  }
+
+  ${mediaQueries.phoneWide} {
+    font-size: 15px;
+    line-height: 1rem;
+    padding: 1.5rem;
+  }
+`
+const Name = styled.p`
+  transform: -0.5deg;
+  font-size: 30px;
+  align-self: flex-end;
+  font-family: "Apercu Mono";
+  margin: 2rem 2rem 3rem 0rem;
+
+  ${mediaQueries.tabletWide} {
+    font-size: 26px;
+    margin: 4rem 7rem 5rem 0rem;
+  }
+
+  ${mediaQueries.phoneWide} {
+    font-size: 22px;
+    margin: 2rem 4rem 3rem 0rem;
+  }
 `
 
 const ControlArrows = styled.button`
@@ -91,7 +143,7 @@ const ControlArrows = styled.button`
   right: 0;
   background: transparent;
   padding: 0;
-  margin: 0;
+  margin: 2rem;
   ${props =>
     props &&
     props.left &&
@@ -145,8 +197,12 @@ const FavoriteSmells = () => {
     query: breakpoints.phoneWide,
   })
 
+  const tabletWide = useMediaQuery({
+    query: breakpoints.tabletWide,
+  })
+
   const renderCustomArrowPrev = (clickHandler, hasPrev) => {
-    if (isPhoneWide) {
+    if (isPhoneWide || tabletWide) {
       return null
     }
     if (hasPrev) {
@@ -159,7 +215,7 @@ const FavoriteSmells = () => {
   }
 
   const renderCustomArrowNext = (clickHandler, hasNext) => {
-    if (isPhoneWide) {
+    if (isPhoneWide || tabletWide) {
       return null
     }
 
@@ -184,28 +240,29 @@ const FavoriteSmells = () => {
         </CoverDiv>
         <SlideContainer color={"#fdffe9"}>
           <TextContainer>
-            <StyleP>
+            <CoverText>
               when I lost my sense of smell after contracting Covid, my life
               changed abruptly. vinegar, pillows, coffee grounds, expired
               chicken, central park, it all smelled the same. Life became
               plastic.
-            </StyleP>
+            </CoverText>
           </TextContainer>
           <ResizeImage>
             <Img fluid={noseImg.node.childImageSharp.fluid} />
           </ResizeImage>
           <TextContainer>
-            <StyleP>
+            <CoverText>
               and so, i asked people on instagram what they favorite smells
               were, and made collages out of my favorite responses, thinking
               that by looking at them, i could imagine what it was to smell
               again.
-            </StyleP>
+            </CoverText>
           </TextContainer>
         </SlideContainer>
       </TitleStyledLayout>
 
-      <SlideContainer color={"#d6f2f2"}>
+      <SlideContainer color={"white"}>
+        {/* "#d6f2f2" */}
         <ResizeImage>
           <Img fluid={afterShowerImg.node.childImageSharp.fluid} />
         </ResizeImage>
@@ -215,21 +272,18 @@ const FavoriteSmells = () => {
           <StyleP degrees={1}>day. So it's like their own special</StyleP>
           <StyleP degrees={0}>person smell plus good clean soap</StyleP>
           <StyleP degree={1}>plus laundry detergent"</StyleP>
-          <StyleP fontSize={25} align={"flex-end"}>
-            -Sanika
-          </StyleP>
+          <Name>-Sanika</Name>
         </TextContainer>
       </SlideContainer>
 
-      <SlideContainer color={"#fdffe9"}>
+      <SlideContainer color={"white"}>
+        {/* "#fdffe9" */}
         <ResizeImage>
           <Img fluid={boulangerieImg.node.childImageSharp.fluid} />
         </ResizeImage>
         <TextContainer>
           <StyleP degrees={0.5}>"boulangerie in the morning"</StyleP>
-          <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
-            -Sacha
-          </StyleP>
+          <Name>-Sacha</Name>
         </TextContainer>
       </SlideContainer>
 
@@ -239,9 +293,7 @@ const FavoriteSmells = () => {
         </ResizeImage>
         <TextContainer>
           <StyleP degrees={-0.5}>"a garden after the rain"</StyleP>
-          <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
-            -Georgia
-          </StyleP>
+          <Name>-Georgia</Name>
         </TextContainer>
       </SlideContainer>
 
@@ -251,9 +303,7 @@ const FavoriteSmells = () => {
         </ResizeImage>
         <TextContainer>
           <StyleP degrees={0.5}>"warm skin"</StyleP>
-          <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
-            -Luca
-          </StyleP>
+          <Name>-Luca</Name>
         </TextContainer>
       </SlideContainer>
 
@@ -263,9 +313,7 @@ const FavoriteSmells = () => {
         </ResizeImage>
         <TextContainer>
           <StyleP degrees={0.5}>"whatever delicious food is cooking"</StyleP>
-          <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
-            -Holly
-          </StyleP>
+          <Name>-Holly</Name>
         </TextContainer>
       </SlideContainer>
 
@@ -277,9 +325,7 @@ const FavoriteSmells = () => {
           <StyleP degrees={1}>"I love the smell of cinema butter</StyleP>
           <StyleP degrees={-1}>popcorn, as soon as you open</StyleP>
           <StyleP degrees={0.5}>the door. BOOM."</StyleP>
-          <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
-            -Nicholas
-          </StyleP>
+          <Name>-Nicholas</Name>
         </TextContainer>
       </SlideContainer>
 
@@ -289,9 +335,7 @@ const FavoriteSmells = () => {
         </ResizeImage>
         <TextContainer>
           <StyleP degrees={0.75}>"coffee in the morning"</StyleP>
-          <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
-            -Lea
-          </StyleP>
+          <Name>-Lea</Name>
         </TextContainer>
       </SlideContainer>
 
@@ -301,9 +345,7 @@ const FavoriteSmells = () => {
         </ResizeImage>
         <TextContainer>
           <StyleP degrees={0.75}>"victory"</StyleP>
-          <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
-            -Bellyn
-          </StyleP>
+          <Name>-Bellyn</Name>
         </TextContainer>
       </SlideContainer>
 
@@ -313,9 +355,7 @@ const FavoriteSmells = () => {
         </ResizeImage>
         <TextContainer>
           <StyleP degrees={-0.25}>"my mom"</StyleP>
-          <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
-            -Morgan
-          </StyleP>
+          <Name>-Morgan</Name>
         </TextContainer>
       </SlideContainer>
 
@@ -325,9 +365,7 @@ const FavoriteSmells = () => {
         </ResizeImage>
         <TextContainer>
           <StyleP degrees={-0.5}>"an old armchair"</StyleP>
-          <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
-            -Jean
-          </StyleP>
+          <Name>-Jean</Name>
         </TextContainer>
       </SlideContainer>
 
@@ -337,21 +375,18 @@ const FavoriteSmells = () => {
         </ResizeImage>
         <TextContainer>
           <StyleP degrees={0.25}>"the salty sea"</StyleP>
-          <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
-            -Alice
-          </StyleP>
+          <Name>-Alice</Name>
         </TextContainer>
       </SlideContainer>
 
-      <SlideContainer color={"#faf9bc"}>
+      <SlideContainer color={"white"}>
+        {/* "#faf9bc" */}
         <ResizeImage>
           <Img fluid={paulImg.node.childImageSharp.fluid} />
         </ResizeImage>
         <TextContainer>
           <StyleP degrees={-0.25}>"Paul's smell"</StyleP>
-          <StyleP fontSize={25} degrees={-0.5} align={"flex-end"}>
-            -Camila
-          </StyleP>
+          <Name>-Camila</Name>
         </TextContainer>
       </SlideContainer>
     </Carousel>
