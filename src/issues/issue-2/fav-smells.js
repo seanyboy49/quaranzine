@@ -85,8 +85,6 @@ const StyleP = styled.p`
   align-self: ${props => props.align || "center"};
   font-family: "Apercu Mono";
   padding: 0rem 1rem;
-  // line-height: 3rem;
-  // text-align: left;
 
   ${mediaQueries.tabletWide} {
     font-size: 18px;
