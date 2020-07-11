@@ -139,6 +139,7 @@ const DavidByrne = () => {
         <Text
           style={{ margin: "4vh auto" }}
           bold
+          large
           color={currentAlbum.textColor}
         >
           {currentAlbum.title}

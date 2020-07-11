@@ -22,7 +22,7 @@ const Header = ({ currentAlbum }) => {
       <HeaderText bold color={"#38a4d6"}>
         David Byrne's
       </HeaderText>
-      <Text bold color={currentAlbum.textColor}>
+      <Text large bold color={currentAlbum.textColor}>
         {currentAlbum.year}
       </Text>
       <HeaderText bold color={"#38a4d6"}>

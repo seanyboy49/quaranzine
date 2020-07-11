@@ -68,6 +68,12 @@ export const Text = styled.div`
   color: ${({ color }) => (color && color) || "black"};
   font-weight: ${({ bold }) => bold && `900`};
   font-size: clamp(12px, 1rem + 0.5vw, 24px);
+
+  ${({ large }) =>
+    large &&
+    css`
+      font-size: clamp(1rem, 2rem + 1vw, 31px);
+    `}
 `
 
 export const WordCountContainer = styled.div`
