@@ -136,7 +136,11 @@ const DavidByrne = () => {
       </FlexContainer>
 
       <FlexContainer>
-        <Text bold color={currentAlbum.textColor}>
+        <Text
+          style={{ margin: "4vh auto" }}
+          bold
+          color={currentAlbum.textColor}
+        >
           {currentAlbum.title}
         </Text>
 

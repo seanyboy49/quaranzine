@@ -72,14 +72,15 @@ export const Text = styled.div`
 
 export const WordCountContainer = styled.div`
   border: 0.2em solid ${({ color }) => color || "black"};
-  position: relative;
-  left: 20vw;
+  position: absolute;
+  right: 14vw;
   padding: 0.5em;
 
   ${mediaQueries.phoneWide} {
     max-width: 50vw;
-    left: initial;
+    right: initial;
     margin: auto;
     margin-top: 0.2em;
+    position: relative;
   }
 `
