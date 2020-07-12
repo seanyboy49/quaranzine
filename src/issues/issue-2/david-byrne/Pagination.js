@@ -8,14 +8,19 @@ import { mediaQueries } from "../../../styles/layout"
 const MiniImg = styled(Img)`
   margin: 10px;
   width: 35px;
+
   transition: 0.2s;
-
-  :hover {
-    cursor: pointer;
-    transform: scale(2);
-  }
-
   transform: ${({ isAdjacent }) => isAdjacent && `scale(1.3)`}};
+`
+
+const ImgWrap = styled.div`
+  :hover {
+    ${MiniImg} {
+      transition: 0.2s;
+      cursor: pointer;
+      transform: scale(2);
+    }
+  }
 `
 
 const PaginationWrap = styled.div`
@@ -42,7 +47,7 @@ const Pagination = ({ albums, albumIndex, onClick }) => {
         const isAdjacent = Math.abs(hoveredIndex - index) === 1
 
         return (
-          <div
+          <ImgWrap
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(undefined)}
             key={album.year}
@@ -53,7 +58,7 @@ const Pagination = ({ albums, albumIndex, onClick }) => {
               fluid={album.miniImg.childImageSharp.fluid}
             />
             {isActive && <TextBox>{album.year}</TextBox>}
-          </div>
+          </ImgWrap>
         )
       })}
     </PaginationWrap>

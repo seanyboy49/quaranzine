@@ -116,7 +116,7 @@ const DavidByrne = () => {
           <ImgWrap>
             <Img
               fluid={currentAlbum.bigImg.childImageSharp.fluid}
-              style={isPhoneWide ? { maxHeight: "20vh" } : { maxWidth: "15vw" }}
+              style={isPhoneWide && { maxHeight: "20vh" }}
               imgStyle={{ objectFit: "contain" }}
             />
           </ImgWrap>
