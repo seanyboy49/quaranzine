@@ -12,13 +12,7 @@ import useMeasure from "./useMeasure"
 import usePositions from "./usePositions"
 import albumByYearData from "./albumsByYear.js"
 import { mapImagesToAlbums, calculateGridItems } from "./utility"
-import {
-  Background,
-  Text,
-  FlexContainer,
-  ImgWrap,
-  WordCountContainer,
-} from "./styled"
+import { Background, Text, FlexContainer, ImgWrap } from "./styled"
 import { breakpoints } from "../../../styles/layout"
 
 let xOffset
@@ -136,23 +130,9 @@ const DavidByrne = () => {
       </FlexContainer>
 
       <FlexContainer>
-        <Text
-          style={{ margin: "4vh auto" }}
-          bold
-          large
-          color={currentAlbum.textColor}
-        >
+        <Text bold large color={currentAlbum.textColor}>
           {currentAlbum.title}
         </Text>
-
-        <WordCountContainer color={currentAlbum.textColor}>
-          <Text bold color={currentAlbum.textColor}>
-            Word Count
-          </Text>
-          <Text bold color={currentAlbum.textColor}>
-            {currentAlbum.wordCount}
-          </Text>
-        </WordCountContainer>
       </FlexContainer>
 
       {!isPhoneWide && (

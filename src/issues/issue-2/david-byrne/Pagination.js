@@ -6,8 +6,8 @@ import { TextBox, Text } from "./styled"
 import { mediaQueries } from "../../../styles/layout"
 
 const MiniImg = styled(Img)`
-  margin: 15px;
-  width: 50px;
+  margin: 5px;
+  width: 30px;
 
   transform: ${({ active }) => active && `scale(1.3)`};
   transition: 0.3s;
@@ -41,11 +41,6 @@ const Pagination = ({ albums, albumIndex, onClick }) => {
               active={isActive}
               fluid={album.miniImg.childImageSharp.fluid}
             />
-            {isActive ? (
-              <TextBox>{album.year}</TextBox>
-            ) : (
-              <Text color={albums[albumIndex].textColor}>{album.year}</Text>
-            )}
           </div>
         )
       })}
