@@ -1,20 +1,21 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 
-import { TextBox, Text } from "./styled"
+import { TextBox } from "./styled"
 import { mediaQueries } from "../../../styles/layout"
 
 const MiniImg = styled(Img)`
-  margin: 5px;
-  width: 30px;
-
-  transform: ${({ active }) => active && `scale(1.3)`};
-  transition: 0.3s;
+  margin: 10px;
+  width: 35px;
+  transition: 0.2s;
 
   :hover {
     cursor: pointer;
+    transform: scale(2);
   }
+
+  transform: ${({ isAdjacent }) => isAdjacent && `scale(1.3)`}};
 `
 
 const PaginationWrap = styled.div`
@@ -22,6 +23,7 @@ const PaginationWrap = styled.div`
   display: flex;
   justify-content: center;
   overflow-x: scroll;
+  padding: 15px;
 
   ${mediaQueries.phoneWide} {
     justify-content: flex-start;
@@ -30,17 +32,27 @@ const PaginationWrap = styled.div`
 `
 
 const Pagination = ({ albums, albumIndex, onClick }) => {
+  // Needs to be undefined, because you can do math with null
+  const [hoveredIndex, setHoveredIndex] = useState(undefined)
+
   return (
     <PaginationWrap>
       {albums.map((album, index) => {
         const isActive = index === albumIndex
+        const isAdjacent = Math.abs(hoveredIndex - index) === 1
 
         return (
-          <div key={album.year} onClick={() => onClick(index)}>
+          <div
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(undefined)}
+            key={album.year}
+            onClick={() => onClick(index)}
+          >
             <MiniImg
-              active={isActive}
+              isAdjacent={isAdjacent}
               fluid={album.miniImg.childImageSharp.fluid}
             />
+            {isActive && <TextBox>{album.year}</TextBox>}
           </div>
         )
       })}
