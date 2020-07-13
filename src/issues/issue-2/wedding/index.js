@@ -50,7 +50,7 @@ const Wedding = () => {
           10 Ways To Keep Posting About Your Wedding Long After It’s Over.
         </Title>
         <Authors>
-          words by Liann KayeM
+          words by Liann Kaye
           <br />
           collage by Charlene Kaye
         </Authors>
