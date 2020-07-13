@@ -6,14 +6,19 @@ import { TextBox } from "./styled"
 import { mediaQueries } from "../../../styles/layout"
 
 const MiniImg = styled(Img)`
+  z-index: 1000;
   margin: 10px;
   width: 35px;
 
-  transition: 0.2s;
+  transition: 0.4s;
   transform: ${({ isAdjacent }) => isAdjacent && `scale(1.3)`}};
 `
 
 const ImgWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   :hover {
     ${MiniImg} {
       transition: 0.2s;
@@ -27,12 +32,12 @@ const PaginationWrap = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+  margin: 2% 0;
   overflow-x: scroll;
   padding: 15px;
 
   ${mediaQueries.phoneWide} {
     justify-content: flex-start;
-    margin: 5% 0;
   }
 `
 
@@ -57,7 +62,9 @@ const Pagination = ({ albums, albumIndex, onClick }) => {
               isAdjacent={isAdjacent}
               fluid={album.miniImg.childImageSharp.fluid}
             />
-            {isActive && <TextBox>{album.year}</TextBox>}
+            {isActive && (
+              <TextBox style={{ marginTop: "10px" }}>{album.year}</TextBox>
+            )}
           </ImgWrap>
         )
       })}
