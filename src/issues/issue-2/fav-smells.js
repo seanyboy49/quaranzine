@@ -261,8 +261,7 @@ const FavoriteSmells = () => {
         </SlideContainer>
       </TitleStyledLayout>
 
-      <SlideContainer color={"white"}>
-        {/* "#d6f2f2" */}
+      <SlideContainer color={"#d6f2f2"}>
         <ResizeImage>
           <Img fluid={afterShowerImg.node.childImageSharp.fluid} />
         </ResizeImage>
@@ -276,8 +275,7 @@ const FavoriteSmells = () => {
         </TextContainer>
       </SlideContainer>
 
-      <SlideContainer color={"white"}>
-        {/* "#fdffe9" */}
+      <SlideContainer color={"#fdffe9"}>
         <ResizeImage>
           <Img fluid={boulangerieImg.node.childImageSharp.fluid} />
         </ResizeImage>
@@ -379,8 +377,7 @@ const FavoriteSmells = () => {
         </TextContainer>
       </SlideContainer>
 
-      <SlideContainer color={"white"}>
-        {/* "#faf9bc" */}
+      <SlideContainer color={"#faf9bc"}>
         <ResizeImage>
           <Img fluid={paulImg.node.childImageSharp.fluid} />
         </ResizeImage>
