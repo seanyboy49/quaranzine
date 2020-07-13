@@ -32,12 +32,26 @@ const DavidByrne = () => {
       mini: allFile(
         filter: { relativeDirectory: { eq: "issue2-images/david-byrne/mini" } }
       ) {
-        ...FixedImageFragment
+        nodes {
+          name
+          childImageSharp {
+            fixed(height: 60) {
+              ...GatsbyImageSharpFixed_withWebp_tracedSVG
+            }
+          }
+        }
       }
       big: allFile(
         filter: { relativeDirectory: { eq: "issue2-images/david-byrne/big" } }
       ) {
-        ...FluidImageFragment
+        nodes {
+          name
+          childImageSharp {
+            fixed(height: 300) {
+              ...GatsbyImageSharpFixed_withWebp_tracedSVG
+            }
+          }
+        }
       }
     }
   `)
@@ -114,11 +128,7 @@ const DavidByrne = () => {
           />
         ) : (
           <ImgWrap>
-            <Img
-              fluid={currentAlbum.bigImg.childImageSharp.fluid}
-              style={isPhoneWide && { maxHeight: "20vh" }}
-              imgStyle={{ objectFit: "contain" }}
-            />
+            <Img fixed={currentAlbum.bigImg.childImageSharp.fixed} />
           </ImgWrap>
         )}
 
