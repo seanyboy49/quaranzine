@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 import { useMediaQuery } from "react-responsive"
@@ -32,12 +32,12 @@ const DavidByrne = () => {
       mini: allFile(
         filter: { relativeDirectory: { eq: "issue2-images/david-byrne/mini" } }
       ) {
-        ...ImageFragment
+        ...FixedImageFragment
       }
       big: allFile(
         filter: { relativeDirectory: { eq: "issue2-images/david-byrne/big" } }
       ) {
-        ...ImageFragment
+        ...FluidImageFragment
       }
     }
   `)

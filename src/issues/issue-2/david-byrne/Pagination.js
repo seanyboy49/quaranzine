@@ -23,7 +23,7 @@ const ImgWrap = styled.div`
     ${MiniImg} {
       transition: 0.2s;
       cursor: pointer;
-      transform: scale(2);
+      transform: scale(1.8);
     }
   }
 `
@@ -60,7 +60,7 @@ const Pagination = ({ albums, albumIndex, onClick }) => {
           >
             <MiniImg
               isAdjacent={isAdjacent}
-              fluid={album.miniImg.childImageSharp.fluid}
+              fixed={album.miniImg.childImageSharp.fixed}
             />
             {isActive && (
               <TextBox style={{ marginTop: "10px" }}>{album.year}</TextBox>
