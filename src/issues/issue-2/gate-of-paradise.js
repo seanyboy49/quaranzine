@@ -133,6 +133,21 @@ const ParadiseContainer = styled.div`
     margin: 0;
   }
 `
+const Credit = styled.p`
+  font-size: 1rem;
+  text-align: right;
+  margin: 0rem 8rem 3rem 0rem;
+
+  ${mediaQueries.tabletWide} {
+    margin: 0rem 3.7rem 2rem 0rem;
+    font-size: 2rem;
+  }
+  ${mediaQueries.phoneWide} {
+      margin: 0rem 2rem 2rem 0rem;
+      font-size: 0.9rem;
+    }
+  }
+`
 
 const Paradise = () => {
   const data = useStaticQuery(graphql`
@@ -226,6 +241,7 @@ const Paradise = () => {
           <Img fluid={parkImg.node.childImageSharp.fluid} />
         </RightSection>
       </ArticleWrapper>
+      <Credit>collages by Leah Yen Jarrett @leahyjarrett</Credit>
     </ComponentWrapper>
   )
 }
