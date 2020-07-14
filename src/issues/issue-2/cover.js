@@ -51,7 +51,7 @@ const H1 = styled.h1`
 const Cover = () => {
   const coverImage = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "issue2-images/issue2-cover.png" }) {
+      file(relativePath: { eq: "issue2-images/issue-2-cover.jpg" }) {
         childImageSharp {
           fluid(quality: 100) {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
