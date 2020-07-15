@@ -4,9 +4,11 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import { mediaQueries } from "../../styles/layout"
 import Nav from "../../pages/navBar"
+import grit from "./david-byrne/grit"
 
 const Background = styled.div`
   background-color: #ecdb3f;
+  background-image: url(${grit});
 `
 
 const IssueWrapper = styled.div`
