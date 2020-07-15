@@ -148,7 +148,7 @@ const TextSeconHalf = () => (
 const DogsMind = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "issue2-images/dogs-mind.png" }) {
+      file(relativePath: { eq: "issue2-images/dogs-mind.jpg" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
