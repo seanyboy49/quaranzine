@@ -5,7 +5,7 @@ import { Text } from "../styles/text"
 import logo from "../images/logo.svg"
 import { useMediaQuery } from "react-responsive"
 
-const Nav = () => {
+const Nav = ({ title }) => {
   const isPhoneWide = useMediaQuery({
     query: breakpoints.phoneWide,
   })
@@ -18,7 +18,7 @@ const Nav = () => {
           alt="small qrzn logo"
         ></img>
       </a>
-      {!isPhoneWide && <Text center>the quaranzine for the quaranzined</Text>}
+      {!isPhoneWide && <Text center>{title}</Text>}
       <StyledLink to="/archive/">archive</StyledLink>
     </NavBar>
   )

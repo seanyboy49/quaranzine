@@ -3,7 +3,7 @@ import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import { mediaQueries } from "../../styles/layout"
-import Nav from "../../pages/navBar"
+import Nav from "../../components/navBar"
 import grit from "./david-byrne/grit"
 
 const Background = styled.div`
@@ -70,7 +70,7 @@ const Cover = () => {
 
   return (
     <Background>
-      <Nav />
+      <Nav title={"for the bored by the bored"} />
       <Img fluid={coverImage.file.childImageSharp.fluid} />
       <IssueWrapper>
         <IssueNum>issue #2: collage</IssueNum>
