@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 
 import SEO from "../components/seo"
-import Nav from "./navBar"
 import Issue2 from "../issues/issue-2"
 
 const PublishedIssue2 = () => {
@@ -18,7 +17,6 @@ const PublishedIssue2 = () => {
   return (
     <>
       <SEO title="Home" />
-      {/* <Nav /> */}
       <Issue2 />
     </>
   )

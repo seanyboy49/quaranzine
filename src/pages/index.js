@@ -17,7 +17,6 @@ const Home = () => {
   return (
     <>
       <SEO title="Home" />
-
       <Issue1 />
     </>
   )
