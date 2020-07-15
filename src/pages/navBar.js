@@ -11,11 +11,13 @@ const Nav = () => {
   })
   return (
     <NavBar>
-      <img
-        width={isPhoneWide ? 75 : 128}
-        src={logo}
-        alt="small qrzn logo"
-      ></img>
+      <a href="/">
+        <img
+          width={isPhoneWide ? 75 : 128}
+          src={logo}
+          alt="small qrzn logo"
+        ></img>
+      </a>
       {!isPhoneWide && <Text center>the quaranzine for the quaranzined</Text>}
       <StyledLink to="/archive/">archive</StyledLink>
     </NavBar>
