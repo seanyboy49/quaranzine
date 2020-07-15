@@ -18,7 +18,7 @@ const PublishedIssue2 = () => {
   return (
     <>
       <SEO title="Home" />
-      <Nav />
+      {/* <Nav /> */}
       <Issue2 />
     </>
   )

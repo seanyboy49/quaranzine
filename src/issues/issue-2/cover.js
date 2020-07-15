@@ -3,6 +3,11 @@ import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import { mediaQueries } from "../../styles/layout"
+import Nav from "../../pages/navBar"
+
+const Background = styled.div`
+  background-color: #ecdb3f;
+`
 
 const IssueWrapper = styled.div`
   background-color: #ff7b4d;
@@ -51,7 +56,7 @@ const H1 = styled.h1`
 const Cover = () => {
   const coverImage = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "issue2-images/issue-2-cover.jpg" }) {
+      file(relativePath: { eq: "issue2-images/issue-2-cover.png" }) {
         childImageSharp {
           fluid(quality: 100) {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
@@ -62,7 +67,8 @@ const Cover = () => {
   `)
 
   return (
-    <>
+    <Background>
+      <Nav />
       <Img fluid={coverImage.file.childImageSharp.fluid} />
       <IssueWrapper>
         <IssueNum>issue #2: collage</IssueNum>
@@ -79,7 +85,7 @@ const Cover = () => {
           @qrzn_mag
         </H1>
       </About>
-    </>
+    </Background>
   )
 }
 
