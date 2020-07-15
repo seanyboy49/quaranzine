@@ -39,7 +39,7 @@ const Wedding = () => {
   const weddingCoverImg = findFileByName(data, "wedding-cover")
   const cheezItImg = findFileByName(data, "cheese-it")
   const whiteClawImg = findFileByName(data, "white-claw")
-  const honestImg = findFileByName(data, "honest")
+  const oreoImg = findFileByName(data, "oreo")
   const pringlesImg = findFileByName(data, "pringles")
   const benJerryImg = findFileByName(data, "ben-jerry")
 
@@ -129,7 +129,7 @@ const Wedding = () => {
             </P>
           </ArticleText>
           <ImageWrapper>
-            <Img fluid={honestImg.node.childImageSharp.fluid} />
+            <Img fluid={oreoImg.node.childImageSharp.fluid} />
           </ImageWrapper>
         </Row>
         <Row direction={"column-reverse"}>
