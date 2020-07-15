@@ -13,6 +13,7 @@ import PodcatRatings from "./podcast-ratings"
 import LimerickMinute from "./limerick-minute"
 import BarbershopsAreClosed from "./barbershops-are-closed"
 import DescentIntoMadness from "./descent-into-madness"
+import Nav from "../../pages/navBar"
 
 import Sext from "./sext-ed"
 import Credits from "./credits"
@@ -20,6 +21,7 @@ import Credits from "./credits"
 const Issue1 = () => {
   return (
     <>
+      <Nav />
       <Cover />
       <LineBreak fileName="morse-follow-me" />
       <ApartmentDrawing />
