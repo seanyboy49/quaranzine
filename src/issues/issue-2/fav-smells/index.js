@@ -165,7 +165,7 @@ const Dot = styled.div`
   border: 1px solid black;
   text-align: center;
   padding: 0;
-  background-color: ${props => props.color || "none"};
+  background-color: ${props => props.color || "transparent"};
 
   ${mediaQueries.phoneWide} {
     width: 7px;
