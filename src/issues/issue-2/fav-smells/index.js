@@ -165,25 +165,7 @@ const Dot = styled.div`
   border: 1px solid black;
   text-align: center;
   padding: 0;
-
-  ${mediaQueries.phoneWide} {
-    width: 7px;
-    height: 7px;
-    margin: 0 7px;
-  }
-`
-
-const SelectedDot = styled.div`
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: inline-block;
-  margin: 0 12px;
-  border: 1px solid black;
-  background-color: black;
-  text-align: center;
-  padding: 0;
+  background-color: ${props => props.color || "none"};
 
   ${mediaQueries.phoneWide} {
     width: 7px;
@@ -266,11 +248,11 @@ const FavoriteSmells = () => {
     }
   }
 
-  const dots = (clickHandler, isSelected, index) => {
+  const dots = (clickHandler, isSelected) => {
     if (isSelected === true) {
-      return <SelectedDot onClick={clickHandler}></SelectedDot>
+      return <Dot color={"black"} onClick={clickHandler} />
     } else {
-      return <Dot onClick={clickHandler}></Dot>
+      return <Dot onClick={clickHandler} />
     }
   }
 
