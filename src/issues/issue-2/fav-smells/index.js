@@ -5,16 +5,18 @@ import { useStaticQuery, graphql } from "gatsby"
 import { useMediaQuery } from "react-responsive"
 import styled, { css } from "styled-components"
 
-import { mediaQueries, breakpoints } from "../../styles/layout"
-import { findFileByName } from "../../utils"
+import { mediaQueries, breakpoints } from "../../../styles/layout"
+import { findFileByName } from "../../../utils"
+import "./style.css"
 
 const ResizeImage = styled.div`
   width: 40%;
-  margin: 0;
+  margin: 0 0 2rem 0;
   padding: 0;
 
   ${mediaQueries.tabletWide} {
     width: 85%;
+    margin: 0;
   }
 `
 const TitleStyledLayout = styled.div`
@@ -153,6 +155,24 @@ const ControlArrows = styled.button`
       z-index: 10;
     `}
 `
+const Dot = styled.div`
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 12px;
+  border: 1px solid black;
+  text-align: center;
+  padding: 0;
+  background-color: ${props => props.color || "transparent"};
+
+  ${mediaQueries.phoneWide} {
+    width: 7px;
+    height: 7px;
+    margin: 0 7px;
+  }
+`
 
 const FavoriteSmells = () => {
   const data = useStaticQuery(graphql`
@@ -228,10 +248,19 @@ const FavoriteSmells = () => {
     }
   }
 
+  const dots = (clickHandler, isSelected) => {
+    if (isSelected === true) {
+      return <Dot color={"black"} onClick={clickHandler} />
+    } else {
+      return <Dot onClick={clickHandler} />
+    }
+  }
+
   return (
     <Carousel
       renderArrowPrev={renderCustomArrowPrev}
       renderArrowNext={renderCustomArrowNext}
+      renderIndicator={dots}
       showThumbs={false}
     >
       <TitleStyledLayout>
@@ -261,8 +290,7 @@ const FavoriteSmells = () => {
         </SlideContainer>
       </TitleStyledLayout>
 
-      <SlideContainer color={"white"}>
-        {/* "#d6f2f2" */}
+      <SlideContainer color={"#d6f2f2"}>
         <ResizeImage>
           <Img fluid={afterShowerImg.node.childImageSharp.fluid} />
         </ResizeImage>
@@ -276,8 +304,7 @@ const FavoriteSmells = () => {
         </TextContainer>
       </SlideContainer>
 
-      <SlideContainer color={"white"}>
-        {/* "#fdffe9" */}
+      <SlideContainer color={"#fdffe9"}>
         <ResizeImage>
           <Img fluid={boulangerieImg.node.childImageSharp.fluid} />
         </ResizeImage>
@@ -379,8 +406,7 @@ const FavoriteSmells = () => {
         </TextContainer>
       </SlideContainer>
 
-      <SlideContainer color={"white"}>
-        {/* "#faf9bc" */}
+      <SlideContainer color={"#faf9bc"}>
         <ResizeImage>
           <Img fluid={paulImg.node.childImageSharp.fluid} />
         </ResizeImage>
