@@ -11,17 +11,20 @@ const MiniImg = styled(Img)`
   width: 35px;
 
   transition: 0.4s;
-  transform: ${({ isAdjacent }) => isAdjacent && `scale(1.3)`}};
   transform: ${({ isActive }) => isActive && `scale(1.8)`}};
 `
 
 const ImgWrap = styled(animated.div)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: relative;
+  //   transition: 0.4s;
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: center;
+  border: 1px solid blue;
 `
 
 const CarouselWrap = styled.div`
+  border: 1px solid black;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -59,16 +62,26 @@ const getListFromAdjacent = (array, index) => {
 
 const Carousel = ({ albums, albumIndex, onClick }) => {
   const [carousel, setCarousel] = useState(getListFromAdjacent(albums, 0))
+
   const renderTransitions = useTransition(carousel, {
-    keys: carouselItem => carouselItem.index,
-    from: props => {
-      return { opacity: 0 }
+    keys: carouselItem => {
+      //   console.log(carouselItem)
+      //   return carouselItem.item.year
+      return carouselItem.index
     },
-    enter: props => {
-      return { x: 10, opacity: 1 }
+    from: props => {
+      return { x: 0, opacity: 0 }
+    },
+    enter: ({ position }) => {
+      if (position === "previous") {
+        return { x: 10, opacity: 1 }
+      } else if (position === "next") {
+        return { x: -10, opacity: 1 }
+      } else return { x: 0, opacity: 1 }
     },
     update: props => {
-      return { x: 10 }
+      //   console.log("update", props)
+      return { x: -10 }
     },
     leave: ({ position }) => {
       if (position === "previous") {
@@ -77,30 +90,37 @@ const Carousel = ({ albums, albumIndex, onClick }) => {
         return { x: 10, opacity: 0 }
       }
     },
+
+    // trail: 250,
   })
-  console.log(carousel)
 
   return (
     <CarouselWrap>
       {renderTransitions(({ x, ...rest }, { item, index }, transition) => {
+        const isActive = index === albumIndex
         // console.log("x", x)
         return (
-          <ImgWrap
-            key={item.year}
-            onClick={() => {
-              onClick(index)
-              setCarousel(getListFromAdjacent(albums, index))
-            }}
-            style={{
-              transform: x.to(x => {
-                // console.log("x", x)
-                return `translate3d(${x}px, 0, 0)`
-              }),
-              ...rest,
-            }}
-          >
-            <MiniImg fixed={item.miniImg.childImageSharp.fixed} />
-          </ImgWrap>
+          <>
+            <ImgWrap
+              key={item.year}
+              onClick={() => {
+                onClick(index)
+                setCarousel(getListFromAdjacent(albums, index))
+              }}
+              style={{
+                transform: x.to(x => {
+                  // console.log("x", x)
+                  return `translate3d(${x}px, 0, 0)`
+                }),
+                ...rest,
+              }}
+            >
+              <MiniImg
+                isActive={isActive}
+                fixed={item.miniImg.childImageSharp.fixed}
+              />
+            </ImgWrap>
+          </>
         )
       })}
     </CarouselWrap>
