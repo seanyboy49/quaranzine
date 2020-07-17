@@ -6,6 +6,7 @@ import { useMediaQuery } from "react-responsive"
 import Header from "./Header"
 import AnimatedWords from "./AnimatedWords"
 import Pagination from "./Pagination"
+import Carousel from "./Carousel"
 
 import useMedia from "./useMedia"
 import useMeasure from "./useMeasure"
@@ -121,7 +122,7 @@ const DavidByrne = () => {
         />
 
         {isPhoneWide ? (
-          <Pagination
+          <Carousel
             albums={albums}
             albumIndex={albumIndex}
             onClick={setAlbumIndex}
