@@ -46,24 +46,24 @@ const getListFromAdjacent = (array, index) => {
   const last = array.length - 1
 
   if (index === 0) {
-    const previous = array[last]
-    const current = array[index]
-    const next = array[index + 1]
+    const previous = { item: array[last], index: last }
+    const current = { item: array[index], index }
+    const next = { item: array[index + 1], index: index + 1 }
 
     return [previous, current, next]
   }
 
   if (index === last) {
-    const previous = last - 1
-    const current = last
-    const next = first
+    const previous = { item: array[last - 1], index: last - 1 }
+    const current = { item: array[last], index: last }
+    const next = { item: array[first], index: first }
 
     return [previous, current, next]
   }
 
-  const previous = array[index - 1]
-  const current = array[index]
-  const next = array[index + 1]
+  const previous = { item: array[index - 1], index: index - 1 }
+  const current = { item: array[index], index }
+  const next = { item: array[index + 1], index: index + 1 }
 
   return [previous, current, next]
 }
@@ -77,7 +77,7 @@ const Carousel = ({ albums, albumIndex, onClick }) => {
 
   return (
     <PaginationWrap>
-      {carousel.map((album, index) => {
+      {carousel.map(({ item, index }, idx) => {
         const isActive = index === albumIndex
         const isAdjacent = Math.abs(hoveredIndex - index) === 1
 
@@ -85,15 +85,18 @@ const Carousel = ({ albums, albumIndex, onClick }) => {
           <ImgWrap
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(undefined)}
-            key={album.year}
-            onClick={() => onClick(index)}
+            key={item.year}
+            onClick={() => {
+              onClick(index)
+              setCarousel(getListFromAdjacent(albums, index))
+            }}
           >
             <MiniImg
               isAdjacent={isAdjacent}
-              fixed={album.miniImg.childImageSharp.fixed}
+              fixed={item.miniImg.childImageSharp.fixed}
             />
             {isActive && (
-              <TextBox style={{ marginTop: "10px" }}>{album.year}</TextBox>
+              <TextBox style={{ marginTop: "10px" }}>{item.year}</TextBox>
             )}
           </ImgWrap>
         )
