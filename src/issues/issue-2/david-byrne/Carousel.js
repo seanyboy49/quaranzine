@@ -17,17 +17,14 @@ const MiniImg = styled(Img)`
 const ImgWrap = styled(animated.div)`
   will-change: transform, opacity;
   position: relative;
-  // width: 100%;
   margin: auto;
-  border: 1px solid blue;
   text-align: center;
-  display: inline-block;
 `
 
 const CarouselWrap = styled.div`
-  border: 5px solid black;
-  display: block;
-  margin: 5% 0;
+  display: flex;
+  margin: 5% auto;
+  width: 80%;
 `
 
 const getListFromAdjacent = (array, index) => {
@@ -42,7 +39,6 @@ const getListFromAdjacent = (array, index) => {
   }
   // last item in the list
   else if (index === lastIdx) {
-    console.log("last array", array)
     previous = { item: array[lastIdx - 1], index: lastIdx - 1 }
     current = { item: array[lastIdx], index: lastIdx }
     next = { item: array[0], index: 0 }
@@ -61,7 +57,6 @@ const getListFromAdjacent = (array, index) => {
 
 const Carousel = ({ albums, albumIndex, onClick }) => {
   const [carousel, setCarousel] = useState(getListFromAdjacent(albums, 0))
-  console.log("carousel", carousel)
 
   const renderTransitions = useTransition(carousel, {
     keys: ({ index }) => index,
@@ -75,27 +70,21 @@ const Carousel = ({ albums, albumIndex, onClick }) => {
         return { x: -10, opacity: 1 }
       } else return { x: 0, opacity: 1 }
     },
-    update: props => {
-      //   console.log("update", props)
-      // return { x: -10 }
-    },
     leave: ({ position }) => {
       if (position === "previous") {
-        return { x: -10, opacity: 0 }
+        return { x: -10, opacity: 0, position: "absolute" }
       } else if (position === "next") {
-        return { x: 10, opacity: 0 }
+        return { x: 10, opacity: 0, position: "absolute" }
       }
     },
-
-    // trail: 250,
+    config: { mass: 5, tension: 500, friction: 100 },
   })
 
   return (
     <CarouselWrap>
       {renderTransitions(({ x, ...rest }, { item, index }) => {
-        console.log("index", index)
         const isActive = index === albumIndex
-        // console.log("x", x)
+
         return (
           <>
             <ImgWrap
@@ -105,10 +94,7 @@ const Carousel = ({ albums, albumIndex, onClick }) => {
                 setCarousel(getListFromAdjacent(albums, index))
               }}
               style={{
-                transform: x.to(x => {
-                  // console.log("x", x)
-                  return `translate3d(${x}px, 0, 0)`
-                }),
+                transform: x.to(x => `translate3d(${x}px, 0, 0)`),
                 ...rest,
               }}
             >
@@ -122,32 +108,6 @@ const Carousel = ({ albums, albumIndex, onClick }) => {
       })}
     </CarouselWrap>
   )
-
-  //   return (
-  //     <CarouselWrap>
-  //       {carousel.map(({ item, index }, idx) => {
-  //         const isActive = index === albumIndex
-
-  //         return (
-  //           <ImgWrap
-  //             key={item.year}
-  //             onClick={() => {
-  //               onClick(index)
-  //               setCarousel(getListFromAdjacent(albums, index))
-  //             }}
-  //           >
-  //             <MiniImg
-  //               isActive={isActive}
-  //               fixed={item.miniImg.childImageSharp.fixed}
-  //             />
-  //             {isActive && (
-  //               <TextBox style={{ marginTop: "10px" }}>{item.year}</TextBox>
-  //             )}
-  //           </ImgWrap>
-  //         )
-  //       })}
-  //     </CarouselWrap>
-  //   )
 }
 
 export default Carousel
