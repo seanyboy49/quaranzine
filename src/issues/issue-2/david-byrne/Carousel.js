@@ -31,28 +31,28 @@ const CarouselWrap = styled.div`
 const getListFromAdjacent = (array, index) => {
   const first = array[0]
   const last = array.length - 1
+  let previous, current, next
 
   // first item in the list
   if (index === 0) {
-    const previous = { item: array[last], index: last }
-    const current = { item: array[index], index }
-    const next = { item: array[index + 1], index: index + 1 }
-
-    return [previous, current, next]
+    previous = { item: array[last], index: last }
+    current = { item: array[index], index }
+    next = { item: array[index + 1], index: index + 1 }
   }
-
   // last item in the list
-  if (index === last) {
-    const previous = { item: array[last - 1], index: last - 1 }
-    const current = { item: array[last], index: last }
-    const next = { item: array[first], index: first }
-
-    return [previous, current, next]
+  else if (index === last) {
+    previous = { item: array[last - 1], index: last - 1 }
+    current = { item: array[last], index: last }
+    next = { item: array[first], index: first }
+  } else {
+    previous = { item: array[index - 1], index: index - 1 }
+    current = { item: array[index], index }
+    next = { item: array[index + 1], index: index + 1 }
   }
 
-  const previous = { item: array[index - 1], index: index - 1 }
-  const current = { item: array[index], index }
-  const next = { item: array[index + 1], index: index + 1 }
+  previous.position = "previous"
+  current.position = "current"
+  next.position = "next"
 
   return [previous, current, next]
 }
@@ -70,12 +70,13 @@ const Carousel = ({ albums, albumIndex, onClick }) => {
     update: props => {
       return { x: 10 }
     },
-    leave: props => {
-      console.log("props", props)
-      return { x: -10, opacity: 0 }
+    leave: ({ position }) => {
+      if (position === "previous") {
+        return { x: -10, opacity: 0 }
+      } else if (position === "next") {
+        return { x: 10, opacity: 0 }
+      }
     },
-    config: { mass: 5, tension: 100, friction: 100 },
-    trail: 0,
   })
   console.log(carousel)
 
