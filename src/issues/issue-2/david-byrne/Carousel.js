@@ -88,7 +88,7 @@ const Carousel = ({ albums, albumIndex, onClick }) => {
         return (
           <>
             <ImgWrap
-              key={item.year}
+              key={index}
               onClick={() => {
                 onClick(index)
                 setCarousel(getListFromAdjacent(albums, index))
@@ -102,6 +102,7 @@ const Carousel = ({ albums, albumIndex, onClick }) => {
                 isActive={isActive}
                 fixed={item.miniImg.childImageSharp.fixed}
               />
+              {isActive && <TextBox>{item.year}</TextBox>}
             </ImgWrap>
           </>
         )
