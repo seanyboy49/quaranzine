@@ -112,7 +112,7 @@ const DavidByrne = () => {
 
   return (
     <Background backgroundColor={currentAlbum.backgroundColor}>
-      <Header currentAlbum={currentAlbum} />
+      <Header currentAlbum={currentAlbum} isPhoneWide={isPhoneWide} />
 
       <FlexContainer>
         <AnimatedWords

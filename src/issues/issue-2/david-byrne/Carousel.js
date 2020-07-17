@@ -7,38 +7,25 @@ import { mediaQueries } from "../../../styles/layout"
 
 const MiniImg = styled(Img)`
   z-index: 1000;
-  margin: 10px;
+  margin: 15px;
   width: 35px;
 
   transition: 0.4s;
   transform: ${({ isAdjacent }) => isAdjacent && `scale(1.3)`}};
+  transform: ${({ isActive }) => isActive && `scale(1.8)`}};
 `
 
 const ImgWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  :hover {
-    ${MiniImg} {
-      transition: 0.2s;
-      cursor: pointer;
-      transform: scale(1.8);
-    }
-  }
 `
 
-const PaginationWrap = styled.div`
+const CarouselWrap = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  margin: 2% 0;
-  overflow-x: scroll;
-  padding: 15px;
-
-  ${mediaQueries.phoneWide} {
-    justify-content: flex-start;
-  }
+  margin: 5% 0;
 `
 
 const getListFromAdjacent = (array, index) => {
@@ -69,22 +56,16 @@ const getListFromAdjacent = (array, index) => {
 }
 
 const Carousel = ({ albums, albumIndex, onClick }) => {
-  // Needs to be undefined, because you can do math with null
-  const [hoveredIndex, setHoveredIndex] = useState(undefined)
-
   const [carousel, setCarousel] = useState(getListFromAdjacent(albums, 0))
   console.log(carousel)
 
   return (
-    <PaginationWrap>
+    <CarouselWrap>
       {carousel.map(({ item, index }, idx) => {
         const isActive = index === albumIndex
-        const isAdjacent = Math.abs(hoveredIndex - index) === 1
 
         return (
           <ImgWrap
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(undefined)}
             key={item.year}
             onClick={() => {
               onClick(index)
@@ -92,7 +73,7 @@ const Carousel = ({ albums, albumIndex, onClick }) => {
             }}
           >
             <MiniImg
-              isAdjacent={isAdjacent}
+              isActive={isActive}
               fixed={item.miniImg.childImageSharp.fixed}
             />
             {isActive && (
@@ -101,7 +82,7 @@ const Carousel = ({ albums, albumIndex, onClick }) => {
           </ImgWrap>
         )
       })}
-    </PaginationWrap>
+    </CarouselWrap>
   )
 }
 
