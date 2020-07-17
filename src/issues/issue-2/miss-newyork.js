@@ -78,7 +78,7 @@ const Blurb = styled.div`
 const MissNewYork = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "issue2-images/miss-newyork.png" }) {
+      file(relativePath: { eq: "issue2-images/miss-newyork.jpg" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG

@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 const Scrapbook = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "issue2-images/scrapbook.png" }) {
+      file(relativePath: { eq: "issue2-images/scrapbook.jpg" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
