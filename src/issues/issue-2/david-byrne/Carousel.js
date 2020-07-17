@@ -15,38 +15,37 @@ const MiniImg = styled(Img)`
 `
 
 const ImgWrap = styled(animated.div)`
+  will-change: transform, opacity;
   position: relative;
-  //   transition: 0.4s;
-  //   display: flex;
-  //   flex-direction: column;
-  //   align-items: center;
+  // width: 100%;
+  margin: auto;
   border: 1px solid blue;
+  text-align: center;
+  display: inline-block;
 `
 
 const CarouselWrap = styled.div`
-  border: 1px solid black;
-  width: 100%;
-  display: flex;
-  justify-content: center;
+  border: 5px solid black;
+  display: block;
   margin: 5% 0;
 `
 
 const getListFromAdjacent = (array, index) => {
-  const first = array[0]
-  const last = array.length - 1
+  const lastIdx = array.length - 1
   let previous, current, next
 
   // first item in the list
   if (index === 0) {
-    previous = { item: array[last], index: last }
+    previous = { item: array[lastIdx], index: lastIdx }
     current = { item: array[index], index }
     next = { item: array[index + 1], index: index + 1 }
   }
   // last item in the list
-  else if (index === last) {
-    previous = { item: array[last - 1], index: last - 1 }
-    current = { item: array[last], index: last }
-    next = { item: array[first], index: first }
+  else if (index === lastIdx) {
+    console.log("last array", array)
+    previous = { item: array[lastIdx - 1], index: lastIdx - 1 }
+    current = { item: array[lastIdx], index: lastIdx }
+    next = { item: array[0], index: 0 }
   } else {
     previous = { item: array[index - 1], index: index - 1 }
     current = { item: array[index], index }
@@ -62,13 +61,10 @@ const getListFromAdjacent = (array, index) => {
 
 const Carousel = ({ albums, albumIndex, onClick }) => {
   const [carousel, setCarousel] = useState(getListFromAdjacent(albums, 0))
+  console.log("carousel", carousel)
 
   const renderTransitions = useTransition(carousel, {
-    keys: carouselItem => {
-      //   console.log(carouselItem)
-      //   return carouselItem.item.year
-      return carouselItem.index
-    },
+    keys: ({ index }) => index,
     from: props => {
       return { x: 0, opacity: 0 }
     },
@@ -81,7 +77,7 @@ const Carousel = ({ albums, albumIndex, onClick }) => {
     },
     update: props => {
       //   console.log("update", props)
-      return { x: -10 }
+      // return { x: -10 }
     },
     leave: ({ position }) => {
       if (position === "previous") {
@@ -96,7 +92,8 @@ const Carousel = ({ albums, albumIndex, onClick }) => {
 
   return (
     <CarouselWrap>
-      {renderTransitions(({ x, ...rest }, { item, index }, transition) => {
+      {renderTransitions(({ x, ...rest }, { item, index }) => {
+        console.log("index", index)
         const isActive = index === albumIndex
         // console.log("x", x)
         return (

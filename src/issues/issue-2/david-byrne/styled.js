@@ -22,7 +22,6 @@ export const FlexContainer = styled.div`
 
 export const AnimatedWordContainer = styled.div`
   margin: auto;
-
   width: 100%;
 `
 
