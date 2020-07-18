@@ -17,10 +17,10 @@ import Credits from "./credits"
 const Issue2 = () => {
   return (
     <>
-      {/* <Cover /> */}
+      <Cover />
       <DavidByrne />
       <Paradise />
-      {/* <FavoriteSmells />
+      <FavoriteSmells />
       <Esperas />
       <Nyc360 />
       <Scrapbook />
@@ -28,7 +28,7 @@ const Issue2 = () => {
       <MissNewYork />
       <DJBan />
       <Wedding />
-      <Credits /> */}
+      <Credits />
     </>
   )
 }
