@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 import { useMediaQuery } from "react-responsive"
@@ -6,19 +6,14 @@ import { useMediaQuery } from "react-responsive"
 import Header from "./Header"
 import AnimatedWords from "./AnimatedWords"
 import Pagination from "./Pagination"
+import Carousel from "./Carousel"
 
 import useMedia from "./useMedia"
 import useMeasure from "./useMeasure"
 import usePositions from "./usePositions"
 import albumByYearData from "./albumsByYear.js"
 import { mapImagesToAlbums, calculateGridItems } from "./utility"
-import {
-  Background,
-  Text,
-  FlexContainer,
-  ImgWrap,
-  WordCountContainer,
-} from "./styled"
+import { Background, Text, FlexContainer, ImgWrap } from "./styled"
 import { breakpoints } from "../../../styles/layout"
 
 let xOffset
@@ -38,12 +33,26 @@ const DavidByrne = () => {
       mini: allFile(
         filter: { relativeDirectory: { eq: "issue2-images/david-byrne/mini" } }
       ) {
-        ...ImageFragment
+        nodes {
+          name
+          childImageSharp {
+            fixed(height: 60) {
+              ...GatsbyImageSharpFixed_withWebp_tracedSVG
+            }
+          }
+        }
       }
       big: allFile(
         filter: { relativeDirectory: { eq: "issue2-images/david-byrne/big" } }
       ) {
-        ...ImageFragment
+        nodes {
+          name
+          childImageSharp {
+            fixed(height: 300) {
+              ...GatsbyImageSharpFixed_withWebp_tracedSVG
+            }
+          }
+        }
       }
     }
   `)
@@ -103,7 +112,7 @@ const DavidByrne = () => {
 
   return (
     <Background backgroundColor={currentAlbum.backgroundColor}>
-      <Header currentAlbum={currentAlbum} />
+      <Header currentAlbum={currentAlbum} isPhoneWide={isPhoneWide} />
 
       <FlexContainer>
         <AnimatedWords
@@ -113,18 +122,14 @@ const DavidByrne = () => {
         />
 
         {isPhoneWide ? (
-          <Pagination
+          <Carousel
             albums={albums}
             albumIndex={albumIndex}
             onClick={setAlbumIndex}
           />
         ) : (
           <ImgWrap>
-            <Img
-              fluid={currentAlbum.bigImg.childImageSharp.fluid}
-              style={isPhoneWide ? { maxHeight: "20vh" } : { maxWidth: "15vw" }}
-              imgStyle={{ objectFit: "contain" }}
-            />
+            <Img fixed={currentAlbum.bigImg.childImageSharp.fixed} />
           </ImgWrap>
         )}
 
@@ -136,23 +141,9 @@ const DavidByrne = () => {
       </FlexContainer>
 
       <FlexContainer>
-        <Text
-          style={{ margin: "4vh auto" }}
-          bold
-          large
-          color={currentAlbum.textColor}
-        >
+        <Text bold large color={currentAlbum.textColor}>
           {currentAlbum.title}
         </Text>
-
-        <WordCountContainer color={currentAlbum.textColor}>
-          <Text bold color={currentAlbum.textColor}>
-            Word Count
-          </Text>
-          <Text bold color={currentAlbum.textColor}>
-            {currentAlbum.wordCount}
-          </Text>
-        </WordCountContainer>
       </FlexContainer>
 
       {!isPhoneWide && (

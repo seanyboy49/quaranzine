@@ -32,8 +32,6 @@ const Credits = () => {
       <P right>Dustin Willoughby</P>
       <P right>Connie Zhou</P>
       <P right>Liann Kaye</P>
-
-      <P>all artwork except where credited by JG Debray</P>
     </PaddedWidthContainer>
   )
 }

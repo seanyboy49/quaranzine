@@ -1,19 +1,30 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 
-import { TextBox, Text } from "./styled"
+import { TextBox } from "./styled"
 import { mediaQueries } from "../../../styles/layout"
 
 const MiniImg = styled(Img)`
-  margin: 15px;
-  width: 50px;
+  z-index: 1000;
+  margin: 10px;
+  width: 35px;
 
-  transform: ${({ active }) => active && `scale(1.3)`};
-  transition: 0.3s;
+  transition: 0.4s;
+  transform: ${({ isAdjacent }) => isAdjacent && `scale(1.3)`}};
+`
+
+const ImgWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   :hover {
-    cursor: pointer;
+    ${MiniImg} {
+      transition: 0.2s;
+      cursor: pointer;
+      transform: scale(1.8);
+    }
   }
 `
 
@@ -21,32 +32,40 @@ const PaginationWrap = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+  margin: 2% 0;
   overflow-x: scroll;
+  padding: 15px;
 
   ${mediaQueries.phoneWide} {
     justify-content: flex-start;
-    margin: 5% 0;
   }
 `
 
 const Pagination = ({ albums, albumIndex, onClick }) => {
+  // Needs to be undefined, because you can do math with null
+  const [hoveredIndex, setHoveredIndex] = useState(undefined)
+
   return (
     <PaginationWrap>
       {albums.map((album, index) => {
         const isActive = index === albumIndex
+        const isAdjacent = Math.abs(hoveredIndex - index) === 1
 
         return (
-          <div key={album.year} onClick={() => onClick(index)}>
+          <ImgWrap
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(undefined)}
+            key={album.year}
+            onClick={() => onClick(index)}
+          >
             <MiniImg
-              active={isActive}
-              fluid={album.miniImg.childImageSharp.fluid}
+              isAdjacent={isAdjacent}
+              fixed={album.miniImg.childImageSharp.fixed}
             />
-            {isActive ? (
-              <TextBox>{album.year}</TextBox>
-            ) : (
-              <Text color={albums[albumIndex].textColor}>{album.year}</Text>
+            {isActive && (
+              <TextBox style={{ marginTop: "10px" }}>{album.year}</TextBox>
             )}
-          </div>
+          </ImgWrap>
         )
       })}
     </PaginationWrap>
