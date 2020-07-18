@@ -17,7 +17,7 @@ import Credits from "./credits"
 const Issue2 = () => {
   return (
     <>
-      <Cover />
+      {/* <Cover /> */}
       {/* <DavidByrne /> */}
       {/* <Paradise /> */}
       <FavoriteSmells />

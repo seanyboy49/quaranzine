@@ -15,10 +15,21 @@ const ResizeImage = styled.div`
   padding: 0;
 
   ${mediaQueries.tabletWide} {
-    width: 60%;
+    width: 85%;
     margin: 0;
   }
 `
+
+const CoverImage = styled(ResizeImage)`
+  ${mediaQueries.iphonePlus} {
+    width: 65%;
+  }
+
+  ${mediaQueries.iphone5} {
+    width: 55%;
+  }
+`
+
 const TitleStyledLayout = styled.div`
   display: flex;
   flex-direction: column;
@@ -38,10 +49,23 @@ const CoverTitle = styled.h1`
   ${mediaQueries.tabletWide} {
     font-size: 5.5em;
   }
-  ${mediaQueries.phoneWide} {
+
+  ${mediaQueries.iphoneX} {
     font-size: 3rem;
     margin-top: 1rem;
     margin-left: -5rem;
+  }
+
+  ${mediaQueries.iphonePlus} {
+    font-size: 3rem;
+    margin-top: 3rem;
+    margin-left: -5rem;
+  }
+
+  ${mediaQueries.iphone5} {
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-left: -3rem;
   }
 `
 const CoverDiv = styled.div`
@@ -49,6 +73,40 @@ const CoverDiv = styled.div`
   height: auto;
   padding: 0;
   margin: 0;
+`
+const CoverText = styled.p`
+  font-size: 20px;
+  align-self: center;
+  font-family: "Apercu Mono";
+  padding: 2rem;
+  line-height: 3rem;
+  text-align: left;
+
+  ${mediaQueries.tabletWide} {
+    font-size: clamp(12px, 1.5rem + 3vw, 22px);
+    line-height: 1.5rem;
+    padding: 1rem;
+  }
+
+  ${mediaQueries.iphoneX} {
+    font-size: 15px;
+    line-height: 1rem;
+    padding: 1.5rem;
+  }
+
+  ${mediaQueries.iphonePlus} {
+    font-size: clamp(12px, 2rem, 13px);
+    line-height: 1rem;
+    padding: 1.5rem;
+    margin: 0 auto;
+  }
+
+  ${mediaQueries.iphone5} {
+    font-size: 12px;
+    line-height: 1rem;
+    padding: 1vh 3vw;
+    margin: 0 auto;
+  }
 `
 
 const SlideContainer = styled.div`
@@ -91,31 +149,10 @@ const StyleP = styled.p`
   }
 
   ${mediaQueries.phoneWide} {
-    font-size: 15px;
-  }
-`
-
-const CoverText = styled.p`
-  font-size: 20px;
-  align-self: center;
-  font-family: "Apercu Mono";
-  padding: 2rem;
-  line-height: 3rem;
-  text-align: left;
-
-  ${mediaQueries.tabletWide} {
-    font-size: clamp(12px, 1.5rem + 3vw, 22px);
-    line-height: 1.5rem;
-    padding: 1rem;
-  }
-
-  ${mediaQueries.iphone5} {
     font-size: 14px;
-    line-height: 1rem;
-    padding: 1vh 3vw;
-    margin: 0 auto;
   }
 `
+
 const Name = styled.p`
   transform: -0.5deg;
   font-size: 30px;
@@ -269,19 +306,21 @@ const FavoriteSmells = () => {
         <SlideContainer color={"#fdffe9"}>
           <TextContainer>
             <CoverText>
-              when I lost my sense of smell after getting Covid, my life changed
-              abruptly. vinegar, pillows, coffee grounds, expired chicken,
-              central park, it all smelled the same. Life became plastic.
+              when I lost my sense of smell after contracting Covid, my life
+              changed abruptly. vinegar, pillows, coffee grounds, expired
+              chicken, central park, it all smelled the same. Life became
+              plastic.
             </CoverText>
           </TextContainer>
-          <ResizeImage style={{ width: "55%" }}>
+          <CoverImage>
             <Img fluid={noseImg.node.childImageSharp.fluid} />
-          </ResizeImage>
+          </CoverImage>
           <TextContainer>
             <CoverText>
-              i asked people what their favorite smells were, and made collages
-              out of my favorite responses, thinking that by looking at them, i
-              could imagine what it was to smell again.
+              and so, i asked people on instagram what their favorite smells
+              were, and made collages out of my favorite responses, thinking
+              that by looking at them, i could imagine what it was to smell
+              again.
             </CoverText>
           </TextContainer>
         </SlideContainer>
