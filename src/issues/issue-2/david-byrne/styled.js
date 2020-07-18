@@ -9,6 +9,10 @@ export const Background = styled.div`
   padding: 1em 0;
   background: ${({ backgroundColor }) => backgroundColor};
   background-image: url(${grit});
+
+  ${mediaQueries.phoneWide} {
+    height: 100vh;
+  }
 `
 
 export const FlexContainer = styled.div`
@@ -54,7 +58,12 @@ export const TextBox = styled.div`
 
   font-size: clamp(12px, 1rem + 0.5vw, 24px);
 
-  ${mediaQueries.phoneWide} {
+  ${mediaQueries.iphoneX} {
+    padding: 5px 10px;
+    font-size: 22px;
+  }
+
+  ${mediaQueries.iphone5} {
     padding: 5px 10px;
     font-size: clamp(8px, 1rem, 14px);
   }
@@ -73,4 +82,18 @@ export const Text = styled.div`
     css`
       font-size: clamp(1rem, 2rem + 1vw, 31px);
     `}
+`
+
+export const AlbumText = styled(Text)`
+  ${mediaQueries.iphoneX} {
+    margin-top: 8vh;
+  }
+
+  ${mediaQueries.iphonePlus} {
+    margin-top: 10vh;
+  }
+
+  ${mediaQueries.iphone5} {
+    margin-top: 1vh;
+  }
 `

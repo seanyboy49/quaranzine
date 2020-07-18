@@ -18,9 +18,9 @@ const Issue2 = () => {
   return (
     <>
       {/* <Cover /> */}
-      {/* <DavidByrne /> */}
-      {/* <Paradise /> */}
-      <FavoriteSmells />
+      <DavidByrne />
+      <Paradise />
+      {/* <FavoriteSmells />
       <Esperas />
       <Nyc360 />
       <Scrapbook />
@@ -28,7 +28,7 @@ const Issue2 = () => {
       <MissNewYork />
       <DJBan />
       <Wedding />
-      <Credits />
+      <Credits /> */}
     </>
   )
 }

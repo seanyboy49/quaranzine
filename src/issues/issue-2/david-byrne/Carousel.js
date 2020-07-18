@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { useTransition, animated } from "react-spring"
+import { mediaQueries } from "../../../styles/layout"
 
 import { TextBox } from "./styled"
 

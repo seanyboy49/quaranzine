@@ -19,6 +19,7 @@ const HeaderText = styled(TextBox)`
   ${mediaQueries.phoneWide} {
     font-size: 19px;
     padding: 15px 10px;
+    margin-bottom: 2vh;
   }
 `
 
