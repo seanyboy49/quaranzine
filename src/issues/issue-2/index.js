@@ -18,8 +18,8 @@ const Issue2 = () => {
   return (
     <>
       <Cover />
-      <DavidByrne />
-      <Paradise />
+      {/* <DavidByrne /> */}
+      {/* <Paradise /> */}
       <FavoriteSmells />
       <Esperas />
       <Nyc360 />

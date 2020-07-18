@@ -15,7 +15,7 @@ const ResizeImage = styled.div`
   padding: 0;
 
   ${mediaQueries.tabletWide} {
-    width: 85%;
+    width: 60%;
     margin: 0;
   }
 `
@@ -27,7 +27,7 @@ const TitleStyledLayout = styled.div`
   justify-content: center;
   padding: 0;
   margin: 0;
-  height: 100%;
+  height: 100vh;
 `
 const CoverTitle = styled.h1`
   font-size: 6em;
@@ -54,7 +54,7 @@ const CoverDiv = styled.div`
 const SlideContainer = styled.div`
   background: ${props => props.color};
   width: 100%;
-  height: 100%;
+  height: 100vh;
   top: 0;
   left: 0;
   display: flex;
@@ -72,7 +72,6 @@ const TextContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
-  margin: 0 15px;
   width: 40%;
 
   ${mediaQueries.tabletWide} {
@@ -86,7 +85,6 @@ const StyleP = styled.p`
   font-size: ${props => props.fontSize || 20}px;
   align-self: ${props => props.align || "center"};
   font-family: "Apercu Mono";
-  padding: 0rem 1rem;
 
   ${mediaQueries.tabletWide} {
     font-size: 18px;
@@ -106,15 +104,16 @@ const CoverText = styled.p`
   text-align: left;
 
   ${mediaQueries.tabletWide} {
-    font-size: 18px;
-    line-height: 1rem;
+    font-size: clamp(12px, 1.5rem + 3vw, 22px);
+    line-height: 1.5rem;
     padding: 1rem;
   }
 
-  ${mediaQueries.phoneWide} {
-    font-size: 15px;
+  ${mediaQueries.iphone5} {
+    font-size: 14px;
     line-height: 1rem;
-    padding: 1.5rem;
+    padding: 1vh 3vw;
+    margin: 0 auto;
   }
 `
 const Name = styled.p`
@@ -270,21 +269,19 @@ const FavoriteSmells = () => {
         <SlideContainer color={"#fdffe9"}>
           <TextContainer>
             <CoverText>
-              when I lost my sense of smell after contracting Covid, my life
-              changed abruptly. vinegar, pillows, coffee grounds, expired
-              chicken, central park, it all smelled the same. Life became
-              plastic.
+              when I lost my sense of smell after getting Covid, my life changed
+              abruptly. vinegar, pillows, coffee grounds, expired chicken,
+              central park, it all smelled the same. Life became plastic.
             </CoverText>
           </TextContainer>
-          <ResizeImage>
+          <ResizeImage style={{ width: "55%" }}>
             <Img fluid={noseImg.node.childImageSharp.fluid} />
           </ResizeImage>
           <TextContainer>
             <CoverText>
-              and so, i asked people on instagram what they favorite smells
-              were, and made collages out of my favorite responses, thinking
-              that by looking at them, i could imagine what it was to smell
-              again.
+              i asked people what their favorite smells were, and made collages
+              out of my favorite responses, thinking that by looking at them, i
+              could imagine what it was to smell again.
             </CoverText>
           </TextContainer>
         </SlideContainer>

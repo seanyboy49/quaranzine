@@ -5,6 +5,9 @@ export const breakpoints = {
   tabletWide: `(max-width: 880px)`,
   laptop: `(max-width: 1024px)`,
   desktop: `(max-width: 1440px)`,
+
+  iphone5: `(max-height: 658px)`,
+  iphonePlus: `(max-height: 736px)`,
 }
 
 export const mediaQueries = Object.entries(breakpoints)
