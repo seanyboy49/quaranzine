@@ -19,6 +19,17 @@ const ResizeImage = styled.div`
     margin: 0;
   }
 `
+
+const CoverImage = styled(ResizeImage)`
+  ${mediaQueries.iphonePlus} {
+    width: 65%;
+  }
+
+  ${mediaQueries.iphone5} {
+    width: 55%;
+  }
+`
+
 const TitleStyledLayout = styled.div`
   display: flex;
   flex-direction: column;
@@ -27,7 +38,7 @@ const TitleStyledLayout = styled.div`
   justify-content: center;
   padding: 0;
   margin: 0;
-  height: 100%;
+  height: 100vh;
 `
 const CoverTitle = styled.h1`
   font-size: 6em;
@@ -38,10 +49,23 @@ const CoverTitle = styled.h1`
   ${mediaQueries.tabletWide} {
     font-size: 5.5em;
   }
-  ${mediaQueries.phoneWide} {
+
+  ${mediaQueries.iphoneX} {
     font-size: 3rem;
     margin-top: 1rem;
     margin-left: -5rem;
+  }
+
+  ${mediaQueries.iphonePlus} {
+    font-size: 3rem;
+    margin-top: 3rem;
+    margin-left: -5rem;
+  }
+
+  ${mediaQueries.iphone5} {
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-left: -3rem;
   }
 `
 const CoverDiv = styled.div`
@@ -50,11 +74,45 @@ const CoverDiv = styled.div`
   padding: 0;
   margin: 0;
 `
+const CoverText = styled.p`
+  font-size: 20px;
+  align-self: center;
+  font-family: "Apercu Mono";
+  padding: 2rem;
+  line-height: 3rem;
+  text-align: left;
+
+  ${mediaQueries.tabletWide} {
+    font-size: clamp(12px, 1.5rem + 3vw, 22px);
+    line-height: 1.5rem;
+    padding: 1rem;
+  }
+
+  ${mediaQueries.iphoneX} {
+    font-size: 15px;
+    line-height: 1rem;
+    padding: 1.5rem;
+  }
+
+  ${mediaQueries.iphonePlus} {
+    font-size: clamp(12px, 2rem, 13px);
+    line-height: 1rem;
+    padding: 1.5rem;
+    margin: 0 auto;
+  }
+
+  ${mediaQueries.iphone5} {
+    font-size: 12px;
+    line-height: 1rem;
+    padding: 1vh 3vw;
+    margin: 0 auto;
+  }
+`
 
 const SlideContainer = styled.div`
   background: ${props => props.color};
   width: 100%;
-  height: 100%;
+  height: 100vh;
   top: 0;
   left: 0;
   display: flex;
@@ -72,7 +130,6 @@ const TextContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
-  margin: 0 15px;
   width: 40%;
 
   ${mediaQueries.tabletWide} {
@@ -86,37 +143,16 @@ const StyleP = styled.p`
   font-size: ${props => props.fontSize || 20}px;
   align-self: ${props => props.align || "center"};
   font-family: "Apercu Mono";
-  padding: 0rem 1rem;
 
   ${mediaQueries.tabletWide} {
     font-size: 18px;
   }
 
   ${mediaQueries.phoneWide} {
-    font-size: 15px;
+    font-size: 14px;
   }
 `
 
-const CoverText = styled.p`
-  font-size: 20px;
-  align-self: center;
-  font-family: "Apercu Mono";
-  padding: 2rem;
-  line-height: 3rem;
-  text-align: left;
-
-  ${mediaQueries.tabletWide} {
-    font-size: 18px;
-    line-height: 1rem;
-    padding: 1rem;
-  }
-
-  ${mediaQueries.phoneWide} {
-    font-size: 15px;
-    line-height: 1rem;
-    padding: 1.5rem;
-  }
-`
 const Name = styled.p`
   transform: -0.5deg;
   font-size: 30px;
@@ -276,12 +312,12 @@ const FavoriteSmells = () => {
               plastic.
             </CoverText>
           </TextContainer>
-          <ResizeImage>
+          <CoverImage>
             <Img fluid={noseImg.node.childImageSharp.fluid} />
-          </ResizeImage>
+          </CoverImage>
           <TextContainer>
             <CoverText>
-              and so, i asked people on instagram what they favorite smells
+              and so, i asked people on instagram what their favorite smells
               were, and made collages out of my favorite responses, thinking
               that by looking at them, i could imagine what it was to smell
               again.

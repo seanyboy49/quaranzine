@@ -13,7 +13,7 @@ import useMeasure from "./useMeasure"
 import usePositions from "./usePositions"
 import albumByYearData from "./albumsByYear.js"
 import { mapImagesToAlbums, calculateGridItems } from "./utility"
-import { Background, Text, FlexContainer, ImgWrap } from "./styled"
+import { Background, AlbumText, FlexContainer, ImgWrap } from "./styled"
 import { breakpoints } from "../../../styles/layout"
 
 let xOffset
@@ -69,11 +69,13 @@ const DavidByrne = () => {
     queries: [
       "(min-width: 1440px)",
       "(min-width: 1024px)",
+      "(min-height: 812px)",
       "(max-width: 600px)",
     ],
     values: [
       { col: 4, heightOffset: 85 },
       { col: 3, heightOffset: 65 },
+      { col: 4, heightOffset: 65 },
       { col: 4, heightOffset: 40 },
     ],
     defaultValue: { col: 2, heightOffset: 55 },
@@ -140,11 +142,9 @@ const DavidByrne = () => {
         />
       </FlexContainer>
 
-      <FlexContainer>
-        <Text bold large color={currentAlbum.textColor}>
-          {currentAlbum.title}
-        </Text>
-      </FlexContainer>
+      <AlbumText bold large color={currentAlbum.textColor}>
+        {currentAlbum.title}
+      </AlbumText>
 
       {!isPhoneWide && (
         <Pagination

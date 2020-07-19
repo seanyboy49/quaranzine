@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { useTransition, animated } from "react-spring"
+import { mediaQueries } from "../../../styles/layout"
 
 import { TextBox } from "./styled"
 
@@ -19,6 +20,8 @@ const ImgWrap = styled(animated.div)`
   position: relative;
   margin: auto;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 `
 
 const CarouselWrap = styled.div`
@@ -60,9 +63,7 @@ const Carousel = ({ albums, albumIndex, onClick }) => {
 
   const renderTransitions = useTransition(carousel, {
     keys: ({ index }) => index,
-    from: props => {
-      return { x: 0, opacity: 0 }
-    },
+    from: () => ({ x: 0, opacity: 0 }),
     enter: ({ position }) => {
       if (position === "previous") {
         return { x: 10, opacity: 1 }
@@ -102,7 +103,9 @@ const Carousel = ({ albums, albumIndex, onClick }) => {
                 isActive={isActive}
                 fixed={item.miniImg.childImageSharp.fixed}
               />
-              {isActive && <TextBox>{item.year}</TextBox>}
+              {isActive && (
+                <TextBox style={{ marginTop: "20px" }}>{item.year}</TextBox>
+              )}
             </ImgWrap>
           </>
         )
