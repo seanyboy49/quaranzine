@@ -38,7 +38,6 @@ const CoverTitle = styled.h1`
   }
   ${mediaQueries.phoneWide} {
     font-size: 3rem;
-    // margin-top: 1rem;
     margin-left: -5rem;
   }
 `
@@ -136,9 +135,6 @@ const CoverText = styled.p`
     font-size: 10px;
     margin: 0;
   }
-  // ${mediaQueries.desktop} {
-  //   font-size: 20px;
-  // }
 `
 const Name = styled.p`
   transform: -0.5deg;
@@ -301,7 +297,7 @@ const FavoriteSmells = () => {
           </ResizeImage>
           <TextContainer>
             <CoverText>
-              and so, i asked people on instagram what they favorite smells
+              and so, i asked people on instagram what their favorite smells
               were, and made collages out of my favorite responses, thinking
               that by looking at them, i could imagine what it was to smell
               again.
