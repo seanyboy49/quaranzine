@@ -13,23 +13,11 @@ const ResizeImage = styled.div`
   width: 40%;
   margin: 0 0 2rem 0;
   padding: 0;
-
   ${mediaQueries.tabletWide} {
     width: 85%;
     margin: 0;
   }
 `
-
-const CoverImage = styled(ResizeImage)`
-  ${mediaQueries.iphonePlus} {
-    width: 65%;
-  }
-
-  ${mediaQueries.iphone5} {
-    width: 55%;
-  }
-`
-
 const TitleStyledLayout = styled.div`
   display: flex;
   flex-direction: column;
@@ -38,34 +26,19 @@ const TitleStyledLayout = styled.div`
   justify-content: center;
   padding: 0;
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
 `
 const CoverTitle = styled.h1`
   font-size: 6em;
   white-space: nowrap;
   transform: rotate(-1deg);
   margin: auto;
-
   ${mediaQueries.tabletWide} {
     font-size: 5.5em;
   }
-
-  ${mediaQueries.iphoneX} {
+  ${mediaQueries.phoneWide} {
     font-size: 3rem;
-    margin-top: 1rem;
     margin-left: -5rem;
-  }
-
-  ${mediaQueries.iphonePlus} {
-    font-size: 3rem;
-    margin-top: 3rem;
-    margin-left: -5rem;
-  }
-
-  ${mediaQueries.iphone5} {
-    font-size: 2rem;
-    margin-top: 1rem;
-    margin-left: -3rem;
   }
 `
 const CoverDiv = styled.div`
@@ -74,45 +47,22 @@ const CoverDiv = styled.div`
   padding: 0;
   margin: 0;
 `
-const CoverText = styled.p`
-  font-size: 20px;
-  align-self: center;
-  font-family: "Apercu Mono";
-  padding: 2rem;
-  line-height: 3rem;
-  text-align: left;
-
+const CoverBody = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
   ${mediaQueries.tabletWide} {
-    font-size: clamp(12px, 1.5rem + 3vw, 22px);
-    line-height: 1.5rem;
-    padding: 1rem;
-  }
-
-  ${mediaQueries.iphoneX} {
-    font-size: 15px;
-    line-height: 1rem;
-    padding: 1.5rem;
-  }
-
-  ${mediaQueries.iphonePlus} {
-    font-size: clamp(12px, 2rem, 13px);
-    line-height: 1rem;
-    padding: 1.5rem;
-    margin: 0 auto;
-  }
-
-  ${mediaQueries.iphone5} {
-    font-size: 12px;
-    line-height: 1rem;
-    padding: 1vh 3vw;
-    margin: 0 auto;
+    flex-direction: column;
   }
 `
 
 const SlideContainer = styled.div`
   background: ${props => props.color};
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   top: 0;
   left: 0;
   display: flex;
@@ -120,7 +70,6 @@ const SlideContainer = styled.div`
   justify-content: center;
   padding: 0;
   margin: 0;
-
   ${mediaQueries.tabletWide} {
     flex-direction: column;
   }
@@ -130,8 +79,8 @@ const TextContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
+  margin: 0 15px;
   width: 40%;
-
   ${mediaQueries.tabletWide} {
     width: 100%;
     margin: 0 5px;
@@ -143,28 +92,60 @@ const StyleP = styled.p`
   font-size: ${props => props.fontSize || 20}px;
   align-self: ${props => props.align || "center"};
   font-family: "Apercu Mono";
-
+  padding: 0rem 1rem;
   ${mediaQueries.tabletWide} {
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 0.6rem;
   }
-
   ${mediaQueries.phoneWide} {
-    font-size: 14px;
+    font-size: 15px;
+  }
+  ${mediaQueries.iphone5} {
+    font-size: 10px;
   }
 `
 
+const CoverText = styled.p`
+  font-size: 20px;
+  align-self: center;
+  font-family: "Apercu Mono";
+  padding: 2rem;
+  line-height: 3rem;
+  text-align: left;
+  ${mediaQueries.tabletWide} {
+    font-size: 18px;
+    line-height: 1rem;
+    padding: 1.5rem;
+    margin: 0;
+  }
+  ${mediaQueries.phoneWide} {
+    font-size: 17px;
+    line-height: 1rem;
+    padding: 1.5rem;
+  }
+  ${mediaQueries.iphonePlus} {
+    font-size: 14px;
+    padding: 1rem;
+  }
+
+  ${mediaQueries.iphone678} {
+    padding: 0.5rem;
+  }
+  ${mediaQueries.iphone5} {
+    font-size: 10px;
+    margin: 0;
+  }
+`
 const Name = styled.p`
   transform: -0.5deg;
   font-size: 30px;
   align-self: flex-end;
   font-family: "Apercu Mono";
   margin: 2rem 2rem 3rem 0rem;
-
   ${mediaQueries.tabletWide} {
     font-size: 26px;
     margin: 4rem 7rem 5rem 0rem;
   }
-
   ${mediaQueries.phoneWide} {
     font-size: 22px;
     margin: 2rem 4rem 3rem 0rem;
@@ -202,7 +183,6 @@ const Dot = styled.div`
   text-align: center;
   padding: 0;
   background-color: ${props => props.color || "transparent"};
-
   ${mediaQueries.phoneWide} {
     width: 7px;
     height: 7px;
@@ -303,7 +283,7 @@ const FavoriteSmells = () => {
         <CoverDiv>
           <CoverTitle>lls favorite smells favorite smell</CoverTitle>
         </CoverDiv>
-        <SlideContainer color={"#fdffe9"}>
+        <CoverBody>
           <TextContainer>
             <CoverText>
               when I lost my sense of smell after contracting Covid, my life
@@ -312,9 +292,9 @@ const FavoriteSmells = () => {
               plastic.
             </CoverText>
           </TextContainer>
-          <CoverImage>
+          <ResizeImage>
             <Img fluid={noseImg.node.childImageSharp.fluid} />
-          </CoverImage>
+          </ResizeImage>
           <TextContainer>
             <CoverText>
               and so, i asked people on instagram what their favorite smells
@@ -323,7 +303,7 @@ const FavoriteSmells = () => {
               again.
             </CoverText>
           </TextContainer>
-        </SlideContainer>
+        </CoverBody>
       </TitleStyledLayout>
 
       <SlideContainer color={"#d6f2f2"}>
