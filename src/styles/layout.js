@@ -9,7 +9,7 @@ export const breakpoints = {
   iphone5: `(max-height: 658px) and (max-width: 320px)`,
   iphonePlus: `(max-height: 736px) and (max-width: 414px)`,
   iphone678: `(max-height: 667px) and (max-width: 375px)`,
-  iphoneX: `(max-height: 812px)`,
+  iphoneX: `(max-height: 812px) and (max-width: 375px)`,
 }
 
 export const mediaQueries = Object.entries(breakpoints)
