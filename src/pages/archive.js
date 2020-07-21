@@ -26,6 +26,7 @@ const WeeklyIssueContainer = styled.div`
 const WeeklyTitle = styled.p`
   font-size: 65px;
   color: ${props => props.textColor};
+  font-weight: bold;
   margin: 0;
 `
 
