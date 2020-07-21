@@ -49,7 +49,10 @@ const Archive = () => {
       <WeeklyIssueContainer>
         {weeklyIssues.map((weeklyIssue, index) => {
           return (
-            <StyledLink to={`/issue-${index + 1}`}>
+            <StyledLink
+              to={`/issue-${index + 1}`}
+              key={weeklyIssue.linkBarColor}
+            >
               <IssueLinkBar backgroundColor={weeklyIssue.linkBarColor}>
                 <WeeklyTitle textColor={weeklyIssue.titleColor}>
                   Week {index + 1}.
