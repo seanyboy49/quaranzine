@@ -15,7 +15,7 @@ export const FlexContainer = styled.div`
   display: flex;
   justify-content: center;
 
-  ${mediaQueries.phoneWide} {
+  ${mediaQueries.tabletWide} {
     flex-direction: column;
   }
 `

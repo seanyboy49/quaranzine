@@ -27,6 +27,9 @@ const DavidByrne = () => {
   const isPhoneWide = useMediaQuery({
     query: breakpoints.phoneWide,
   })
+  const isTabletWide = useMediaQuery({
+    query: breakpoints.tabletWide,
+  })
   // Query images
   const { mini, big } = useStaticQuery(graphql`
     query {
@@ -123,7 +126,7 @@ const DavidByrne = () => {
           renderTransitions={renderLeftTransitions}
         />
 
-        {isPhoneWide ? (
+        {isTabletWide ? (
           <Carousel
             albums={albums}
             albumIndex={albumIndex}
@@ -146,7 +149,7 @@ const DavidByrne = () => {
         {currentAlbum.title}
       </AlbumText>
 
-      {!isPhoneWide && (
+      {!isTabletWide && (
         <Pagination
           albums={albums}
           albumIndex={albumIndex}
