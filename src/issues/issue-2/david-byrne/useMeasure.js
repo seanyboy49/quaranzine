@@ -24,7 +24,7 @@ export default function useMeasure() {
     ro.observe(ref.current)
 
     // Clean up the ro and stop observering
-    return ro.disconnect
+    return () => ro.disconnect()
   }, [ro])
 
   return [{ ref }, bounds]
