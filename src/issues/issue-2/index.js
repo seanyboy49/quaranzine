@@ -20,9 +20,9 @@ const Issue2 = () => {
       {/* <Cover />
       <DavidByrne />
       <Paradise />
-      <FavoriteSmells /> */}
+      <FavoriteSmells /> 
       <Esperas />
-      <Nyc360 />
+      <Nyc360 />*/}
       <Scrapbook />
       <DogsMind />
       <MissNewYork />
