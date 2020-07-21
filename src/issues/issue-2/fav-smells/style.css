@@ -1,3 +1,7 @@
 .carousel .control-dots {
   padding: 0;
 }
+
+.carousel-status {
+  display: none;
+}
