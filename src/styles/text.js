@@ -13,6 +13,12 @@ const color = css`
     css`
       color: ${theme.pink};
     `};
+
+  ${p =>
+    p.white &&
+    css`
+      color: ${theme.white};
+    `};
 `
 
 export const align = css`

@@ -26,13 +26,14 @@ const WeeklyIssueContainer = styled.div`
 const WeeklyTitle = styled.p`
   font-size: 65px;
   color: ${props => props.textColor};
+  font-weight: bold;
   margin: 0;
 `
 
 const Archive = () => {
   const weeklyIssues = [
     { linkBarColor: theme.blue, titleColor: theme.red },
-    // { linkBarColor: theme.pink, titleColor: theme.blue },
+    { linkBarColor: theme.pink, titleColor: theme.blue },
   ]
 
   return (

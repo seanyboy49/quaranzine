@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 
 import SEO from "../components/seo"
-import Issue1 from "../issues/issue-1"
+import Issue2 from "../issues/issue-2"
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true)
@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <>
       <SEO title="Home" />
-      <Issue1 />
+      <Issue2 />
     </>
   )
 }

@@ -61,7 +61,7 @@ const Wedding = () => {
       <Article>
         <Row>
           <ArticleText marginTop={5}>
-            <P fontSize={2}>
+            <P bold fontSize={2}>
               1. Wish anyone and everyone who was at your wedding a happy
               birthday.
             </P>
@@ -87,14 +87,14 @@ const Wedding = () => {
             <Img fluid={whiteClawImg.node.childImageSharp.fluid} />
           </ImageWrapper>
           <ArticleText>
-            <P fontSize={2}>
+            <P bold fontSize={2}>
               2. Thank your spouse for being awesome in quarantine.
             </P>
             <P fontSize={1.25}>
               Even if behind the scenes you’re bickering daily about putting
               down the toilet seat, you don’t have to show that on social media!
             </P>
-            <P fontSize={2} marginLeft={7}>
+            <P bold fontSize={2} marginLeft={7}>
               3. Don’t forget, you have multiple anniversaries!
             </P>
             <P fontSize={1.25} marginLeft={7}>
@@ -106,14 +106,14 @@ const Wedding = () => {
         </Row>
         <Row>
           <ArticleText>
-            <P fontSize={2} marginLeft={2}>
+            <P bold fontSize={2} marginLeft={2}>
               4. The classic #TBT
             </P>
             <P fontSize={1.25} marginLeft={2}>
               #TBT to better times!!! What better times have you had than your
               wedding? IT WAS THE HAPPIEST DAY OF YOUR LIFE!
             </P>
-            <P fontSize={2} marginLeft={7}>
+            <P bold fontSize={2} marginLeft={7}>
               5. Post your manicure! Or your drink!
             </P>
             <P fontSize={1.25} marginLeft={7}>
@@ -121,7 +121,9 @@ const Wedding = () => {
               “LOOK AT MY ROCK.” “I’m drinking tea” (here’s my rock) “Margarita
               night” (LOOK. AT. MY. ROCK.)
             </P>
-            <P fontSize={2}>6. Don’t forget about your parents!</P>
+            <P bold fontSize={2}>
+              6. Don’t forget about your parents!
+            </P>
             <P fontSize={1.25}>
               Mother’s Day, Father’s Day, your mother’s birthday, your father’s
               birthday, your parents’ anniversary, your parents’ first date.
@@ -137,13 +139,15 @@ const Wedding = () => {
             <Img fluid={pringlesImg.node.childImageSharp.fluid} />
           </ImageWrapper>
           <ArticleText>
-            <P fontSize={2}>7. And your siblings!</P>
+            <P bold fontSize={2}>
+              7. And your siblings!
+            </P>
             <P fontSize={1.25}>
               Did they graduate college? Did they get a new job? Write them a
               heartfelt, 5 paragraph post and include a photo of them, next to
               you in your wedding dress.
             </P>
-            <P fontSize={2} marginLeft={7}>
+            <P bold fontSize={2} marginLeft={7}>
               8. Prioritize Fitness.
             </P>
             <P fontSize={1.25} marginLeft={7}>
@@ -151,7 +155,7 @@ const Wedding = () => {
               your caption: “I tried on my wedding dress from 5 years ago and it
               STILL fits! #goalsandgains
             </P>
-            <P fontSize={2} marginLeft={3}>
+            <P bold fontSize={2} marginLeft={3}>
               9. Play celebrity look-alike.
             </P>
             <P fontSize={1.25} marginLeft={3}>
@@ -162,7 +166,9 @@ const Wedding = () => {
         </Row>
         <Row>
           <ArticleText marginTop={7}>
-            <P fontSize={2}>10. Just be shameless.</P>
+            <P bold fontSize={2}>
+              10. Just be shameless.
+            </P>
             <P fontSize={1.25}>
               There’s nothing more honest than just a simple “I love this
               picture” or “thinking about my wedding day.” We all know you are,

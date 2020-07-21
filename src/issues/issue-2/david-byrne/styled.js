@@ -5,21 +5,17 @@ import grit from "./grit"
 import { mediaQueries } from "../../../styles/layout"
 
 export const Background = styled.div`
-  height: 100%;
+  min-height: 100vh;
   padding: 1em 0;
   background: ${({ backgroundColor }) => backgroundColor};
   background-image: url(${grit});
-
-  ${mediaQueries.phoneWide} {
-    height: 100vh;
-  }
 `
 
 export const FlexContainer = styled.div`
   display: flex;
   justify-content: center;
 
-  ${mediaQueries.phoneWide} {
+  ${mediaQueries.tabletWide} {
     flex-direction: column;
   }
 `
@@ -86,7 +82,7 @@ export const Text = styled.div`
 
 export const AlbumText = styled(Text)`
   ${mediaQueries.iphoneX} {
-    margin-top: 8vh;
+    margin-top: 5vh;
   }
 
   ${mediaQueries.iphonePlus} {

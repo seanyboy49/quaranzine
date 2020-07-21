@@ -87,6 +87,7 @@ export const P = styled.p`
   font-size: ${props => props.fontSize}rem;
   margin: 1rem;
   margin-left: ${props => props.marginLeft}rem;
+  font-weight: ${({ bold }) => bold && 600};
 
   ${mediaQueries.tabletWide} {
     margin: 0.5rem 0rem;
