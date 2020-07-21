@@ -165,7 +165,7 @@ const DogsMind = () => {
   return (
     <Background>
       <TitleWrap>
-        <Title>Dog's Mind</Title>
+        <Title>Dog’s Mind</Title>
         <ByLine>by David Byrne</ByLine>
       </TitleWrap>
 
