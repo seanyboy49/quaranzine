@@ -14,3 +14,7 @@ body {
   font-family: "Apercu Mono";
   src: url("../../static/fonts/apercu/Apercu-Mono.otf");
 }
+
+* {
+  border: 1px solid red;
+}

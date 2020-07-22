@@ -1,19 +1,24 @@
 import React from "react"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
-
 import styled from "styled-components"
 
-import { Text } from "../../styles/text"
+import { mediaQueries } from "../../styles/layout"
 
 const Background = styled.div`
   position: relative;
 `
 
-const Credit = styled(Text)`
+const Credit = styled.div`
+  font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue";
+  font-size: 17px;
   position: absolute;
   bottom: 0;
   right: 10px;
+
+  ${mediaQueries.phoneWide} {
+    font-size: 15px;
+  }
 `
 
 const Scrapbook = () => {
